@@ -3692,7 +3692,7 @@ components:
         item:
           $ref: '#/components/schemas/Item'
         status:
-          $ref: '#/components/schemas/NullableItemStatus'
+          $ref: '#/components/schemas/ItemStatus'
         request_id:
           $ref: '#/components/schemas/RequestID'
         access_token:
@@ -4347,13 +4347,13 @@ components:
       description: An object containing identifying numbers used for making electronic transfers to and from the `account`. The identifying number type (ACH, EFT, IBAN, or BACS) used will depend on the country of the account. An account may have more than one number type. If a particular identifying number type is not used by the `account` for which auth data has been requested, a null value will be returned.
       properties:
         ach:
-          $ref: '#/components/schemas/NullableNumbersACH'
+          $ref: '#/components/schemas/NumbersACH'
         eft:
-          $ref: '#/components/schemas/NullableNumbersEFT'
+          $ref: '#/components/schemas/NumbersEFT'
         international:
-          $ref: '#/components/schemas/NullableNumbersInternational'
+          $ref: '#/components/schemas/NumbersInternational'
         bacs:
-          $ref: '#/components/schemas/NullableNumbersBACS'
+          $ref: '#/components/schemas/NumbersBACS'
     ProcessorIdentityGetRequest:
       type: object
       description: ProcessorIdentityGetRequest defines the request schema for `/processor/identity/get`
@@ -4565,7 +4565,7 @@ components:
           type: string
           description: The International Bank Account Number (IBAN) for the recipient. If BACS data is not provided, an IBAN is required.
         bacs:
-          $ref: '#/components/schemas/NullableRecipientBACS'
+          $ref: '#/components/schemas/RecipientBACS'
         address:
           $ref: '#/components/schemas/PaymentInitiationAddress'
       required:
@@ -4612,7 +4612,7 @@ components:
           type: string
           description: The International Bank Account Number (IBAN) for the recipient.
         bacs:
-          $ref: '#/components/schemas/NullableRecipientBACS'
+          $ref: '#/components/schemas/RecipientBACS'
         request_id:
           $ref: '#/components/schemas/RequestID'
       required:
@@ -5880,11 +5880,6 @@ components:
       - error_code
       - error_message
       - request_id
-    NullableItemStatus:
-      nullable: true
-      allOf:
-      - $ref: '#/components/schemas/ItemStatus'
-      - type: object
     ItemStatus:
       description: An object with information about the status of the Item.
       type: object
@@ -6132,6 +6127,7 @@ components:
       - null
     NumbersACH:
       title: NumbersACH
+      nullable: true
       type: object
       description: Identifying information for transferring money to or from a US account via ACH or wire transfer.
       properties:
@@ -6152,14 +6148,10 @@ components:
       - account_id
       - account
       - routing
-    NullableNumbersACH:
-      nullable: true
-      allOf:
-      - $ref: '#/components/schemas/NumbersACH'
-      - type: object
     NumbersEFT:
       title: NumbersEFT
       type: object
+      nullable: true
       description: Identifying information for transferring money to or from a Canadian bank account via EFT.
       properties:
         account_id:
@@ -6179,13 +6171,9 @@ components:
       - account
       - institution
       - branch
-    NullableNumbersEFT:
-      nullable: true
-      allOf:
-      - $ref: '#/components/schemas/NumbersEFT'
-      - type: object
     NumbersInternational:
       title: NumbersInternational
+      nullable: true
       type: object
       description: Identifying information for transferring money to or from an international bank account via wire transfer.
       properties:
@@ -6202,13 +6190,9 @@ components:
       - account_id
       - iban
       - bic
-    NullableNumbersInternational:
-      nullable: true
-      allOf:
-      - $ref: '#/components/schemas/NumbersInternational'
-      - type: object
     NumbersBACS:
       title: NumbersBACS
+      nullable: true
       type: object
       description: Identifying information for transferring money to or from a UK bank account via BACS.
       properties:
@@ -6225,12 +6209,8 @@ components:
       - account_id
       - account
       - sort_code
-    NullableNumbersBACS:
-      nullable: true
-      allOf:
-      - $ref: '#/components/schemas/NumbersBACS'
-      - type: object
     RecipientBACS:
+      nullable: true
       title: RecipientBACS
       type: object
       description: An object containing a BACS account number and sort code. If an IBAN is not provided or if this recipient needs to accept domestic GBP-denominated payments, BACS data is required.
@@ -6241,12 +6221,6 @@ components:
         sort_code:
           type: string
           description: The 6-character sort code of the account.
-    NullableRecipientBACS:
-      nullable: true
-      allOf:
-      - $ref: '#/components/schemas/RecipientBACS'
-      - type: object
-        description: The sort code of the account.
     RequestID:
       title: RequestID
       type: string
@@ -6849,6 +6823,7 @@ components:
       title: Address
       type: object
       description: A physical mailing address.
+      nullable: true
       properties:
         data:
           $ref: '#/components/schemas/AddressData'
@@ -6858,17 +6833,8 @@ components:
           nullable: true
       required:
       - data
-    NullableAddress:
-      nullable: true
-      allOf:
-      - $ref: '#/components/schemas/Address'
-      - type: object
-    NullableAddressData:
-      nullable: true
-      allOf:
-      - $ref: '#/components/schemas/AddressData'
-      - type: object
     AddressData:
+      nullable: true
       title: AddressData
       type: object
       description: Data about the components comprising an address.
@@ -10356,7 +10322,7 @@ components:
           type: string
           description: The name of the employer
         address:
-          $ref: '#/components/schemas/NullableAddressData'
+          $ref: '#/components/schemas/AddressData'
         confidence_score:
           type: number
           nullable: true
@@ -10687,7 +10653,7 @@ components:
           description: The name of the employee.
           nullable: true
         address:
-          $ref: '#/components/schemas/NullableAddressData'
+          $ref: '#/components/schemas/AddressData'
         ssn_masked:
           nullable: true
           type: string
