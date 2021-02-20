@@ -19,7 +19,7 @@ type IncomeVerificationCreateResponse struct {
 	// ID of the verification. This ID is persisted throughout the lifetime of the verification.
 	IncomeVerificationId string `json:"income_verification_id"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _IncomeVerificationCreateResponse IncomeVerificationCreateResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIncomeVerificationCreateResponse(incomeVerificationId string, requestId string, ) *IncomeVerificationCreateResponse {
+func NewIncomeVerificationCreateResponse(incomeVerificationId string, requestId string) *IncomeVerificationCreateResponse {
 	this := IncomeVerificationCreateResponse{}
 	this.IncomeVerificationId = incomeVerificationId
 	this.RequestId = requestId
@@ -46,7 +46,7 @@ func NewIncomeVerificationCreateResponseWithDefaults() *IncomeVerificationCreate
 
 // GetIncomeVerificationId returns the IncomeVerificationId field value
 func (o *IncomeVerificationCreateResponse) GetIncomeVerificationId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *IncomeVerificationCreateResponse) GetIncomeVerificationId() string {
 // GetIncomeVerificationIdOk returns a tuple with the IncomeVerificationId field value
 // and a boolean to check if the value has been set.
 func (o *IncomeVerificationCreateResponse) GetIncomeVerificationIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.IncomeVerificationId, true
@@ -70,7 +70,7 @@ func (o *IncomeVerificationCreateResponse) SetIncomeVerificationId(v string) {
 
 // GetRequestId returns the RequestId field value
 func (o *IncomeVerificationCreateResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *IncomeVerificationCreateResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *IncomeVerificationCreateResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -161,5 +161,3 @@ func (v *NullableIncomeVerificationCreateResponse) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

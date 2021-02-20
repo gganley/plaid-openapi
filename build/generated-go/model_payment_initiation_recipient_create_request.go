@@ -23,9 +23,9 @@ type PaymentInitiationRecipientCreateRequest struct {
 	// The name of the recipient
 	Name string `json:"name"`
 	// The International Bank Account Number (IBAN) for the recipient. If BACS data is not provided, an IBAN is required.
-	Iban *string `json:"iban,omitempty"`
-	Bacs NullableRecipientBACS `json:"bacs,omitempty"`
-	Address NullablePaymentInitiationAddress `json:"address,omitempty"`
+	Iban                 *string                          `json:"iban,omitempty"`
+	Bacs                 NullableRecipientBACS            `json:"bacs,omitempty"`
+	Address              NullablePaymentInitiationAddress `json:"address,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -35,7 +35,7 @@ type _PaymentInitiationRecipientCreateRequest PaymentInitiationRecipientCreateRe
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaymentInitiationRecipientCreateRequest(name string, ) *PaymentInitiationRecipientCreateRequest {
+func NewPaymentInitiationRecipientCreateRequest(name string) *PaymentInitiationRecipientCreateRequest {
 	this := PaymentInitiationRecipientCreateRequest{}
 	this.Name = name
 	return &this
@@ -115,7 +115,7 @@ func (o *PaymentInitiationRecipientCreateRequest) SetSecret(v string) {
 
 // GetName returns the Name field value
 func (o *PaymentInitiationRecipientCreateRequest) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *PaymentInitiationRecipientCreateRequest) GetName() string {
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationRecipientCreateRequest) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Name, true
@@ -182,7 +182,7 @@ func (o *PaymentInitiationRecipientCreateRequest) GetBacs() RecipientBACS {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaymentInitiationRecipientCreateRequest) GetBacsOk() (*RecipientBACS, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Bacs.Get(), o.Bacs.IsSet()
@@ -201,6 +201,7 @@ func (o *PaymentInitiationRecipientCreateRequest) HasBacs() bool {
 func (o *PaymentInitiationRecipientCreateRequest) SetBacs(v RecipientBACS) {
 	o.Bacs.Set(&v)
 }
+
 // SetBacsNil sets the value for Bacs to be an explicit nil
 func (o *PaymentInitiationRecipientCreateRequest) SetBacsNil() {
 	o.Bacs.Set(nil)
@@ -224,7 +225,7 @@ func (o *PaymentInitiationRecipientCreateRequest) GetAddress() PaymentInitiation
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaymentInitiationRecipientCreateRequest) GetAddressOk() (*PaymentInitiationAddress, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Address.Get(), o.Address.IsSet()
@@ -243,6 +244,7 @@ func (o *PaymentInitiationRecipientCreateRequest) HasAddress() bool {
 func (o *PaymentInitiationRecipientCreateRequest) SetAddress(v PaymentInitiationAddress) {
 	o.Address.Set(&v)
 }
+
 // SetAddressNil sets the value for Address to be an explicit nil
 func (o *PaymentInitiationRecipientCreateRequest) SetAddressNil() {
 	o.Address.Set(nil)
@@ -338,5 +340,3 @@ func (v *NullablePaymentInitiationRecipientCreateRequest) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -36,7 +36,7 @@ func (v *CountryCode) UnmarshalJSON(src []byte) error {
 		return err
 	}
 	enumTypeValue := CountryCode(value)
-	for _, existing := range []CountryCode{ "US", "GB", "ES", "NL", "FR", "IE", "CA",   } {
+	for _, existing := range []CountryCode{"US", "GB", "ES", "NL", "FR", "IE", "CA"} {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
@@ -86,4 +86,3 @@ func (v *NullableCountryCode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

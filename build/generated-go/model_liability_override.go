@@ -41,8 +41,8 @@ type LiabilityOverride struct {
 	// The interest rate on the loan as a percentage. Can only be set if `type` is `student`.
 	NominalApr float32 `json:"nominal_apr"`
 	// If set, interest capitalization begins at the given number of months after loan origination. By default interest is never capitalized. Can only be set if `type` is `student`.
-	InterestCapitalizationGracePeriodMonths float32 `json:"interest_capitalization_grace_period_months"`
-	RepaymentModel StudentLoanRepaymentModel `json:"repayment_model"`
+	InterestCapitalizationGracePeriodMonths float32                   `json:"interest_capitalization_grace_period_months"`
+	RepaymentModel                          StudentLoanRepaymentModel `json:"repayment_model"`
 	// Override the `expected_payoff_date` field. Can only be set if `type` is `student`.
 	ExpectedPayoffDate string `json:"expected_payoff_date"`
 	// Override the `guarantor` field. Can only be set if `type` is `student`.
@@ -62,8 +62,8 @@ type LiabilityOverride struct {
 	// Override the `repayment_plan.type` field. Can only be set if `type` is `student`. Possible values are: `\"extended graduated\"`, `\"extended standard\"`, `\"graduated\"`, `\"income-contingent repayment\"`, `\"income-based repayment\"`, `\"interest only\"`, `\"other\"`, `\"pay as you earn\"`, `\"revised pay as you earn\"`, or `\"standard\"`.
 	RepaymentPlanType string `json:"repayment_plan_type"`
 	// Override the `sequence_number` field. Can only be set if `type` is `student`.
-	SequenceNumber string `json:"sequence_number"`
-	ServicerAddress NullableAddress `json:"servicer_address"`
+	SequenceNumber       string          `json:"sequence_number"`
+	ServicerAddress      NullableAddress `json:"servicer_address"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ type _LiabilityOverride LiabilityOverride
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLiabilityOverride(type_ string, purchaseApr float32, cashApr float32, balanceTransferApr float32, specialApr float32, lastPaymentAmount float32, lastStatementBalance float32, minimumPaymentAmount float32, isOverdue bool, originationDate string, principal float32, nominalApr float32, interestCapitalizationGracePeriodMonths float32, repaymentModel StudentLoanRepaymentModel, expectedPayoffDate string, guarantor string, isFederal bool, loanName string, loanStatus string, paymentReferenceNumber string, pslfStatus string, repaymentPlanDescription string, repaymentPlanType string, sequenceNumber string, servicerAddress NullableAddress, ) *LiabilityOverride {
+func NewLiabilityOverride(type_ string, purchaseApr float32, cashApr float32, balanceTransferApr float32, specialApr float32, lastPaymentAmount float32, lastStatementBalance float32, minimumPaymentAmount float32, isOverdue bool, originationDate string, principal float32, nominalApr float32, interestCapitalizationGracePeriodMonths float32, repaymentModel StudentLoanRepaymentModel, expectedPayoffDate string, guarantor string, isFederal bool, loanName string, loanStatus string, paymentReferenceNumber string, pslfStatus string, repaymentPlanDescription string, repaymentPlanType string, sequenceNumber string, servicerAddress NullableAddress) *LiabilityOverride {
 	this := LiabilityOverride{}
 	this.Type = type_
 	this.PurchaseApr = purchaseApr
@@ -113,7 +113,7 @@ func NewLiabilityOverrideWithDefaults() *LiabilityOverride {
 
 // GetType returns the Type field value
 func (o *LiabilityOverride) GetType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *LiabilityOverride) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -137,7 +137,7 @@ func (o *LiabilityOverride) SetType(v string) {
 
 // GetPurchaseApr returns the PurchaseApr field value
 func (o *LiabilityOverride) GetPurchaseApr() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *LiabilityOverride) GetPurchaseApr() float32 {
 // GetPurchaseAprOk returns a tuple with the PurchaseApr field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetPurchaseAprOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PurchaseApr, true
@@ -161,7 +161,7 @@ func (o *LiabilityOverride) SetPurchaseApr(v float32) {
 
 // GetCashApr returns the CashApr field value
 func (o *LiabilityOverride) GetCashApr() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -172,7 +172,7 @@ func (o *LiabilityOverride) GetCashApr() float32 {
 // GetCashAprOk returns a tuple with the CashApr field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetCashAprOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.CashApr, true
@@ -185,7 +185,7 @@ func (o *LiabilityOverride) SetCashApr(v float32) {
 
 // GetBalanceTransferApr returns the BalanceTransferApr field value
 func (o *LiabilityOverride) GetBalanceTransferApr() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -196,7 +196,7 @@ func (o *LiabilityOverride) GetBalanceTransferApr() float32 {
 // GetBalanceTransferAprOk returns a tuple with the BalanceTransferApr field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetBalanceTransferAprOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.BalanceTransferApr, true
@@ -209,7 +209,7 @@ func (o *LiabilityOverride) SetBalanceTransferApr(v float32) {
 
 // GetSpecialApr returns the SpecialApr field value
 func (o *LiabilityOverride) GetSpecialApr() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *LiabilityOverride) GetSpecialApr() float32 {
 // GetSpecialAprOk returns a tuple with the SpecialApr field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetSpecialAprOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.SpecialApr, true
@@ -233,7 +233,7 @@ func (o *LiabilityOverride) SetSpecialApr(v float32) {
 
 // GetLastPaymentAmount returns the LastPaymentAmount field value
 func (o *LiabilityOverride) GetLastPaymentAmount() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *LiabilityOverride) GetLastPaymentAmount() float32 {
 // GetLastPaymentAmountOk returns a tuple with the LastPaymentAmount field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetLastPaymentAmountOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.LastPaymentAmount, true
@@ -257,7 +257,7 @@ func (o *LiabilityOverride) SetLastPaymentAmount(v float32) {
 
 // GetLastStatementBalance returns the LastStatementBalance field value
 func (o *LiabilityOverride) GetLastStatementBalance() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -268,7 +268,7 @@ func (o *LiabilityOverride) GetLastStatementBalance() float32 {
 // GetLastStatementBalanceOk returns a tuple with the LastStatementBalance field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetLastStatementBalanceOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.LastStatementBalance, true
@@ -281,7 +281,7 @@ func (o *LiabilityOverride) SetLastStatementBalance(v float32) {
 
 // GetMinimumPaymentAmount returns the MinimumPaymentAmount field value
 func (o *LiabilityOverride) GetMinimumPaymentAmount() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -292,7 +292,7 @@ func (o *LiabilityOverride) GetMinimumPaymentAmount() float32 {
 // GetMinimumPaymentAmountOk returns a tuple with the MinimumPaymentAmount field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetMinimumPaymentAmountOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.MinimumPaymentAmount, true
@@ -305,7 +305,7 @@ func (o *LiabilityOverride) SetMinimumPaymentAmount(v float32) {
 
 // GetIsOverdue returns the IsOverdue field value
 func (o *LiabilityOverride) GetIsOverdue() bool {
-	if o == nil  {
+	if o == nil {
 		var ret bool
 		return ret
 	}
@@ -316,7 +316,7 @@ func (o *LiabilityOverride) GetIsOverdue() bool {
 // GetIsOverdueOk returns a tuple with the IsOverdue field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetIsOverdueOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.IsOverdue, true
@@ -329,7 +329,7 @@ func (o *LiabilityOverride) SetIsOverdue(v bool) {
 
 // GetOriginationDate returns the OriginationDate field value
 func (o *LiabilityOverride) GetOriginationDate() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -340,7 +340,7 @@ func (o *LiabilityOverride) GetOriginationDate() string {
 // GetOriginationDateOk returns a tuple with the OriginationDate field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetOriginationDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.OriginationDate, true
@@ -353,7 +353,7 @@ func (o *LiabilityOverride) SetOriginationDate(v string) {
 
 // GetPrincipal returns the Principal field value
 func (o *LiabilityOverride) GetPrincipal() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -364,7 +364,7 @@ func (o *LiabilityOverride) GetPrincipal() float32 {
 // GetPrincipalOk returns a tuple with the Principal field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetPrincipalOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Principal, true
@@ -377,7 +377,7 @@ func (o *LiabilityOverride) SetPrincipal(v float32) {
 
 // GetNominalApr returns the NominalApr field value
 func (o *LiabilityOverride) GetNominalApr() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -388,7 +388,7 @@ func (o *LiabilityOverride) GetNominalApr() float32 {
 // GetNominalAprOk returns a tuple with the NominalApr field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetNominalAprOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.NominalApr, true
@@ -401,7 +401,7 @@ func (o *LiabilityOverride) SetNominalApr(v float32) {
 
 // GetInterestCapitalizationGracePeriodMonths returns the InterestCapitalizationGracePeriodMonths field value
 func (o *LiabilityOverride) GetInterestCapitalizationGracePeriodMonths() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -412,7 +412,7 @@ func (o *LiabilityOverride) GetInterestCapitalizationGracePeriodMonths() float32
 // GetInterestCapitalizationGracePeriodMonthsOk returns a tuple with the InterestCapitalizationGracePeriodMonths field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetInterestCapitalizationGracePeriodMonthsOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.InterestCapitalizationGracePeriodMonths, true
@@ -425,7 +425,7 @@ func (o *LiabilityOverride) SetInterestCapitalizationGracePeriodMonths(v float32
 
 // GetRepaymentModel returns the RepaymentModel field value
 func (o *LiabilityOverride) GetRepaymentModel() StudentLoanRepaymentModel {
-	if o == nil  {
+	if o == nil {
 		var ret StudentLoanRepaymentModel
 		return ret
 	}
@@ -436,7 +436,7 @@ func (o *LiabilityOverride) GetRepaymentModel() StudentLoanRepaymentModel {
 // GetRepaymentModelOk returns a tuple with the RepaymentModel field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetRepaymentModelOk() (*StudentLoanRepaymentModel, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RepaymentModel, true
@@ -449,7 +449,7 @@ func (o *LiabilityOverride) SetRepaymentModel(v StudentLoanRepaymentModel) {
 
 // GetExpectedPayoffDate returns the ExpectedPayoffDate field value
 func (o *LiabilityOverride) GetExpectedPayoffDate() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -460,7 +460,7 @@ func (o *LiabilityOverride) GetExpectedPayoffDate() string {
 // GetExpectedPayoffDateOk returns a tuple with the ExpectedPayoffDate field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetExpectedPayoffDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ExpectedPayoffDate, true
@@ -473,7 +473,7 @@ func (o *LiabilityOverride) SetExpectedPayoffDate(v string) {
 
 // GetGuarantor returns the Guarantor field value
 func (o *LiabilityOverride) GetGuarantor() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -484,7 +484,7 @@ func (o *LiabilityOverride) GetGuarantor() string {
 // GetGuarantorOk returns a tuple with the Guarantor field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetGuarantorOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Guarantor, true
@@ -497,7 +497,7 @@ func (o *LiabilityOverride) SetGuarantor(v string) {
 
 // GetIsFederal returns the IsFederal field value
 func (o *LiabilityOverride) GetIsFederal() bool {
-	if o == nil  {
+	if o == nil {
 		var ret bool
 		return ret
 	}
@@ -508,7 +508,7 @@ func (o *LiabilityOverride) GetIsFederal() bool {
 // GetIsFederalOk returns a tuple with the IsFederal field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetIsFederalOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.IsFederal, true
@@ -521,7 +521,7 @@ func (o *LiabilityOverride) SetIsFederal(v bool) {
 
 // GetLoanName returns the LoanName field value
 func (o *LiabilityOverride) GetLoanName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -532,7 +532,7 @@ func (o *LiabilityOverride) GetLoanName() string {
 // GetLoanNameOk returns a tuple with the LoanName field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetLoanNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.LoanName, true
@@ -545,7 +545,7 @@ func (o *LiabilityOverride) SetLoanName(v string) {
 
 // GetLoanStatus returns the LoanStatus field value
 func (o *LiabilityOverride) GetLoanStatus() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -556,7 +556,7 @@ func (o *LiabilityOverride) GetLoanStatus() string {
 // GetLoanStatusOk returns a tuple with the LoanStatus field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetLoanStatusOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.LoanStatus, true
@@ -569,7 +569,7 @@ func (o *LiabilityOverride) SetLoanStatus(v string) {
 
 // GetPaymentReferenceNumber returns the PaymentReferenceNumber field value
 func (o *LiabilityOverride) GetPaymentReferenceNumber() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -580,7 +580,7 @@ func (o *LiabilityOverride) GetPaymentReferenceNumber() string {
 // GetPaymentReferenceNumberOk returns a tuple with the PaymentReferenceNumber field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetPaymentReferenceNumberOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PaymentReferenceNumber, true
@@ -593,7 +593,7 @@ func (o *LiabilityOverride) SetPaymentReferenceNumber(v string) {
 
 // GetPslfStatus returns the PslfStatus field value
 func (o *LiabilityOverride) GetPslfStatus() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -604,7 +604,7 @@ func (o *LiabilityOverride) GetPslfStatus() string {
 // GetPslfStatusOk returns a tuple with the PslfStatus field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetPslfStatusOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PslfStatus, true
@@ -617,7 +617,7 @@ func (o *LiabilityOverride) SetPslfStatus(v string) {
 
 // GetRepaymentPlanDescription returns the RepaymentPlanDescription field value
 func (o *LiabilityOverride) GetRepaymentPlanDescription() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -628,7 +628,7 @@ func (o *LiabilityOverride) GetRepaymentPlanDescription() string {
 // GetRepaymentPlanDescriptionOk returns a tuple with the RepaymentPlanDescription field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetRepaymentPlanDescriptionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RepaymentPlanDescription, true
@@ -641,7 +641,7 @@ func (o *LiabilityOverride) SetRepaymentPlanDescription(v string) {
 
 // GetRepaymentPlanType returns the RepaymentPlanType field value
 func (o *LiabilityOverride) GetRepaymentPlanType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -652,7 +652,7 @@ func (o *LiabilityOverride) GetRepaymentPlanType() string {
 // GetRepaymentPlanTypeOk returns a tuple with the RepaymentPlanType field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetRepaymentPlanTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RepaymentPlanType, true
@@ -665,7 +665,7 @@ func (o *LiabilityOverride) SetRepaymentPlanType(v string) {
 
 // GetSequenceNumber returns the SequenceNumber field value
 func (o *LiabilityOverride) GetSequenceNumber() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -676,7 +676,7 @@ func (o *LiabilityOverride) GetSequenceNumber() string {
 // GetSequenceNumberOk returns a tuple with the SequenceNumber field value
 // and a boolean to check if the value has been set.
 func (o *LiabilityOverride) GetSequenceNumberOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.SequenceNumber, true
@@ -702,7 +702,7 @@ func (o *LiabilityOverride) GetServicerAddress() Address {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LiabilityOverride) GetServicerAddressOk() (*Address, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ServicerAddress.Get(), o.ServicerAddress.IsSet()
@@ -874,5 +874,3 @@ func (v *NullableLiabilityOverride) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

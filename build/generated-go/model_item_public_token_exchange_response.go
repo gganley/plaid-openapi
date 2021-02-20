@@ -21,7 +21,7 @@ type ItemPublicTokenExchangeResponse struct {
 	// The `item_id` value of the Item associated with the returned `access_token`
 	ItemId string `json:"item_id"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _ItemPublicTokenExchangeResponse ItemPublicTokenExchangeResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewItemPublicTokenExchangeResponse(accessToken string, itemId string, requestId string, ) *ItemPublicTokenExchangeResponse {
+func NewItemPublicTokenExchangeResponse(accessToken string, itemId string, requestId string) *ItemPublicTokenExchangeResponse {
 	this := ItemPublicTokenExchangeResponse{}
 	this.AccessToken = accessToken
 	this.ItemId = itemId
@@ -49,7 +49,7 @@ func NewItemPublicTokenExchangeResponseWithDefaults() *ItemPublicTokenExchangeRe
 
 // GetAccessToken returns the AccessToken field value
 func (o *ItemPublicTokenExchangeResponse) GetAccessToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *ItemPublicTokenExchangeResponse) GetAccessToken() string {
 // GetAccessTokenOk returns a tuple with the AccessToken field value
 // and a boolean to check if the value has been set.
 func (o *ItemPublicTokenExchangeResponse) GetAccessTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccessToken, true
@@ -73,7 +73,7 @@ func (o *ItemPublicTokenExchangeResponse) SetAccessToken(v string) {
 
 // GetItemId returns the ItemId field value
 func (o *ItemPublicTokenExchangeResponse) GetItemId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *ItemPublicTokenExchangeResponse) GetItemId() string {
 // GetItemIdOk returns a tuple with the ItemId field value
 // and a boolean to check if the value has been set.
 func (o *ItemPublicTokenExchangeResponse) GetItemIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ItemId, true
@@ -97,7 +97,7 @@ func (o *ItemPublicTokenExchangeResponse) SetItemId(v string) {
 
 // GetRequestId returns the RequestId field value
 func (o *ItemPublicTokenExchangeResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *ItemPublicTokenExchangeResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *ItemPublicTokenExchangeResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -192,5 +192,3 @@ func (v *NullableItemPublicTokenExchangeResponse) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

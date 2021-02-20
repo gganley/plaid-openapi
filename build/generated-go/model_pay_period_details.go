@@ -25,7 +25,7 @@ type PayPeriodDetails struct {
 	// Total earnings before tax.
 	GrossEarnings NullableFloat32 `json:"gross_earnings,omitempty"`
 	// The net amount of the paycheck.
-	CheckAmount NullableFloat32 `json:"check_amount,omitempty"`
+	CheckAmount          NullableFloat32 `json:"check_amount,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -61,7 +61,7 @@ func (o *PayPeriodDetails) GetStartDate() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PayPeriodDetails) GetStartDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StartDate.Get(), o.StartDate.IsSet()
@@ -80,6 +80,7 @@ func (o *PayPeriodDetails) HasStartDate() bool {
 func (o *PayPeriodDetails) SetStartDate(v string) {
 	o.StartDate.Set(&v)
 }
+
 // SetStartDateNil sets the value for StartDate to be an explicit nil
 func (o *PayPeriodDetails) SetStartDateNil() {
 	o.StartDate.Set(nil)
@@ -103,7 +104,7 @@ func (o *PayPeriodDetails) GetEndDate() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PayPeriodDetails) GetEndDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.EndDate.Get(), o.EndDate.IsSet()
@@ -122,6 +123,7 @@ func (o *PayPeriodDetails) HasEndDate() bool {
 func (o *PayPeriodDetails) SetEndDate(v string) {
 	o.EndDate.Set(&v)
 }
+
 // SetEndDateNil sets the value for EndDate to be an explicit nil
 func (o *PayPeriodDetails) SetEndDateNil() {
 	o.EndDate.Set(nil)
@@ -145,7 +147,7 @@ func (o *PayPeriodDetails) GetPayDay() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PayPeriodDetails) GetPayDayOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PayDay.Get(), o.PayDay.IsSet()
@@ -164,6 +166,7 @@ func (o *PayPeriodDetails) HasPayDay() bool {
 func (o *PayPeriodDetails) SetPayDay(v string) {
 	o.PayDay.Set(&v)
 }
+
 // SetPayDayNil sets the value for PayDay to be an explicit nil
 func (o *PayPeriodDetails) SetPayDayNil() {
 	o.PayDay.Set(nil)
@@ -187,7 +190,7 @@ func (o *PayPeriodDetails) GetGrossEarnings() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PayPeriodDetails) GetGrossEarningsOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.GrossEarnings.Get(), o.GrossEarnings.IsSet()
@@ -206,6 +209,7 @@ func (o *PayPeriodDetails) HasGrossEarnings() bool {
 func (o *PayPeriodDetails) SetGrossEarnings(v float32) {
 	o.GrossEarnings.Set(&v)
 }
+
 // SetGrossEarningsNil sets the value for GrossEarnings to be an explicit nil
 func (o *PayPeriodDetails) SetGrossEarningsNil() {
 	o.GrossEarnings.Set(nil)
@@ -229,7 +233,7 @@ func (o *PayPeriodDetails) GetCheckAmount() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PayPeriodDetails) GetCheckAmountOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CheckAmount.Get(), o.CheckAmount.IsSet()
@@ -248,6 +252,7 @@ func (o *PayPeriodDetails) HasCheckAmount() bool {
 func (o *PayPeriodDetails) SetCheckAmount(v float32) {
 	o.CheckAmount.Set(&v)
 }
+
 // SetCheckAmountNil sets the value for CheckAmount to be an explicit nil
 func (o *PayPeriodDetails) SetCheckAmountNil() {
 	o.CheckAmount.Set(nil)
@@ -339,5 +344,3 @@ func (v *NullablePayPeriodDetails) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

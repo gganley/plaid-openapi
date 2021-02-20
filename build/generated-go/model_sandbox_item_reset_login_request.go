@@ -21,7 +21,7 @@ type SandboxItemResetLoginRequest struct {
 	// Your Plaid API `secret`.
 	Secret *string `json:"secret,omitempty"`
 	// The access token associated with the Item data is being requested for.
-	AccessToken string `json:"access_token"`
+	AccessToken          string `json:"access_token"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _SandboxItemResetLoginRequest SandboxItemResetLoginRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSandboxItemResetLoginRequest(accessToken string, ) *SandboxItemResetLoginRequest {
+func NewSandboxItemResetLoginRequest(accessToken string) *SandboxItemResetLoginRequest {
 	this := SandboxItemResetLoginRequest{}
 	this.AccessToken = accessToken
 	return &this
@@ -111,7 +111,7 @@ func (o *SandboxItemResetLoginRequest) SetSecret(v string) {
 
 // GetAccessToken returns the AccessToken field value
 func (o *SandboxItemResetLoginRequest) GetAccessToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *SandboxItemResetLoginRequest) GetAccessToken() string {
 // GetAccessTokenOk returns a tuple with the AccessToken field value
 // and a boolean to check if the value has been set.
 func (o *SandboxItemResetLoginRequest) GetAccessTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccessToken, true
@@ -206,5 +206,3 @@ func (v *NullableSandboxItemResetLoginRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

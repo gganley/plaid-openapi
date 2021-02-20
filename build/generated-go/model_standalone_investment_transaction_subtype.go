@@ -36,7 +36,7 @@ type StandaloneInvestmentTransactionSubtype struct {
 	DividendReinvestment *string `json:"dividend reinvestment,omitempty"`
 	// Exercise of an option or warrant contract
 	Exercise *string `json:"exercise,omitempty"`
-	// Expiration of an option or warrant contract 
+	// Expiration of an option or warrant contract
 	Expire *string `json:"expire,omitempty"`
 	// Fees paid for administration of a mutual fund or other pooled investment vehicle
 	FundFee *string `json:"fund fee,omitempty"`
@@ -103,7 +103,7 @@ type StandaloneInvestmentTransactionSubtype struct {
 	// Unqualified capital gain received as cash
 	UnqualifiedGain *string `json:"unqualified gain,omitempty"`
 	// Outflow of cash from an account
-	Withdrawal *string `json:"withdrawal,omitempty"`
+	Withdrawal           *string `json:"withdrawal,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -1771,5 +1771,3 @@ func (v *NullableStandaloneInvestmentTransactionSubtype) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

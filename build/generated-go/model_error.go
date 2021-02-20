@@ -33,7 +33,7 @@ type Error struct {
 	// The URL of a Plaid documentation page with more information about the error
 	DocumentationUrl NullableString `json:"documentation_url,omitempty"`
 	// Suggested steps for resolving the error
-	SuggestedAction NullableString `json:"suggested_action,omitempty"`
+	SuggestedAction      NullableString `json:"suggested_action,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -43,7 +43,7 @@ type _Error Error
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewError(errorType string, errorCode string, errorMessage string, requestId string, ) *Error {
+func NewError(errorType string, errorCode string, errorMessage string, requestId string) *Error {
 	this := Error{}
 	this.ErrorType = errorType
 	this.ErrorCode = errorCode
@@ -62,7 +62,7 @@ func NewErrorWithDefaults() *Error {
 
 // GetErrorType returns the ErrorType field value
 func (o *Error) GetErrorType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -73,7 +73,7 @@ func (o *Error) GetErrorType() string {
 // GetErrorTypeOk returns a tuple with the ErrorType field value
 // and a boolean to check if the value has been set.
 func (o *Error) GetErrorTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ErrorType, true
@@ -86,7 +86,7 @@ func (o *Error) SetErrorType(v string) {
 
 // GetErrorCode returns the ErrorCode field value
 func (o *Error) GetErrorCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *Error) GetErrorCode() string {
 // GetErrorCodeOk returns a tuple with the ErrorCode field value
 // and a boolean to check if the value has been set.
 func (o *Error) GetErrorCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ErrorCode, true
@@ -110,7 +110,7 @@ func (o *Error) SetErrorCode(v string) {
 
 // GetErrorMessage returns the ErrorMessage field value
 func (o *Error) GetErrorMessage() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *Error) GetErrorMessage() string {
 // GetErrorMessageOk returns a tuple with the ErrorMessage field value
 // and a boolean to check if the value has been set.
 func (o *Error) GetErrorMessageOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ErrorMessage, true
@@ -145,7 +145,7 @@ func (o *Error) GetDisplayMessage() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Error) GetDisplayMessageOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DisplayMessage.Get(), o.DisplayMessage.IsSet()
@@ -164,6 +164,7 @@ func (o *Error) HasDisplayMessage() bool {
 func (o *Error) SetDisplayMessage(v string) {
 	o.DisplayMessage.Set(&v)
 }
+
 // SetDisplayMessageNil sets the value for DisplayMessage to be an explicit nil
 func (o *Error) SetDisplayMessageNil() {
 	o.DisplayMessage.Set(nil)
@@ -176,7 +177,7 @@ func (o *Error) UnsetDisplayMessage() {
 
 // GetRequestId returns the RequestId field value
 func (o *Error) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -187,7 +188,7 @@ func (o *Error) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *Error) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -243,7 +244,7 @@ func (o *Error) GetStatus() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Error) GetStatusOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Status.Get(), o.Status.IsSet()
@@ -262,6 +263,7 @@ func (o *Error) HasStatus() bool {
 func (o *Error) SetStatus(v float32) {
 	o.Status.Set(&v)
 }
+
 // SetStatusNil sets the value for Status to be an explicit nil
 func (o *Error) SetStatusNil() {
 	o.Status.Set(nil)
@@ -285,7 +287,7 @@ func (o *Error) GetDocumentationUrl() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Error) GetDocumentationUrlOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DocumentationUrl.Get(), o.DocumentationUrl.IsSet()
@@ -304,6 +306,7 @@ func (o *Error) HasDocumentationUrl() bool {
 func (o *Error) SetDocumentationUrl(v string) {
 	o.DocumentationUrl.Set(&v)
 }
+
 // SetDocumentationUrlNil sets the value for DocumentationUrl to be an explicit nil
 func (o *Error) SetDocumentationUrlNil() {
 	o.DocumentationUrl.Set(nil)
@@ -327,7 +330,7 @@ func (o *Error) GetSuggestedAction() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Error) GetSuggestedActionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SuggestedAction.Get(), o.SuggestedAction.IsSet()
@@ -346,6 +349,7 @@ func (o *Error) HasSuggestedAction() bool {
 func (o *Error) SetSuggestedAction(v string) {
 	o.SuggestedAction.Set(&v)
 }
+
 // SetSuggestedActionNil sets the value for SuggestedAction to be an explicit nil
 func (o *Error) SetSuggestedActionNil() {
 	o.SuggestedAction.Set(nil)
@@ -453,5 +457,3 @@ func (v *NullableError) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

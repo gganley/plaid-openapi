@@ -23,9 +23,9 @@ type PaymentInitiationPaymentCreateRequest struct {
 	// The ID of the recipient the payment is for.
 	RecipientId string `json:"recipient_id"`
 	// A reference for the payment. This must be an alphanumeric string with at most 18 characters and must not contain any special characters (since not all institutions support them).
-	Reference string `json:"reference"`
-	Amount Amount `json:"amount"`
-	Schedule NullableExternalPaymentSchedule `json:"schedule,omitempty"`
+	Reference            string                          `json:"reference"`
+	Amount               Amount                          `json:"amount"`
+	Schedule             NullableExternalPaymentSchedule `json:"schedule,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -35,7 +35,7 @@ type _PaymentInitiationPaymentCreateRequest PaymentInitiationPaymentCreateReques
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaymentInitiationPaymentCreateRequest(recipientId string, reference string, amount Amount, ) *PaymentInitiationPaymentCreateRequest {
+func NewPaymentInitiationPaymentCreateRequest(recipientId string, reference string, amount Amount) *PaymentInitiationPaymentCreateRequest {
 	this := PaymentInitiationPaymentCreateRequest{}
 	this.RecipientId = recipientId
 	this.Reference = reference
@@ -117,7 +117,7 @@ func (o *PaymentInitiationPaymentCreateRequest) SetSecret(v string) {
 
 // GetRecipientId returns the RecipientId field value
 func (o *PaymentInitiationPaymentCreateRequest) GetRecipientId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *PaymentInitiationPaymentCreateRequest) GetRecipientId() string {
 // GetRecipientIdOk returns a tuple with the RecipientId field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationPaymentCreateRequest) GetRecipientIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RecipientId, true
@@ -141,7 +141,7 @@ func (o *PaymentInitiationPaymentCreateRequest) SetRecipientId(v string) {
 
 // GetReference returns the Reference field value
 func (o *PaymentInitiationPaymentCreateRequest) GetReference() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *PaymentInitiationPaymentCreateRequest) GetReference() string {
 // GetReferenceOk returns a tuple with the Reference field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationPaymentCreateRequest) GetReferenceOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -165,7 +165,7 @@ func (o *PaymentInitiationPaymentCreateRequest) SetReference(v string) {
 
 // GetAmount returns the Amount field value
 func (o *PaymentInitiationPaymentCreateRequest) GetAmount() Amount {
-	if o == nil  {
+	if o == nil {
 		var ret Amount
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *PaymentInitiationPaymentCreateRequest) GetAmount() Amount {
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationPaymentCreateRequest) GetAmountOk() (*Amount, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Amount, true
@@ -200,7 +200,7 @@ func (o *PaymentInitiationPaymentCreateRequest) GetSchedule() ExternalPaymentSch
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaymentInitiationPaymentCreateRequest) GetScheduleOk() (*ExternalPaymentSchedule, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Schedule.Get(), o.Schedule.IsSet()
@@ -219,6 +219,7 @@ func (o *PaymentInitiationPaymentCreateRequest) HasSchedule() bool {
 func (o *PaymentInitiationPaymentCreateRequest) SetSchedule(v ExternalPaymentSchedule) {
 	o.Schedule.Set(&v)
 }
+
 // SetScheduleNil sets the value for Schedule to be an explicit nil
 func (o *PaymentInitiationPaymentCreateRequest) SetScheduleNil() {
 	o.Schedule.Set(nil)
@@ -314,5 +315,3 @@ func (v *NullablePaymentInitiationPaymentCreateRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

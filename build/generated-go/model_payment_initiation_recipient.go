@@ -19,11 +19,11 @@ type PaymentInitiationRecipient struct {
 	// The ID of the recipient. Like all Plaid identifiers, the `recipient_id` is case sensitive.
 	RecipientId string `json:"recipient_id"`
 	// The name of the recipient
-	Name string `json:"name"`
+	Name    string                           `json:"name"`
 	Address NullablePaymentInitiationAddress `json:"address"`
 	// The International Bank Account Number (IBAN) for the recipient.
-	Iban NullableString `json:"iban,omitempty"`
-	Bacs NullablePaymentInitiationRecipientBacs `json:"bacs,omitempty"`
+	Iban                 NullableString                         `json:"iban,omitempty"`
+	Bacs                 NullablePaymentInitiationRecipientBacs `json:"bacs,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -33,7 +33,7 @@ type _PaymentInitiationRecipient PaymentInitiationRecipient
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaymentInitiationRecipient(recipientId string, name string, address NullablePaymentInitiationAddress, ) *PaymentInitiationRecipient {
+func NewPaymentInitiationRecipient(recipientId string, name string, address NullablePaymentInitiationAddress) *PaymentInitiationRecipient {
 	this := PaymentInitiationRecipient{}
 	this.RecipientId = recipientId
 	this.Name = name
@@ -51,7 +51,7 @@ func NewPaymentInitiationRecipientWithDefaults() *PaymentInitiationRecipient {
 
 // GetRecipientId returns the RecipientId field value
 func (o *PaymentInitiationRecipient) GetRecipientId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *PaymentInitiationRecipient) GetRecipientId() string {
 // GetRecipientIdOk returns a tuple with the RecipientId field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationRecipient) GetRecipientIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RecipientId, true
@@ -75,7 +75,7 @@ func (o *PaymentInitiationRecipient) SetRecipientId(v string) {
 
 // GetName returns the Name field value
 func (o *PaymentInitiationRecipient) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *PaymentInitiationRecipient) GetName() string {
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationRecipient) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Name, true
@@ -112,7 +112,7 @@ func (o *PaymentInitiationRecipient) GetAddress() PaymentInitiationAddress {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaymentInitiationRecipient) GetAddressOk() (*PaymentInitiationAddress, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Address.Get(), o.Address.IsSet()
@@ -136,7 +136,7 @@ func (o *PaymentInitiationRecipient) GetIban() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaymentInitiationRecipient) GetIbanOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Iban.Get(), o.Iban.IsSet()
@@ -155,6 +155,7 @@ func (o *PaymentInitiationRecipient) HasIban() bool {
 func (o *PaymentInitiationRecipient) SetIban(v string) {
 	o.Iban.Set(&v)
 }
+
 // SetIbanNil sets the value for Iban to be an explicit nil
 func (o *PaymentInitiationRecipient) SetIbanNil() {
 	o.Iban.Set(nil)
@@ -178,7 +179,7 @@ func (o *PaymentInitiationRecipient) GetBacs() PaymentInitiationRecipientBacs {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaymentInitiationRecipient) GetBacsOk() (*PaymentInitiationRecipientBacs, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Bacs.Get(), o.Bacs.IsSet()
@@ -197,6 +198,7 @@ func (o *PaymentInitiationRecipient) HasBacs() bool {
 func (o *PaymentInitiationRecipient) SetBacs(v PaymentInitiationRecipientBacs) {
 	o.Bacs.Set(&v)
 }
+
 // SetBacsNil sets the value for Bacs to be an explicit nil
 func (o *PaymentInitiationRecipient) SetBacsNil() {
 	o.Bacs.Set(nil)
@@ -288,5 +290,3 @@ func (v *NullablePaymentInitiationRecipient) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

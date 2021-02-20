@@ -31,7 +31,7 @@ type PaymentMeta struct {
 	// The name of the payment processor
 	PaymentProcessor NullableString `json:"payment_processor,omitempty"`
 	// The payer-supplied description of the transfer.
-	Reason NullableString `json:"reason,omitempty"`
+	Reason               NullableString `json:"reason,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *PaymentMeta) GetReferenceNumber() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaymentMeta) GetReferenceNumberOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ReferenceNumber.Get(), o.ReferenceNumber.IsSet()
@@ -86,6 +86,7 @@ func (o *PaymentMeta) HasReferenceNumber() bool {
 func (o *PaymentMeta) SetReferenceNumber(v string) {
 	o.ReferenceNumber.Set(&v)
 }
+
 // SetReferenceNumberNil sets the value for ReferenceNumber to be an explicit nil
 func (o *PaymentMeta) SetReferenceNumberNil() {
 	o.ReferenceNumber.Set(nil)
@@ -109,7 +110,7 @@ func (o *PaymentMeta) GetPpdId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaymentMeta) GetPpdIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PpdId.Get(), o.PpdId.IsSet()
@@ -128,6 +129,7 @@ func (o *PaymentMeta) HasPpdId() bool {
 func (o *PaymentMeta) SetPpdId(v string) {
 	o.PpdId.Set(&v)
 }
+
 // SetPpdIdNil sets the value for PpdId to be an explicit nil
 func (o *PaymentMeta) SetPpdIdNil() {
 	o.PpdId.Set(nil)
@@ -151,7 +153,7 @@ func (o *PaymentMeta) GetPayee() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaymentMeta) GetPayeeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Payee.Get(), o.Payee.IsSet()
@@ -170,6 +172,7 @@ func (o *PaymentMeta) HasPayee() bool {
 func (o *PaymentMeta) SetPayee(v string) {
 	o.Payee.Set(&v)
 }
+
 // SetPayeeNil sets the value for Payee to be an explicit nil
 func (o *PaymentMeta) SetPayeeNil() {
 	o.Payee.Set(nil)
@@ -193,7 +196,7 @@ func (o *PaymentMeta) GetByOrderOf() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaymentMeta) GetByOrderOfOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ByOrderOf.Get(), o.ByOrderOf.IsSet()
@@ -212,6 +215,7 @@ func (o *PaymentMeta) HasByOrderOf() bool {
 func (o *PaymentMeta) SetByOrderOf(v string) {
 	o.ByOrderOf.Set(&v)
 }
+
 // SetByOrderOfNil sets the value for ByOrderOf to be an explicit nil
 func (o *PaymentMeta) SetByOrderOfNil() {
 	o.ByOrderOf.Set(nil)
@@ -235,7 +239,7 @@ func (o *PaymentMeta) GetPayer() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaymentMeta) GetPayerOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Payer.Get(), o.Payer.IsSet()
@@ -254,6 +258,7 @@ func (o *PaymentMeta) HasPayer() bool {
 func (o *PaymentMeta) SetPayer(v string) {
 	o.Payer.Set(&v)
 }
+
 // SetPayerNil sets the value for Payer to be an explicit nil
 func (o *PaymentMeta) SetPayerNil() {
 	o.Payer.Set(nil)
@@ -277,7 +282,7 @@ func (o *PaymentMeta) GetPaymentMethod() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaymentMeta) GetPaymentMethodOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PaymentMethod.Get(), o.PaymentMethod.IsSet()
@@ -296,6 +301,7 @@ func (o *PaymentMeta) HasPaymentMethod() bool {
 func (o *PaymentMeta) SetPaymentMethod(v string) {
 	o.PaymentMethod.Set(&v)
 }
+
 // SetPaymentMethodNil sets the value for PaymentMethod to be an explicit nil
 func (o *PaymentMeta) SetPaymentMethodNil() {
 	o.PaymentMethod.Set(nil)
@@ -319,7 +325,7 @@ func (o *PaymentMeta) GetPaymentProcessor() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaymentMeta) GetPaymentProcessorOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PaymentProcessor.Get(), o.PaymentProcessor.IsSet()
@@ -338,6 +344,7 @@ func (o *PaymentMeta) HasPaymentProcessor() bool {
 func (o *PaymentMeta) SetPaymentProcessor(v string) {
 	o.PaymentProcessor.Set(&v)
 }
+
 // SetPaymentProcessorNil sets the value for PaymentProcessor to be an explicit nil
 func (o *PaymentMeta) SetPaymentProcessorNil() {
 	o.PaymentProcessor.Set(nil)
@@ -361,7 +368,7 @@ func (o *PaymentMeta) GetReason() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaymentMeta) GetReasonOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Reason.Get(), o.Reason.IsSet()
@@ -380,6 +387,7 @@ func (o *PaymentMeta) HasReason() bool {
 func (o *PaymentMeta) SetReason(v string) {
 	o.Reason.Set(&v)
 }
+
 // SetReasonNil sets the value for Reason to be an explicit nil
 func (o *PaymentMeta) SetReasonNil() {
 	o.Reason.Set(nil)
@@ -483,5 +491,3 @@ func (v *NullablePaymentMeta) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

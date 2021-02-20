@@ -25,7 +25,7 @@ type SandboxItemSetVerificationStatusRequest struct {
 	// The `account_id` of the account whose verification status is to be modified
 	AccountId string `json:"account_id"`
 	// The verification status to set the account to.
-	VerificationStatus string `json:"verification_status"`
+	VerificationStatus   string `json:"verification_status"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -35,7 +35,7 @@ type _SandboxItemSetVerificationStatusRequest SandboxItemSetVerificationStatusRe
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSandboxItemSetVerificationStatusRequest(accessToken string, accountId string, verificationStatus string, ) *SandboxItemSetVerificationStatusRequest {
+func NewSandboxItemSetVerificationStatusRequest(accessToken string, accountId string, verificationStatus string) *SandboxItemSetVerificationStatusRequest {
 	this := SandboxItemSetVerificationStatusRequest{}
 	this.AccessToken = accessToken
 	this.AccountId = accountId
@@ -117,7 +117,7 @@ func (o *SandboxItemSetVerificationStatusRequest) SetSecret(v string) {
 
 // GetAccessToken returns the AccessToken field value
 func (o *SandboxItemSetVerificationStatusRequest) GetAccessToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *SandboxItemSetVerificationStatusRequest) GetAccessToken() string {
 // GetAccessTokenOk returns a tuple with the AccessToken field value
 // and a boolean to check if the value has been set.
 func (o *SandboxItemSetVerificationStatusRequest) GetAccessTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccessToken, true
@@ -141,7 +141,7 @@ func (o *SandboxItemSetVerificationStatusRequest) SetAccessToken(v string) {
 
 // GetAccountId returns the AccountId field value
 func (o *SandboxItemSetVerificationStatusRequest) GetAccountId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *SandboxItemSetVerificationStatusRequest) GetAccountId() string {
 // GetAccountIdOk returns a tuple with the AccountId field value
 // and a boolean to check if the value has been set.
 func (o *SandboxItemSetVerificationStatusRequest) GetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountId, true
@@ -165,7 +165,7 @@ func (o *SandboxItemSetVerificationStatusRequest) SetAccountId(v string) {
 
 // GetVerificationStatus returns the VerificationStatus field value
 func (o *SandboxItemSetVerificationStatusRequest) GetVerificationStatus() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *SandboxItemSetVerificationStatusRequest) GetVerificationStatus() string
 // GetVerificationStatusOk returns a tuple with the VerificationStatus field value
 // and a boolean to check if the value has been set.
 func (o *SandboxItemSetVerificationStatusRequest) GetVerificationStatusOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.VerificationStatus, true
@@ -268,5 +268,3 @@ func (v *NullableSandboxItemSetVerificationStatusRequest) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

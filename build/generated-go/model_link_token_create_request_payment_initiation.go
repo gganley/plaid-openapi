@@ -17,7 +17,7 @@ import (
 // LinkTokenCreateRequestPaymentInitiation Specifies options for initializing Link for use with the Payment Initiation (Europe) product. This field is required if `payment_initiation` is included in the `products` array.
 type LinkTokenCreateRequestPaymentInitiation struct {
 	// The `payment_id` provided by the `/payment_initiation/payment/create` endpoint.
-	PaymentId string `json:"payment_id"`
+	PaymentId            string `json:"payment_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -27,7 +27,7 @@ type _LinkTokenCreateRequestPaymentInitiation LinkTokenCreateRequestPaymentIniti
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLinkTokenCreateRequestPaymentInitiation(paymentId string, ) *LinkTokenCreateRequestPaymentInitiation {
+func NewLinkTokenCreateRequestPaymentInitiation(paymentId string) *LinkTokenCreateRequestPaymentInitiation {
 	this := LinkTokenCreateRequestPaymentInitiation{}
 	this.PaymentId = paymentId
 	return &this
@@ -43,7 +43,7 @@ func NewLinkTokenCreateRequestPaymentInitiationWithDefaults() *LinkTokenCreateRe
 
 // GetPaymentId returns the PaymentId field value
 func (o *LinkTokenCreateRequestPaymentInitiation) GetPaymentId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *LinkTokenCreateRequestPaymentInitiation) GetPaymentId() string {
 // GetPaymentIdOk returns a tuple with the PaymentId field value
 // and a boolean to check if the value has been set.
 func (o *LinkTokenCreateRequestPaymentInitiation) GetPaymentIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PaymentId, true
@@ -130,5 +130,3 @@ func (v *NullableLinkTokenCreateRequestPaymentInitiation) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -33,7 +33,7 @@ type CreditCardLiability struct {
 	// The minimum payment due for the next billing cycle.
 	MinimumPaymentAmount float32 `json:"minimum_payment_amount"`
 	// The due date for the next payment. The due date is `null` if a payment is not expected. Dates are returned in an ISO 8601 format (YYYY-MM-DD).
-	NextPaymentDueDate string `json:"next_payment_due_date"`
+	NextPaymentDueDate   string `json:"next_payment_due_date"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -43,7 +43,7 @@ type _CreditCardLiability CreditCardLiability
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCreditCardLiability(aprs []APR, lastPaymentAmount float32, lastPaymentDate string, lastStatementBalance float32, lastStatementIssueDate string, minimumPaymentAmount float32, nextPaymentDueDate string, ) *CreditCardLiability {
+func NewCreditCardLiability(aprs []APR, lastPaymentAmount float32, lastPaymentDate string, lastStatementBalance float32, lastStatementIssueDate string, minimumPaymentAmount float32, nextPaymentDueDate string) *CreditCardLiability {
 	this := CreditCardLiability{}
 	this.Aprs = aprs
 	this.LastPaymentAmount = lastPaymentAmount
@@ -76,7 +76,7 @@ func (o *CreditCardLiability) GetAccountId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreditCardLiability) GetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AccountId.Get(), o.AccountId.IsSet()
@@ -95,6 +95,7 @@ func (o *CreditCardLiability) HasAccountId() bool {
 func (o *CreditCardLiability) SetAccountId(v string) {
 	o.AccountId.Set(&v)
 }
+
 // SetAccountIdNil sets the value for AccountId to be an explicit nil
 func (o *CreditCardLiability) SetAccountIdNil() {
 	o.AccountId.Set(nil)
@@ -107,7 +108,7 @@ func (o *CreditCardLiability) UnsetAccountId() {
 
 // GetAprs returns the Aprs field value
 func (o *CreditCardLiability) GetAprs() []APR {
-	if o == nil  {
+	if o == nil {
 		var ret []APR
 		return ret
 	}
@@ -118,7 +119,7 @@ func (o *CreditCardLiability) GetAprs() []APR {
 // GetAprsOk returns a tuple with the Aprs field value
 // and a boolean to check if the value has been set.
 func (o *CreditCardLiability) GetAprsOk() (*[]APR, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Aprs, true
@@ -142,7 +143,7 @@ func (o *CreditCardLiability) GetIsOverdue() bool {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreditCardLiability) GetIsOverdueOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.IsOverdue.Get(), o.IsOverdue.IsSet()
@@ -161,6 +162,7 @@ func (o *CreditCardLiability) HasIsOverdue() bool {
 func (o *CreditCardLiability) SetIsOverdue(v bool) {
 	o.IsOverdue.Set(&v)
 }
+
 // SetIsOverdueNil sets the value for IsOverdue to be an explicit nil
 func (o *CreditCardLiability) SetIsOverdueNil() {
 	o.IsOverdue.Set(nil)
@@ -173,7 +175,7 @@ func (o *CreditCardLiability) UnsetIsOverdue() {
 
 // GetLastPaymentAmount returns the LastPaymentAmount field value
 func (o *CreditCardLiability) GetLastPaymentAmount() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -184,7 +186,7 @@ func (o *CreditCardLiability) GetLastPaymentAmount() float32 {
 // GetLastPaymentAmountOk returns a tuple with the LastPaymentAmount field value
 // and a boolean to check if the value has been set.
 func (o *CreditCardLiability) GetLastPaymentAmountOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.LastPaymentAmount, true
@@ -197,7 +199,7 @@ func (o *CreditCardLiability) SetLastPaymentAmount(v float32) {
 
 // GetLastPaymentDate returns the LastPaymentDate field value
 func (o *CreditCardLiability) GetLastPaymentDate() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -208,7 +210,7 @@ func (o *CreditCardLiability) GetLastPaymentDate() string {
 // GetLastPaymentDateOk returns a tuple with the LastPaymentDate field value
 // and a boolean to check if the value has been set.
 func (o *CreditCardLiability) GetLastPaymentDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.LastPaymentDate, true
@@ -221,7 +223,7 @@ func (o *CreditCardLiability) SetLastPaymentDate(v string) {
 
 // GetLastStatementBalance returns the LastStatementBalance field value
 func (o *CreditCardLiability) GetLastStatementBalance() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -232,7 +234,7 @@ func (o *CreditCardLiability) GetLastStatementBalance() float32 {
 // GetLastStatementBalanceOk returns a tuple with the LastStatementBalance field value
 // and a boolean to check if the value has been set.
 func (o *CreditCardLiability) GetLastStatementBalanceOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.LastStatementBalance, true
@@ -245,7 +247,7 @@ func (o *CreditCardLiability) SetLastStatementBalance(v float32) {
 
 // GetLastStatementIssueDate returns the LastStatementIssueDate field value
 func (o *CreditCardLiability) GetLastStatementIssueDate() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -256,7 +258,7 @@ func (o *CreditCardLiability) GetLastStatementIssueDate() string {
 // GetLastStatementIssueDateOk returns a tuple with the LastStatementIssueDate field value
 // and a boolean to check if the value has been set.
 func (o *CreditCardLiability) GetLastStatementIssueDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.LastStatementIssueDate, true
@@ -269,7 +271,7 @@ func (o *CreditCardLiability) SetLastStatementIssueDate(v string) {
 
 // GetMinimumPaymentAmount returns the MinimumPaymentAmount field value
 func (o *CreditCardLiability) GetMinimumPaymentAmount() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -280,7 +282,7 @@ func (o *CreditCardLiability) GetMinimumPaymentAmount() float32 {
 // GetMinimumPaymentAmountOk returns a tuple with the MinimumPaymentAmount field value
 // and a boolean to check if the value has been set.
 func (o *CreditCardLiability) GetMinimumPaymentAmountOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.MinimumPaymentAmount, true
@@ -293,7 +295,7 @@ func (o *CreditCardLiability) SetMinimumPaymentAmount(v float32) {
 
 // GetNextPaymentDueDate returns the NextPaymentDueDate field value
 func (o *CreditCardLiability) GetNextPaymentDueDate() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -304,7 +306,7 @@ func (o *CreditCardLiability) GetNextPaymentDueDate() string {
 // GetNextPaymentDueDateOk returns a tuple with the NextPaymentDueDate field value
 // and a boolean to check if the value has been set.
 func (o *CreditCardLiability) GetNextPaymentDueDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.NextPaymentDueDate, true
@@ -412,5 +414,3 @@ func (v *NullableCreditCardLiability) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

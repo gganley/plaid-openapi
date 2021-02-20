@@ -17,9 +17,9 @@ import (
 // ProcessorAuthGetResponse ProcessorAuthGetResponse defines the response schema for `/processor/auth/get`
 type ProcessorAuthGetResponse struct {
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
-	Numbers ProcessorNumber `json:"numbers"`
-	Account AccountBase `json:"account"`
+	RequestId            string          `json:"request_id"`
+	Numbers              ProcessorNumber `json:"numbers"`
+	Account              AccountBase     `json:"account"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _ProcessorAuthGetResponse ProcessorAuthGetResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProcessorAuthGetResponse(requestId string, numbers ProcessorNumber, account AccountBase, ) *ProcessorAuthGetResponse {
+func NewProcessorAuthGetResponse(requestId string, numbers ProcessorNumber, account AccountBase) *ProcessorAuthGetResponse {
 	this := ProcessorAuthGetResponse{}
 	this.RequestId = requestId
 	this.Numbers = numbers
@@ -47,7 +47,7 @@ func NewProcessorAuthGetResponseWithDefaults() *ProcessorAuthGetResponse {
 
 // GetRequestId returns the RequestId field value
 func (o *ProcessorAuthGetResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *ProcessorAuthGetResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *ProcessorAuthGetResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -71,7 +71,7 @@ func (o *ProcessorAuthGetResponse) SetRequestId(v string) {
 
 // GetNumbers returns the Numbers field value
 func (o *ProcessorAuthGetResponse) GetNumbers() ProcessorNumber {
-	if o == nil  {
+	if o == nil {
 		var ret ProcessorNumber
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *ProcessorAuthGetResponse) GetNumbers() ProcessorNumber {
 // GetNumbersOk returns a tuple with the Numbers field value
 // and a boolean to check if the value has been set.
 func (o *ProcessorAuthGetResponse) GetNumbersOk() (*ProcessorNumber, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Numbers, true
@@ -95,7 +95,7 @@ func (o *ProcessorAuthGetResponse) SetNumbers(v ProcessorNumber) {
 
 // GetAccount returns the Account field value
 func (o *ProcessorAuthGetResponse) GetAccount() AccountBase {
-	if o == nil  {
+	if o == nil {
 		var ret AccountBase
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *ProcessorAuthGetResponse) GetAccount() AccountBase {
 // GetAccountOk returns a tuple with the Account field value
 // and a boolean to check if the value has been set.
 func (o *ProcessorAuthGetResponse) GetAccountOk() (*AccountBase, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Account, true
@@ -190,5 +190,3 @@ func (v *NullableProcessorAuthGetResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

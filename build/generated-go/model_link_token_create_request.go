@@ -25,8 +25,8 @@ type LinkTokenCreateRequest struct {
 	// The language that Link should be displayed in.  Supported languages are: - English (`'en'`) - French (`'fr'`) - Spanish (`'es'`) - Dutch (`'nl'`)  When using a Link customization, the language configured here must match the setting in the customization, or the customization will not be applied.
 	Language string `json:"language"`
 	// Specify an array of Plaid-supported country codes using the ISO-3166-1 alpha-2 country code standard. Institutions from all listed countries will be shown.  Supported country codes are: `US`, `CA`, `ES`, `FR`, `GB`, `IE`, `NL`. Example value: `['US', 'CA']`.  If Link is launched with multiple country codes, only products that you are enabled for in all countries will be used by Link. Note that while all countries are enabled by default in Sandbox and Development, in Production only US and Canada are enabled by default. To gain access to European institutions in the Production environment, [file a product access Support ticket](https://dashboard.plaid.com/support/new/product-and-development/product-troubleshooting/request-product-access) via the Plaid dashboard. If you initialize with a European country code, your users will see the European consent panel during the Link flow.  If using a Link customization, make sure the country codes in the customization match those specified in `country_codes`. If both `country_codes` and a Link customization are used, the value in `country_codes` may override the value in the customization.  If using the Auth features Instant Match, Same-day Micro-deposits, or Automated Micro-deposits, `country_codes` must be set to `['US']`.
-	CountryCodes []CountryCode `json:"country_codes"`
-	User LinkTokenCreateRequestUser `json:"user"`
+	CountryCodes []CountryCode              `json:"country_codes"`
+	User         LinkTokenCreateRequestUser `json:"user"`
 	// List of Plaid product(s) you wish to use. If launching Link in update mode, should be omitted; required otherwise. Valid products are:  `transactions`, `auth`, `identity`, `assets`, `investments`, `liabilities`, `payment_initiation`, `deposit_switch`  Example: `['auth', 'transactions']`  `balance` is *not* a valid value, the Balance product does not require explicit initalization and will automatically be initialized when any other product is initialized.  Only institutions that support *all* requested products will be shown in Link; to maximize the number of institutions listed, it is recommended to initialize Link with the minimal product set required for your use case. Additional products can be added after Link initialization by calling the relevant endpoints. For details and exceptions, see [Choosing when to initialize products](/docs/link/best-practices/#choosing-when-to-initialize-products).          In Production, you will be billed for each product that you specify when initializing Link. Note that a product cannot be removed from an Item once the Item has been initialized with that product. To stop billing on an Item for subscription-based products, such as Liabilities, Investments, and Transactions, remove the Item via `/item/remove`.
 	Products *[]Products `json:"products,omitempty"`
 	// The destination URL to which any webhooks should be sent.
@@ -37,13 +37,13 @@ type LinkTokenCreateRequest struct {
 	LinkCustomizationName *string `json:"link_customization_name,omitempty"`
 	// A URI indicating the destination where a user should be forwarded after completing the Link flow; used to support OAuth authentication flows when launching Link in the browser or via a webview. The `redirect_uri` should not contain any query parameters. If `android_package_name` is specified, this field should be left blank. Any redirect URI specified here must also be added under the \"Allowed redirect URIs\" configuration on the [developer dashboard](https://dashboard.plaid.com/team/api). In non-Sandbox (Production and Development) environments, the `redirect_uri` must begin with https.
 	RedirectUri *string `json:"redirect_uri,omitempty"`
-	// The name of your app's Android package. Required if using the `link_token` to initialize Link on Android. When creating a `link_token` for initializing Link on other platforms, this field must be left blank. Any package name specified here must also be added to the Allowed Android package names setting on the [developer dashboard](https://dashboard.plaid.com/team/api). 
-	AndroidPackageName *string `json:"android_package_name,omitempty"`
-	AccountFilters *LinkTokenAccountFilters `json:"account_filters,omitempty"`
+	// The name of your app's Android package. Required if using the `link_token` to initialize Link on Android. When creating a `link_token` for initializing Link on other platforms, this field must be left blank. Any package name specified here must also be added to the Allowed Android package names setting on the [developer dashboard](https://dashboard.plaid.com/team/api).
+	AndroidPackageName *string                  `json:"android_package_name,omitempty"`
+	AccountFilters     *LinkTokenAccountFilters `json:"account_filters,omitempty"`
 	// Used for certain legacy use cases
-	InstitutionId *string `json:"institution_id,omitempty"`
-	PaymentInitiation *LinkTokenCreateRequestPaymentInitiation `json:"payment_initiation,omitempty"`
-	DepositSwitch *LinkTokenCreateRequestDepositSwitch `json:"deposit_switch,omitempty"`
+	InstitutionId        *string                                  `json:"institution_id,omitempty"`
+	PaymentInitiation    *LinkTokenCreateRequestPaymentInitiation `json:"payment_initiation,omitempty"`
+	DepositSwitch        *LinkTokenCreateRequestDepositSwitch     `json:"deposit_switch,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -53,7 +53,7 @@ type _LinkTokenCreateRequest LinkTokenCreateRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLinkTokenCreateRequest(clientName string, language string, countryCodes []CountryCode, user LinkTokenCreateRequestUser, ) *LinkTokenCreateRequest {
+func NewLinkTokenCreateRequest(clientName string, language string, countryCodes []CountryCode, user LinkTokenCreateRequestUser) *LinkTokenCreateRequest {
 	this := LinkTokenCreateRequest{}
 	this.ClientName = clientName
 	this.Language = language
@@ -136,7 +136,7 @@ func (o *LinkTokenCreateRequest) SetSecret(v string) {
 
 // GetClientName returns the ClientName field value
 func (o *LinkTokenCreateRequest) GetClientName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *LinkTokenCreateRequest) GetClientName() string {
 // GetClientNameOk returns a tuple with the ClientName field value
 // and a boolean to check if the value has been set.
 func (o *LinkTokenCreateRequest) GetClientNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClientName, true
@@ -160,7 +160,7 @@ func (o *LinkTokenCreateRequest) SetClientName(v string) {
 
 // GetLanguage returns the Language field value
 func (o *LinkTokenCreateRequest) GetLanguage() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *LinkTokenCreateRequest) GetLanguage() string {
 // GetLanguageOk returns a tuple with the Language field value
 // and a boolean to check if the value has been set.
 func (o *LinkTokenCreateRequest) GetLanguageOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Language, true
@@ -184,7 +184,7 @@ func (o *LinkTokenCreateRequest) SetLanguage(v string) {
 
 // GetCountryCodes returns the CountryCodes field value
 func (o *LinkTokenCreateRequest) GetCountryCodes() []CountryCode {
-	if o == nil  {
+	if o == nil {
 		var ret []CountryCode
 		return ret
 	}
@@ -195,7 +195,7 @@ func (o *LinkTokenCreateRequest) GetCountryCodes() []CountryCode {
 // GetCountryCodesOk returns a tuple with the CountryCodes field value
 // and a boolean to check if the value has been set.
 func (o *LinkTokenCreateRequest) GetCountryCodesOk() (*[]CountryCode, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.CountryCodes, true
@@ -208,7 +208,7 @@ func (o *LinkTokenCreateRequest) SetCountryCodes(v []CountryCode) {
 
 // GetUser returns the User field value
 func (o *LinkTokenCreateRequest) GetUser() LinkTokenCreateRequestUser {
-	if o == nil  {
+	if o == nil {
 		var ret LinkTokenCreateRequestUser
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *LinkTokenCreateRequest) GetUser() LinkTokenCreateRequestUser {
 // GetUserOk returns a tuple with the User field value
 // and a boolean to check if the value has been set.
 func (o *LinkTokenCreateRequest) GetUserOk() (*LinkTokenCreateRequestUser, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.User, true
@@ -675,5 +675,3 @@ func (v *NullableLinkTokenCreateRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

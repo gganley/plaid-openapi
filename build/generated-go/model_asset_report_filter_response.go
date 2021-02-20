@@ -21,7 +21,7 @@ type AssetReportFilterResponse struct {
 	// A unique ID identifying an Asset Report. Like all Plaid identifiers, this ID is case sensitive.
 	AssetReportId string `json:"asset_report_id"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _AssetReportFilterResponse AssetReportFilterResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAssetReportFilterResponse(assetReportToken string, assetReportId string, requestId string, ) *AssetReportFilterResponse {
+func NewAssetReportFilterResponse(assetReportToken string, assetReportId string, requestId string) *AssetReportFilterResponse {
 	this := AssetReportFilterResponse{}
 	this.AssetReportToken = assetReportToken
 	this.AssetReportId = assetReportId
@@ -49,7 +49,7 @@ func NewAssetReportFilterResponseWithDefaults() *AssetReportFilterResponse {
 
 // GetAssetReportToken returns the AssetReportToken field value
 func (o *AssetReportFilterResponse) GetAssetReportToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *AssetReportFilterResponse) GetAssetReportToken() string {
 // GetAssetReportTokenOk returns a tuple with the AssetReportToken field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportFilterResponse) GetAssetReportTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AssetReportToken, true
@@ -73,7 +73,7 @@ func (o *AssetReportFilterResponse) SetAssetReportToken(v string) {
 
 // GetAssetReportId returns the AssetReportId field value
 func (o *AssetReportFilterResponse) GetAssetReportId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *AssetReportFilterResponse) GetAssetReportId() string {
 // GetAssetReportIdOk returns a tuple with the AssetReportId field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportFilterResponse) GetAssetReportIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AssetReportId, true
@@ -97,7 +97,7 @@ func (o *AssetReportFilterResponse) SetAssetReportId(v string) {
 
 // GetRequestId returns the RequestId field value
 func (o *AssetReportFilterResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *AssetReportFilterResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportFilterResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -192,5 +192,3 @@ func (v *NullableAssetReportFilterResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -21,7 +21,7 @@ type DepositSwitchTokenCreateRequest struct {
 	// Your Plaid API `secret`.
 	Secret *string `json:"secret,omitempty"`
 	// The ID of the deposit switch
-	DepositSwitchId string `json:"deposit_switch_id"`
+	DepositSwitchId      string `json:"deposit_switch_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _DepositSwitchTokenCreateRequest DepositSwitchTokenCreateRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDepositSwitchTokenCreateRequest(depositSwitchId string, ) *DepositSwitchTokenCreateRequest {
+func NewDepositSwitchTokenCreateRequest(depositSwitchId string) *DepositSwitchTokenCreateRequest {
 	this := DepositSwitchTokenCreateRequest{}
 	this.DepositSwitchId = depositSwitchId
 	return &this
@@ -111,7 +111,7 @@ func (o *DepositSwitchTokenCreateRequest) SetSecret(v string) {
 
 // GetDepositSwitchId returns the DepositSwitchId field value
 func (o *DepositSwitchTokenCreateRequest) GetDepositSwitchId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *DepositSwitchTokenCreateRequest) GetDepositSwitchId() string {
 // GetDepositSwitchIdOk returns a tuple with the DepositSwitchId field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchTokenCreateRequest) GetDepositSwitchIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DepositSwitchId, true
@@ -206,5 +206,3 @@ func (v *NullableDepositSwitchTokenCreateRequest) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

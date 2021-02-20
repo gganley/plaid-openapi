@@ -21,7 +21,7 @@ type PaymentInitiationRecipientGetRequest struct {
 	// Your Plaid API `secret`.
 	Secret *string `json:"secret,omitempty"`
 	// The ID of the recipient
-	RecipientId string `json:"recipient_id"`
+	RecipientId          string `json:"recipient_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _PaymentInitiationRecipientGetRequest PaymentInitiationRecipientGetRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaymentInitiationRecipientGetRequest(recipientId string, ) *PaymentInitiationRecipientGetRequest {
+func NewPaymentInitiationRecipientGetRequest(recipientId string) *PaymentInitiationRecipientGetRequest {
 	this := PaymentInitiationRecipientGetRequest{}
 	this.RecipientId = recipientId
 	return &this
@@ -111,7 +111,7 @@ func (o *PaymentInitiationRecipientGetRequest) SetSecret(v string) {
 
 // GetRecipientId returns the RecipientId field value
 func (o *PaymentInitiationRecipientGetRequest) GetRecipientId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *PaymentInitiationRecipientGetRequest) GetRecipientId() string {
 // GetRecipientIdOk returns a tuple with the RecipientId field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationRecipientGetRequest) GetRecipientIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RecipientId, true
@@ -206,5 +206,3 @@ func (v *NullablePaymentInitiationRecipientGetRequest) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -46,7 +46,7 @@ type Security struct {
 	IsoCurrencyCode NullableString `json:"iso_currency_code,omitempty"`
 	// The unofficial currency code associated with the security. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.  See the [currency code schema](/docs/api/accounts#currency-code-schema) for a full listing of supported `iso_currency_code`s.
 	UnofficialCurrencyCode NullableString `json:"unofficial_currency_code,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties   map[string]interface{}
 }
 
 type _Security Security
@@ -55,7 +55,7 @@ type _Security Security
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSecurity(securityId string, type_ string, ) *Security {
+func NewSecurity(securityId string, type_ string) *Security {
 	this := Security{}
 	this.SecurityId = securityId
 	this.Type = type_
@@ -72,7 +72,7 @@ func NewSecurityWithDefaults() *Security {
 
 // GetSecurityId returns the SecurityId field value
 func (o *Security) GetSecurityId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *Security) GetSecurityId() string {
 // GetSecurityIdOk returns a tuple with the SecurityId field value
 // and a boolean to check if the value has been set.
 func (o *Security) GetSecurityIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.SecurityId, true
@@ -107,7 +107,7 @@ func (o *Security) GetIsin() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Security) GetIsinOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Isin.Get(), o.Isin.IsSet()
@@ -126,6 +126,7 @@ func (o *Security) HasIsin() bool {
 func (o *Security) SetIsin(v string) {
 	o.Isin.Set(&v)
 }
+
 // SetIsinNil sets the value for Isin to be an explicit nil
 func (o *Security) SetIsinNil() {
 	o.Isin.Set(nil)
@@ -149,7 +150,7 @@ func (o *Security) GetCusip() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Security) GetCusipOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Cusip.Get(), o.Cusip.IsSet()
@@ -168,6 +169,7 @@ func (o *Security) HasCusip() bool {
 func (o *Security) SetCusip(v string) {
 	o.Cusip.Set(&v)
 }
+
 // SetCusipNil sets the value for Cusip to be an explicit nil
 func (o *Security) SetCusipNil() {
 	o.Cusip.Set(nil)
@@ -191,7 +193,7 @@ func (o *Security) GetSedol() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Security) GetSedolOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Sedol.Get(), o.Sedol.IsSet()
@@ -210,6 +212,7 @@ func (o *Security) HasSedol() bool {
 func (o *Security) SetSedol(v string) {
 	o.Sedol.Set(&v)
 }
+
 // SetSedolNil sets the value for Sedol to be an explicit nil
 func (o *Security) SetSedolNil() {
 	o.Sedol.Set(nil)
@@ -233,7 +236,7 @@ func (o *Security) GetInstitutionSecurityId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Security) GetInstitutionSecurityIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.InstitutionSecurityId.Get(), o.InstitutionSecurityId.IsSet()
@@ -252,6 +255,7 @@ func (o *Security) HasInstitutionSecurityId() bool {
 func (o *Security) SetInstitutionSecurityId(v string) {
 	o.InstitutionSecurityId.Set(&v)
 }
+
 // SetInstitutionSecurityIdNil sets the value for InstitutionSecurityId to be an explicit nil
 func (o *Security) SetInstitutionSecurityIdNil() {
 	o.InstitutionSecurityId.Set(nil)
@@ -275,7 +279,7 @@ func (o *Security) GetInstitutionId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Security) GetInstitutionIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.InstitutionId.Get(), o.InstitutionId.IsSet()
@@ -294,6 +298,7 @@ func (o *Security) HasInstitutionId() bool {
 func (o *Security) SetInstitutionId(v string) {
 	o.InstitutionId.Set(&v)
 }
+
 // SetInstitutionIdNil sets the value for InstitutionId to be an explicit nil
 func (o *Security) SetInstitutionIdNil() {
 	o.InstitutionId.Set(nil)
@@ -317,7 +322,7 @@ func (o *Security) GetProxySecurityId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Security) GetProxySecurityIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ProxySecurityId.Get(), o.ProxySecurityId.IsSet()
@@ -336,6 +341,7 @@ func (o *Security) HasProxySecurityId() bool {
 func (o *Security) SetProxySecurityId(v string) {
 	o.ProxySecurityId.Set(&v)
 }
+
 // SetProxySecurityIdNil sets the value for ProxySecurityId to be an explicit nil
 func (o *Security) SetProxySecurityIdNil() {
 	o.ProxySecurityId.Set(nil)
@@ -359,7 +365,7 @@ func (o *Security) GetName() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Security) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
@@ -378,6 +384,7 @@ func (o *Security) HasName() bool {
 func (o *Security) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *Security) SetNameNil() {
 	o.Name.Set(nil)
@@ -401,7 +408,7 @@ func (o *Security) GetTickerSymbol() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Security) GetTickerSymbolOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TickerSymbol.Get(), o.TickerSymbol.IsSet()
@@ -420,6 +427,7 @@ func (o *Security) HasTickerSymbol() bool {
 func (o *Security) SetTickerSymbol(v string) {
 	o.TickerSymbol.Set(&v)
 }
+
 // SetTickerSymbolNil sets the value for TickerSymbol to be an explicit nil
 func (o *Security) SetTickerSymbolNil() {
 	o.TickerSymbol.Set(nil)
@@ -464,7 +472,7 @@ func (o *Security) SetIsCashEquivalent(v bool) {
 
 // GetType returns the Type field value
 func (o *Security) GetType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -475,7 +483,7 @@ func (o *Security) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *Security) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -499,7 +507,7 @@ func (o *Security) GetClosePrice() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Security) GetClosePriceOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ClosePrice.Get(), o.ClosePrice.IsSet()
@@ -518,6 +526,7 @@ func (o *Security) HasClosePrice() bool {
 func (o *Security) SetClosePrice(v float32) {
 	o.ClosePrice.Set(&v)
 }
+
 // SetClosePriceNil sets the value for ClosePrice to be an explicit nil
 func (o *Security) SetClosePriceNil() {
 	o.ClosePrice.Set(nil)
@@ -541,7 +550,7 @@ func (o *Security) GetClosePriceAsOf() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Security) GetClosePriceAsOfOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ClosePriceAsOf.Get(), o.ClosePriceAsOf.IsSet()
@@ -560,6 +569,7 @@ func (o *Security) HasClosePriceAsOf() bool {
 func (o *Security) SetClosePriceAsOf(v string) {
 	o.ClosePriceAsOf.Set(&v)
 }
+
 // SetClosePriceAsOfNil sets the value for ClosePriceAsOf to be an explicit nil
 func (o *Security) SetClosePriceAsOfNil() {
 	o.ClosePriceAsOf.Set(nil)
@@ -583,7 +593,7 @@ func (o *Security) GetIsoCurrencyCode() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Security) GetIsoCurrencyCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.IsoCurrencyCode.Get(), o.IsoCurrencyCode.IsSet()
@@ -602,6 +612,7 @@ func (o *Security) HasIsoCurrencyCode() bool {
 func (o *Security) SetIsoCurrencyCode(v string) {
 	o.IsoCurrencyCode.Set(&v)
 }
+
 // SetIsoCurrencyCodeNil sets the value for IsoCurrencyCode to be an explicit nil
 func (o *Security) SetIsoCurrencyCodeNil() {
 	o.IsoCurrencyCode.Set(nil)
@@ -625,7 +636,7 @@ func (o *Security) GetUnofficialCurrencyCode() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Security) GetUnofficialCurrencyCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UnofficialCurrencyCode.Get(), o.UnofficialCurrencyCode.IsSet()
@@ -644,6 +655,7 @@ func (o *Security) HasUnofficialCurrencyCode() bool {
 func (o *Security) SetUnofficialCurrencyCode(v string) {
 	o.UnofficialCurrencyCode.Set(&v)
 }
+
 // SetUnofficialCurrencyCodeNil sets the value for UnofficialCurrencyCode to be an explicit nil
 func (o *Security) SetUnofficialCurrencyCodeNil() {
 	o.UnofficialCurrencyCode.Set(nil)
@@ -775,5 +787,3 @@ func (v *NullableSecurity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

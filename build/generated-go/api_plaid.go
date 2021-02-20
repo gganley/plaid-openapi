@@ -28,8 +28,8 @@ var (
 type PlaidApiService service
 
 type ApiAccountsBalanceGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                       _context.Context
+	ApiService                *PlaidApiService
 	accountsBalanceGetRequest *AccountsBalanceGetRequest
 }
 
@@ -51,7 +51,7 @@ func (r ApiAccountsBalanceGetRequest) Execute() (AccountsGetResponse, *_nethttp.
 func (a *PlaidApiService) AccountsBalanceGet(ctx _context.Context) ApiAccountsBalanceGetRequest {
 	return ApiAccountsBalanceGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,8 +182,8 @@ func (a *PlaidApiService) AccountsBalanceGetExecute(r ApiAccountsBalanceGetReque
 }
 
 type ApiAccountsGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                _context.Context
+	ApiService         *PlaidApiService
 	accountsGetRequest *AccountsGetRequest
 }
 
@@ -205,7 +205,7 @@ func (r ApiAccountsGetRequest) Execute() (AccountsGetResponse, *_nethttp.Respons
 func (a *PlaidApiService) AccountsGet(ctx _context.Context) ApiAccountsGetRequest {
 	return ApiAccountsGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -320,13 +320,13 @@ func (a *PlaidApiService) AccountsGetExecute(r ApiAccountsGetRequest) (AccountsG
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -343,8 +343,8 @@ func (a *PlaidApiService) AccountsGetExecute(r ApiAccountsGetRequest) (AccountsG
 }
 
 type ApiAssetReportAuditCopyCreateRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                               _context.Context
+	ApiService                        *PlaidApiService
 	assetReportAuditCopyCreateRequest *AssetReportAuditCopyCreateRequest
 }
 
@@ -364,11 +364,11 @@ func (r ApiAssetReportAuditCopyCreateRequest) Execute() (AssetReportAuditCopyCre
 To grant access to an Audit Copy, use the `/asset_report/audit_copy/create` endpoint to create an `audit_copy_token` and then pass that token to the third party who needs access. Each third party has its own `auditor_id`, for example `fannie_mae`. You’ll need to create a separate Audit Copy for each third party to whom you want to grant access to the Report.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiAssetReportAuditCopyCreateRequest
- */
+*/
 func (a *PlaidApiService) AssetReportAuditCopyCreate(ctx _context.Context) ApiAssetReportAuditCopyCreateRequest {
 	return ApiAssetReportAuditCopyCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -499,8 +499,8 @@ func (a *PlaidApiService) AssetReportAuditCopyCreateExecute(r ApiAssetReportAudi
 }
 
 type ApiAssetReportAuditCopyGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                            _context.Context
+	ApiService                     *PlaidApiService
 	assetReportAuditCopyGetRequest *AssetReportAuditCopyGetRequest
 }
 
@@ -522,7 +522,7 @@ func (r ApiAssetReportAuditCopyGetRequest) Execute() (AssetReportGetResponse, *_
 func (a *PlaidApiService) AssetReportAuditCopyGet(ctx _context.Context) ApiAssetReportAuditCopyGetRequest {
 	return ApiAssetReportAuditCopyGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -653,8 +653,8 @@ func (a *PlaidApiService) AssetReportAuditCopyGetExecute(r ApiAssetReportAuditCo
 }
 
 type ApiAssetReportAuditCopyRemoveRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                               _context.Context
+	ApiService                        *PlaidApiService
 	assetReportAuditCopyRemoveRequest *AssetReportAuditCopyRemoveRequest
 }
 
@@ -676,7 +676,7 @@ func (r ApiAssetReportAuditCopyRemoveRequest) Execute() (AssetReportAuditCopyRem
 func (a *PlaidApiService) AssetReportAuditCopyRemove(ctx _context.Context) ApiAssetReportAuditCopyRemoveRequest {
 	return ApiAssetReportAuditCopyRemoveRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -807,8 +807,8 @@ func (a *PlaidApiService) AssetReportAuditCopyRemoveExecute(r ApiAssetReportAudi
 }
 
 type ApiAssetReportCreateRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                      _context.Context
+	ApiService               *PlaidApiService
 	assetReportCreateRequest *AssetReportCreateRequest
 }
 
@@ -830,11 +830,11 @@ The Asset Report takes some time to be created and is not available immediately 
 The `/asset_report/create` endpoint creates an Asset Report at a moment in time. Asset Reports are immutable. To get an updated Asset Report, use the `/asset_report/refresh` endpoint.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiAssetReportCreateRequest
- */
+*/
 func (a *PlaidApiService) AssetReportCreate(ctx _context.Context) ApiAssetReportCreateRequest {
 	return ApiAssetReportCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -965,8 +965,8 @@ func (a *PlaidApiService) AssetReportCreateExecute(r ApiAssetReportCreateRequest
 }
 
 type ApiAssetReportFilterRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                      _context.Context
+	ApiService               *PlaidApiService
 	assetReportFilterRequest *AssetReportFilterRequest
 }
 
@@ -990,11 +990,11 @@ Because Asset Reports are immutable, calling `/asset_report/filter` does not alt
 Plaid will fire a [`PRODUCT_READY`](/docs/api/webhooks) webhook once generation of the filtered Asset Report has completed.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiAssetReportFilterRequest
- */
+*/
 func (a *PlaidApiService) AssetReportFilter(ctx _context.Context) ApiAssetReportFilterRequest {
 	return ApiAssetReportFilterRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1125,8 +1125,8 @@ func (a *PlaidApiService) AssetReportFilterExecute(r ApiAssetReportFilterRequest
 }
 
 type ApiAssetReportGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                   _context.Context
+	ApiService            *PlaidApiService
 	assetReportGetRequest *AssetReportGetRequest
 }
 
@@ -1148,11 +1148,11 @@ By default, an Asset Report includes transaction descriptions as returned by the
 To retrieve an Asset Report with Insights, call the `/asset_report/get` endpoint with `include_insights` set to `true`. Note that you will need to [contact us](https://dashboard.plaid.com/support) to get access to this feature.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiAssetReportGetRequest
- */
+*/
 func (a *PlaidApiService) AssetReportGet(ctx _context.Context) ApiAssetReportGetRequest {
 	return ApiAssetReportGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1283,8 +1283,8 @@ func (a *PlaidApiService) AssetReportGetExecute(r ApiAssetReportGetRequest) (Ass
 }
 
 type ApiAssetReportPdfGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                      _context.Context
+	ApiService               *PlaidApiService
 	assetReportPDFGetRequest *AssetReportPDFGetRequest
 }
 
@@ -1306,11 +1306,11 @@ The response to `/asset_report/pdf/get` is the PDF binary data. The `request_id`
 [View a sample PDF Asset Report with Insights](https://plaid.com/documents/sample-asset-report.pdf).
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiAssetReportPdfGetRequest
- */
+*/
 func (a *PlaidApiService) AssetReportPdfGet(ctx _context.Context) ApiAssetReportPdfGetRequest {
 	return ApiAssetReportPdfGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1441,8 +1441,8 @@ func (a *PlaidApiService) AssetReportPdfGetExecute(r ApiAssetReportPdfGetRequest
 }
 
 type ApiAssetReportRefreshRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                       _context.Context
+	ApiService                *PlaidApiService
 	assetReportRefreshRequest *AssetReportRefreshRequest
 }
 
@@ -1462,11 +1462,11 @@ func (r ApiAssetReportRefreshRequest) Execute() (AssetReportRefreshResponse, *_n
 The new Asset Report will contain the same Items as the original Report, as well as the same filters applied by any call to `/asset_report/filter`. By default, the new Asset Report will also use the same parameters you submitted with your original `/asset_report/create` request, but the original `days_requested` value and the values of any parameters in the `options` object can be overridden with new values. To change these arguments, simply supply new values for them in your request to `/asset_report/refresh`. Submit an empty string ("") for any previously-populated fields you would like set as empty.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiAssetReportRefreshRequest
- */
+*/
 func (a *PlaidApiService) AssetReportRefresh(ctx _context.Context) ApiAssetReportRefreshRequest {
 	return ApiAssetReportRefreshRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1597,8 +1597,8 @@ func (a *PlaidApiService) AssetReportRefreshExecute(r ApiAssetReportRefreshReque
 }
 
 type ApiAssetReportRemoveRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                      _context.Context
+	ApiService               *PlaidApiService
 	assetReportRemoveRequest *AssetReportRemoveRequest
 }
 
@@ -1618,11 +1618,11 @@ func (r ApiAssetReportRemoveRequest) Execute() (AssetReportRemoveResponse, *_net
 The `/asset_report/remove` endpoint allows you to remove an Asset Report. Removing an Asset Report invalidates its `asset_report_token`, meaning you will no longer be able to use it to access Report data or create new Audit Copies. Removing an Asset Report does not affect the underlying Items, but does invalidate any `audit_copy_tokens` associated with the Asset Report.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiAssetReportRemoveRequest
- */
+*/
 func (a *PlaidApiService) AssetReportRemove(ctx _context.Context) ApiAssetReportRemoveRequest {
 	return ApiAssetReportRemoveRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1753,8 +1753,8 @@ func (a *PlaidApiService) AssetReportRemoveExecute(r ApiAssetReportRemoveRequest
 }
 
 type ApiAuthGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx            _context.Context
+	ApiService     *PlaidApiService
 	authGetRequest *AuthGetRequest
 }
 
@@ -1774,11 +1774,11 @@ func (r ApiAuthGetRequest) Execute() (AuthGetResponse, *_nethttp.Response, error
 Note: This request may take some time to complete if `auth` was not specified as an initial product when creating the Item. This is because Plaid must communicate directly with the institution to retrieve the data.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiAuthGetRequest
- */
+*/
 func (a *PlaidApiService) AuthGet(ctx _context.Context) ApiAuthGetRequest {
 	return ApiAuthGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1893,13 +1893,13 @@ func (a *PlaidApiService) AuthGetExecute(r ApiAuthGetRequest) (AuthGetResponse, 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1916,8 +1916,8 @@ func (a *PlaidApiService) AuthGetExecute(r ApiAuthGetRequest) (AuthGetResponse, 
 }
 
 type ApiBankTransferBalanceGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                           _context.Context
+	ApiService                    *PlaidApiService
 	bankTransferBalanceGetRequest *BankTransferBalanceGetRequest
 }
 
@@ -1939,11 +1939,11 @@ The transactable balance shows the amount in your account that you are able to u
 Note that this endpoint can only be used with FBO accounts, when using Bank Transfers in the Full Service configuration. It cannot be used on your own account when using Bank Transfers in the BTS Platform configuration.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiBankTransferBalanceGetRequest
- */
+*/
 func (a *PlaidApiService) BankTransferBalanceGet(ctx _context.Context) ApiBankTransferBalanceGetRequest {
 	return ApiBankTransferBalanceGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2058,13 +2058,13 @@ func (a *PlaidApiService) BankTransferBalanceGetExecute(r ApiBankTransferBalance
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2081,8 +2081,8 @@ func (a *PlaidApiService) BankTransferBalanceGetExecute(r ApiBankTransferBalance
 }
 
 type ApiBankTransferCancelRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                       _context.Context
+	ApiService                *PlaidApiService
 	bankTransferCancelRequest *BankTransferCancelRequest
 }
 
@@ -2104,7 +2104,7 @@ func (r ApiBankTransferCancelRequest) Execute() (BankTransferCancelResponse, *_n
 func (a *PlaidApiService) BankTransferCancel(ctx _context.Context) ApiBankTransferCancelRequest {
 	return ApiBankTransferCancelRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2219,13 +2219,13 @@ func (a *PlaidApiService) BankTransferCancelExecute(r ApiBankTransferCancelReque
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2242,8 +2242,8 @@ func (a *PlaidApiService) BankTransferCancelExecute(r ApiBankTransferCancelReque
 }
 
 type ApiBankTransferCreateRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                       _context.Context
+	ApiService                *PlaidApiService
 	bankTransferCreateRequest *BankTransferCreateRequest
 }
 
@@ -2265,7 +2265,7 @@ func (r ApiBankTransferCreateRequest) Execute() (BankTransferCreateResponse, *_n
 func (a *PlaidApiService) BankTransferCreate(ctx _context.Context) ApiBankTransferCreateRequest {
 	return ApiBankTransferCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2380,13 +2380,13 @@ func (a *PlaidApiService) BankTransferCreateExecute(r ApiBankTransferCreateReque
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2403,8 +2403,8 @@ func (a *PlaidApiService) BankTransferCreateExecute(r ApiBankTransferCreateReque
 }
 
 type ApiBankTransferEventListRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                          _context.Context
+	ApiService                   *PlaidApiService
 	bankTransferEventListRequest *BankTransferEventListRequest
 }
 
@@ -2426,7 +2426,7 @@ func (r ApiBankTransferEventListRequest) Execute() (BankTransferEventListRespons
 func (a *PlaidApiService) BankTransferEventList(ctx _context.Context) ApiBankTransferEventListRequest {
 	return ApiBankTransferEventListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2541,13 +2541,13 @@ func (a *PlaidApiService) BankTransferEventListExecute(r ApiBankTransferEventLis
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2564,8 +2564,8 @@ func (a *PlaidApiService) BankTransferEventListExecute(r ApiBankTransferEventLis
 }
 
 type ApiBankTransferEventSyncRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                          _context.Context
+	ApiService                   *PlaidApiService
 	bankTransferEventSyncRequest *BankTransferEventSyncRequest
 }
 
@@ -2580,14 +2580,14 @@ func (r ApiBankTransferEventSyncRequest) Execute() (BankTransferEventSyncRespons
 
 /*
  * BankTransferEventSync Sync bank transfer events
- * `/bank_transfer/event/sync` allows you to request up to the next 25 bank transfer events that happened after a specific `event_id`. Use the `/bank_transfer/event/sync` endpoint to guarantee you have seen all bank transfer events. 
+ * `/bank_transfer/event/sync` allows you to request up to the next 25 bank transfer events that happened after a specific `event_id`. Use the `/bank_transfer/event/sync` endpoint to guarantee you have seen all bank transfer events.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiBankTransferEventSyncRequest
  */
 func (a *PlaidApiService) BankTransferEventSync(ctx _context.Context) ApiBankTransferEventSyncRequest {
 	return ApiBankTransferEventSyncRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2702,13 +2702,13 @@ func (a *PlaidApiService) BankTransferEventSyncExecute(r ApiBankTransferEventSyn
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2725,8 +2725,8 @@ func (a *PlaidApiService) BankTransferEventSyncExecute(r ApiBankTransferEventSyn
 }
 
 type ApiBankTransferGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                    _context.Context
+	ApiService             *PlaidApiService
 	bankTransferGetRequest *BankTransferGetRequest
 }
 
@@ -2748,7 +2748,7 @@ func (r ApiBankTransferGetRequest) Execute() (BankTransferGetResponse, *_nethttp
 func (a *PlaidApiService) BankTransferGet(ctx _context.Context) ApiBankTransferGetRequest {
 	return ApiBankTransferGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2863,13 +2863,13 @@ func (a *PlaidApiService) BankTransferGetExecute(r ApiBankTransferGetRequest) (B
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2886,8 +2886,8 @@ func (a *PlaidApiService) BankTransferGetExecute(r ApiBankTransferGetRequest) (B
 }
 
 type ApiBankTransferListRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                     _context.Context
+	ApiService              *PlaidApiService
 	bankTransferListRequest *BankTransferListRequest
 }
 
@@ -2910,7 +2910,7 @@ func (r ApiBankTransferListRequest) Execute() (BankTransferListResponse, *_netht
 func (a *PlaidApiService) BankTransferList(ctx _context.Context) ApiBankTransferListRequest {
 	return ApiBankTransferListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3025,13 +3025,13 @@ func (a *PlaidApiService) BankTransferListExecute(r ApiBankTransferListRequest) 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3048,8 +3048,8 @@ func (a *PlaidApiService) BankTransferListExecute(r ApiBankTransferListRequest) 
 }
 
 type ApiBankTransferMigrateAccountRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                               _context.Context
+	ApiService                        *PlaidApiService
 	bankTransferMigrateAccountRequest *BankTransferMigrateAccountRequest
 }
 
@@ -3071,7 +3071,7 @@ func (r ApiBankTransferMigrateAccountRequest) Execute() (BankTransferMigrateAcco
 func (a *PlaidApiService) BankTransferMigrateAccount(ctx _context.Context) ApiBankTransferMigrateAccountRequest {
 	return ApiBankTransferMigrateAccountRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3186,13 +3186,13 @@ func (a *PlaidApiService) BankTransferMigrateAccountExecute(r ApiBankTransferMig
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3209,9 +3209,9 @@ func (a *PlaidApiService) BankTransferMigrateAccountExecute(r ApiBankTransferMig
 }
 
 type ApiCategoriesGetRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *PlaidApiService
-	body *map[string]interface{}
+	body       *map[string]interface{}
 }
 
 func (r ApiCategoriesGetRequest) Body(body map[string]interface{}) ApiCategoriesGetRequest {
@@ -3232,7 +3232,7 @@ func (r ApiCategoriesGetRequest) Execute() (CategoriesGetResponse, *_nethttp.Res
 func (a *PlaidApiService) CategoriesGet(ctx _context.Context) ApiCategoriesGetRequest {
 	return ApiCategoriesGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3305,13 +3305,13 @@ func (a *PlaidApiService) CategoriesGetExecute(r ApiCategoriesGetRequest) (Categ
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3328,8 +3328,8 @@ func (a *PlaidApiService) CategoriesGetExecute(r ApiCategoriesGetRequest) (Categ
 }
 
 type ApiCreatePaymentTokenRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                                        _context.Context
+	ApiService                                 *PlaidApiService
 	paymentInitiationPaymentTokenCreateRequest *PaymentInitiationPaymentTokenCreateRequest
 }
 
@@ -3349,11 +3349,11 @@ func (r ApiCreatePaymentTokenRequest) Execute() (PaymentInitiationPaymentTokenCr
 The `/payment_initiation/payment/token/create` is used to create a `payment_token`, which can then be used in Link initialization to enter a payment initiation flow. You can only use a `payment_token` once. If this attempt fails, the end user aborts the flow, or the token expires, you will need to create a new payment token. Creating a new payment token does not require end user input.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiCreatePaymentTokenRequest
- */
+*/
 func (a *PlaidApiService) CreatePaymentToken(ctx _context.Context) ApiCreatePaymentTokenRequest {
 	return ApiCreatePaymentTokenRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3484,8 +3484,8 @@ func (a *PlaidApiService) CreatePaymentTokenExecute(r ApiCreatePaymentTokenReque
 }
 
 type ApiDepositSwitchAltCreateRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                           _context.Context
+	ApiService                    *PlaidApiService
 	depositSwitchAltCreateRequest *DepositSwitchAltCreateRequest
 }
 
@@ -3507,7 +3507,7 @@ func (r ApiDepositSwitchAltCreateRequest) Execute() (DepositSwitchAltCreateRespo
 func (a *PlaidApiService) DepositSwitchAltCreate(ctx _context.Context) ApiDepositSwitchAltCreateRequest {
 	return ApiDepositSwitchAltCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3635,8 +3635,8 @@ func (a *PlaidApiService) DepositSwitchAltCreateExecute(r ApiDepositSwitchAltCre
 }
 
 type ApiDepositSwitchCreateRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                        _context.Context
+	ApiService                 *PlaidApiService
 	depositSwitchCreateRequest *DepositSwitchCreateRequest
 }
 
@@ -3658,7 +3658,7 @@ func (r ApiDepositSwitchCreateRequest) Execute() (DepositSwitchCreateResponse, *
 func (a *PlaidApiService) DepositSwitchCreate(ctx _context.Context) ApiDepositSwitchCreateRequest {
 	return ApiDepositSwitchCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3789,8 +3789,8 @@ func (a *PlaidApiService) DepositSwitchCreateExecute(r ApiDepositSwitchCreateReq
 }
 
 type ApiDepositSwitchGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                     _context.Context
+	ApiService              *PlaidApiService
 	depositSwitchGetRequest *DepositSwitchGetRequest
 }
 
@@ -3812,7 +3812,7 @@ func (r ApiDepositSwitchGetRequest) Execute() (DepositSwitchGetResponse, *_netht
 func (a *PlaidApiService) DepositSwitchGet(ctx _context.Context) ApiDepositSwitchGetRequest {
 	return ApiDepositSwitchGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3943,8 +3943,8 @@ func (a *PlaidApiService) DepositSwitchGetExecute(r ApiDepositSwitchGetRequest) 
 }
 
 type ApiDepositSwitchTokenCreateRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                             _context.Context
+	ApiService                      *PlaidApiService
 	depositSwitchTokenCreateRequest *DepositSwitchTokenCreateRequest
 }
 
@@ -3967,7 +3967,7 @@ func (r ApiDepositSwitchTokenCreateRequest) Execute() (DepositSwitchTokenCreateR
 func (a *PlaidApiService) DepositSwitchTokenCreate(ctx _context.Context) ApiDepositSwitchTokenCreateRequest {
 	return ApiDepositSwitchTokenCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4098,8 +4098,8 @@ func (a *PlaidApiService) DepositSwitchTokenCreateExecute(r ApiDepositSwitchToke
 }
 
 type ApiEmployersSearchRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                    _context.Context
+	ApiService             *PlaidApiService
 	employersSearchRequest *EmployersSearchRequest
 }
 
@@ -4119,11 +4119,11 @@ func (r ApiEmployersSearchRequest) Execute() (EmployersSearchResponse, *_nethttp
 The data in the employer database is currently limited. As the Verification of Income product progresses through the beta period, more employers are being regularly added. Because the employer database is frequently updated, we recommend that you do not cache or store data from this endpoint for more than a day.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiEmployersSearchRequest
- */
+*/
 func (a *PlaidApiService) EmployersSearch(ctx _context.Context) ApiEmployersSearchRequest {
 	return ApiEmployersSearchRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4251,8 +4251,8 @@ func (a *PlaidApiService) EmployersSearchExecute(r ApiEmployersSearchRequest) (E
 }
 
 type ApiIdentityGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                _context.Context
+	ApiService         *PlaidApiService
 	identityGetRequest *IdentityGetRequest
 }
 
@@ -4272,11 +4272,11 @@ func (r ApiIdentityGetRequest) Execute() (IdentityGetResponse, *_nethttp.Respons
 Note: This request may take some time to complete if identity was not specified as an initial product when creating the Item. This is because Plaid must communicate directly with the institution to retrieve the data.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiIdentityGetRequest
- */
+*/
 func (a *PlaidApiService) IdentityGet(ctx _context.Context) ApiIdentityGetRequest {
 	return ApiIdentityGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4407,8 +4407,8 @@ func (a *PlaidApiService) IdentityGetExecute(r ApiIdentityGetRequest) (IdentityG
 }
 
 type ApiIncomeVerificationDocumentsDownloadRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                                        _context.Context
+	ApiService                                 *PlaidApiService
 	incomeVerificationDocumentsDownloadRequest *IncomeVerificationDocumentsDownloadRequest
 }
 
@@ -4430,11 +4430,11 @@ The response to `/income/verification/documents/download` is a ZIP file in binar
 In the future, when Digital Verification is available, the most recent file available for download with the payroll provider will also be available from this endpoint.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiIncomeVerificationDocumentsDownloadRequest
- */
+*/
 func (a *PlaidApiService) IncomeVerificationDocumentsDownload(ctx _context.Context) ApiIncomeVerificationDocumentsDownloadRequest {
 	return ApiIncomeVerificationDocumentsDownloadRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4562,8 +4562,8 @@ func (a *PlaidApiService) IncomeVerificationDocumentsDownloadExecute(r ApiIncome
 }
 
 type ApiIncomeVerificationPaystubGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                                 _context.Context
+	ApiService                          *PlaidApiService
 	incomeVerificationPaystubGetRequest *IncomeVerificationPaystubGetRequest
 }
 
@@ -4585,7 +4585,7 @@ func (r ApiIncomeVerificationPaystubGetRequest) Execute() (IncomeVerificationPay
 func (a *PlaidApiService) IncomeVerificationPaystubGet(ctx _context.Context) ApiIncomeVerificationPaystubGetRequest {
 	return ApiIncomeVerificationPaystubGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4713,8 +4713,8 @@ func (a *PlaidApiService) IncomeVerificationPaystubGetExecute(r ApiIncomeVerific
 }
 
 type ApiIncomeVerificationSummaryGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                                 _context.Context
+	ApiService                          *PlaidApiService
 	incomeVerificationSummaryGetRequest *IncomeVerificationSummaryGetRequest
 }
 
@@ -4736,7 +4736,7 @@ func (r ApiIncomeVerificationSummaryGetRequest) Execute() (IncomeVerificationSum
 func (a *PlaidApiService) IncomeVerificationSummaryGet(ctx _context.Context) ApiIncomeVerificationSummaryGetRequest {
 	return ApiIncomeVerificationSummaryGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4864,8 +4864,8 @@ func (a *PlaidApiService) IncomeVerificationSummaryGetExecute(r ApiIncomeVerific
 }
 
 type ApiInstitutionsGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                    _context.Context
+	ApiService             *PlaidApiService
 	institutionsGetRequest *InstitutionsGetRequest
 }
 
@@ -4885,11 +4885,11 @@ func (r ApiInstitutionsGetRequest) Execute() (InstitutionsGetResponse, *_nethttp
 This data changes frequently. If you store it locally on your system, be sure to update it regularly.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiInstitutionsGetRequest
- */
+*/
 func (a *PlaidApiService) InstitutionsGet(ctx _context.Context) ApiInstitutionsGetRequest {
 	return ApiInstitutionsGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5004,13 +5004,13 @@ func (a *PlaidApiService) InstitutionsGetExecute(r ApiInstitutionsGetRequest) (I
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5027,8 +5027,8 @@ func (a *PlaidApiService) InstitutionsGetExecute(r ApiInstitutionsGetRequest) (I
 }
 
 type ApiInstitutionsGetByIdRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                        _context.Context
+	ApiService                 *PlaidApiService
 	institutionsGetByIdRequest *InstitutionsGetByIdRequest
 }
 
@@ -5050,7 +5050,7 @@ func (r ApiInstitutionsGetByIdRequest) Execute() (InstitutionsGetByIdResponse, *
 func (a *PlaidApiService) InstitutionsGetById(ctx _context.Context) ApiInstitutionsGetByIdRequest {
 	return ApiInstitutionsGetByIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5165,13 +5165,13 @@ func (a *PlaidApiService) InstitutionsGetByIdExecute(r ApiInstitutionsGetByIdReq
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5188,8 +5188,8 @@ func (a *PlaidApiService) InstitutionsGetByIdExecute(r ApiInstitutionsGetByIdReq
 }
 
 type ApiInstitutionsSearchRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                       _context.Context
+	ApiService                *PlaidApiService
 	institutionsSearchRequest *InstitutionsSearchRequest
 }
 
@@ -5211,7 +5211,7 @@ func (r ApiInstitutionsSearchRequest) Execute() (InstitutionsSearchResponse, *_n
 func (a *PlaidApiService) InstitutionsSearch(ctx _context.Context) ApiInstitutionsSearchRequest {
 	return ApiInstitutionsSearchRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5326,13 +5326,13 @@ func (a *PlaidApiService) InstitutionsSearchExecute(r ApiInstitutionsSearchReque
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5349,8 +5349,8 @@ func (a *PlaidApiService) InstitutionsSearchExecute(r ApiInstitutionsSearchReque
 }
 
 type ApiInvestmentsHoldingsGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                           _context.Context
+	ApiService                    *PlaidApiService
 	investmentsHoldingsGetRequest *InvestmentsHoldingsGetRequest
 }
 
@@ -5372,7 +5372,7 @@ func (r ApiInvestmentsHoldingsGetRequest) Execute() (InvestmentsHoldingsGetRespo
 func (a *PlaidApiService) InvestmentsHoldingsGet(ctx _context.Context) ApiInvestmentsHoldingsGetRequest {
 	return ApiInvestmentsHoldingsGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5503,8 +5503,8 @@ func (a *PlaidApiService) InvestmentsHoldingsGetExecute(r ApiInvestmentsHoldings
 }
 
 type ApiInvestmentsTransactionsGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                               _context.Context
+	ApiService                        *PlaidApiService
 	investmentsTransactionsGetRequest *InvestmentsTransactionsGetRequest
 }
 
@@ -5526,11 +5526,11 @@ Transactions are returned in reverse-chronological order, and the sequence of tr
 Due to the potentially large number of investment transactions associated with an Item, results are paginated. Manipulate the count and offset parameters in conjunction with the `total_investment_transactions` response body field to fetch all available investment transactions.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiInvestmentsTransactionsGetRequest
- */
+*/
 func (a *PlaidApiService) InvestmentsTransactionsGet(ctx _context.Context) ApiInvestmentsTransactionsGetRequest {
 	return ApiInvestmentsTransactionsGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5661,8 +5661,8 @@ func (a *PlaidApiService) InvestmentsTransactionsGetExecute(r ApiInvestmentsTran
 }
 
 type ApiItemAccessTokenInvalidateRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                              _context.Context
+	ApiService                       *PlaidApiService
 	itemAccessTokenInvalidateRequest *ItemAccessTokenInvalidateRequest
 }
 
@@ -5683,11 +5683,11 @@ You can use the `/item/access_token/invalidate` endpoint to rotate the `access_t
 
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiItemAccessTokenInvalidateRequest
- */
+*/
 func (a *PlaidApiService) ItemAccessTokenInvalidate(ctx _context.Context) ApiItemAccessTokenInvalidateRequest {
 	return ApiItemAccessTokenInvalidateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5818,8 +5818,8 @@ func (a *PlaidApiService) ItemAccessTokenInvalidateExecute(r ApiItemAccessTokenI
 }
 
 type ApiItemCreatePublicTokenRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                          _context.Context
+	ApiService                   *PlaidApiService
 	itemPublicTokenCreateRequest *ItemPublicTokenCreateRequest
 }
 
@@ -5843,11 +5843,11 @@ A `public_token` is one-time use and expires after 30 minutes. You use a `public
 The `/item/public_token/create` endpoint is **not** used to create your initial `public_token`. If you have not already received an `access_token` for a specific Item, use Link to obtain your `public_token` instead. See the [Quickstart](/docs/quickstart) for more information.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiItemCreatePublicTokenRequest
- */
+*/
 func (a *PlaidApiService) ItemCreatePublicToken(ctx _context.Context) ApiItemCreatePublicTokenRequest {
 	return ApiItemCreatePublicTokenRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5978,8 +5978,8 @@ func (a *PlaidApiService) ItemCreatePublicTokenExecute(r ApiItemCreatePublicToke
 }
 
 type ApiItemGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx            _context.Context
+	ApiService     *PlaidApiService
 	itemGetRequest *ItemGetRequest
 }
 
@@ -6001,7 +6001,7 @@ func (r ApiItemGetRequest) Execute() (ItemGetResponse, *_nethttp.Response, error
 func (a *PlaidApiService) ItemGet(ctx _context.Context) ApiItemGetRequest {
 	return ApiItemGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6116,13 +6116,13 @@ func (a *PlaidApiService) ItemGetExecute(r ApiItemGetRequest) (ItemGetResponse, 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6139,8 +6139,8 @@ func (a *PlaidApiService) ItemGetExecute(r ApiItemGetRequest) (ItemGetResponse, 
 }
 
 type ApiItemImportRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx               _context.Context
+	ApiService        *PlaidApiService
 	itemImportRequest *ItemImportRequest
 }
 
@@ -6160,11 +6160,11 @@ func (r ApiItemImportRequest) Execute() (ItemImportResponse, *_nethttp.Response,
 Upon creating an Item via `/item/import`, Plaid will automatically begin an extraction of that Item through the Plaid Exchange infrastructure you have already integrated. This will automatically generate the Plaid native account ID for the account the user will switch their direct deposit to (`target_account_id`).
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiItemImportRequest
- */
+*/
 func (a *PlaidApiService) ItemImport(ctx _context.Context) ApiItemImportRequest {
 	return ApiItemImportRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6295,8 +6295,8 @@ func (a *PlaidApiService) ItemImportExecute(r ApiItemImportRequest) (ItemImportR
 }
 
 type ApiItemPublicTokenExchangeRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                            _context.Context
+	ApiService                     *PlaidApiService
 	itemPublicTokenExchangeRequest *ItemPublicTokenExchangeRequest
 }
 
@@ -6316,11 +6316,11 @@ func (r ApiItemPublicTokenExchangeRequest) Execute() (ItemPublicTokenExchangeRes
 The response also includes an `item_id` that should be stored with the `access_token`. The `item_id` is used to identify an Item in a webhook. The `item_id` can also be retrieved by making an `/item/get` request.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiItemPublicTokenExchangeRequest
- */
+*/
 func (a *PlaidApiService) ItemPublicTokenExchange(ctx _context.Context) ApiItemPublicTokenExchangeRequest {
 	return ApiItemPublicTokenExchangeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6451,8 +6451,8 @@ func (a *PlaidApiService) ItemPublicTokenExchangeExecute(r ApiItemPublicTokenExc
 }
 
 type ApiItemRemoveRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx               _context.Context
+	ApiService        *PlaidApiService
 	itemRemoveRequest *ItemRemoveRequest
 }
 
@@ -6472,11 +6472,11 @@ func (r ApiItemRemoveRequest) Execute() (ItemRemoveResponse, *_nethttp.Response,
 Note that in the Development environment, issuing an `/item/remove`  request will not decrement your live credential count.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiItemRemoveRequest
- */
+*/
 func (a *PlaidApiService) ItemRemove(ctx _context.Context) ApiItemRemoveRequest {
 	return ApiItemRemoveRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6591,13 +6591,13 @@ func (a *PlaidApiService) ItemRemoveExecute(r ApiItemRemoveRequest) (ItemRemoveR
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6614,8 +6614,8 @@ func (a *PlaidApiService) ItemRemoveExecute(r ApiItemRemoveRequest) (ItemRemoveR
 }
 
 type ApiItemWebhookUpdateRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                      _context.Context
+	ApiService               *PlaidApiService
 	itemWebhookUpdateRequest *ItemWebhookUpdateRequest
 }
 
@@ -6637,7 +6637,7 @@ func (r ApiItemWebhookUpdateRequest) Execute() (ItemWebhookUpdateResponse, *_net
 func (a *PlaidApiService) ItemWebhookUpdate(ctx _context.Context) ApiItemWebhookUpdateRequest {
 	return ApiItemWebhookUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6768,8 +6768,8 @@ func (a *PlaidApiService) ItemWebhookUpdateExecute(r ApiItemWebhookUpdateRequest
 }
 
 type ApiLiabilitiesGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                   _context.Context
+	ApiService            *PlaidApiService
 	liabilitiesGetRequest *LiabilitiesGetRequest
 }
 
@@ -6791,11 +6791,11 @@ The types of information returned by Liabilities can include balances and due da
 Note: This request may take some time to complete if `liabilities` was not specified as an initial product when creating the Item. This is because Plaid must communicate directly with the institution to retrieve the additional data.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiLiabilitiesGetRequest
- */
+*/
 func (a *PlaidApiService) LiabilitiesGet(ctx _context.Context) ApiLiabilitiesGetRequest {
 	return ApiLiabilitiesGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6926,8 +6926,8 @@ func (a *PlaidApiService) LiabilitiesGetExecute(r ApiLiabilitiesGetRequest) (Lia
 }
 
 type ApiLinkTokenCreateRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                    _context.Context
+	ApiService             *PlaidApiService
 	linkTokenCreateRequest *LinkTokenCreateRequest
 }
 
@@ -6947,11 +6947,11 @@ func (r ApiLinkTokenCreateRequest) Execute() (LinkTokenCreateResponse, *_nethttp
 A `link_token` generated by `/link/token/create` is also used to initialize other Link flows, such as the update mode flow for tokens with expired credentials, or the Payment Initiation (Europe) flow.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiLinkTokenCreateRequest
- */
+*/
 func (a *PlaidApiService) LinkTokenCreate(ctx _context.Context) ApiLinkTokenCreateRequest {
 	return ApiLinkTokenCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7082,8 +7082,8 @@ func (a *PlaidApiService) LinkTokenCreateExecute(r ApiLinkTokenCreateRequest) (L
 }
 
 type ApiLinkTokenGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                 _context.Context
+	ApiService          *PlaidApiService
 	linkTokenGetRequest *LinkTokenGetRequest
 }
 
@@ -7102,11 +7102,11 @@ func (r ApiLinkTokenGetRequest) Execute() (LinkTokenGetResponse, *_nethttp.Respo
 `/link/token/create` endpoint. It can be useful for debugging purposes.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiLinkTokenGetRequest
- */
+*/
 func (a *PlaidApiService) LinkTokenGet(ctx _context.Context) ApiLinkTokenGetRequest {
 	return ApiLinkTokenGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7237,8 +7237,8 @@ func (a *PlaidApiService) LinkTokenGetExecute(r ApiLinkTokenGetRequest) (LinkTok
 }
 
 type ApiPaymentInitiationPaymentCreateRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                                   _context.Context
+	ApiService                            *PlaidApiService
 	paymentInitiationPaymentCreateRequest *PaymentInitiationPaymentCreateRequest
 }
 
@@ -7258,11 +7258,11 @@ func (r ApiPaymentInitiationPaymentCreateRequest) Execute() (PaymentInitiationPa
 Standing orders (recurring payments) must be denominated in GBP and can only be sent to recipients in the UK. Once created, standing order payments will continue indefinitely and cannot be modified or canceled via the API. An end user can cancel or modify a standing order directly on their banking application or website, or by contacting the bank. Standing orders will follow the payment rules of the underlying rails (Faster Payments in UK). Payments can be sent Monday to Friday, excluding bank holidays. If the pre-arranged date falls on a weekend or bank holiday, the payment is made on the next working day. It is not possible to guarantee the exact time the payment will reach the recipient’s account, although at least 90% of standing order payments are sent by 6am.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiPaymentInitiationPaymentCreateRequest
- */
+*/
 func (a *PlaidApiService) PaymentInitiationPaymentCreate(ctx _context.Context) ApiPaymentInitiationPaymentCreateRequest {
 	return ApiPaymentInitiationPaymentCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7393,8 +7393,8 @@ func (a *PlaidApiService) PaymentInitiationPaymentCreateExecute(r ApiPaymentInit
 }
 
 type ApiPaymentInitiationPaymentGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                                _context.Context
+	ApiService                         *PlaidApiService
 	paymentInitiationPaymentGetRequest *PaymentInitiationPaymentGetRequest
 }
 
@@ -7416,7 +7416,7 @@ func (r ApiPaymentInitiationPaymentGetRequest) Execute() (PaymentInitiationPayme
 func (a *PlaidApiService) PaymentInitiationPaymentGet(ctx _context.Context) ApiPaymentInitiationPaymentGetRequest {
 	return ApiPaymentInitiationPaymentGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7547,8 +7547,8 @@ func (a *PlaidApiService) PaymentInitiationPaymentGetExecute(r ApiPaymentInitiat
 }
 
 type ApiPaymentInitiationPaymentListRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                                 _context.Context
+	ApiService                          *PlaidApiService
 	paymentInitiationPaymentListRequest *PaymentInitiationPaymentListRequest
 }
 
@@ -7570,7 +7570,7 @@ func (r ApiPaymentInitiationPaymentListRequest) Execute() (PaymentInitiationPaym
 func (a *PlaidApiService) PaymentInitiationPaymentList(ctx _context.Context) ApiPaymentInitiationPaymentListRequest {
 	return ApiPaymentInitiationPaymentListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7701,8 +7701,8 @@ func (a *PlaidApiService) PaymentInitiationPaymentListExecute(r ApiPaymentInitia
 }
 
 type ApiPaymentInitiationRecipientCreateRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                                     _context.Context
+	ApiService                              *PlaidApiService
 	paymentInitiationRecipientCreateRequest *PaymentInitiationRecipientCreateRequest
 }
 
@@ -7725,11 +7725,11 @@ In the Sandbox environment, you can use the `/payment_initiation/recipient/creat
 
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiPaymentInitiationRecipientCreateRequest
- */
+*/
 func (a *PlaidApiService) PaymentInitiationRecipientCreate(ctx _context.Context) ApiPaymentInitiationRecipientCreateRequest {
 	return ApiPaymentInitiationRecipientCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7860,8 +7860,8 @@ func (a *PlaidApiService) PaymentInitiationRecipientCreateExecute(r ApiPaymentIn
 }
 
 type ApiPaymentInitiationRecipientGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                                  _context.Context
+	ApiService                           *PlaidApiService
 	paymentInitiationRecipientGetRequest *PaymentInitiationRecipientGetRequest
 }
 
@@ -7883,7 +7883,7 @@ func (r ApiPaymentInitiationRecipientGetRequest) Execute() (PaymentInitiationRec
 func (a *PlaidApiService) PaymentInitiationRecipientGet(ctx _context.Context) ApiPaymentInitiationRecipientGetRequest {
 	return ApiPaymentInitiationRecipientGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8014,8 +8014,8 @@ func (a *PlaidApiService) PaymentInitiationRecipientGetExecute(r ApiPaymentIniti
 }
 
 type ApiPaymentInitiationRecipientListRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                                   _context.Context
+	ApiService                            *PlaidApiService
 	paymentInitiationRecipientListRequest *PaymentInitiationRecipientListRequest
 }
 
@@ -8037,7 +8037,7 @@ func (r ApiPaymentInitiationRecipientListRequest) Execute() (PaymentInitiationRe
 func (a *PlaidApiService) PaymentInitiationRecipientList(ctx _context.Context) ApiPaymentInitiationRecipientListRequest {
 	return ApiPaymentInitiationRecipientListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8168,8 +8168,8 @@ func (a *PlaidApiService) PaymentInitiationRecipientListExecute(r ApiPaymentInit
 }
 
 type ApiPostIncomeVerificationCreateRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                             _context.Context
+	ApiService                      *PlaidApiService
 	incomeVerificationCreateRequest *IncomeVerificationCreateRequest
 }
 
@@ -8191,7 +8191,7 @@ func (r ApiPostIncomeVerificationCreateRequest) Execute() (IncomeVerificationCre
 func (a *PlaidApiService) PostIncomeVerificationCreate(ctx _context.Context) ApiPostIncomeVerificationCreateRequest {
 	return ApiPostIncomeVerificationCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8319,8 +8319,8 @@ func (a *PlaidApiService) PostIncomeVerificationCreateExecute(r ApiPostIncomeVer
 }
 
 type ApiProcessorApexProcessorTokenCreateRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                                      _context.Context
+	ApiService                               *PlaidApiService
 	processorApexProcessorTokenCreateRequest *ProcessorApexProcessorTokenCreateRequest
 }
 
@@ -8342,7 +8342,7 @@ func (r ApiProcessorApexProcessorTokenCreateRequest) Execute() (ProcessorTokenCr
 func (a *PlaidApiService) ProcessorApexProcessorTokenCreate(ctx _context.Context) ApiProcessorApexProcessorTokenCreateRequest {
 	return ApiProcessorApexProcessorTokenCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8473,8 +8473,8 @@ func (a *PlaidApiService) ProcessorApexProcessorTokenCreateExecute(r ApiProcesso
 }
 
 type ApiProcessorAuthGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                     _context.Context
+	ApiService              *PlaidApiService
 	processorAuthGetRequest *ProcessorAuthGetRequest
 }
 
@@ -8496,7 +8496,7 @@ func (r ApiProcessorAuthGetRequest) Execute() (ProcessorAuthGetResponse, *_netht
 func (a *PlaidApiService) ProcessorAuthGet(ctx _context.Context) ApiProcessorAuthGetRequest {
 	return ApiProcessorAuthGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8627,8 +8627,8 @@ func (a *PlaidApiService) ProcessorAuthGetExecute(r ApiProcessorAuthGetRequest) 
 }
 
 type ApiProcessorBalanceGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                        _context.Context
+	ApiService                 *PlaidApiService
 	processorBalanceGetRequest *ProcessorBalanceGetRequest
 }
 
@@ -8643,14 +8643,14 @@ func (r ApiProcessorBalanceGetRequest) Execute() (ProcessorBalanceGetResponse, *
 
 /*
  * ProcessorBalanceGet Retrieve Balance data
- * The `/processor/balance/get` endpoint returns the real-time balance for each of an Item's accounts. While other endpoints may return a balance object, only `/processor/balance/get` forces the available and current balance fields to be refreshed rather than cached. 
+ * The `/processor/balance/get` endpoint returns the real-time balance for each of an Item's accounts. While other endpoints may return a balance object, only `/processor/balance/get` forces the available and current balance fields to be refreshed rather than cached.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiProcessorBalanceGetRequest
  */
 func (a *PlaidApiService) ProcessorBalanceGet(ctx _context.Context) ApiProcessorBalanceGetRequest {
 	return ApiProcessorBalanceGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8781,8 +8781,8 @@ func (a *PlaidApiService) ProcessorBalanceGetExecute(r ApiProcessorBalanceGetReq
 }
 
 type ApiProcessorIdentityGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                         _context.Context
+	ApiService                  *PlaidApiService
 	processorIdentityGetRequest *ProcessorIdentityGetRequest
 }
 
@@ -8804,7 +8804,7 @@ func (r ApiProcessorIdentityGetRequest) Execute() (ProcessorIdentityGetResponse,
 func (a *PlaidApiService) ProcessorIdentityGet(ctx _context.Context) ApiProcessorIdentityGetRequest {
 	return ApiProcessorIdentityGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8935,8 +8935,8 @@ func (a *PlaidApiService) ProcessorIdentityGetExecute(r ApiProcessorIdentityGetR
 }
 
 type ApiProcessorStripeBankAccountTokenCreateRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                                          _context.Context
+	ApiService                                   *PlaidApiService
 	processorStripeBankAccountTokenCreateRequest *ProcessorStripeBankAccountTokenCreateRequest
 }
 
@@ -8958,7 +8958,7 @@ func (r ApiProcessorStripeBankAccountTokenCreateRequest) Execute() (ProcessorStr
 func (a *PlaidApiService) ProcessorStripeBankAccountTokenCreate(ctx _context.Context) ApiProcessorStripeBankAccountTokenCreateRequest {
 	return ApiProcessorStripeBankAccountTokenCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9089,8 +9089,8 @@ func (a *PlaidApiService) ProcessorStripeBankAccountTokenCreateExecute(r ApiProc
 }
 
 type ApiProcessorTokenCreateRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                         _context.Context
+	ApiService                  *PlaidApiService
 	processorTokenCreateRequest *ProcessorTokenCreateRequest
 }
 
@@ -9112,7 +9112,7 @@ func (r ApiProcessorTokenCreateRequest) Execute() (ProcessorTokenCreateResponse,
 func (a *PlaidApiService) ProcessorTokenCreate(ctx _context.Context) ApiProcessorTokenCreateRequest {
 	return ApiProcessorTokenCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9243,8 +9243,8 @@ func (a *PlaidApiService) ProcessorTokenCreateExecute(r ApiProcessorTokenCreateR
 }
 
 type ApiSandboxBankTransferSimulateRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                                _context.Context
+	ApiService                         *PlaidApiService
 	sandboxBankTransferSimulateRequest *SandboxBankTransferSimulateRequest
 }
 
@@ -9266,7 +9266,7 @@ func (r ApiSandboxBankTransferSimulateRequest) Execute() (SandboxBankTransferSim
 func (a *PlaidApiService) SandboxBankTransferSimulate(ctx _context.Context) ApiSandboxBankTransferSimulateRequest {
 	return ApiSandboxBankTransferSimulateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9381,13 +9381,13 @@ func (a *PlaidApiService) SandboxBankTransferSimulateExecute(r ApiSandboxBankTra
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9404,8 +9404,8 @@ func (a *PlaidApiService) SandboxBankTransferSimulateExecute(r ApiSandboxBankTra
 }
 
 type ApiSandboxItemFireWebhookRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                           _context.Context
+	ApiService                    *PlaidApiService
 	sandboxItemFireWebhookRequest *SandboxItemFireWebhookRequest
 }
 
@@ -9427,7 +9427,7 @@ func (r ApiSandboxItemFireWebhookRequest) Execute() (SandboxItemFireWebhookRespo
 func (a *PlaidApiService) SandboxItemFireWebhook(ctx _context.Context) ApiSandboxItemFireWebhookRequest {
 	return ApiSandboxItemFireWebhookRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9542,13 +9542,13 @@ func (a *PlaidApiService) SandboxItemFireWebhookExecute(r ApiSandboxItemFireWebh
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9565,8 +9565,8 @@ func (a *PlaidApiService) SandboxItemFireWebhookExecute(r ApiSandboxItemFireWebh
 }
 
 type ApiSandboxItemResetLoginRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                          _context.Context
+	ApiService                   *PlaidApiService
 	sandboxItemResetLoginRequest *SandboxItemResetLoginRequest
 }
 
@@ -9587,11 +9587,11 @@ func (r ApiSandboxItemResetLoginRequest) Execute() (SandboxItemResetLoginRespons
 In the Sandbox, Items will transition to an `ITEM_LOGIN_REQUIRED` error state automatically after 30 days, even if this endpoint is not called.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiSandboxItemResetLoginRequest
- */
+*/
 func (a *PlaidApiService) SandboxItemResetLogin(ctx _context.Context) ApiSandboxItemResetLoginRequest {
 	return ApiSandboxItemResetLoginRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9722,8 +9722,8 @@ func (a *PlaidApiService) SandboxItemResetLoginExecute(r ApiSandboxItemResetLogi
 }
 
 type ApiSandboxItemSetVerificationStatusRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                                     _context.Context
+	ApiService                              *PlaidApiService
 	sandboxItemSetVerificationStatusRequest *SandboxItemSetVerificationStatusRequest
 }
 
@@ -9745,11 +9745,11 @@ Note that not all Plaid developer accounts are enabled for micro-deposit based v
 For more information on testing Automated Micro-deposits in Sandbox, see [Auth full coverage testing](/docs/auth/coverage/testing#).
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiSandboxItemSetVerificationStatusRequest
- */
+*/
 func (a *PlaidApiService) SandboxItemSetVerificationStatus(ctx _context.Context) ApiSandboxItemSetVerificationStatusRequest {
 	return ApiSandboxItemSetVerificationStatusRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9880,8 +9880,8 @@ func (a *PlaidApiService) SandboxItemSetVerificationStatusExecute(r ApiSandboxIt
 }
 
 type ApiSandboxProcessorTokenCreateRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                                _context.Context
+	ApiService                         *PlaidApiService
 	sandboxProcessorTokenCreateRequest *SandboxProcessorTokenCreateRequest
 }
 
@@ -9903,7 +9903,7 @@ func (r ApiSandboxProcessorTokenCreateRequest) Execute() (SandboxProcessorTokenC
 func (a *PlaidApiService) SandboxProcessorTokenCreate(ctx _context.Context) ApiSandboxProcessorTokenCreateRequest {
 	return ApiSandboxProcessorTokenCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10015,13 +10015,13 @@ func (a *PlaidApiService) SandboxProcessorTokenCreateExecute(r ApiSandboxProcess
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10038,8 +10038,8 @@ func (a *PlaidApiService) SandboxProcessorTokenCreateExecute(r ApiSandboxProcess
 }
 
 type ApiSandboxPublicTokenCreateRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                             _context.Context
+	ApiService                      *PlaidApiService
 	sandboxPublicTokenCreateRequest *SandboxPublicTokenCreateRequest
 }
 
@@ -10061,7 +10061,7 @@ func (r ApiSandboxPublicTokenCreateRequest) Execute() (SandboxPublicTokenCreateR
 func (a *PlaidApiService) SandboxPublicTokenCreate(ctx _context.Context) ApiSandboxPublicTokenCreateRequest {
 	return ApiSandboxPublicTokenCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10176,13 +10176,13 @@ func (a *PlaidApiService) SandboxPublicTokenCreateExecute(r ApiSandboxPublicToke
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10199,8 +10199,8 @@ func (a *PlaidApiService) SandboxPublicTokenCreateExecute(r ApiSandboxPublicToke
 }
 
 type ApiTransactionsGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                    _context.Context
+	ApiService             *PlaidApiService
 	transactionsGetRequest *TransactionsGetRequest
 }
 
@@ -10224,11 +10224,11 @@ Due to the potentially large number of transactions associated with an Item, res
 Note that data may not be immediately available to `/transactions/get`. Plaid will begin to prepare transactions data upon Item link, if Link was initialized with `transactions`, or upon the first call to `/transactions/get`, if it wasn't. To be alerted when transaction data is ready to be fetched, listen for the [`INITIAL_UPDATE`](/docs/api/webhooks#transactions-initial_update) and [`HISTORICAL_UPDATE`](/docs/api/webhooks#transactions-historical_update) webhooks. If no transaction history is ready when `/transactions/get` is called, it will return a `PRODUCT_NOT_READY` error.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiTransactionsGetRequest
- */
+*/
 func (a *PlaidApiService) TransactionsGet(ctx _context.Context) ApiTransactionsGetRequest {
 	return ApiTransactionsGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10343,13 +10343,13 @@ func (a *PlaidApiService) TransactionsGetExecute(r ApiTransactionsGetRequest) (T
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10366,8 +10366,8 @@ func (a *PlaidApiService) TransactionsGetExecute(r ApiTransactionsGetRequest) (T
 }
 
 type ApiTransactionsRefreshRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                        _context.Context
+	ApiService                 *PlaidApiService
 	transactionsRefreshRequest *TransactionsRefreshRequest
 }
 
@@ -10387,11 +10387,11 @@ func (r ApiTransactionsRefreshRequest) Execute() (TransactionsRefreshResponse, *
 Access to `/transactions/refresh` in Production is specific to certain pricing plans. If you cannot access `/transactions/refresh` in Production, [contact Sales](https://www.plaid.com/contact) for assistance.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiTransactionsRefreshRequest
- */
+*/
 func (a *PlaidApiService) TransactionsRefresh(ctx _context.Context) ApiTransactionsRefreshRequest {
 	return ApiTransactionsRefreshRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10506,13 +10506,13 @@ func (a *PlaidApiService) TransactionsRefreshExecute(r ApiTransactionsRefreshReq
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10529,8 +10529,8 @@ func (a *PlaidApiService) TransactionsRefreshExecute(r ApiTransactionsRefreshReq
 }
 
 type ApiWebhookVerificationKeyGetRequest struct {
-	ctx _context.Context
-	ApiService *PlaidApiService
+	ctx                              _context.Context
+	ApiService                       *PlaidApiService
 	webhookVerificationKeyGetRequest *WebhookVerificationKeyGetRequest
 }
 
@@ -10550,11 +10550,11 @@ func (r ApiWebhookVerificationKeyGetRequest) Execute() (WebhookVerificationKeyGe
 The `/webhook_verification_key/get` endpoint provides a JSON Web Key (JWK) that can be used to verify a JWT.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiWebhookVerificationKeyGetRequest
- */
+*/
 func (a *PlaidApiService) WebhookVerificationKeyGet(ctx _context.Context) ApiWebhookVerificationKeyGetRequest {
 	return ApiWebhookVerificationKeyGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 

@@ -17,8 +17,8 @@ import (
 // TransactionsGetRequest TransactionsGetRequest defines the request schema for `/transactions/get`
 type TransactionsGetRequest struct {
 	// Your Plaid API `client_id`.
-	ClientId *string `json:"client_id,omitempty"`
-	Options *TransactionsGetRequestOptions `json:"options,omitempty"`
+	ClientId *string                        `json:"client_id,omitempty"`
+	Options  *TransactionsGetRequestOptions `json:"options,omitempty"`
 	// The access token associated with the Item data is being requested for.
 	AccessToken string `json:"access_token"`
 	// Your Plaid API `secret`.
@@ -26,7 +26,7 @@ type TransactionsGetRequest struct {
 	// The earliest date for which data should be returned. Dates should be formatted as YYYY-MM-DD.
 	StartDate string `json:"start_date"`
 	// The latest date for which data should be returned. Dates should be formatted as YYYY-MM-DD.
-	EndDate string `json:"end_date"`
+	EndDate              string `json:"end_date"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -36,7 +36,7 @@ type _TransactionsGetRequest TransactionsGetRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTransactionsGetRequest(accessToken string, startDate string, endDate string, ) *TransactionsGetRequest {
+func NewTransactionsGetRequest(accessToken string, startDate string, endDate string) *TransactionsGetRequest {
 	this := TransactionsGetRequest{}
 	this.AccessToken = accessToken
 	this.StartDate = startDate
@@ -118,7 +118,7 @@ func (o *TransactionsGetRequest) SetOptions(v TransactionsGetRequestOptions) {
 
 // GetAccessToken returns the AccessToken field value
 func (o *TransactionsGetRequest) GetAccessToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *TransactionsGetRequest) GetAccessToken() string {
 // GetAccessTokenOk returns a tuple with the AccessToken field value
 // and a boolean to check if the value has been set.
 func (o *TransactionsGetRequest) GetAccessTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccessToken, true
@@ -174,7 +174,7 @@ func (o *TransactionsGetRequest) SetSecret(v string) {
 
 // GetStartDate returns the StartDate field value
 func (o *TransactionsGetRequest) GetStartDate() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *TransactionsGetRequest) GetStartDate() string {
 // GetStartDateOk returns a tuple with the StartDate field value
 // and a boolean to check if the value has been set.
 func (o *TransactionsGetRequest) GetStartDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.StartDate, true
@@ -198,7 +198,7 @@ func (o *TransactionsGetRequest) SetStartDate(v string) {
 
 // GetEndDate returns the EndDate field value
 func (o *TransactionsGetRequest) GetEndDate() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -209,7 +209,7 @@ func (o *TransactionsGetRequest) GetEndDate() string {
 // GetEndDateOk returns a tuple with the EndDate field value
 // and a boolean to check if the value has been set.
 func (o *TransactionsGetRequest) GetEndDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.EndDate, true
@@ -305,5 +305,3 @@ func (v *NullableTransactionsGetRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

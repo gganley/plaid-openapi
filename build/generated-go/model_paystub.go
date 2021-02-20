@@ -19,12 +19,12 @@ type Paystub struct {
 	// The unique identifier for this paystub.
 	PaystubId string `json:"paystub_id"`
 	// The account identifier for the account associated with this paystub.
-	AccountId NullableString `json:"account_id,omitempty"`
-	Employer Employer `json:"employer"`
-	Employee Employee `json:"employee"`
-	PayPeriodDetails PayPeriodDetails `json:"pay_period_details"`
-	IncomeBreakdown IncomeBreakdown `json:"income_breakdown"`
-	YtdEarnings PaystubYTDDetails `json:"ytd_earnings"`
+	AccountId            NullableString    `json:"account_id,omitempty"`
+	Employer             Employer          `json:"employer"`
+	Employee             Employee          `json:"employee"`
+	PayPeriodDetails     PayPeriodDetails  `json:"pay_period_details"`
+	IncomeBreakdown      IncomeBreakdown   `json:"income_breakdown"`
+	YtdEarnings          PaystubYTDDetails `json:"ytd_earnings"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _Paystub Paystub
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaystub(paystubId string, employer Employer, employee Employee, payPeriodDetails PayPeriodDetails, incomeBreakdown IncomeBreakdown, ytdEarnings PaystubYTDDetails, ) *Paystub {
+func NewPaystub(paystubId string, employer Employer, employee Employee, payPeriodDetails PayPeriodDetails, incomeBreakdown IncomeBreakdown, ytdEarnings PaystubYTDDetails) *Paystub {
 	this := Paystub{}
 	this.PaystubId = paystubId
 	this.Employer = employer
@@ -55,7 +55,7 @@ func NewPaystubWithDefaults() *Paystub {
 
 // GetPaystubId returns the PaystubId field value
 func (o *Paystub) GetPaystubId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *Paystub) GetPaystubId() string {
 // GetPaystubIdOk returns a tuple with the PaystubId field value
 // and a boolean to check if the value has been set.
 func (o *Paystub) GetPaystubIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PaystubId, true
@@ -90,7 +90,7 @@ func (o *Paystub) GetAccountId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Paystub) GetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AccountId.Get(), o.AccountId.IsSet()
@@ -109,6 +109,7 @@ func (o *Paystub) HasAccountId() bool {
 func (o *Paystub) SetAccountId(v string) {
 	o.AccountId.Set(&v)
 }
+
 // SetAccountIdNil sets the value for AccountId to be an explicit nil
 func (o *Paystub) SetAccountIdNil() {
 	o.AccountId.Set(nil)
@@ -121,7 +122,7 @@ func (o *Paystub) UnsetAccountId() {
 
 // GetEmployer returns the Employer field value
 func (o *Paystub) GetEmployer() Employer {
-	if o == nil  {
+	if o == nil {
 		var ret Employer
 		return ret
 	}
@@ -132,7 +133,7 @@ func (o *Paystub) GetEmployer() Employer {
 // GetEmployerOk returns a tuple with the Employer field value
 // and a boolean to check if the value has been set.
 func (o *Paystub) GetEmployerOk() (*Employer, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Employer, true
@@ -145,7 +146,7 @@ func (o *Paystub) SetEmployer(v Employer) {
 
 // GetEmployee returns the Employee field value
 func (o *Paystub) GetEmployee() Employee {
-	if o == nil  {
+	if o == nil {
 		var ret Employee
 		return ret
 	}
@@ -156,7 +157,7 @@ func (o *Paystub) GetEmployee() Employee {
 // GetEmployeeOk returns a tuple with the Employee field value
 // and a boolean to check if the value has been set.
 func (o *Paystub) GetEmployeeOk() (*Employee, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Employee, true
@@ -169,7 +170,7 @@ func (o *Paystub) SetEmployee(v Employee) {
 
 // GetPayPeriodDetails returns the PayPeriodDetails field value
 func (o *Paystub) GetPayPeriodDetails() PayPeriodDetails {
-	if o == nil  {
+	if o == nil {
 		var ret PayPeriodDetails
 		return ret
 	}
@@ -180,7 +181,7 @@ func (o *Paystub) GetPayPeriodDetails() PayPeriodDetails {
 // GetPayPeriodDetailsOk returns a tuple with the PayPeriodDetails field value
 // and a boolean to check if the value has been set.
 func (o *Paystub) GetPayPeriodDetailsOk() (*PayPeriodDetails, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PayPeriodDetails, true
@@ -193,7 +194,7 @@ func (o *Paystub) SetPayPeriodDetails(v PayPeriodDetails) {
 
 // GetIncomeBreakdown returns the IncomeBreakdown field value
 func (o *Paystub) GetIncomeBreakdown() IncomeBreakdown {
-	if o == nil  {
+	if o == nil {
 		var ret IncomeBreakdown
 		return ret
 	}
@@ -204,7 +205,7 @@ func (o *Paystub) GetIncomeBreakdown() IncomeBreakdown {
 // GetIncomeBreakdownOk returns a tuple with the IncomeBreakdown field value
 // and a boolean to check if the value has been set.
 func (o *Paystub) GetIncomeBreakdownOk() (*IncomeBreakdown, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.IncomeBreakdown, true
@@ -217,7 +218,7 @@ func (o *Paystub) SetIncomeBreakdown(v IncomeBreakdown) {
 
 // GetYtdEarnings returns the YtdEarnings field value
 func (o *Paystub) GetYtdEarnings() PaystubYTDDetails {
-	if o == nil  {
+	if o == nil {
 		var ret PaystubYTDDetails
 		return ret
 	}
@@ -228,7 +229,7 @@ func (o *Paystub) GetYtdEarnings() PaystubYTDDetails {
 // GetYtdEarningsOk returns a tuple with the YtdEarnings field value
 // and a boolean to check if the value has been set.
 func (o *Paystub) GetYtdEarningsOk() (*PaystubYTDDetails, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.YtdEarnings, true
@@ -328,5 +329,3 @@ func (v *NullablePaystub) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,7 +18,7 @@ import (
 type Address struct {
 	Data NullableAddressData `json:"data"`
 	// When `true`, identifies the address as the primary address on an account.
-	Primary NullableBool `json:"primary,omitempty"`
+	Primary              NullableBool `json:"primary,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -28,7 +28,7 @@ type _Address Address
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddress(data NullableAddressData, ) *Address {
+func NewAddress(data NullableAddressData) *Address {
 	this := Address{}
 	this.Data = data
 	return &this
@@ -57,7 +57,7 @@ func (o *Address) GetData() AddressData {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Address) GetDataOk() (*AddressData, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Data.Get(), o.Data.IsSet()
@@ -81,7 +81,7 @@ func (o *Address) GetPrimary() bool {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Address) GetPrimaryOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Primary.Get(), o.Primary.IsSet()
@@ -100,6 +100,7 @@ func (o *Address) HasPrimary() bool {
 func (o *Address) SetPrimary(v bool) {
 	o.Primary.Set(&v)
 }
+
 // SetPrimaryNil sets the value for Primary to be an explicit nil
 func (o *Address) SetPrimaryNil() {
 	o.Primary.Set(nil)
@@ -179,5 +180,3 @@ func (v *NullableAddress) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

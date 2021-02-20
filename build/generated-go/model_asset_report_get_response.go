@@ -20,7 +20,7 @@ type AssetReportGetResponse struct {
 	// If the Asset Report generation was successful but identity information cannot be returned, this array will contain information about the errors causing identity information to be missing
 	Warnings []Warning `json:"warnings"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -30,7 +30,7 @@ type _AssetReportGetResponse AssetReportGetResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAssetReportGetResponse(report AssetReport, warnings []Warning, requestId string, ) *AssetReportGetResponse {
+func NewAssetReportGetResponse(report AssetReport, warnings []Warning, requestId string) *AssetReportGetResponse {
 	this := AssetReportGetResponse{}
 	this.Report = report
 	this.Warnings = warnings
@@ -48,7 +48,7 @@ func NewAssetReportGetResponseWithDefaults() *AssetReportGetResponse {
 
 // GetReport returns the Report field value
 func (o *AssetReportGetResponse) GetReport() AssetReport {
-	if o == nil  {
+	if o == nil {
 		var ret AssetReport
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *AssetReportGetResponse) GetReport() AssetReport {
 // GetReportOk returns a tuple with the Report field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportGetResponse) GetReportOk() (*AssetReport, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Report, true
@@ -72,7 +72,7 @@ func (o *AssetReportGetResponse) SetReport(v AssetReport) {
 
 // GetWarnings returns the Warnings field value
 func (o *AssetReportGetResponse) GetWarnings() []Warning {
-	if o == nil  {
+	if o == nil {
 		var ret []Warning
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *AssetReportGetResponse) GetWarnings() []Warning {
 // GetWarningsOk returns a tuple with the Warnings field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportGetResponse) GetWarningsOk() (*[]Warning, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Warnings, true
@@ -96,7 +96,7 @@ func (o *AssetReportGetResponse) SetWarnings(v []Warning) {
 
 // GetRequestId returns the RequestId field value
 func (o *AssetReportGetResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *AssetReportGetResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportGetResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -191,5 +191,3 @@ func (v *NullableAssetReportGetResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

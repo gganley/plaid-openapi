@@ -17,7 +17,7 @@ import (
 // AccountsGetRequestOptions An optional object to filter `/accounts/get` results.
 type AccountsGetRequestOptions struct {
 	// An array of `account_ids` to retrieve for the Account.
-	AccountIds *[]string `json:"account_ids,omitempty"`
+	AccountIds           *[]string `json:"account_ids,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -137,5 +137,3 @@ func (v *NullableAccountsGetRequestOptions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

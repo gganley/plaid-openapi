@@ -21,7 +21,7 @@ type AssetReportAuditCopyRemoveRequest struct {
 	// Your Plaid API `secret`.
 	Secret *string `json:"secret,omitempty"`
 	// The `audit_copy_token` granting access to the Audit Copy you would like to revoke.
-	AuditCopyToken string `json:"audit_copy_token"`
+	AuditCopyToken       string `json:"audit_copy_token"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _AssetReportAuditCopyRemoveRequest AssetReportAuditCopyRemoveRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAssetReportAuditCopyRemoveRequest(auditCopyToken string, ) *AssetReportAuditCopyRemoveRequest {
+func NewAssetReportAuditCopyRemoveRequest(auditCopyToken string) *AssetReportAuditCopyRemoveRequest {
 	this := AssetReportAuditCopyRemoveRequest{}
 	this.AuditCopyToken = auditCopyToken
 	return &this
@@ -111,7 +111,7 @@ func (o *AssetReportAuditCopyRemoveRequest) SetSecret(v string) {
 
 // GetAuditCopyToken returns the AuditCopyToken field value
 func (o *AssetReportAuditCopyRemoveRequest) GetAuditCopyToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *AssetReportAuditCopyRemoveRequest) GetAuditCopyToken() string {
 // GetAuditCopyTokenOk returns a tuple with the AuditCopyToken field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportAuditCopyRemoveRequest) GetAuditCopyTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AuditCopyToken, true
@@ -206,5 +206,3 @@ func (v *NullableAssetReportAuditCopyRemoveRequest) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

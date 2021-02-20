@@ -21,7 +21,7 @@ type Meta struct {
 	// The account's official name
 	OfficialName string `json:"official_name"`
 	// The account's limit
-	Limit float32 `json:"limit"`
+	Limit                float32 `json:"limit"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _Meta Meta
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMeta(name string, officialName string, limit float32, ) *Meta {
+func NewMeta(name string, officialName string, limit float32) *Meta {
 	this := Meta{}
 	this.Name = name
 	this.OfficialName = officialName
@@ -49,7 +49,7 @@ func NewMetaWithDefaults() *Meta {
 
 // GetName returns the Name field value
 func (o *Meta) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *Meta) GetName() string {
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *Meta) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Name, true
@@ -73,7 +73,7 @@ func (o *Meta) SetName(v string) {
 
 // GetOfficialName returns the OfficialName field value
 func (o *Meta) GetOfficialName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *Meta) GetOfficialName() string {
 // GetOfficialNameOk returns a tuple with the OfficialName field value
 // and a boolean to check if the value has been set.
 func (o *Meta) GetOfficialNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.OfficialName, true
@@ -97,7 +97,7 @@ func (o *Meta) SetOfficialName(v string) {
 
 // GetLimit returns the Limit field value
 func (o *Meta) GetLimit() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *Meta) GetLimit() float32 {
 // GetLimitOk returns a tuple with the Limit field value
 // and a boolean to check if the value has been set.
 func (o *Meta) GetLimitOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Limit, true
@@ -192,5 +192,3 @@ func (v *NullableMeta) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

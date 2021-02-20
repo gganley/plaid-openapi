@@ -44,7 +44,7 @@ func (v *ACHClass) UnmarshalJSON(src []byte) error {
 		return err
 	}
 	enumTypeValue := ACHClass(value)
-	for _, existing := range []ACHClass{ "arc", "cbr", "ccd", "cie", "cor", "ctx", "iat", "mte", "pbr", "pop", "pos", "ppd", "rck", "tel", "web",   } {
+	for _, existing := range []ACHClass{"arc", "cbr", "ccd", "cie", "cor", "ctx", "iat", "mte", "pbr", "pop", "pos", "ppd", "rck", "tel", "web"} {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
@@ -94,4 +94,3 @@ func (v *NullableACHClass) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

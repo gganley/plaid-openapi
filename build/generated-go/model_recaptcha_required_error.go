@@ -19,7 +19,7 @@ type RecaptchaRequiredError struct {
 	// RECAPTCHA_ERROR
 	ErrorType string `json:"error_type"`
 	// RECAPTCHA_REQUIRED
-	ErrorCode string `json:"error_code"`
+	ErrorCode      string `json:"error_code"`
 	DisplayMessage string `json:"display_message"`
 	// 400
 	HttpCode string `json:"http_code"`
@@ -38,7 +38,7 @@ type _RecaptchaRequiredError RecaptchaRequiredError
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRecaptchaRequiredError(errorType string, errorCode string, displayMessage string, httpCode string, linkUserExperience string, commonCauses string, troubleshootingSteps string, ) *RecaptchaRequiredError {
+func NewRecaptchaRequiredError(errorType string, errorCode string, displayMessage string, httpCode string, linkUserExperience string, commonCauses string, troubleshootingSteps string) *RecaptchaRequiredError {
 	this := RecaptchaRequiredError{}
 	this.ErrorType = errorType
 	this.ErrorCode = errorCode
@@ -60,7 +60,7 @@ func NewRecaptchaRequiredErrorWithDefaults() *RecaptchaRequiredError {
 
 // GetErrorType returns the ErrorType field value
 func (o *RecaptchaRequiredError) GetErrorType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -71,7 +71,7 @@ func (o *RecaptchaRequiredError) GetErrorType() string {
 // GetErrorTypeOk returns a tuple with the ErrorType field value
 // and a boolean to check if the value has been set.
 func (o *RecaptchaRequiredError) GetErrorTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ErrorType, true
@@ -84,7 +84,7 @@ func (o *RecaptchaRequiredError) SetErrorType(v string) {
 
 // GetErrorCode returns the ErrorCode field value
 func (o *RecaptchaRequiredError) GetErrorCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *RecaptchaRequiredError) GetErrorCode() string {
 // GetErrorCodeOk returns a tuple with the ErrorCode field value
 // and a boolean to check if the value has been set.
 func (o *RecaptchaRequiredError) GetErrorCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ErrorCode, true
@@ -108,7 +108,7 @@ func (o *RecaptchaRequiredError) SetErrorCode(v string) {
 
 // GetDisplayMessage returns the DisplayMessage field value
 func (o *RecaptchaRequiredError) GetDisplayMessage() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *RecaptchaRequiredError) GetDisplayMessage() string {
 // GetDisplayMessageOk returns a tuple with the DisplayMessage field value
 // and a boolean to check if the value has been set.
 func (o *RecaptchaRequiredError) GetDisplayMessageOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DisplayMessage, true
@@ -132,7 +132,7 @@ func (o *RecaptchaRequiredError) SetDisplayMessage(v string) {
 
 // GetHttpCode returns the HttpCode field value
 func (o *RecaptchaRequiredError) GetHttpCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *RecaptchaRequiredError) GetHttpCode() string {
 // GetHttpCodeOk returns a tuple with the HttpCode field value
 // and a boolean to check if the value has been set.
 func (o *RecaptchaRequiredError) GetHttpCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.HttpCode, true
@@ -156,7 +156,7 @@ func (o *RecaptchaRequiredError) SetHttpCode(v string) {
 
 // GetLinkUserExperience returns the LinkUserExperience field value
 func (o *RecaptchaRequiredError) GetLinkUserExperience() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -167,7 +167,7 @@ func (o *RecaptchaRequiredError) GetLinkUserExperience() string {
 // GetLinkUserExperienceOk returns a tuple with the LinkUserExperience field value
 // and a boolean to check if the value has been set.
 func (o *RecaptchaRequiredError) GetLinkUserExperienceOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.LinkUserExperience, true
@@ -180,7 +180,7 @@ func (o *RecaptchaRequiredError) SetLinkUserExperience(v string) {
 
 // GetCommonCauses returns the CommonCauses field value
 func (o *RecaptchaRequiredError) GetCommonCauses() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *RecaptchaRequiredError) GetCommonCauses() string {
 // GetCommonCausesOk returns a tuple with the CommonCauses field value
 // and a boolean to check if the value has been set.
 func (o *RecaptchaRequiredError) GetCommonCausesOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.CommonCauses, true
@@ -204,7 +204,7 @@ func (o *RecaptchaRequiredError) SetCommonCauses(v string) {
 
 // GetTroubleshootingSteps returns the TroubleshootingSteps field value
 func (o *RecaptchaRequiredError) GetTroubleshootingSteps() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -215,7 +215,7 @@ func (o *RecaptchaRequiredError) GetTroubleshootingSteps() string {
 // GetTroubleshootingStepsOk returns a tuple with the TroubleshootingSteps field value
 // and a boolean to check if the value has been set.
 func (o *RecaptchaRequiredError) GetTroubleshootingStepsOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.TroubleshootingSteps, true
@@ -315,5 +315,3 @@ func (v *NullableRecaptchaRequiredError) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

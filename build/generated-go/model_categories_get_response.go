@@ -19,7 +19,7 @@ type CategoriesGetResponse struct {
 	// An array of all of the transaction categories used by Plaid.
 	Categories []Category `json:"categories"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _CategoriesGetResponse CategoriesGetResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCategoriesGetResponse(categories []Category, requestId string, ) *CategoriesGetResponse {
+func NewCategoriesGetResponse(categories []Category, requestId string) *CategoriesGetResponse {
 	this := CategoriesGetResponse{}
 	this.Categories = categories
 	this.RequestId = requestId
@@ -46,7 +46,7 @@ func NewCategoriesGetResponseWithDefaults() *CategoriesGetResponse {
 
 // GetCategories returns the Categories field value
 func (o *CategoriesGetResponse) GetCategories() []Category {
-	if o == nil  {
+	if o == nil {
 		var ret []Category
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *CategoriesGetResponse) GetCategories() []Category {
 // GetCategoriesOk returns a tuple with the Categories field value
 // and a boolean to check if the value has been set.
 func (o *CategoriesGetResponse) GetCategoriesOk() (*[]Category, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Categories, true
@@ -70,7 +70,7 @@ func (o *CategoriesGetResponse) SetCategories(v []Category) {
 
 // GetRequestId returns the RequestId field value
 func (o *CategoriesGetResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *CategoriesGetResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *CategoriesGetResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -161,5 +161,3 @@ func (v *NullableCategoriesGetResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

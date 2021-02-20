@@ -16,7 +16,7 @@ import (
 
 // IncomeVerificationDocumentsDownloadResponse IncomeVerificationDocumentsDownloadResponse defines the response schema for `/income/verification/documents/download`.
 type IncomeVerificationDocumentsDownloadResponse struct {
-	Id string `json:"id"`
+	Id                   string `json:"id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -26,7 +26,7 @@ type _IncomeVerificationDocumentsDownloadResponse IncomeVerificationDocumentsDow
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIncomeVerificationDocumentsDownloadResponse(id string, ) *IncomeVerificationDocumentsDownloadResponse {
+func NewIncomeVerificationDocumentsDownloadResponse(id string) *IncomeVerificationDocumentsDownloadResponse {
 	this := IncomeVerificationDocumentsDownloadResponse{}
 	this.Id = id
 	return &this
@@ -42,7 +42,7 @@ func NewIncomeVerificationDocumentsDownloadResponseWithDefaults() *IncomeVerific
 
 // GetId returns the Id field value
 func (o *IncomeVerificationDocumentsDownloadResponse) GetId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *IncomeVerificationDocumentsDownloadResponse) GetId() string {
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *IncomeVerificationDocumentsDownloadResponse) GetIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Id, true
@@ -129,5 +129,3 @@ func (v *NullableIncomeVerificationDocumentsDownloadResponse) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

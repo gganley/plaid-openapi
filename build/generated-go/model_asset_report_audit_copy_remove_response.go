@@ -19,7 +19,7 @@ type AssetReportAuditCopyRemoveResponse struct {
 	// `true` if the Audit Copy was successfully removed.
 	Removed bool `json:"removed"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _AssetReportAuditCopyRemoveResponse AssetReportAuditCopyRemoveResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAssetReportAuditCopyRemoveResponse(removed bool, requestId string, ) *AssetReportAuditCopyRemoveResponse {
+func NewAssetReportAuditCopyRemoveResponse(removed bool, requestId string) *AssetReportAuditCopyRemoveResponse {
 	this := AssetReportAuditCopyRemoveResponse{}
 	this.Removed = removed
 	this.RequestId = requestId
@@ -46,7 +46,7 @@ func NewAssetReportAuditCopyRemoveResponseWithDefaults() *AssetReportAuditCopyRe
 
 // GetRemoved returns the Removed field value
 func (o *AssetReportAuditCopyRemoveResponse) GetRemoved() bool {
-	if o == nil  {
+	if o == nil {
 		var ret bool
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *AssetReportAuditCopyRemoveResponse) GetRemoved() bool {
 // GetRemovedOk returns a tuple with the Removed field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportAuditCopyRemoveResponse) GetRemovedOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Removed, true
@@ -70,7 +70,7 @@ func (o *AssetReportAuditCopyRemoveResponse) SetRemoved(v bool) {
 
 // GetRequestId returns the RequestId field value
 func (o *AssetReportAuditCopyRemoveResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *AssetReportAuditCopyRemoveResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportAuditCopyRemoveResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -161,5 +161,3 @@ func (v *NullableAssetReportAuditCopyRemoveResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

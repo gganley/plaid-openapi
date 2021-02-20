@@ -21,7 +21,7 @@ type BankTransferUser struct {
 	// The account holder’s email.
 	EmailAddress NullableString `json:"email_address,omitempty"`
 	// The account holder's routing number. This field is only used for response data. Do not provide this field when making requests.
-	RoutingNumber *string `json:"routing_number,omitempty"`
+	RoutingNumber        *string `json:"routing_number,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _BankTransferUser BankTransferUser
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBankTransferUser(legalName string, ) *BankTransferUser {
+func NewBankTransferUser(legalName string) *BankTransferUser {
 	this := BankTransferUser{}
 	this.LegalName = legalName
 	return &this
@@ -47,7 +47,7 @@ func NewBankTransferUserWithDefaults() *BankTransferUser {
 
 // GetLegalName returns the LegalName field value
 func (o *BankTransferUser) GetLegalName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *BankTransferUser) GetLegalName() string {
 // GetLegalNameOk returns a tuple with the LegalName field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferUser) GetLegalNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.LegalName, true
@@ -82,7 +82,7 @@ func (o *BankTransferUser) GetEmailAddress() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferUser) GetEmailAddressOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.EmailAddress.Get(), o.EmailAddress.IsSet()
@@ -101,6 +101,7 @@ func (o *BankTransferUser) HasEmailAddress() bool {
 func (o *BankTransferUser) SetEmailAddress(v string) {
 	o.EmailAddress.Set(&v)
 }
+
 // SetEmailAddressNil sets the value for EmailAddress to be an explicit nil
 func (o *BankTransferUser) SetEmailAddressNil() {
 	o.EmailAddress.Set(nil)
@@ -216,5 +217,3 @@ func (v *NullableBankTransferUser) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

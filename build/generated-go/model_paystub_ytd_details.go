@@ -19,7 +19,7 @@ type PaystubYTDDetails struct {
 	// Year-to-date gross earnings.
 	GrossEarnings float32 `json:"gross_earnings"`
 	// Year-to-date net (take home) earnings.
-	NetEarnings float32 `json:"net_earnings"`
+	NetEarnings          float32 `json:"net_earnings"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _PaystubYTDDetails PaystubYTDDetails
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaystubYTDDetails(grossEarnings float32, netEarnings float32, ) *PaystubYTDDetails {
+func NewPaystubYTDDetails(grossEarnings float32, netEarnings float32) *PaystubYTDDetails {
 	this := PaystubYTDDetails{}
 	this.GrossEarnings = grossEarnings
 	this.NetEarnings = netEarnings
@@ -46,7 +46,7 @@ func NewPaystubYTDDetailsWithDefaults() *PaystubYTDDetails {
 
 // GetGrossEarnings returns the GrossEarnings field value
 func (o *PaystubYTDDetails) GetGrossEarnings() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *PaystubYTDDetails) GetGrossEarnings() float32 {
 // GetGrossEarningsOk returns a tuple with the GrossEarnings field value
 // and a boolean to check if the value has been set.
 func (o *PaystubYTDDetails) GetGrossEarningsOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.GrossEarnings, true
@@ -70,7 +70,7 @@ func (o *PaystubYTDDetails) SetGrossEarnings(v float32) {
 
 // GetNetEarnings returns the NetEarnings field value
 func (o *PaystubYTDDetails) GetNetEarnings() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *PaystubYTDDetails) GetNetEarnings() float32 {
 // GetNetEarningsOk returns a tuple with the NetEarnings field value
 // and a boolean to check if the value has been set.
 func (o *PaystubYTDDetails) GetNetEarningsOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.NetEarnings, true
@@ -161,5 +161,3 @@ func (v *NullablePaystubYTDDetails) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

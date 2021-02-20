@@ -19,7 +19,7 @@ type BankTransferFailure struct {
 	// The ACH return code, e.g. `R01`.  A return code will be provided if and only if the transfer status is `reversed`. For a full listing of ACH return codes, see [Bank Transfers errors](/docs/errors/bank-transfers/#ach-return-codes).
 	AchReturnCode NullableString `json:"ach_return_code,omitempty"`
 	// A human-readable description of the reason for the failure or reversal.
-	Description *string `json:"description,omitempty"`
+	Description          *string `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -55,7 +55,7 @@ func (o *BankTransferFailure) GetAchReturnCode() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferFailure) GetAchReturnCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AchReturnCode.Get(), o.AchReturnCode.IsSet()
@@ -74,6 +74,7 @@ func (o *BankTransferFailure) HasAchReturnCode() bool {
 func (o *BankTransferFailure) SetAchReturnCode(v string) {
 	o.AchReturnCode.Set(&v)
 }
+
 // SetAchReturnCodeNil sets the value for AchReturnCode to be an explicit nil
 func (o *BankTransferFailure) SetAchReturnCodeNil() {
 	o.AchReturnCode.Set(nil)
@@ -185,5 +186,3 @@ func (v *NullableBankTransferFailure) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

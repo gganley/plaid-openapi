@@ -19,8 +19,8 @@ type PaymentInitiationPaymentGetResponse struct {
 	// The ID of the payment. Like all Plaid identifiers, the `payment_id` is case sensitive.
 	PaymentId string `json:"payment_id"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId *string `json:"request_id,omitempty"`
-	Amount PaymentAmount `json:"amount"`
+	RequestId *string       `json:"request_id,omitempty"`
+	Amount    PaymentAmount `json:"amount"`
 	// The status of the payment.  `PAYMENT_STATUS_INPUT_NEEDED`: This is the initial state of all payments. It indicates that the payment is waiting on user input to continue processing. A payment may re-enter this state later on if further input is needed.  `PAYMENT_STATUS_PROCESSING`: The payment is currently being processed. The payment will automatically exit this state when processing is complete.  `PAYMENT_STATUS_INITIATED`: The payment has been successfully initiated and is considered complete.  `PAYMENT_STATUS_COMPLETED`: Indicates that the standing order has been successfully established. This state is only used for standing orders.  `PAYMENT_STATUS_INSUFFICIENT_FUNDS`: The payment has failed due to insufficient funds.  `PAYMENT_STATUS_FAILED`: The payment has failed to be initiated. This error is retryable once the root cause is resolved.  `PAYMENT_STATUS_BLOCKED`: The payment has been blocked. This is a retryable error.  `PAYMENT_STATUS_UNKNOWN`: The payment status is unknown.
 	Status string `json:"status"`
 	// The ID of the recipient
@@ -28,9 +28,9 @@ type PaymentInitiationPaymentGetResponse struct {
 	// A reference for the payment.
 	Reference string `json:"reference"`
 	// The date and time of the last time the `status` was updated, in IS0 8601 format
-	LastStatusUpdate string `json:"last_status_update"`
-	Schedule NullableExternalPaymentSchedule `json:"schedule,omitempty"`
-	AdjustedReference NullableString `json:"adjusted_reference,omitempty"`
+	LastStatusUpdate     string                          `json:"last_status_update"`
+	Schedule             NullableExternalPaymentSchedule `json:"schedule,omitempty"`
+	AdjustedReference    NullableString                  `json:"adjusted_reference,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -40,7 +40,7 @@ type _PaymentInitiationPaymentGetResponse PaymentInitiationPaymentGetResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaymentInitiationPaymentGetResponse(paymentId string, amount PaymentAmount, status string, recipientId string, reference string, lastStatusUpdate string, ) *PaymentInitiationPaymentGetResponse {
+func NewPaymentInitiationPaymentGetResponse(paymentId string, amount PaymentAmount, status string, recipientId string, reference string, lastStatusUpdate string) *PaymentInitiationPaymentGetResponse {
 	this := PaymentInitiationPaymentGetResponse{}
 	this.PaymentId = paymentId
 	this.Amount = amount
@@ -61,7 +61,7 @@ func NewPaymentInitiationPaymentGetResponseWithDefaults() *PaymentInitiationPaym
 
 // GetPaymentId returns the PaymentId field value
 func (o *PaymentInitiationPaymentGetResponse) GetPaymentId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -72,7 +72,7 @@ func (o *PaymentInitiationPaymentGetResponse) GetPaymentId() string {
 // GetPaymentIdOk returns a tuple with the PaymentId field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationPaymentGetResponse) GetPaymentIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PaymentId, true
@@ -117,7 +117,7 @@ func (o *PaymentInitiationPaymentGetResponse) SetRequestId(v string) {
 
 // GetAmount returns the Amount field value
 func (o *PaymentInitiationPaymentGetResponse) GetAmount() PaymentAmount {
-	if o == nil  {
+	if o == nil {
 		var ret PaymentAmount
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *PaymentInitiationPaymentGetResponse) GetAmount() PaymentAmount {
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationPaymentGetResponse) GetAmountOk() (*PaymentAmount, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Amount, true
@@ -141,7 +141,7 @@ func (o *PaymentInitiationPaymentGetResponse) SetAmount(v PaymentAmount) {
 
 // GetStatus returns the Status field value
 func (o *PaymentInitiationPaymentGetResponse) GetStatus() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *PaymentInitiationPaymentGetResponse) GetStatus() string {
 // GetStatusOk returns a tuple with the Status field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationPaymentGetResponse) GetStatusOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Status, true
@@ -165,7 +165,7 @@ func (o *PaymentInitiationPaymentGetResponse) SetStatus(v string) {
 
 // GetRecipientId returns the RecipientId field value
 func (o *PaymentInitiationPaymentGetResponse) GetRecipientId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *PaymentInitiationPaymentGetResponse) GetRecipientId() string {
 // GetRecipientIdOk returns a tuple with the RecipientId field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationPaymentGetResponse) GetRecipientIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RecipientId, true
@@ -189,7 +189,7 @@ func (o *PaymentInitiationPaymentGetResponse) SetRecipientId(v string) {
 
 // GetReference returns the Reference field value
 func (o *PaymentInitiationPaymentGetResponse) GetReference() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -200,7 +200,7 @@ func (o *PaymentInitiationPaymentGetResponse) GetReference() string {
 // GetReferenceOk returns a tuple with the Reference field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationPaymentGetResponse) GetReferenceOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -213,7 +213,7 @@ func (o *PaymentInitiationPaymentGetResponse) SetReference(v string) {
 
 // GetLastStatusUpdate returns the LastStatusUpdate field value
 func (o *PaymentInitiationPaymentGetResponse) GetLastStatusUpdate() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -224,7 +224,7 @@ func (o *PaymentInitiationPaymentGetResponse) GetLastStatusUpdate() string {
 // GetLastStatusUpdateOk returns a tuple with the LastStatusUpdate field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationPaymentGetResponse) GetLastStatusUpdateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.LastStatusUpdate, true
@@ -248,7 +248,7 @@ func (o *PaymentInitiationPaymentGetResponse) GetSchedule() ExternalPaymentSched
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaymentInitiationPaymentGetResponse) GetScheduleOk() (*ExternalPaymentSchedule, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Schedule.Get(), o.Schedule.IsSet()
@@ -267,6 +267,7 @@ func (o *PaymentInitiationPaymentGetResponse) HasSchedule() bool {
 func (o *PaymentInitiationPaymentGetResponse) SetSchedule(v ExternalPaymentSchedule) {
 	o.Schedule.Set(&v)
 }
+
 // SetScheduleNil sets the value for Schedule to be an explicit nil
 func (o *PaymentInitiationPaymentGetResponse) SetScheduleNil() {
 	o.Schedule.Set(nil)
@@ -290,7 +291,7 @@ func (o *PaymentInitiationPaymentGetResponse) GetAdjustedReference() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaymentInitiationPaymentGetResponse) GetAdjustedReferenceOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AdjustedReference.Get(), o.AdjustedReference.IsSet()
@@ -309,6 +310,7 @@ func (o *PaymentInitiationPaymentGetResponse) HasAdjustedReference() bool {
 func (o *PaymentInitiationPaymentGetResponse) SetAdjustedReference(v string) {
 	o.AdjustedReference.Set(&v)
 }
+
 // SetAdjustedReferenceNil sets the value for AdjustedReference to be an explicit nil
 func (o *PaymentInitiationPaymentGetResponse) SetAdjustedReferenceNil() {
 	o.AdjustedReference.Set(nil)
@@ -416,5 +418,3 @@ func (v *NullablePaymentInitiationPaymentGetResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

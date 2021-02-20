@@ -19,7 +19,7 @@ type ProcessorTokenCreateResponse struct {
 	// The `processor_token` that can then be used by the Plaid partner to make API requests
 	ProcessorToken string `json:"processor_token"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _ProcessorTokenCreateResponse ProcessorTokenCreateResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProcessorTokenCreateResponse(processorToken string, requestId string, ) *ProcessorTokenCreateResponse {
+func NewProcessorTokenCreateResponse(processorToken string, requestId string) *ProcessorTokenCreateResponse {
 	this := ProcessorTokenCreateResponse{}
 	this.ProcessorToken = processorToken
 	this.RequestId = requestId
@@ -46,7 +46,7 @@ func NewProcessorTokenCreateResponseWithDefaults() *ProcessorTokenCreateResponse
 
 // GetProcessorToken returns the ProcessorToken field value
 func (o *ProcessorTokenCreateResponse) GetProcessorToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *ProcessorTokenCreateResponse) GetProcessorToken() string {
 // GetProcessorTokenOk returns a tuple with the ProcessorToken field value
 // and a boolean to check if the value has been set.
 func (o *ProcessorTokenCreateResponse) GetProcessorTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ProcessorToken, true
@@ -70,7 +70,7 @@ func (o *ProcessorTokenCreateResponse) SetProcessorToken(v string) {
 
 // GetRequestId returns the RequestId field value
 func (o *ProcessorTokenCreateResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *ProcessorTokenCreateResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *ProcessorTokenCreateResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -161,5 +161,3 @@ func (v *NullableProcessorTokenCreateResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

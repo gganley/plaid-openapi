@@ -17,11 +17,11 @@ import (
 // AuthGetResponse AuthGetResponse defines the response schema for `/auth/get`
 type AuthGetResponse struct {
 	// The `accounts` for which numbers are being retrieved.
-	Accounts []AccountBase `json:"accounts"`
-	Numbers AuthGetNumbers `json:"numbers"`
-	Item Item `json:"item"`
+	Accounts []AccountBase  `json:"accounts"`
+	Numbers  AuthGetNumbers `json:"numbers"`
+	Item     Item           `json:"item"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _AuthGetResponse AuthGetResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAuthGetResponse(accounts []AccountBase, numbers AuthGetNumbers, item Item, requestId string, ) *AuthGetResponse {
+func NewAuthGetResponse(accounts []AccountBase, numbers AuthGetNumbers, item Item, requestId string) *AuthGetResponse {
 	this := AuthGetResponse{}
 	this.Accounts = accounts
 	this.Numbers = numbers
@@ -50,7 +50,7 @@ func NewAuthGetResponseWithDefaults() *AuthGetResponse {
 
 // GetAccounts returns the Accounts field value
 func (o *AuthGetResponse) GetAccounts() []AccountBase {
-	if o == nil  {
+	if o == nil {
 		var ret []AccountBase
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *AuthGetResponse) GetAccounts() []AccountBase {
 // GetAccountsOk returns a tuple with the Accounts field value
 // and a boolean to check if the value has been set.
 func (o *AuthGetResponse) GetAccountsOk() (*[]AccountBase, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Accounts, true
@@ -74,7 +74,7 @@ func (o *AuthGetResponse) SetAccounts(v []AccountBase) {
 
 // GetNumbers returns the Numbers field value
 func (o *AuthGetResponse) GetNumbers() AuthGetNumbers {
-	if o == nil  {
+	if o == nil {
 		var ret AuthGetNumbers
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *AuthGetResponse) GetNumbers() AuthGetNumbers {
 // GetNumbersOk returns a tuple with the Numbers field value
 // and a boolean to check if the value has been set.
 func (o *AuthGetResponse) GetNumbersOk() (*AuthGetNumbers, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Numbers, true
@@ -98,7 +98,7 @@ func (o *AuthGetResponse) SetNumbers(v AuthGetNumbers) {
 
 // GetItem returns the Item field value
 func (o *AuthGetResponse) GetItem() Item {
-	if o == nil  {
+	if o == nil {
 		var ret Item
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *AuthGetResponse) GetItem() Item {
 // GetItemOk returns a tuple with the Item field value
 // and a boolean to check if the value has been set.
 func (o *AuthGetResponse) GetItemOk() (*Item, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Item, true
@@ -122,7 +122,7 @@ func (o *AuthGetResponse) SetItem(v Item) {
 
 // GetRequestId returns the RequestId field value
 func (o *AuthGetResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -133,7 +133,7 @@ func (o *AuthGetResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *AuthGetResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -221,5 +221,3 @@ func (v *NullableAuthGetResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

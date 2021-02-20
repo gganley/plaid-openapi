@@ -23,12 +23,12 @@ type LinkTokenGetMetadataResponse struct {
 	// The `country_codes` specified in the `/link/token/create` call.
 	CountryCodes *[]CountryCode `json:"country_codes,omitempty"`
 	// The `language` specified in the `/link/token/create` call.
-	Language NullableString `json:"language,omitempty"`
+	Language       NullableString          `json:"language,omitempty"`
 	AccountFilters *AccountFiltersResponse `json:"account_filters,omitempty"`
 	// The `redirect_uri` specified in the `/link/token/create` call.
 	RedirectUri NullableString `json:"redirect_uri,omitempty"`
 	// The `client_name` specified in the `/link/token/create` call.
-	ClientName NullableString `json:"client_name,omitempty"`
+	ClientName           NullableString `json:"client_name,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -96,7 +96,7 @@ func (o *LinkTokenGetMetadataResponse) GetWebhook() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LinkTokenGetMetadataResponse) GetWebhookOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Webhook.Get(), o.Webhook.IsSet()
@@ -115,6 +115,7 @@ func (o *LinkTokenGetMetadataResponse) HasWebhook() bool {
 func (o *LinkTokenGetMetadataResponse) SetWebhook(v string) {
 	o.Webhook.Set(&v)
 }
+
 // SetWebhookNil sets the value for Webhook to be an explicit nil
 func (o *LinkTokenGetMetadataResponse) SetWebhookNil() {
 	o.Webhook.Set(nil)
@@ -170,7 +171,7 @@ func (o *LinkTokenGetMetadataResponse) GetLanguage() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LinkTokenGetMetadataResponse) GetLanguageOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Language.Get(), o.Language.IsSet()
@@ -189,6 +190,7 @@ func (o *LinkTokenGetMetadataResponse) HasLanguage() bool {
 func (o *LinkTokenGetMetadataResponse) SetLanguage(v string) {
 	o.Language.Set(&v)
 }
+
 // SetLanguageNil sets the value for Language to be an explicit nil
 func (o *LinkTokenGetMetadataResponse) SetLanguageNil() {
 	o.Language.Set(nil)
@@ -244,7 +246,7 @@ func (o *LinkTokenGetMetadataResponse) GetRedirectUri() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LinkTokenGetMetadataResponse) GetRedirectUriOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RedirectUri.Get(), o.RedirectUri.IsSet()
@@ -263,6 +265,7 @@ func (o *LinkTokenGetMetadataResponse) HasRedirectUri() bool {
 func (o *LinkTokenGetMetadataResponse) SetRedirectUri(v string) {
 	o.RedirectUri.Set(&v)
 }
+
 // SetRedirectUriNil sets the value for RedirectUri to be an explicit nil
 func (o *LinkTokenGetMetadataResponse) SetRedirectUriNil() {
 	o.RedirectUri.Set(nil)
@@ -286,7 +289,7 @@ func (o *LinkTokenGetMetadataResponse) GetClientName() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LinkTokenGetMetadataResponse) GetClientNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ClientName.Get(), o.ClientName.IsSet()
@@ -305,6 +308,7 @@ func (o *LinkTokenGetMetadataResponse) HasClientName() bool {
 func (o *LinkTokenGetMetadataResponse) SetClientName(v string) {
 	o.ClientName.Set(&v)
 }
+
 // SetClientNameNil sets the value for ClientName to be an explicit nil
 func (o *LinkTokenGetMetadataResponse) SetClientNameNil() {
 	o.ClientName.Set(nil)
@@ -404,5 +408,3 @@ func (v *NullableLinkTokenGetMetadataResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

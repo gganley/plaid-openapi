@@ -16,7 +16,7 @@ import (
 
 // AssetReportTransaction struct for AssetReportTransaction
 type AssetReportTransaction struct {
-	// Please use the `payment_channel` field, `transaction_type` will be deprecated in the future.  `digital:` transactions that took place online.  `place:` transactions that were made at a physical location.  `special:` transactions that relate to banks, e.g. fees or deposits.  `unresolved:` transactions that do not fit into the other three types. 
+	// Please use the `payment_channel` field, `transaction_type` will be deprecated in the future.  `digital:` transactions that took place online.  `place:` transactions that were made at a physical location.  `special:` transactions that relate to banks, e.g. fees or deposits.  `unresolved:` transactions that do not fit into the other three types.
 	TransactionType *string `json:"transaction_type,omitempty"`
 	// The unique ID of the transaction. Like all Plaid identifiers, the `transaction_id` is case sensitive.
 	TransactionId string `json:"transaction_id"`
@@ -26,14 +26,14 @@ type AssetReportTransaction struct {
 	PendingTransactionId NullableString `json:"pending_transaction_id,omitempty"`
 	// When `true`, identifies the transaction as pending or unsettled. Pending transaction details (name, type, amount, category ID) may change before they are settled.
 	Pending bool `json:"pending"`
-	// The channel used to make a payment. `online:` transactions that took place online.  `in store:` transactions that were made at a physical location.  `other:` transactions that relate to banks, e.g. fees or deposits.  This field replaces the `transaction_type` field. 
-	PaymentChannel *string `json:"payment_channel,omitempty"`
-	PaymentMeta *PaymentMeta `json:"payment_meta,omitempty"`
+	// The channel used to make a payment. `online:` transactions that took place online.  `in store:` transactions that were made at a physical location.  `other:` transactions that relate to banks, e.g. fees or deposits.  This field replaces the `transaction_type` field.
+	PaymentChannel *string      `json:"payment_channel,omitempty"`
+	PaymentMeta    *PaymentMeta `json:"payment_meta,omitempty"`
 	// The merchant name or transaction description.  If the `transaction` object was returned by a Transactions endpoint such as `/transactions/get`, this field will always appear. If the `transaction` object was returned by an Assets endpoint such as `/asset_report/get/` or `/asset_report/pdf/get`, this field will only appear in an Asset Report with Insights.
 	Name *string `json:"name,omitempty"`
 	// The merchant name, as extracted by Plaid from the `name` field.
 	MerchantName NullableString `json:"merchant_name,omitempty"`
-	Location *Location `json:"location,omitempty"`
+	Location     *Location      `json:"location,omitempty"`
 	// The date that the transaction was authorized. Dates are returned in an ISO 8601 format ( `YYYY-MM-DD` ).
 	AuthorizedDate NullableString `json:"authorized_date,omitempty"`
 	// For pending transactions, the date that the transaction occurred; for posted transactions, the date that the transaction posted. Both dates are returned in an ISO 8601 format ( `YYYY-MM-DD` ).
@@ -49,12 +49,12 @@ type AssetReportTransaction struct {
 	// The settled value of the transaction, denominated in the account's currency, as stated in `iso_currency_code` or `unofficial_currency_code`. Positive values when money moves out of the account; negative values when money moves in. For example, debit card purchases are positive; credit card payments, direct deposits, and refunds are negative.
 	Amount float32 `json:"amount"`
 	// The ID of the account in which this transaction occurred.
-	AccountId string `json:"account_id"`
+	AccountId       string                  `json:"account_id"`
 	TransactionCode NullableTransactionCode `json:"transaction_code,omitempty"`
 	// The date on which the transaction took place, in IS0 8601 format.
 	DateTransacted NullableString `json:"date_transacted,omitempty"`
 	// The string returned by the financial institution to describe the transaction
-	OriginalDescription string `json:"original_description"`
+	OriginalDescription  string `json:"original_description"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -64,7 +64,7 @@ type _AssetReportTransaction AssetReportTransaction
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAssetReportTransaction(transactionId string, pending bool, date string, amount float32, accountId string, originalDescription string, ) *AssetReportTransaction {
+func NewAssetReportTransaction(transactionId string, pending bool, date string, amount float32, accountId string, originalDescription string) *AssetReportTransaction {
 	this := AssetReportTransaction{}
 	this.TransactionId = transactionId
 	this.Pending = pending
@@ -117,7 +117,7 @@ func (o *AssetReportTransaction) SetTransactionType(v string) {
 
 // GetTransactionId returns the TransactionId field value
 func (o *AssetReportTransaction) GetTransactionId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *AssetReportTransaction) GetTransactionId() string {
 // GetTransactionIdOk returns a tuple with the TransactionId field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportTransaction) GetTransactionIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.TransactionId, true
@@ -152,7 +152,7 @@ func (o *AssetReportTransaction) GetAccountOwner() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetReportTransaction) GetAccountOwnerOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AccountOwner.Get(), o.AccountOwner.IsSet()
@@ -171,6 +171,7 @@ func (o *AssetReportTransaction) HasAccountOwner() bool {
 func (o *AssetReportTransaction) SetAccountOwner(v string) {
 	o.AccountOwner.Set(&v)
 }
+
 // SetAccountOwnerNil sets the value for AccountOwner to be an explicit nil
 func (o *AssetReportTransaction) SetAccountOwnerNil() {
 	o.AccountOwner.Set(nil)
@@ -194,7 +195,7 @@ func (o *AssetReportTransaction) GetPendingTransactionId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetReportTransaction) GetPendingTransactionIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PendingTransactionId.Get(), o.PendingTransactionId.IsSet()
@@ -213,6 +214,7 @@ func (o *AssetReportTransaction) HasPendingTransactionId() bool {
 func (o *AssetReportTransaction) SetPendingTransactionId(v string) {
 	o.PendingTransactionId.Set(&v)
 }
+
 // SetPendingTransactionIdNil sets the value for PendingTransactionId to be an explicit nil
 func (o *AssetReportTransaction) SetPendingTransactionIdNil() {
 	o.PendingTransactionId.Set(nil)
@@ -225,7 +227,7 @@ func (o *AssetReportTransaction) UnsetPendingTransactionId() {
 
 // GetPending returns the Pending field value
 func (o *AssetReportTransaction) GetPending() bool {
-	if o == nil  {
+	if o == nil {
 		var ret bool
 		return ret
 	}
@@ -236,7 +238,7 @@ func (o *AssetReportTransaction) GetPending() bool {
 // GetPendingOk returns a tuple with the Pending field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportTransaction) GetPendingOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Pending, true
@@ -356,7 +358,7 @@ func (o *AssetReportTransaction) GetMerchantName() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetReportTransaction) GetMerchantNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MerchantName.Get(), o.MerchantName.IsSet()
@@ -375,6 +377,7 @@ func (o *AssetReportTransaction) HasMerchantName() bool {
 func (o *AssetReportTransaction) SetMerchantName(v string) {
 	o.MerchantName.Set(&v)
 }
+
 // SetMerchantNameNil sets the value for MerchantName to be an explicit nil
 func (o *AssetReportTransaction) SetMerchantNameNil() {
 	o.MerchantName.Set(nil)
@@ -430,7 +433,7 @@ func (o *AssetReportTransaction) GetAuthorizedDate() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetReportTransaction) GetAuthorizedDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AuthorizedDate.Get(), o.AuthorizedDate.IsSet()
@@ -449,6 +452,7 @@ func (o *AssetReportTransaction) HasAuthorizedDate() bool {
 func (o *AssetReportTransaction) SetAuthorizedDate(v string) {
 	o.AuthorizedDate.Set(&v)
 }
+
 // SetAuthorizedDateNil sets the value for AuthorizedDate to be an explicit nil
 func (o *AssetReportTransaction) SetAuthorizedDateNil() {
 	o.AuthorizedDate.Set(nil)
@@ -461,7 +465,7 @@ func (o *AssetReportTransaction) UnsetAuthorizedDate() {
 
 // GetDate returns the Date field value
 func (o *AssetReportTransaction) GetDate() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -472,7 +476,7 @@ func (o *AssetReportTransaction) GetDate() string {
 // GetDateOk returns a tuple with the Date field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportTransaction) GetDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Date, true
@@ -517,7 +521,7 @@ func (o *AssetReportTransaction) SetCategoryId(v string) {
 
 // GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AssetReportTransaction) GetCategory() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -561,7 +565,7 @@ func (o *AssetReportTransaction) GetUnofficialCurrencyCode() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetReportTransaction) GetUnofficialCurrencyCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UnofficialCurrencyCode.Get(), o.UnofficialCurrencyCode.IsSet()
@@ -580,6 +584,7 @@ func (o *AssetReportTransaction) HasUnofficialCurrencyCode() bool {
 func (o *AssetReportTransaction) SetUnofficialCurrencyCode(v string) {
 	o.UnofficialCurrencyCode.Set(&v)
 }
+
 // SetUnofficialCurrencyCodeNil sets the value for UnofficialCurrencyCode to be an explicit nil
 func (o *AssetReportTransaction) SetUnofficialCurrencyCodeNil() {
 	o.UnofficialCurrencyCode.Set(nil)
@@ -603,7 +608,7 @@ func (o *AssetReportTransaction) GetIsoCurrencyCode() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetReportTransaction) GetIsoCurrencyCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.IsoCurrencyCode.Get(), o.IsoCurrencyCode.IsSet()
@@ -622,6 +627,7 @@ func (o *AssetReportTransaction) HasIsoCurrencyCode() bool {
 func (o *AssetReportTransaction) SetIsoCurrencyCode(v string) {
 	o.IsoCurrencyCode.Set(&v)
 }
+
 // SetIsoCurrencyCodeNil sets the value for IsoCurrencyCode to be an explicit nil
 func (o *AssetReportTransaction) SetIsoCurrencyCodeNil() {
 	o.IsoCurrencyCode.Set(nil)
@@ -634,7 +640,7 @@ func (o *AssetReportTransaction) UnsetIsoCurrencyCode() {
 
 // GetAmount returns the Amount field value
 func (o *AssetReportTransaction) GetAmount() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -645,7 +651,7 @@ func (o *AssetReportTransaction) GetAmount() float32 {
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportTransaction) GetAmountOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Amount, true
@@ -658,7 +664,7 @@ func (o *AssetReportTransaction) SetAmount(v float32) {
 
 // GetAccountId returns the AccountId field value
 func (o *AssetReportTransaction) GetAccountId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -669,7 +675,7 @@ func (o *AssetReportTransaction) GetAccountId() string {
 // GetAccountIdOk returns a tuple with the AccountId field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportTransaction) GetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountId, true
@@ -693,7 +699,7 @@ func (o *AssetReportTransaction) GetTransactionCode() TransactionCode {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetReportTransaction) GetTransactionCodeOk() (*TransactionCode, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TransactionCode.Get(), o.TransactionCode.IsSet()
@@ -712,6 +718,7 @@ func (o *AssetReportTransaction) HasTransactionCode() bool {
 func (o *AssetReportTransaction) SetTransactionCode(v TransactionCode) {
 	o.TransactionCode.Set(&v)
 }
+
 // SetTransactionCodeNil sets the value for TransactionCode to be an explicit nil
 func (o *AssetReportTransaction) SetTransactionCodeNil() {
 	o.TransactionCode.Set(nil)
@@ -735,7 +742,7 @@ func (o *AssetReportTransaction) GetDateTransacted() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetReportTransaction) GetDateTransactedOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DateTransacted.Get(), o.DateTransacted.IsSet()
@@ -754,6 +761,7 @@ func (o *AssetReportTransaction) HasDateTransacted() bool {
 func (o *AssetReportTransaction) SetDateTransacted(v string) {
 	o.DateTransacted.Set(&v)
 }
+
 // SetDateTransactedNil sets the value for DateTransacted to be an explicit nil
 func (o *AssetReportTransaction) SetDateTransactedNil() {
 	o.DateTransacted.Set(nil)
@@ -766,7 +774,7 @@ func (o *AssetReportTransaction) UnsetDateTransacted() {
 
 // GetOriginalDescription returns the OriginalDescription field value
 func (o *AssetReportTransaction) GetOriginalDescription() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -777,7 +785,7 @@ func (o *AssetReportTransaction) GetOriginalDescription() string {
 // GetOriginalDescriptionOk returns a tuple with the OriginalDescription field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportTransaction) GetOriginalDescriptionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.OriginalDescription, true
@@ -933,5 +941,3 @@ func (v *NullableAssetReportTransaction) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

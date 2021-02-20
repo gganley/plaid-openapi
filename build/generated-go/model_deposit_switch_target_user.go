@@ -23,10 +23,10 @@ type DepositSwitchTargetUser struct {
 	// The phone number of the user. The endpoint can accept a variety of phone number formats, including E.164.
 	Phone string `json:"phone"`
 	// The email address of the user.
-	Email string `json:"email"`
+	Email   string                    `json:"email"`
 	Address *DepositSwitchAddressData `json:"address,omitempty"`
 	// The taxpayer ID of the user, generally their SSN, EIN, or TIN.
-	TaxPayerId *string `json:"tax_payer_id,omitempty"`
+	TaxPayerId           *string `json:"tax_payer_id,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -36,7 +36,7 @@ type _DepositSwitchTargetUser DepositSwitchTargetUser
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDepositSwitchTargetUser(givenName string, familyName string, phone string, email string, ) *DepositSwitchTargetUser {
+func NewDepositSwitchTargetUser(givenName string, familyName string, phone string, email string) *DepositSwitchTargetUser {
 	this := DepositSwitchTargetUser{}
 	this.GivenName = givenName
 	this.FamilyName = familyName
@@ -55,7 +55,7 @@ func NewDepositSwitchTargetUserWithDefaults() *DepositSwitchTargetUser {
 
 // GetGivenName returns the GivenName field value
 func (o *DepositSwitchTargetUser) GetGivenName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *DepositSwitchTargetUser) GetGivenName() string {
 // GetGivenNameOk returns a tuple with the GivenName field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchTargetUser) GetGivenNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.GivenName, true
@@ -79,7 +79,7 @@ func (o *DepositSwitchTargetUser) SetGivenName(v string) {
 
 // GetFamilyName returns the FamilyName field value
 func (o *DepositSwitchTargetUser) GetFamilyName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *DepositSwitchTargetUser) GetFamilyName() string {
 // GetFamilyNameOk returns a tuple with the FamilyName field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchTargetUser) GetFamilyNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.FamilyName, true
@@ -103,7 +103,7 @@ func (o *DepositSwitchTargetUser) SetFamilyName(v string) {
 
 // GetPhone returns the Phone field value
 func (o *DepositSwitchTargetUser) GetPhone() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *DepositSwitchTargetUser) GetPhone() string {
 // GetPhoneOk returns a tuple with the Phone field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchTargetUser) GetPhoneOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Phone, true
@@ -127,7 +127,7 @@ func (o *DepositSwitchTargetUser) SetPhone(v string) {
 
 // GetEmail returns the Email field value
 func (o *DepositSwitchTargetUser) GetEmail() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *DepositSwitchTargetUser) GetEmail() string {
 // GetEmailOk returns a tuple with the Email field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchTargetUser) GetEmailOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Email, true
@@ -298,5 +298,3 @@ func (v *NullableDepositSwitchTargetUser) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -23,10 +23,10 @@ type AssetReport struct {
 	// The date and time when the Asset Report was created, in ISO 8601 format (e.g. \"2018-04-12T03:32:11Z\").
 	DateGenerated string `json:"date_generated"`
 	// The duration of transaction history you requested
-	DaysRequested float32 `json:"days_requested"`
-	User AssetReportUser `json:"user"`
+	DaysRequested float32         `json:"days_requested"`
+	User          AssetReportUser `json:"user"`
 	// Data returned by Plaid about each of the Items included in the Asset Report.
-	Items []AssetReportItem `json:"items"`
+	Items                []AssetReportItem `json:"items"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -36,7 +36,7 @@ type _AssetReport AssetReport
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAssetReport(assetReportId string, clientReportId string, dateGenerated string, daysRequested float32, user AssetReportUser, items []AssetReportItem, ) *AssetReport {
+func NewAssetReport(assetReportId string, clientReportId string, dateGenerated string, daysRequested float32, user AssetReportUser, items []AssetReportItem) *AssetReport {
 	this := AssetReport{}
 	this.AssetReportId = assetReportId
 	this.ClientReportId = clientReportId
@@ -57,7 +57,7 @@ func NewAssetReportWithDefaults() *AssetReport {
 
 // GetAssetReportId returns the AssetReportId field value
 func (o *AssetReport) GetAssetReportId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -68,7 +68,7 @@ func (o *AssetReport) GetAssetReportId() string {
 // GetAssetReportIdOk returns a tuple with the AssetReportId field value
 // and a boolean to check if the value has been set.
 func (o *AssetReport) GetAssetReportIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AssetReportId, true
@@ -81,7 +81,7 @@ func (o *AssetReport) SetAssetReportId(v string) {
 
 // GetClientReportId returns the ClientReportId field value
 func (o *AssetReport) GetClientReportId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *AssetReport) GetClientReportId() string {
 // GetClientReportIdOk returns a tuple with the ClientReportId field value
 // and a boolean to check if the value has been set.
 func (o *AssetReport) GetClientReportIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClientReportId, true
@@ -105,7 +105,7 @@ func (o *AssetReport) SetClientReportId(v string) {
 
 // GetDateGenerated returns the DateGenerated field value
 func (o *AssetReport) GetDateGenerated() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *AssetReport) GetDateGenerated() string {
 // GetDateGeneratedOk returns a tuple with the DateGenerated field value
 // and a boolean to check if the value has been set.
 func (o *AssetReport) GetDateGeneratedOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DateGenerated, true
@@ -129,7 +129,7 @@ func (o *AssetReport) SetDateGenerated(v string) {
 
 // GetDaysRequested returns the DaysRequested field value
 func (o *AssetReport) GetDaysRequested() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *AssetReport) GetDaysRequested() float32 {
 // GetDaysRequestedOk returns a tuple with the DaysRequested field value
 // and a boolean to check if the value has been set.
 func (o *AssetReport) GetDaysRequestedOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DaysRequested, true
@@ -153,7 +153,7 @@ func (o *AssetReport) SetDaysRequested(v float32) {
 
 // GetUser returns the User field value
 func (o *AssetReport) GetUser() AssetReportUser {
-	if o == nil  {
+	if o == nil {
 		var ret AssetReportUser
 		return ret
 	}
@@ -164,7 +164,7 @@ func (o *AssetReport) GetUser() AssetReportUser {
 // GetUserOk returns a tuple with the User field value
 // and a boolean to check if the value has been set.
 func (o *AssetReport) GetUserOk() (*AssetReportUser, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.User, true
@@ -177,7 +177,7 @@ func (o *AssetReport) SetUser(v AssetReportUser) {
 
 // GetItems returns the Items field value
 func (o *AssetReport) GetItems() []AssetReportItem {
-	if o == nil  {
+	if o == nil {
 		var ret []AssetReportItem
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *AssetReport) GetItems() []AssetReportItem {
 // GetItemsOk returns a tuple with the Items field value
 // and a boolean to check if the value has been set.
 func (o *AssetReport) GetItemsOk() (*[]AssetReportItem, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Items, true
@@ -284,5 +284,3 @@ func (v *NullableAssetReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

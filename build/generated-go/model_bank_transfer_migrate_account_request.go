@@ -25,7 +25,7 @@ type BankTransferMigrateAccountRequest struct {
 	// The user's routing number.
 	RoutingNumber string `json:"routing_number"`
 	// The type of the bank account (`checking` or `savings`).
-	AccountType string `json:"account_type"`
+	AccountType          string `json:"account_type"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -35,7 +35,7 @@ type _BankTransferMigrateAccountRequest BankTransferMigrateAccountRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBankTransferMigrateAccountRequest(accountNumber string, routingNumber string, accountType string, ) *BankTransferMigrateAccountRequest {
+func NewBankTransferMigrateAccountRequest(accountNumber string, routingNumber string, accountType string) *BankTransferMigrateAccountRequest {
 	this := BankTransferMigrateAccountRequest{}
 	this.AccountNumber = accountNumber
 	this.RoutingNumber = routingNumber
@@ -117,7 +117,7 @@ func (o *BankTransferMigrateAccountRequest) SetSecret(v string) {
 
 // GetAccountNumber returns the AccountNumber field value
 func (o *BankTransferMigrateAccountRequest) GetAccountNumber() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *BankTransferMigrateAccountRequest) GetAccountNumber() string {
 // GetAccountNumberOk returns a tuple with the AccountNumber field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferMigrateAccountRequest) GetAccountNumberOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountNumber, true
@@ -141,7 +141,7 @@ func (o *BankTransferMigrateAccountRequest) SetAccountNumber(v string) {
 
 // GetRoutingNumber returns the RoutingNumber field value
 func (o *BankTransferMigrateAccountRequest) GetRoutingNumber() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *BankTransferMigrateAccountRequest) GetRoutingNumber() string {
 // GetRoutingNumberOk returns a tuple with the RoutingNumber field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferMigrateAccountRequest) GetRoutingNumberOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RoutingNumber, true
@@ -165,7 +165,7 @@ func (o *BankTransferMigrateAccountRequest) SetRoutingNumber(v string) {
 
 // GetAccountType returns the AccountType field value
 func (o *BankTransferMigrateAccountRequest) GetAccountType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *BankTransferMigrateAccountRequest) GetAccountType() string {
 // GetAccountTypeOk returns a tuple with the AccountType field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferMigrateAccountRequest) GetAccountTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountType, true
@@ -268,5 +268,3 @@ func (v *NullableBankTransferMigrateAccountRequest) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

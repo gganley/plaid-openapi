@@ -19,10 +19,10 @@ type AssetsErrorWebhook struct {
 	// `ASSETS`
 	WebhookType string `json:"webhook_type"`
 	// `ERROR`
-	WebhookCode string `json:"webhook_code"`
-	Error NullableError `json:"error"`
+	WebhookCode string        `json:"webhook_code"`
+	Error       NullableError `json:"error"`
 	// The ID associated with the Asset Report.
-	AssetReportId string `json:"asset_report_id"`
+	AssetReportId        string `json:"asset_report_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -32,7 +32,7 @@ type _AssetsErrorWebhook AssetsErrorWebhook
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAssetsErrorWebhook(webhookType string, webhookCode string, error_ NullableError, assetReportId string, ) *AssetsErrorWebhook {
+func NewAssetsErrorWebhook(webhookType string, webhookCode string, error_ NullableError, assetReportId string) *AssetsErrorWebhook {
 	this := AssetsErrorWebhook{}
 	this.WebhookType = webhookType
 	this.WebhookCode = webhookCode
@@ -51,7 +51,7 @@ func NewAssetsErrorWebhookWithDefaults() *AssetsErrorWebhook {
 
 // GetWebhookType returns the WebhookType field value
 func (o *AssetsErrorWebhook) GetWebhookType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *AssetsErrorWebhook) GetWebhookType() string {
 // GetWebhookTypeOk returns a tuple with the WebhookType field value
 // and a boolean to check if the value has been set.
 func (o *AssetsErrorWebhook) GetWebhookTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookType, true
@@ -75,7 +75,7 @@ func (o *AssetsErrorWebhook) SetWebhookType(v string) {
 
 // GetWebhookCode returns the WebhookCode field value
 func (o *AssetsErrorWebhook) GetWebhookCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *AssetsErrorWebhook) GetWebhookCode() string {
 // GetWebhookCodeOk returns a tuple with the WebhookCode field value
 // and a boolean to check if the value has been set.
 func (o *AssetsErrorWebhook) GetWebhookCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookCode, true
@@ -112,7 +112,7 @@ func (o *AssetsErrorWebhook) GetError() Error {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetsErrorWebhook) GetErrorOk() (*Error, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Error.Get(), o.Error.IsSet()
@@ -125,7 +125,7 @@ func (o *AssetsErrorWebhook) SetError(v Error) {
 
 // GetAssetReportId returns the AssetReportId field value
 func (o *AssetsErrorWebhook) GetAssetReportId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *AssetsErrorWebhook) GetAssetReportId() string {
 // GetAssetReportIdOk returns a tuple with the AssetReportId field value
 // and a boolean to check if the value has been set.
 func (o *AssetsErrorWebhook) GetAssetReportIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AssetReportId, true
@@ -224,5 +224,3 @@ func (v *NullableAssetsErrorWebhook) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

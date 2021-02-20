@@ -37,7 +37,7 @@ type DepositSwitchGetResponse struct {
 	// ISO8601 date the deposit switch was completed. Always `null` if the deposit switch has not been completed.
 	DateCompleted NullableString `json:"date_completed"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -47,7 +47,7 @@ type _DepositSwitchGetResponse DepositSwitchGetResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDepositSwitchGetResponse(depositSwitchId string, targetAccountId NullableString, targetItemId NullableString, state string, accountHasMultipleAllocations NullableBool, isAllocatedRemainder NullableBool, percentAllocated NullableFloat32, amountAllocated NullableFloat32, dateCreated string, dateCompleted NullableString, requestId string, ) *DepositSwitchGetResponse {
+func NewDepositSwitchGetResponse(depositSwitchId string, targetAccountId NullableString, targetItemId NullableString, state string, accountHasMultipleAllocations NullableBool, isAllocatedRemainder NullableBool, percentAllocated NullableFloat32, amountAllocated NullableFloat32, dateCreated string, dateCompleted NullableString, requestId string) *DepositSwitchGetResponse {
 	this := DepositSwitchGetResponse{}
 	this.DepositSwitchId = depositSwitchId
 	this.TargetAccountId = targetAccountId
@@ -73,7 +73,7 @@ func NewDepositSwitchGetResponseWithDefaults() *DepositSwitchGetResponse {
 
 // GetDepositSwitchId returns the DepositSwitchId field value
 func (o *DepositSwitchGetResponse) GetDepositSwitchId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *DepositSwitchGetResponse) GetDepositSwitchId() string {
 // GetDepositSwitchIdOk returns a tuple with the DepositSwitchId field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchGetResponse) GetDepositSwitchIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DepositSwitchId, true
@@ -110,7 +110,7 @@ func (o *DepositSwitchGetResponse) GetTargetAccountId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DepositSwitchGetResponse) GetTargetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TargetAccountId.Get(), o.TargetAccountId.IsSet()
@@ -136,7 +136,7 @@ func (o *DepositSwitchGetResponse) GetTargetItemId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DepositSwitchGetResponse) GetTargetItemIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TargetItemId.Get(), o.TargetItemId.IsSet()
@@ -149,7 +149,7 @@ func (o *DepositSwitchGetResponse) SetTargetItemId(v string) {
 
 // GetState returns the State field value
 func (o *DepositSwitchGetResponse) GetState() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *DepositSwitchGetResponse) GetState() string {
 // GetStateOk returns a tuple with the State field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchGetResponse) GetStateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.State, true
@@ -186,7 +186,7 @@ func (o *DepositSwitchGetResponse) GetAccountHasMultipleAllocations() bool {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DepositSwitchGetResponse) GetAccountHasMultipleAllocationsOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AccountHasMultipleAllocations.Get(), o.AccountHasMultipleAllocations.IsSet()
@@ -212,7 +212,7 @@ func (o *DepositSwitchGetResponse) GetIsAllocatedRemainder() bool {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DepositSwitchGetResponse) GetIsAllocatedRemainderOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.IsAllocatedRemainder.Get(), o.IsAllocatedRemainder.IsSet()
@@ -238,7 +238,7 @@ func (o *DepositSwitchGetResponse) GetPercentAllocated() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DepositSwitchGetResponse) GetPercentAllocatedOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PercentAllocated.Get(), o.PercentAllocated.IsSet()
@@ -264,7 +264,7 @@ func (o *DepositSwitchGetResponse) GetAmountAllocated() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DepositSwitchGetResponse) GetAmountAllocatedOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AmountAllocated.Get(), o.AmountAllocated.IsSet()
@@ -277,7 +277,7 @@ func (o *DepositSwitchGetResponse) SetAmountAllocated(v float32) {
 
 // GetDateCreated returns the DateCreated field value
 func (o *DepositSwitchGetResponse) GetDateCreated() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -288,7 +288,7 @@ func (o *DepositSwitchGetResponse) GetDateCreated() string {
 // GetDateCreatedOk returns a tuple with the DateCreated field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchGetResponse) GetDateCreatedOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DateCreated, true
@@ -314,7 +314,7 @@ func (o *DepositSwitchGetResponse) GetDateCompleted() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DepositSwitchGetResponse) GetDateCompletedOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DateCompleted.Get(), o.DateCompleted.IsSet()
@@ -327,7 +327,7 @@ func (o *DepositSwitchGetResponse) SetDateCompleted(v string) {
 
 // GetRequestId returns the RequestId field value
 func (o *DepositSwitchGetResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -338,7 +338,7 @@ func (o *DepositSwitchGetResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchGetResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -454,5 +454,3 @@ func (v *NullableDepositSwitchGetResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

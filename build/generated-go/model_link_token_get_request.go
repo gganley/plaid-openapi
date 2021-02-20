@@ -21,7 +21,7 @@ type LinkTokenGetRequest struct {
 	// Your Plaid API `secret`.
 	Secret *string `json:"secret,omitempty"`
 	// A `link_token` from a previous invocation of `/link/token/create`
-	LinkToken string `json:"link_token"`
+	LinkToken            string `json:"link_token"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _LinkTokenGetRequest LinkTokenGetRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLinkTokenGetRequest(linkToken string, ) *LinkTokenGetRequest {
+func NewLinkTokenGetRequest(linkToken string) *LinkTokenGetRequest {
 	this := LinkTokenGetRequest{}
 	this.LinkToken = linkToken
 	return &this
@@ -111,7 +111,7 @@ func (o *LinkTokenGetRequest) SetSecret(v string) {
 
 // GetLinkToken returns the LinkToken field value
 func (o *LinkTokenGetRequest) GetLinkToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *LinkTokenGetRequest) GetLinkToken() string {
 // GetLinkTokenOk returns a tuple with the LinkToken field value
 // and a boolean to check if the value has been set.
 func (o *LinkTokenGetRequest) GetLinkTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.LinkToken, true
@@ -206,5 +206,3 @@ func (v *NullableLinkTokenGetRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

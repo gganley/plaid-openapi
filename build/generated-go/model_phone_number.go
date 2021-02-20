@@ -21,7 +21,7 @@ type PhoneNumber struct {
 	// When `true`, identifies the phone number as the primary number on an account.
 	Primary NullableBool `json:"primary,omitempty"`
 	// The type of phone number.
-	Type NullableString `json:"type,omitempty"`
+	Type                 NullableString `json:"type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _PhoneNumber PhoneNumber
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPhoneNumber(data string, ) *PhoneNumber {
+func NewPhoneNumber(data string) *PhoneNumber {
 	this := PhoneNumber{}
 	this.Data = data
 	return &this
@@ -47,7 +47,7 @@ func NewPhoneNumberWithDefaults() *PhoneNumber {
 
 // GetData returns the Data field value
 func (o *PhoneNumber) GetData() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *PhoneNumber) GetData() string {
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
 func (o *PhoneNumber) GetDataOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Data, true
@@ -82,7 +82,7 @@ func (o *PhoneNumber) GetPrimary() bool {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PhoneNumber) GetPrimaryOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Primary.Get(), o.Primary.IsSet()
@@ -101,6 +101,7 @@ func (o *PhoneNumber) HasPrimary() bool {
 func (o *PhoneNumber) SetPrimary(v bool) {
 	o.Primary.Set(&v)
 }
+
 // SetPrimaryNil sets the value for Primary to be an explicit nil
 func (o *PhoneNumber) SetPrimaryNil() {
 	o.Primary.Set(nil)
@@ -124,7 +125,7 @@ func (o *PhoneNumber) GetType() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PhoneNumber) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Type.Get(), o.Type.IsSet()
@@ -143,6 +144,7 @@ func (o *PhoneNumber) HasType() bool {
 func (o *PhoneNumber) SetType(v string) {
 	o.Type.Set(&v)
 }
+
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *PhoneNumber) SetTypeNil() {
 	o.Type.Set(nil)
@@ -226,5 +228,3 @@ func (v *NullablePhoneNumber) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

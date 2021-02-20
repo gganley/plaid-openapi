@@ -18,7 +18,7 @@ import (
 type BankTransferEventSyncResponse struct {
 	BankTransferEvents []BankTransferEvent `json:"bank_transfer_events"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -28,7 +28,7 @@ type _BankTransferEventSyncResponse BankTransferEventSyncResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBankTransferEventSyncResponse(bankTransferEvents []BankTransferEvent, requestId string, ) *BankTransferEventSyncResponse {
+func NewBankTransferEventSyncResponse(bankTransferEvents []BankTransferEvent, requestId string) *BankTransferEventSyncResponse {
 	this := BankTransferEventSyncResponse{}
 	this.BankTransferEvents = bankTransferEvents
 	this.RequestId = requestId
@@ -45,7 +45,7 @@ func NewBankTransferEventSyncResponseWithDefaults() *BankTransferEventSyncRespon
 
 // GetBankTransferEvents returns the BankTransferEvents field value
 func (o *BankTransferEventSyncResponse) GetBankTransferEvents() []BankTransferEvent {
-	if o == nil  {
+	if o == nil {
 		var ret []BankTransferEvent
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *BankTransferEventSyncResponse) GetBankTransferEvents() []BankTransferEv
 // GetBankTransferEventsOk returns a tuple with the BankTransferEvents field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferEventSyncResponse) GetBankTransferEventsOk() (*[]BankTransferEvent, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.BankTransferEvents, true
@@ -69,7 +69,7 @@ func (o *BankTransferEventSyncResponse) SetBankTransferEvents(v []BankTransferEv
 
 // GetRequestId returns the RequestId field value
 func (o *BankTransferEventSyncResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *BankTransferEventSyncResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferEventSyncResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -160,5 +160,3 @@ func (v *NullableBankTransferEventSyncResponse) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

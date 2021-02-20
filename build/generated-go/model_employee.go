@@ -17,10 +17,10 @@ import (
 // Employee Data about the employee.
 type Employee struct {
 	// The name of the employee.
-	Name NullableString `json:"name,omitempty"`
+	Name    NullableString      `json:"name,omitempty"`
 	Address NullableAddressData `json:"address,omitempty"`
 	// The SSN of the employee, with all but the last 4 digits masked out. For example: \"XXX-XX-1111\".
-	SsnMasked NullableString `json:"ssn_masked,omitempty"`
+	SsnMasked            NullableString `json:"ssn_masked,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -56,7 +56,7 @@ func (o *Employee) GetName() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Employee) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
@@ -75,6 +75,7 @@ func (o *Employee) HasName() bool {
 func (o *Employee) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *Employee) SetNameNil() {
 	o.Name.Set(nil)
@@ -98,7 +99,7 @@ func (o *Employee) GetAddress() AddressData {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Employee) GetAddressOk() (*AddressData, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Address.Get(), o.Address.IsSet()
@@ -117,6 +118,7 @@ func (o *Employee) HasAddress() bool {
 func (o *Employee) SetAddress(v AddressData) {
 	o.Address.Set(&v)
 }
+
 // SetAddressNil sets the value for Address to be an explicit nil
 func (o *Employee) SetAddressNil() {
 	o.Address.Set(nil)
@@ -140,7 +142,7 @@ func (o *Employee) GetSsnMasked() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Employee) GetSsnMaskedOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SsnMasked.Get(), o.SsnMasked.IsSet()
@@ -159,6 +161,7 @@ func (o *Employee) HasSsnMasked() bool {
 func (o *Employee) SetSsnMasked(v string) {
 	o.SsnMasked.Set(&v)
 }
+
 // SetSsnMaskedNil sets the value for SsnMasked to be an explicit nil
 func (o *Employee) SetSsnMaskedNil() {
 	o.SsnMasked.Set(nil)
@@ -242,5 +245,3 @@ func (v *NullableEmployee) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

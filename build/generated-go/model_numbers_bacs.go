@@ -21,7 +21,7 @@ type NumbersBACS struct {
 	// The BACS account number for the account
 	Account string `json:"account"`
 	// The BACS sort code for the account
-	SortCode string `json:"sort_code"`
+	SortCode             string `json:"sort_code"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _NumbersBACS NumbersBACS
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNumbersBACS(accountId string, account string, sortCode string, ) *NumbersBACS {
+func NewNumbersBACS(accountId string, account string, sortCode string) *NumbersBACS {
 	this := NumbersBACS{}
 	this.AccountId = accountId
 	this.Account = account
@@ -49,7 +49,7 @@ func NewNumbersBACSWithDefaults() *NumbersBACS {
 
 // GetAccountId returns the AccountId field value
 func (o *NumbersBACS) GetAccountId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *NumbersBACS) GetAccountId() string {
 // GetAccountIdOk returns a tuple with the AccountId field value
 // and a boolean to check if the value has been set.
 func (o *NumbersBACS) GetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountId, true
@@ -73,7 +73,7 @@ func (o *NumbersBACS) SetAccountId(v string) {
 
 // GetAccount returns the Account field value
 func (o *NumbersBACS) GetAccount() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *NumbersBACS) GetAccount() string {
 // GetAccountOk returns a tuple with the Account field value
 // and a boolean to check if the value has been set.
 func (o *NumbersBACS) GetAccountOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Account, true
@@ -97,7 +97,7 @@ func (o *NumbersBACS) SetAccount(v string) {
 
 // GetSortCode returns the SortCode field value
 func (o *NumbersBACS) GetSortCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *NumbersBACS) GetSortCode() string {
 // GetSortCodeOk returns a tuple with the SortCode field value
 // and a boolean to check if the value has been set.
 func (o *NumbersBACS) GetSortCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.SortCode, true
@@ -192,5 +192,3 @@ func (v *NullableNumbersBACS) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

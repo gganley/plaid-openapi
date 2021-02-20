@@ -16,7 +16,7 @@ import (
 
 // APR Information about the APR on the account.
 type APR struct {
-	// Annual Percentage Rate applied. 
+	// Annual Percentage Rate applied.
 	AprPercentage float32 `json:"apr_percentage"`
 	// The type of balance to which the APR applies.
 	AprType string `json:"apr_type"`
@@ -33,7 +33,7 @@ type _APR APR
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAPR(aprPercentage float32, aprType string, ) *APR {
+func NewAPR(aprPercentage float32, aprType string) *APR {
 	this := APR{}
 	this.AprPercentage = aprPercentage
 	this.AprType = aprType
@@ -50,7 +50,7 @@ func NewAPRWithDefaults() *APR {
 
 // GetAprPercentage returns the AprPercentage field value
 func (o *APR) GetAprPercentage() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *APR) GetAprPercentage() float32 {
 // GetAprPercentageOk returns a tuple with the AprPercentage field value
 // and a boolean to check if the value has been set.
 func (o *APR) GetAprPercentageOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AprPercentage, true
@@ -74,7 +74,7 @@ func (o *APR) SetAprPercentage(v float32) {
 
 // GetAprType returns the AprType field value
 func (o *APR) GetAprType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *APR) GetAprType() string {
 // GetAprTypeOk returns a tuple with the AprType field value
 // and a boolean to check if the value has been set.
 func (o *APR) GetAprTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AprType, true
@@ -109,7 +109,7 @@ func (o *APR) GetBalanceSubjectToApr() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *APR) GetBalanceSubjectToAprOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.BalanceSubjectToApr.Get(), o.BalanceSubjectToApr.IsSet()
@@ -128,6 +128,7 @@ func (o *APR) HasBalanceSubjectToApr() bool {
 func (o *APR) SetBalanceSubjectToApr(v float32) {
 	o.BalanceSubjectToApr.Set(&v)
 }
+
 // SetBalanceSubjectToAprNil sets the value for BalanceSubjectToApr to be an explicit nil
 func (o *APR) SetBalanceSubjectToAprNil() {
 	o.BalanceSubjectToApr.Set(nil)
@@ -151,7 +152,7 @@ func (o *APR) GetInterestChargeAmount() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *APR) GetInterestChargeAmountOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.InterestChargeAmount.Get(), o.InterestChargeAmount.IsSet()
@@ -170,6 +171,7 @@ func (o *APR) HasInterestChargeAmount() bool {
 func (o *APR) SetInterestChargeAmount(v float32) {
 	o.InterestChargeAmount.Set(&v)
 }
+
 // SetInterestChargeAmountNil sets the value for InterestChargeAmount to be an explicit nil
 func (o *APR) SetInterestChargeAmountNil() {
 	o.InterestChargeAmount.Set(nil)
@@ -257,5 +259,3 @@ func (v *NullableAPR) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

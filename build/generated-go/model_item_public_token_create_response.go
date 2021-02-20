@@ -18,10 +18,10 @@ import (
 // ItemPublicTokenCreateResponse ItemPublicTokenCreateResponse defines the response schema for `/item/public_token/create`
 type ItemPublicTokenCreateResponse struct {
 	// A `public_token` for the particular Item corresponding to the specified `access_token`
-	PublicToken string `json:"public_token"`
-	Expiration *time.Time `json:"expiration,omitempty"`
+	PublicToken string     `json:"public_token"`
+	Expiration  *time.Time `json:"expiration,omitempty"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _ItemPublicTokenCreateResponse ItemPublicTokenCreateResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewItemPublicTokenCreateResponse(publicToken string, requestId string, ) *ItemPublicTokenCreateResponse {
+func NewItemPublicTokenCreateResponse(publicToken string, requestId string) *ItemPublicTokenCreateResponse {
 	this := ItemPublicTokenCreateResponse{}
 	this.PublicToken = publicToken
 	this.RequestId = requestId
@@ -48,7 +48,7 @@ func NewItemPublicTokenCreateResponseWithDefaults() *ItemPublicTokenCreateRespon
 
 // GetPublicToken returns the PublicToken field value
 func (o *ItemPublicTokenCreateResponse) GetPublicToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *ItemPublicTokenCreateResponse) GetPublicToken() string {
 // GetPublicTokenOk returns a tuple with the PublicToken field value
 // and a boolean to check if the value has been set.
 func (o *ItemPublicTokenCreateResponse) GetPublicTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PublicToken, true
@@ -104,7 +104,7 @@ func (o *ItemPublicTokenCreateResponse) SetExpiration(v time.Time) {
 
 // GetRequestId returns the RequestId field value
 func (o *ItemPublicTokenCreateResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *ItemPublicTokenCreateResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *ItemPublicTokenCreateResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -199,5 +199,3 @@ func (v *NullableItemPublicTokenCreateResponse) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

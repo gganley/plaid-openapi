@@ -16,10 +16,10 @@ import (
 
 // InstitutionsSearchAccountFilter struct for InstitutionsSearchAccountFilter
 type InstitutionsSearchAccountFilter struct {
-	Loan *[]AccountSubtype `json:"loan,omitempty"`
-	Depository *[]AccountSubtype `json:"depository,omitempty"`
-	Credit *[]AccountSubtype `json:"credit,omitempty"`
-	Investment *[]AccountSubtype `json:"investment,omitempty"`
+	Loan                 *[]AccountSubtype `json:"loan,omitempty"`
+	Depository           *[]AccountSubtype `json:"depository,omitempty"`
+	Credit               *[]AccountSubtype `json:"credit,omitempty"`
+	Investment           *[]AccountSubtype `json:"investment,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -247,5 +247,3 @@ func (v *NullableInstitutionsSearchAccountFilter) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

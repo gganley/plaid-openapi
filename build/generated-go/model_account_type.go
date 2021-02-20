@@ -21,11 +21,11 @@ type AccountType string
 // List of AccountType
 const (
 	ACCOUNTTYPE_INVESTMENT AccountType = "investment"
-	ACCOUNTTYPE_CREDIT AccountType = "credit"
+	ACCOUNTTYPE_CREDIT     AccountType = "credit"
 	ACCOUNTTYPE_DEPOSITORY AccountType = "depository"
-	ACCOUNTTYPE_LOAN AccountType = "loan"
-	ACCOUNTTYPE_BROKERAGE AccountType = "brokerage"
-	ACCOUNTTYPE_OTHER AccountType = "other"
+	ACCOUNTTYPE_LOAN       AccountType = "loan"
+	ACCOUNTTYPE_BROKERAGE  AccountType = "brokerage"
+	ACCOUNTTYPE_OTHER      AccountType = "other"
 )
 
 func (v *AccountType) UnmarshalJSON(src []byte) error {
@@ -35,7 +35,7 @@ func (v *AccountType) UnmarshalJSON(src []byte) error {
 		return err
 	}
 	enumTypeValue := AccountType(value)
-	for _, existing := range []AccountType{ "investment", "credit", "depository", "loan", "brokerage", "other",   } {
+	for _, existing := range []AccountType{"investment", "credit", "depository", "loan", "brokerage", "other"} {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
@@ -85,4 +85,3 @@ func (v *NullableAccountType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

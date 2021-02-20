@@ -23,7 +23,7 @@ type IncomeVerificationStatusWebhook struct {
 	// The `income_verification_id` of the verification instance whose status is being reported.
 	IncomeVerificationId string `json:"income_verification_id"`
 	// `VERIFICATION_STATUS_PROCESSING_COMPLETE`: The income verification status processing has completed.  `VERIFICATION_STATUS_UPLOAD_ERROR`: An upload error occurred when the end user attempted to upload their verification documentation.  `VERIFICATION_STATUS_INVALID_TYPE`: The end user attempted to upload verification documentation in an unsupported file format.  `VERIFICATION_STATUS_DOCUMENT_REJECTED`: The documentation uploaded by the end user was recognized as a supported file format, but not recognized as a valid paystub.  `VERIFICATION_STATUS_PROCESSING_FAILED`: A failure occurred when attempting to process the verification documentation.
-	VerificationStatus string `json:"verification_status"`
+	VerificationStatus   string `json:"verification_status"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -33,7 +33,7 @@ type _IncomeVerificationStatusWebhook IncomeVerificationStatusWebhook
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIncomeVerificationStatusWebhook(webhookType string, webhookCode string, incomeVerificationId string, verificationStatus string, ) *IncomeVerificationStatusWebhook {
+func NewIncomeVerificationStatusWebhook(webhookType string, webhookCode string, incomeVerificationId string, verificationStatus string) *IncomeVerificationStatusWebhook {
 	this := IncomeVerificationStatusWebhook{}
 	this.WebhookType = webhookType
 	this.WebhookCode = webhookCode
@@ -52,7 +52,7 @@ func NewIncomeVerificationStatusWebhookWithDefaults() *IncomeVerificationStatusW
 
 // GetWebhookType returns the WebhookType field value
 func (o *IncomeVerificationStatusWebhook) GetWebhookType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *IncomeVerificationStatusWebhook) GetWebhookType() string {
 // GetWebhookTypeOk returns a tuple with the WebhookType field value
 // and a boolean to check if the value has been set.
 func (o *IncomeVerificationStatusWebhook) GetWebhookTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookType, true
@@ -76,7 +76,7 @@ func (o *IncomeVerificationStatusWebhook) SetWebhookType(v string) {
 
 // GetWebhookCode returns the WebhookCode field value
 func (o *IncomeVerificationStatusWebhook) GetWebhookCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *IncomeVerificationStatusWebhook) GetWebhookCode() string {
 // GetWebhookCodeOk returns a tuple with the WebhookCode field value
 // and a boolean to check if the value has been set.
 func (o *IncomeVerificationStatusWebhook) GetWebhookCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookCode, true
@@ -100,7 +100,7 @@ func (o *IncomeVerificationStatusWebhook) SetWebhookCode(v string) {
 
 // GetIncomeVerificationId returns the IncomeVerificationId field value
 func (o *IncomeVerificationStatusWebhook) GetIncomeVerificationId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *IncomeVerificationStatusWebhook) GetIncomeVerificationId() string {
 // GetIncomeVerificationIdOk returns a tuple with the IncomeVerificationId field value
 // and a boolean to check if the value has been set.
 func (o *IncomeVerificationStatusWebhook) GetIncomeVerificationIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.IncomeVerificationId, true
@@ -124,7 +124,7 @@ func (o *IncomeVerificationStatusWebhook) SetIncomeVerificationId(v string) {
 
 // GetVerificationStatus returns the VerificationStatus field value
 func (o *IncomeVerificationStatusWebhook) GetVerificationStatus() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -135,7 +135,7 @@ func (o *IncomeVerificationStatusWebhook) GetVerificationStatus() string {
 // GetVerificationStatusOk returns a tuple with the VerificationStatus field value
 // and a boolean to check if the value has been set.
 func (o *IncomeVerificationStatusWebhook) GetVerificationStatusOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.VerificationStatus, true
@@ -223,5 +223,3 @@ func (v *NullableIncomeVerificationStatusWebhook) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

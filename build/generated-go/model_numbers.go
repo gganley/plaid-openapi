@@ -31,7 +31,7 @@ type Numbers struct {
 	// International bank account number (IBAN). If no account number is specified via `account`, will also be used as the account number by default. Must be specified alongside `international_bic`.
 	InternationalIban string `json:"international_iban"`
 	// BACS sort code
-	BacsSortCode string `json:"bacs_sort_code"`
+	BacsSortCode         string `json:"bacs_sort_code"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -41,7 +41,7 @@ type _Numbers Numbers
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNumbers(account string, achRouting string, achWireRouting string, eftInstitution string, eftBranch string, internationalBic string, internationalIban string, bacsSortCode string, ) *Numbers {
+func NewNumbers(account string, achRouting string, achWireRouting string, eftInstitution string, eftBranch string, internationalBic string, internationalIban string, bacsSortCode string) *Numbers {
 	this := Numbers{}
 	this.Account = account
 	this.AchRouting = achRouting
@@ -64,7 +64,7 @@ func NewNumbersWithDefaults() *Numbers {
 
 // GetAccount returns the Account field value
 func (o *Numbers) GetAccount() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -75,7 +75,7 @@ func (o *Numbers) GetAccount() string {
 // GetAccountOk returns a tuple with the Account field value
 // and a boolean to check if the value has been set.
 func (o *Numbers) GetAccountOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Account, true
@@ -88,7 +88,7 @@ func (o *Numbers) SetAccount(v string) {
 
 // GetAchRouting returns the AchRouting field value
 func (o *Numbers) GetAchRouting() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -99,7 +99,7 @@ func (o *Numbers) GetAchRouting() string {
 // GetAchRoutingOk returns a tuple with the AchRouting field value
 // and a boolean to check if the value has been set.
 func (o *Numbers) GetAchRoutingOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AchRouting, true
@@ -112,7 +112,7 @@ func (o *Numbers) SetAchRouting(v string) {
 
 // GetAchWireRouting returns the AchWireRouting field value
 func (o *Numbers) GetAchWireRouting() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *Numbers) GetAchWireRouting() string {
 // GetAchWireRoutingOk returns a tuple with the AchWireRouting field value
 // and a boolean to check if the value has been set.
 func (o *Numbers) GetAchWireRoutingOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AchWireRouting, true
@@ -136,7 +136,7 @@ func (o *Numbers) SetAchWireRouting(v string) {
 
 // GetEftInstitution returns the EftInstitution field value
 func (o *Numbers) GetEftInstitution() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *Numbers) GetEftInstitution() string {
 // GetEftInstitutionOk returns a tuple with the EftInstitution field value
 // and a boolean to check if the value has been set.
 func (o *Numbers) GetEftInstitutionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.EftInstitution, true
@@ -160,7 +160,7 @@ func (o *Numbers) SetEftInstitution(v string) {
 
 // GetEftBranch returns the EftBranch field value
 func (o *Numbers) GetEftBranch() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *Numbers) GetEftBranch() string {
 // GetEftBranchOk returns a tuple with the EftBranch field value
 // and a boolean to check if the value has been set.
 func (o *Numbers) GetEftBranchOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.EftBranch, true
@@ -184,7 +184,7 @@ func (o *Numbers) SetEftBranch(v string) {
 
 // GetInternationalBic returns the InternationalBic field value
 func (o *Numbers) GetInternationalBic() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -195,7 +195,7 @@ func (o *Numbers) GetInternationalBic() string {
 // GetInternationalBicOk returns a tuple with the InternationalBic field value
 // and a boolean to check if the value has been set.
 func (o *Numbers) GetInternationalBicOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.InternationalBic, true
@@ -208,7 +208,7 @@ func (o *Numbers) SetInternationalBic(v string) {
 
 // GetInternationalIban returns the InternationalIban field value
 func (o *Numbers) GetInternationalIban() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *Numbers) GetInternationalIban() string {
 // GetInternationalIbanOk returns a tuple with the InternationalIban field value
 // and a boolean to check if the value has been set.
 func (o *Numbers) GetInternationalIbanOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.InternationalIban, true
@@ -232,7 +232,7 @@ func (o *Numbers) SetInternationalIban(v string) {
 
 // GetBacsSortCode returns the BacsSortCode field value
 func (o *Numbers) GetBacsSortCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -243,7 +243,7 @@ func (o *Numbers) GetBacsSortCode() string {
 // GetBacsSortCodeOk returns a tuple with the BacsSortCode field value
 // and a boolean to check if the value has been set.
 func (o *Numbers) GetBacsSortCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.BacsSortCode, true
@@ -347,5 +347,3 @@ func (v *NullableNumbers) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

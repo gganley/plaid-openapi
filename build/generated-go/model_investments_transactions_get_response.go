@@ -26,7 +26,7 @@ type InvestmentsTransactionsGetResponse struct {
 	// The total number of transactions available within the date range specified. If `total_investment_transactions` is larger than the size of the `transactions` array, more transactions are available and can be fetched via manipulating the `offset` parameter.'
 	TotalInvestmentTransactions int32 `json:"total_investment_transactions"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -36,7 +36,7 @@ type _InvestmentsTransactionsGetResponse InvestmentsTransactionsGetResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInvestmentsTransactionsGetResponse(item Item, accounts []AccountBase, securities []Security, investmentTransactions []InvestmentTransaction, totalInvestmentTransactions int32, requestId string, ) *InvestmentsTransactionsGetResponse {
+func NewInvestmentsTransactionsGetResponse(item Item, accounts []AccountBase, securities []Security, investmentTransactions []InvestmentTransaction, totalInvestmentTransactions int32, requestId string) *InvestmentsTransactionsGetResponse {
 	this := InvestmentsTransactionsGetResponse{}
 	this.Item = item
 	this.Accounts = accounts
@@ -57,7 +57,7 @@ func NewInvestmentsTransactionsGetResponseWithDefaults() *InvestmentsTransaction
 
 // GetItem returns the Item field value
 func (o *InvestmentsTransactionsGetResponse) GetItem() Item {
-	if o == nil  {
+	if o == nil {
 		var ret Item
 		return ret
 	}
@@ -68,7 +68,7 @@ func (o *InvestmentsTransactionsGetResponse) GetItem() Item {
 // GetItemOk returns a tuple with the Item field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentsTransactionsGetResponse) GetItemOk() (*Item, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Item, true
@@ -81,7 +81,7 @@ func (o *InvestmentsTransactionsGetResponse) SetItem(v Item) {
 
 // GetAccounts returns the Accounts field value
 func (o *InvestmentsTransactionsGetResponse) GetAccounts() []AccountBase {
-	if o == nil  {
+	if o == nil {
 		var ret []AccountBase
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *InvestmentsTransactionsGetResponse) GetAccounts() []AccountBase {
 // GetAccountsOk returns a tuple with the Accounts field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentsTransactionsGetResponse) GetAccountsOk() (*[]AccountBase, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Accounts, true
@@ -105,7 +105,7 @@ func (o *InvestmentsTransactionsGetResponse) SetAccounts(v []AccountBase) {
 
 // GetSecurities returns the Securities field value
 func (o *InvestmentsTransactionsGetResponse) GetSecurities() []Security {
-	if o == nil  {
+	if o == nil {
 		var ret []Security
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *InvestmentsTransactionsGetResponse) GetSecurities() []Security {
 // GetSecuritiesOk returns a tuple with the Securities field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentsTransactionsGetResponse) GetSecuritiesOk() (*[]Security, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Securities, true
@@ -129,7 +129,7 @@ func (o *InvestmentsTransactionsGetResponse) SetSecurities(v []Security) {
 
 // GetInvestmentTransactions returns the InvestmentTransactions field value
 func (o *InvestmentsTransactionsGetResponse) GetInvestmentTransactions() []InvestmentTransaction {
-	if o == nil  {
+	if o == nil {
 		var ret []InvestmentTransaction
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *InvestmentsTransactionsGetResponse) GetInvestmentTransactions() []Inves
 // GetInvestmentTransactionsOk returns a tuple with the InvestmentTransactions field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentsTransactionsGetResponse) GetInvestmentTransactionsOk() (*[]InvestmentTransaction, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.InvestmentTransactions, true
@@ -153,7 +153,7 @@ func (o *InvestmentsTransactionsGetResponse) SetInvestmentTransactions(v []Inves
 
 // GetTotalInvestmentTransactions returns the TotalInvestmentTransactions field value
 func (o *InvestmentsTransactionsGetResponse) GetTotalInvestmentTransactions() int32 {
-	if o == nil  {
+	if o == nil {
 		var ret int32
 		return ret
 	}
@@ -164,7 +164,7 @@ func (o *InvestmentsTransactionsGetResponse) GetTotalInvestmentTransactions() in
 // GetTotalInvestmentTransactionsOk returns a tuple with the TotalInvestmentTransactions field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentsTransactionsGetResponse) GetTotalInvestmentTransactionsOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.TotalInvestmentTransactions, true
@@ -177,7 +177,7 @@ func (o *InvestmentsTransactionsGetResponse) SetTotalInvestmentTransactions(v in
 
 // GetRequestId returns the RequestId field value
 func (o *InvestmentsTransactionsGetResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *InvestmentsTransactionsGetResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentsTransactionsGetResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -284,5 +284,3 @@ func (v *NullableInvestmentsTransactionsGetResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

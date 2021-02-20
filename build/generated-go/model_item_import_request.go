@@ -21,9 +21,9 @@ type ItemImportRequest struct {
 	// Your Plaid API `secret`.
 	Secret *string `json:"secret,omitempty"`
 	// Array of product strings
-	Products []Products `json:"products"`
-	UserAuth ItemImportRequestUserAuth `json:"user_auth"`
-	Options *ItemImportRequestOptions `json:"options,omitempty"`
+	Products             []Products                `json:"products"`
+	UserAuth             ItemImportRequestUserAuth `json:"user_auth"`
+	Options              *ItemImportRequestOptions `json:"options,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -33,7 +33,7 @@ type _ItemImportRequest ItemImportRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewItemImportRequest(products []Products, userAuth ItemImportRequestUserAuth, ) *ItemImportRequest {
+func NewItemImportRequest(products []Products, userAuth ItemImportRequestUserAuth) *ItemImportRequest {
 	this := ItemImportRequest{}
 	this.Products = products
 	this.UserAuth = userAuth
@@ -114,7 +114,7 @@ func (o *ItemImportRequest) SetSecret(v string) {
 
 // GetProducts returns the Products field value
 func (o *ItemImportRequest) GetProducts() []Products {
-	if o == nil  {
+	if o == nil {
 		var ret []Products
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *ItemImportRequest) GetProducts() []Products {
 // GetProductsOk returns a tuple with the Products field value
 // and a boolean to check if the value has been set.
 func (o *ItemImportRequest) GetProductsOk() (*[]Products, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Products, true
@@ -138,7 +138,7 @@ func (o *ItemImportRequest) SetProducts(v []Products) {
 
 // GetUserAuth returns the UserAuth field value
 func (o *ItemImportRequest) GetUserAuth() ItemImportRequestUserAuth {
-	if o == nil  {
+	if o == nil {
 		var ret ItemImportRequestUserAuth
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *ItemImportRequest) GetUserAuth() ItemImportRequestUserAuth {
 // GetUserAuthOk returns a tuple with the UserAuth field value
 // and a boolean to check if the value has been set.
 func (o *ItemImportRequest) GetUserAuthOk() (*ItemImportRequestUserAuth, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.UserAuth, true
@@ -273,5 +273,3 @@ func (v *NullableItemImportRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

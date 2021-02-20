@@ -22,9 +22,9 @@ type SandboxBankTransferSimulateRequest struct {
 	Secret *string `json:"secret,omitempty"`
 	// Plaid’s unique identifier for a bank transfer.
 	BankTransferId string `json:"bank_transfer_id"`
-	// The asynchronous event to be simulated. May be: `posted`, `failed`, or `reversed`.  An error will be returned if the event type is incompatible with the current transfer status. Compatible status --> event type transitions include:  `pending` --> `failed`  `pending` --> `posted`  `posted` --> `reversed` 
-	EventType string `json:"event_type"`
-	FailureReason NullableBankTransferFailure `json:"failure_reason,omitempty"`
+	// The asynchronous event to be simulated. May be: `posted`, `failed`, or `reversed`.  An error will be returned if the event type is incompatible with the current transfer status. Compatible status --> event type transitions include:  `pending` --> `failed`  `pending` --> `posted`  `posted` --> `reversed`
+	EventType            string                      `json:"event_type"`
+	FailureReason        NullableBankTransferFailure `json:"failure_reason,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _SandboxBankTransferSimulateRequest SandboxBankTransferSimulateRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSandboxBankTransferSimulateRequest(bankTransferId string, eventType string, ) *SandboxBankTransferSimulateRequest {
+func NewSandboxBankTransferSimulateRequest(bankTransferId string, eventType string) *SandboxBankTransferSimulateRequest {
 	this := SandboxBankTransferSimulateRequest{}
 	this.BankTransferId = bankTransferId
 	this.EventType = eventType
@@ -115,7 +115,7 @@ func (o *SandboxBankTransferSimulateRequest) SetSecret(v string) {
 
 // GetBankTransferId returns the BankTransferId field value
 func (o *SandboxBankTransferSimulateRequest) GetBankTransferId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *SandboxBankTransferSimulateRequest) GetBankTransferId() string {
 // GetBankTransferIdOk returns a tuple with the BankTransferId field value
 // and a boolean to check if the value has been set.
 func (o *SandboxBankTransferSimulateRequest) GetBankTransferIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.BankTransferId, true
@@ -139,7 +139,7 @@ func (o *SandboxBankTransferSimulateRequest) SetBankTransferId(v string) {
 
 // GetEventType returns the EventType field value
 func (o *SandboxBankTransferSimulateRequest) GetEventType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *SandboxBankTransferSimulateRequest) GetEventType() string {
 // GetEventTypeOk returns a tuple with the EventType field value
 // and a boolean to check if the value has been set.
 func (o *SandboxBankTransferSimulateRequest) GetEventTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.EventType, true
@@ -174,7 +174,7 @@ func (o *SandboxBankTransferSimulateRequest) GetFailureReason() BankTransferFail
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SandboxBankTransferSimulateRequest) GetFailureReasonOk() (*BankTransferFailure, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.FailureReason.Get(), o.FailureReason.IsSet()
@@ -193,6 +193,7 @@ func (o *SandboxBankTransferSimulateRequest) HasFailureReason() bool {
 func (o *SandboxBankTransferSimulateRequest) SetFailureReason(v BankTransferFailure) {
 	o.FailureReason.Set(&v)
 }
+
 // SetFailureReasonNil sets the value for FailureReason to be an explicit nil
 func (o *SandboxBankTransferSimulateRequest) SetFailureReasonNil() {
 	o.FailureReason.Set(nil)
@@ -284,5 +285,3 @@ func (v *NullableSandboxBankTransferSimulateRequest) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -25,7 +25,7 @@ type TransactionOverride struct {
 	// The transaction description.
 	Description string `json:"description"`
 	// The ISO-4217 format currency code for the transaction.
-	Currency *string `json:"currency,omitempty"`
+	Currency             *string `json:"currency,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -35,7 +35,7 @@ type _TransactionOverride TransactionOverride
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTransactionOverride(transactionDate string, postedDate string, amount float32, description string, ) *TransactionOverride {
+func NewTransactionOverride(transactionDate string, postedDate string, amount float32, description string) *TransactionOverride {
 	this := TransactionOverride{}
 	this.TransactionDate = transactionDate
 	this.PostedDate = postedDate
@@ -54,7 +54,7 @@ func NewTransactionOverrideWithDefaults() *TransactionOverride {
 
 // GetTransactionDate returns the TransactionDate field value
 func (o *TransactionOverride) GetTransactionDate() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *TransactionOverride) GetTransactionDate() string {
 // GetTransactionDateOk returns a tuple with the TransactionDate field value
 // and a boolean to check if the value has been set.
 func (o *TransactionOverride) GetTransactionDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.TransactionDate, true
@@ -78,7 +78,7 @@ func (o *TransactionOverride) SetTransactionDate(v string) {
 
 // GetPostedDate returns the PostedDate field value
 func (o *TransactionOverride) GetPostedDate() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *TransactionOverride) GetPostedDate() string {
 // GetPostedDateOk returns a tuple with the PostedDate field value
 // and a boolean to check if the value has been set.
 func (o *TransactionOverride) GetPostedDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PostedDate, true
@@ -102,7 +102,7 @@ func (o *TransactionOverride) SetPostedDate(v string) {
 
 // GetAmount returns the Amount field value
 func (o *TransactionOverride) GetAmount() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *TransactionOverride) GetAmount() float32 {
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
 func (o *TransactionOverride) GetAmountOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Amount, true
@@ -126,7 +126,7 @@ func (o *TransactionOverride) SetAmount(v float32) {
 
 // GetDescription returns the Description field value
 func (o *TransactionOverride) GetDescription() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *TransactionOverride) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value
 // and a boolean to check if the value has been set.
 func (o *TransactionOverride) GetDescriptionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Description, true
@@ -261,5 +261,3 @@ func (v *NullableTransactionOverride) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

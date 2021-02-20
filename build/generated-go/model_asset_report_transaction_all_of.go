@@ -19,7 +19,7 @@ type AssetReportTransactionAllOf struct {
 	// The date on which the transaction took place, in IS0 8601 format.
 	DateTransacted NullableString `json:"date_transacted,omitempty"`
 	// The string returned by the financial institution to describe the transaction
-	OriginalDescription string `json:"original_description"`
+	OriginalDescription  string `json:"original_description"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _AssetReportTransactionAllOf AssetReportTransactionAllOf
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAssetReportTransactionAllOf(originalDescription string, ) *AssetReportTransactionAllOf {
+func NewAssetReportTransactionAllOf(originalDescription string) *AssetReportTransactionAllOf {
 	this := AssetReportTransactionAllOf{}
 	this.OriginalDescription = originalDescription
 	return &this
@@ -56,7 +56,7 @@ func (o *AssetReportTransactionAllOf) GetDateTransacted() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetReportTransactionAllOf) GetDateTransactedOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DateTransacted.Get(), o.DateTransacted.IsSet()
@@ -75,6 +75,7 @@ func (o *AssetReportTransactionAllOf) HasDateTransacted() bool {
 func (o *AssetReportTransactionAllOf) SetDateTransacted(v string) {
 	o.DateTransacted.Set(&v)
 }
+
 // SetDateTransactedNil sets the value for DateTransacted to be an explicit nil
 func (o *AssetReportTransactionAllOf) SetDateTransactedNil() {
 	o.DateTransacted.Set(nil)
@@ -87,7 +88,7 @@ func (o *AssetReportTransactionAllOf) UnsetDateTransacted() {
 
 // GetOriginalDescription returns the OriginalDescription field value
 func (o *AssetReportTransactionAllOf) GetOriginalDescription() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -98,7 +99,7 @@ func (o *AssetReportTransactionAllOf) GetOriginalDescription() string {
 // GetOriginalDescriptionOk returns a tuple with the OriginalDescription field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportTransactionAllOf) GetOriginalDescriptionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.OriginalDescription, true
@@ -178,5 +179,3 @@ func (v *NullableAssetReportTransactionAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

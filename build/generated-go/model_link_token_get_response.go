@@ -22,10 +22,10 @@ type LinkTokenGetResponse struct {
 	// The creation timestamp for the `link_token`, in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// The expiration timestamp for the `link_token`, in ISO 8601 format.
-	Expiration NullableTime `json:"expiration,omitempty"`
-	Metadata *LinkTokenGetMetadataResponse `json:"metadata,omitempty"`
+	Expiration NullableTime                  `json:"expiration,omitempty"`
+	Metadata   *LinkTokenGetMetadataResponse `json:"metadata,omitempty"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -35,7 +35,7 @@ type _LinkTokenGetResponse LinkTokenGetResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLinkTokenGetResponse(requestId string, ) *LinkTokenGetResponse {
+func NewLinkTokenGetResponse(requestId string) *LinkTokenGetResponse {
 	this := LinkTokenGetResponse{}
 	this.RequestId = requestId
 	return &this
@@ -94,7 +94,7 @@ func (o *LinkTokenGetResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LinkTokenGetResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -113,6 +113,7 @@ func (o *LinkTokenGetResponse) HasCreatedAt() bool {
 func (o *LinkTokenGetResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *LinkTokenGetResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -136,7 +137,7 @@ func (o *LinkTokenGetResponse) GetExpiration() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LinkTokenGetResponse) GetExpirationOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Expiration.Get(), o.Expiration.IsSet()
@@ -155,6 +156,7 @@ func (o *LinkTokenGetResponse) HasExpiration() bool {
 func (o *LinkTokenGetResponse) SetExpiration(v time.Time) {
 	o.Expiration.Set(&v)
 }
+
 // SetExpirationNil sets the value for Expiration to be an explicit nil
 func (o *LinkTokenGetResponse) SetExpirationNil() {
 	o.Expiration.Set(nil)
@@ -199,7 +201,7 @@ func (o *LinkTokenGetResponse) SetMetadata(v LinkTokenGetMetadataResponse) {
 
 // GetRequestId returns the RequestId field value
 func (o *LinkTokenGetResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -210,7 +212,7 @@ func (o *LinkTokenGetResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *LinkTokenGetResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -302,5 +304,3 @@ func (v *NullableLinkTokenGetResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

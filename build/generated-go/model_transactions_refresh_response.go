@@ -17,7 +17,7 @@ import (
 // TransactionsRefreshResponse TransactionsRefreshResponse defines the response schema for `/transactions/refresh`
 type TransactionsRefreshResponse struct {
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -27,7 +27,7 @@ type _TransactionsRefreshResponse TransactionsRefreshResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTransactionsRefreshResponse(requestId string, ) *TransactionsRefreshResponse {
+func NewTransactionsRefreshResponse(requestId string) *TransactionsRefreshResponse {
 	this := TransactionsRefreshResponse{}
 	this.RequestId = requestId
 	return &this
@@ -43,7 +43,7 @@ func NewTransactionsRefreshResponseWithDefaults() *TransactionsRefreshResponse {
 
 // GetRequestId returns the RequestId field value
 func (o *TransactionsRefreshResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *TransactionsRefreshResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *TransactionsRefreshResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -130,5 +130,3 @@ func (v *NullableTransactionsRefreshResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

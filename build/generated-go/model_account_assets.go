@@ -17,17 +17,17 @@ import (
 // AccountAssets struct for AccountAssets
 type AccountAssets struct {
 	// Plaid’s unique identifier for the account. This value will not change unless Plaid can't reconcile the account with the data returned by the financial institution. This may occur, for example, when the name of the account changes. If this happens a new `account_id` will be assigned to the account.  The `account_id` can also change if the `access_token` is deleted and the same credentials that were used to generate that `access_token` are used to generate a new `access_token` on a later date. In that case, the new `account_id` will be different from the old `account_id`.  Like all Plaid identifiers, the `account_id` is case sensitive.
-	AccountId string `json:"account_id"`
-	Balances AccountBalance `json:"balances"`
+	AccountId string         `json:"account_id"`
+	Balances  AccountBalance `json:"balances"`
 	// The last 2-4 alphanumeric characters of an account's official account number. Note that the mask may be non-unique between an Item's accounts, and it may also not match the mask that the bank displays to the user.
 	Mask NullableString `json:"mask,omitempty"`
 	// The name of the account, either assigned by the user or by the financial institution itself
 	Name string `json:"name"`
 	// The official name of the account as given by the financial institution
-	OfficialName NullableString `json:"official_name,omitempty"`
-	Type AccountType `json:"type"`
-	Subtype NullableAccountSubtype `json:"subtype"`
-	// The current verification status of an Auth Item initiated through Automated or Manual micro-deposits.  Returned for Auth Items only.  `pending_automatic_verification`: The Item is pending automatic verification  `pending_manual_verification`: The Item is pending manual micro-deposit verification. Items remain in this state until the user successfully verifies the two amounts.  `automatically_verified`: The Item has successfully been automatically verified   `manually_verified`: The Item has successfully been manually verified  `verification_expired`: Plaid was unable to automatically verify the deposit within 7 calendar days and will no longer attempt to validate the Item. Users may retry by submitting their information again through Link.  `verification_failed`: The Item failed manual micro-deposit verification because the user exhausted all 3 verification attempts. Users may retry by submitting their information again through Link.   
+	OfficialName NullableString         `json:"official_name,omitempty"`
+	Type         AccountType            `json:"type"`
+	Subtype      NullableAccountSubtype `json:"subtype"`
+	// The current verification status of an Auth Item initiated through Automated or Manual micro-deposits.  Returned for Auth Items only.  `pending_automatic_verification`: The Item is pending automatic verification  `pending_manual_verification`: The Item is pending manual micro-deposit verification. Items remain in this state until the user successfully verifies the two amounts.  `automatically_verified`: The Item has successfully been automatically verified   `manually_verified`: The Item has successfully been manually verified  `verification_expired`: Plaid was unable to automatically verify the deposit within 7 calendar days and will no longer attempt to validate the Item. Users may retry by submitting their information again through Link.  `verification_failed`: The Item failed manual micro-deposit verification because the user exhausted all 3 verification attempts. Users may retry by submitting their information again through Link.
 	VerificationStatus NullableString `json:"verification_status,omitempty"`
 	// The duration of transaction history available for this Item, typically defined as the time since the date of the earliest transaction in that account. Only returned by Assets endpoints.
 	DaysAvailable NullableFloat32 `json:"days_available,omitempty"`
@@ -36,7 +36,7 @@ type AccountAssets struct {
 	// Data returned by the financial institution about the account owner or owners. Only returned by Identity or Assets endpoints. Multiple owners on a single account will be represented in the same `owner` object, not in multiple owner objects within the array.
 	Owners []Owner `json:"owners"`
 	// Calculated data about the historical balances on the account. Only returned by Assets endpoints.
-	HistoricalBalances []HistoricalBalance `json:"historical_balances,omitempty"`
+	HistoricalBalances   []HistoricalBalance `json:"historical_balances,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -46,7 +46,7 @@ type _AccountAssets AccountAssets
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAccountAssets(accountId string, balances AccountBalance, name string, type_ AccountType, subtype NullableAccountSubtype, owners []Owner, ) *AccountAssets {
+func NewAccountAssets(accountId string, balances AccountBalance, name string, type_ AccountType, subtype NullableAccountSubtype, owners []Owner) *AccountAssets {
 	this := AccountAssets{}
 	this.AccountId = accountId
 	this.Balances = balances
@@ -67,7 +67,7 @@ func NewAccountAssetsWithDefaults() *AccountAssets {
 
 // GetAccountId returns the AccountId field value
 func (o *AccountAssets) GetAccountId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *AccountAssets) GetAccountId() string {
 // GetAccountIdOk returns a tuple with the AccountId field value
 // and a boolean to check if the value has been set.
 func (o *AccountAssets) GetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountId, true
@@ -91,7 +91,7 @@ func (o *AccountAssets) SetAccountId(v string) {
 
 // GetBalances returns the Balances field value
 func (o *AccountAssets) GetBalances() AccountBalance {
-	if o == nil  {
+	if o == nil {
 		var ret AccountBalance
 		return ret
 	}
@@ -102,7 +102,7 @@ func (o *AccountAssets) GetBalances() AccountBalance {
 // GetBalancesOk returns a tuple with the Balances field value
 // and a boolean to check if the value has been set.
 func (o *AccountAssets) GetBalancesOk() (*AccountBalance, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Balances, true
@@ -126,7 +126,7 @@ func (o *AccountAssets) GetMask() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AccountAssets) GetMaskOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Mask.Get(), o.Mask.IsSet()
@@ -145,6 +145,7 @@ func (o *AccountAssets) HasMask() bool {
 func (o *AccountAssets) SetMask(v string) {
 	o.Mask.Set(&v)
 }
+
 // SetMaskNil sets the value for Mask to be an explicit nil
 func (o *AccountAssets) SetMaskNil() {
 	o.Mask.Set(nil)
@@ -157,7 +158,7 @@ func (o *AccountAssets) UnsetMask() {
 
 // GetName returns the Name field value
 func (o *AccountAssets) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -168,7 +169,7 @@ func (o *AccountAssets) GetName() string {
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *AccountAssets) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Name, true
@@ -192,7 +193,7 @@ func (o *AccountAssets) GetOfficialName() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AccountAssets) GetOfficialNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.OfficialName.Get(), o.OfficialName.IsSet()
@@ -211,6 +212,7 @@ func (o *AccountAssets) HasOfficialName() bool {
 func (o *AccountAssets) SetOfficialName(v string) {
 	o.OfficialName.Set(&v)
 }
+
 // SetOfficialNameNil sets the value for OfficialName to be an explicit nil
 func (o *AccountAssets) SetOfficialNameNil() {
 	o.OfficialName.Set(nil)
@@ -223,7 +225,7 @@ func (o *AccountAssets) UnsetOfficialName() {
 
 // GetType returns the Type field value
 func (o *AccountAssets) GetType() AccountType {
-	if o == nil  {
+	if o == nil {
 		var ret AccountType
 		return ret
 	}
@@ -234,7 +236,7 @@ func (o *AccountAssets) GetType() AccountType {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *AccountAssets) GetTypeOk() (*AccountType, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -260,7 +262,7 @@ func (o *AccountAssets) GetSubtype() AccountSubtype {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AccountAssets) GetSubtypeOk() (*AccountSubtype, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Subtype.Get(), o.Subtype.IsSet()
@@ -284,7 +286,7 @@ func (o *AccountAssets) GetVerificationStatus() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AccountAssets) GetVerificationStatusOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VerificationStatus.Get(), o.VerificationStatus.IsSet()
@@ -303,6 +305,7 @@ func (o *AccountAssets) HasVerificationStatus() bool {
 func (o *AccountAssets) SetVerificationStatus(v string) {
 	o.VerificationStatus.Set(&v)
 }
+
 // SetVerificationStatusNil sets the value for VerificationStatus to be an explicit nil
 func (o *AccountAssets) SetVerificationStatusNil() {
 	o.VerificationStatus.Set(nil)
@@ -326,7 +329,7 @@ func (o *AccountAssets) GetDaysAvailable() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AccountAssets) GetDaysAvailableOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DaysAvailable.Get(), o.DaysAvailable.IsSet()
@@ -345,6 +348,7 @@ func (o *AccountAssets) HasDaysAvailable() bool {
 func (o *AccountAssets) SetDaysAvailable(v float32) {
 	o.DaysAvailable.Set(&v)
 }
+
 // SetDaysAvailableNil sets the value for DaysAvailable to be an explicit nil
 func (o *AccountAssets) SetDaysAvailableNil() {
 	o.DaysAvailable.Set(nil)
@@ -357,7 +361,7 @@ func (o *AccountAssets) UnsetDaysAvailable() {
 
 // GetTransactions returns the Transactions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AccountAssets) GetTransactions() []AssetReportTransaction {
-	if o == nil  {
+	if o == nil {
 		var ret []AssetReportTransaction
 		return ret
 	}
@@ -390,7 +394,7 @@ func (o *AccountAssets) SetTransactions(v []AssetReportTransaction) {
 
 // GetOwners returns the Owners field value
 func (o *AccountAssets) GetOwners() []Owner {
-	if o == nil  {
+	if o == nil {
 		var ret []Owner
 		return ret
 	}
@@ -401,7 +405,7 @@ func (o *AccountAssets) GetOwners() []Owner {
 // GetOwnersOk returns a tuple with the Owners field value
 // and a boolean to check if the value has been set.
 func (o *AccountAssets) GetOwnersOk() (*[]Owner, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Owners, true
@@ -414,7 +418,7 @@ func (o *AccountAssets) SetOwners(v []Owner) {
 
 // GetHistoricalBalances returns the HistoricalBalances field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AccountAssets) GetHistoricalBalances() []HistoricalBalance {
-	if o == nil  {
+	if o == nil {
 		var ret []HistoricalBalance
 		return ret
 	}
@@ -554,5 +558,3 @@ func (v *NullableAccountAssets) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

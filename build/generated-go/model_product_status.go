@@ -19,8 +19,8 @@ type ProductStatus struct {
 	// `HEALTHY`: the majority of requests are successful `DEGRADED`: only some requests are successful `DOWN`: all requests are failing
 	Status string `json:"status"`
 	// ISO 8601 formatted timestamp of the last status change for the institution.
-	LastStatusChange string `json:"last_status_change"`
-	Breakdown ProductStatusBreakdown `json:"breakdown"`
+	LastStatusChange     string                 `json:"last_status_change"`
+	Breakdown            ProductStatusBreakdown `json:"breakdown"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -30,7 +30,7 @@ type _ProductStatus ProductStatus
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProductStatus(status string, lastStatusChange string, breakdown ProductStatusBreakdown, ) *ProductStatus {
+func NewProductStatus(status string, lastStatusChange string, breakdown ProductStatusBreakdown) *ProductStatus {
 	this := ProductStatus{}
 	this.Status = status
 	this.LastStatusChange = lastStatusChange
@@ -48,7 +48,7 @@ func NewProductStatusWithDefaults() *ProductStatus {
 
 // GetStatus returns the Status field value
 func (o *ProductStatus) GetStatus() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *ProductStatus) GetStatus() string {
 // GetStatusOk returns a tuple with the Status field value
 // and a boolean to check if the value has been set.
 func (o *ProductStatus) GetStatusOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Status, true
@@ -72,7 +72,7 @@ func (o *ProductStatus) SetStatus(v string) {
 
 // GetLastStatusChange returns the LastStatusChange field value
 func (o *ProductStatus) GetLastStatusChange() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *ProductStatus) GetLastStatusChange() string {
 // GetLastStatusChangeOk returns a tuple with the LastStatusChange field value
 // and a boolean to check if the value has been set.
 func (o *ProductStatus) GetLastStatusChangeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.LastStatusChange, true
@@ -96,7 +96,7 @@ func (o *ProductStatus) SetLastStatusChange(v string) {
 
 // GetBreakdown returns the Breakdown field value
 func (o *ProductStatus) GetBreakdown() ProductStatusBreakdown {
-	if o == nil  {
+	if o == nil {
 		var ret ProductStatusBreakdown
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *ProductStatus) GetBreakdown() ProductStatusBreakdown {
 // GetBreakdownOk returns a tuple with the Breakdown field value
 // and a boolean to check if the value has been set.
 func (o *ProductStatus) GetBreakdownOk() (*ProductStatusBreakdown, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Breakdown, true
@@ -191,5 +191,3 @@ func (v *NullableProductStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

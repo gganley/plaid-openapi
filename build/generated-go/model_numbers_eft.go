@@ -23,7 +23,7 @@ type NumbersEFT struct {
 	// The EFT institution number for the account
 	Institution string `json:"institution"`
 	// The EFT branch number for the account
-	Branch string `json:"branch"`
+	Branch               string `json:"branch"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -33,7 +33,7 @@ type _NumbersEFT NumbersEFT
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNumbersEFT(accountId string, account string, institution string, branch string, ) *NumbersEFT {
+func NewNumbersEFT(accountId string, account string, institution string, branch string) *NumbersEFT {
 	this := NumbersEFT{}
 	this.AccountId = accountId
 	this.Account = account
@@ -52,7 +52,7 @@ func NewNumbersEFTWithDefaults() *NumbersEFT {
 
 // GetAccountId returns the AccountId field value
 func (o *NumbersEFT) GetAccountId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *NumbersEFT) GetAccountId() string {
 // GetAccountIdOk returns a tuple with the AccountId field value
 // and a boolean to check if the value has been set.
 func (o *NumbersEFT) GetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountId, true
@@ -76,7 +76,7 @@ func (o *NumbersEFT) SetAccountId(v string) {
 
 // GetAccount returns the Account field value
 func (o *NumbersEFT) GetAccount() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *NumbersEFT) GetAccount() string {
 // GetAccountOk returns a tuple with the Account field value
 // and a boolean to check if the value has been set.
 func (o *NumbersEFT) GetAccountOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Account, true
@@ -100,7 +100,7 @@ func (o *NumbersEFT) SetAccount(v string) {
 
 // GetInstitution returns the Institution field value
 func (o *NumbersEFT) GetInstitution() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *NumbersEFT) GetInstitution() string {
 // GetInstitutionOk returns a tuple with the Institution field value
 // and a boolean to check if the value has been set.
 func (o *NumbersEFT) GetInstitutionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Institution, true
@@ -124,7 +124,7 @@ func (o *NumbersEFT) SetInstitution(v string) {
 
 // GetBranch returns the Branch field value
 func (o *NumbersEFT) GetBranch() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -135,7 +135,7 @@ func (o *NumbersEFT) GetBranch() string {
 // GetBranchOk returns a tuple with the Branch field value
 // and a boolean to check if the value has been set.
 func (o *NumbersEFT) GetBranchOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Branch, true
@@ -223,5 +223,3 @@ func (v *NullableNumbersEFT) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

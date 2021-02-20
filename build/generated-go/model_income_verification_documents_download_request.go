@@ -31,7 +31,7 @@ type _IncomeVerificationDocumentsDownloadRequest IncomeVerificationDocumentsDown
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIncomeVerificationDocumentsDownloadRequest(incomeVerificationId string, ) *IncomeVerificationDocumentsDownloadRequest {
+func NewIncomeVerificationDocumentsDownloadRequest(incomeVerificationId string) *IncomeVerificationDocumentsDownloadRequest {
 	this := IncomeVerificationDocumentsDownloadRequest{}
 	this.IncomeVerificationId = incomeVerificationId
 	return &this
@@ -111,7 +111,7 @@ func (o *IncomeVerificationDocumentsDownloadRequest) SetSecret(v string) {
 
 // GetIncomeVerificationId returns the IncomeVerificationId field value
 func (o *IncomeVerificationDocumentsDownloadRequest) GetIncomeVerificationId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *IncomeVerificationDocumentsDownloadRequest) GetIncomeVerificationId() s
 // GetIncomeVerificationIdOk returns a tuple with the IncomeVerificationId field value
 // and a boolean to check if the value has been set.
 func (o *IncomeVerificationDocumentsDownloadRequest) GetIncomeVerificationIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.IncomeVerificationId, true
@@ -206,5 +206,3 @@ func (v *NullableIncomeVerificationDocumentsDownloadRequest) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

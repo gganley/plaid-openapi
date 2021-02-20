@@ -18,7 +18,7 @@ import (
 type ProcessorBalanceGetResponse struct {
 	Account AccountBase `json:"account"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -28,7 +28,7 @@ type _ProcessorBalanceGetResponse ProcessorBalanceGetResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProcessorBalanceGetResponse(account AccountBase, requestId string, ) *ProcessorBalanceGetResponse {
+func NewProcessorBalanceGetResponse(account AccountBase, requestId string) *ProcessorBalanceGetResponse {
 	this := ProcessorBalanceGetResponse{}
 	this.Account = account
 	this.RequestId = requestId
@@ -45,7 +45,7 @@ func NewProcessorBalanceGetResponseWithDefaults() *ProcessorBalanceGetResponse {
 
 // GetAccount returns the Account field value
 func (o *ProcessorBalanceGetResponse) GetAccount() AccountBase {
-	if o == nil  {
+	if o == nil {
 		var ret AccountBase
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *ProcessorBalanceGetResponse) GetAccount() AccountBase {
 // GetAccountOk returns a tuple with the Account field value
 // and a boolean to check if the value has been set.
 func (o *ProcessorBalanceGetResponse) GetAccountOk() (*AccountBase, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Account, true
@@ -69,7 +69,7 @@ func (o *ProcessorBalanceGetResponse) SetAccount(v AccountBase) {
 
 // GetRequestId returns the RequestId field value
 func (o *ProcessorBalanceGetResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *ProcessorBalanceGetResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *ProcessorBalanceGetResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -160,5 +160,3 @@ func (v *NullableProcessorBalanceGetResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

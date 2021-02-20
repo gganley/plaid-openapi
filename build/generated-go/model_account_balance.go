@@ -26,7 +26,7 @@ type AccountBalance struct {
 	IsoCurrencyCode NullableString `json:"iso_currency_code,omitempty"`
 	// The unofficial currency code associated with the balance. Always null if `iso_currency_code` is non-null. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.  See the [currency code schema](/docs/api/accounts#currency-code-schema) for a full listing of supported `unofficial_currency_code`s.
 	UnofficialCurrencyCode NullableString `json:"unofficial_currency_code,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties   map[string]interface{}
 }
 
 type _AccountBalance AccountBalance
@@ -35,7 +35,7 @@ type _AccountBalance AccountBalance
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAccountBalance(current float32, ) *AccountBalance {
+func NewAccountBalance(current float32) *AccountBalance {
 	this := AccountBalance{}
 	this.Current = current
 	return &this
@@ -62,7 +62,7 @@ func (o *AccountBalance) GetAvailable() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AccountBalance) GetAvailableOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Available.Get(), o.Available.IsSet()
@@ -81,6 +81,7 @@ func (o *AccountBalance) HasAvailable() bool {
 func (o *AccountBalance) SetAvailable(v float32) {
 	o.Available.Set(&v)
 }
+
 // SetAvailableNil sets the value for Available to be an explicit nil
 func (o *AccountBalance) SetAvailableNil() {
 	o.Available.Set(nil)
@@ -93,7 +94,7 @@ func (o *AccountBalance) UnsetAvailable() {
 
 // GetCurrent returns the Current field value
 func (o *AccountBalance) GetCurrent() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -104,7 +105,7 @@ func (o *AccountBalance) GetCurrent() float32 {
 // GetCurrentOk returns a tuple with the Current field value
 // and a boolean to check if the value has been set.
 func (o *AccountBalance) GetCurrentOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Current, true
@@ -128,7 +129,7 @@ func (o *AccountBalance) GetLimit() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AccountBalance) GetLimitOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Limit.Get(), o.Limit.IsSet()
@@ -147,6 +148,7 @@ func (o *AccountBalance) HasLimit() bool {
 func (o *AccountBalance) SetLimit(v float32) {
 	o.Limit.Set(&v)
 }
+
 // SetLimitNil sets the value for Limit to be an explicit nil
 func (o *AccountBalance) SetLimitNil() {
 	o.Limit.Set(nil)
@@ -170,7 +172,7 @@ func (o *AccountBalance) GetIsoCurrencyCode() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AccountBalance) GetIsoCurrencyCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.IsoCurrencyCode.Get(), o.IsoCurrencyCode.IsSet()
@@ -189,6 +191,7 @@ func (o *AccountBalance) HasIsoCurrencyCode() bool {
 func (o *AccountBalance) SetIsoCurrencyCode(v string) {
 	o.IsoCurrencyCode.Set(&v)
 }
+
 // SetIsoCurrencyCodeNil sets the value for IsoCurrencyCode to be an explicit nil
 func (o *AccountBalance) SetIsoCurrencyCodeNil() {
 	o.IsoCurrencyCode.Set(nil)
@@ -212,7 +215,7 @@ func (o *AccountBalance) GetUnofficialCurrencyCode() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AccountBalance) GetUnofficialCurrencyCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UnofficialCurrencyCode.Get(), o.UnofficialCurrencyCode.IsSet()
@@ -231,6 +234,7 @@ func (o *AccountBalance) HasUnofficialCurrencyCode() bool {
 func (o *AccountBalance) SetUnofficialCurrencyCode(v string) {
 	o.UnofficialCurrencyCode.Set(&v)
 }
+
 // SetUnofficialCurrencyCodeNil sets the value for UnofficialCurrencyCode to be an explicit nil
 func (o *AccountBalance) SetUnofficialCurrencyCodeNil() {
 	o.UnofficialCurrencyCode.Set(nil)
@@ -322,5 +326,3 @@ func (v *NullableAccountBalance) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

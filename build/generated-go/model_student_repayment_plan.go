@@ -19,7 +19,7 @@ type StudentRepaymentPlan struct {
 	// The description of the repayment plan as provided by the servicer.
 	Description NullableString `json:"description,omitempty"`
 	// The type of the repayment plan.
-	Type NullableString `json:"type,omitempty"`
+	Type                 NullableString `json:"type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -55,7 +55,7 @@ func (o *StudentRepaymentPlan) GetDescription() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentRepaymentPlan) GetDescriptionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Description.Get(), o.Description.IsSet()
@@ -74,6 +74,7 @@ func (o *StudentRepaymentPlan) HasDescription() bool {
 func (o *StudentRepaymentPlan) SetDescription(v string) {
 	o.Description.Set(&v)
 }
+
 // SetDescriptionNil sets the value for Description to be an explicit nil
 func (o *StudentRepaymentPlan) SetDescriptionNil() {
 	o.Description.Set(nil)
@@ -97,7 +98,7 @@ func (o *StudentRepaymentPlan) GetType() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentRepaymentPlan) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Type.Get(), o.Type.IsSet()
@@ -116,6 +117,7 @@ func (o *StudentRepaymentPlan) HasType() bool {
 func (o *StudentRepaymentPlan) SetType(v string) {
 	o.Type.Set(&v)
 }
+
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *StudentRepaymentPlan) SetTypeNil() {
 	o.Type.Set(nil)
@@ -195,5 +197,3 @@ func (v *NullableStudentRepaymentPlan) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -23,7 +23,7 @@ type PaymentInitiationPaymentListRequest struct {
 	// The maximum number of payments to return. If `count` is not specified, a maximum of 10 payments will be returned, beginning with the most recent payment before the cursor (if specified).
 	Count *int32 `json:"count,omitempty"`
 	// A string in RFC 3339 format (i.e. \"2019-12-06T22:35:49Z\"). Only payments created before the cursor will be returned.
-	Cursor *string `json:"cursor,omitempty"`
+	Cursor               *string `json:"cursor,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -255,5 +255,3 @@ func (v *NullablePaymentInitiationPaymentListRequest) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

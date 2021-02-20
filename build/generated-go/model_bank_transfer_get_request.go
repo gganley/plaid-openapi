@@ -21,7 +21,7 @@ type BankTransferGetRequest struct {
 	// Your Plaid API `secret`.
 	Secret *string `json:"secret,omitempty"`
 	// Plaid’s unique identifier for a bank transfer.
-	BankTransferId string `json:"bank_transfer_id"`
+	BankTransferId       string `json:"bank_transfer_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _BankTransferGetRequest BankTransferGetRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBankTransferGetRequest(bankTransferId string, ) *BankTransferGetRequest {
+func NewBankTransferGetRequest(bankTransferId string) *BankTransferGetRequest {
 	this := BankTransferGetRequest{}
 	this.BankTransferId = bankTransferId
 	return &this
@@ -111,7 +111,7 @@ func (o *BankTransferGetRequest) SetSecret(v string) {
 
 // GetBankTransferId returns the BankTransferId field value
 func (o *BankTransferGetRequest) GetBankTransferId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *BankTransferGetRequest) GetBankTransferId() string {
 // GetBankTransferIdOk returns a tuple with the BankTransferId field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferGetRequest) GetBankTransferIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.BankTransferId, true
@@ -206,5 +206,3 @@ func (v *NullableBankTransferGetRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

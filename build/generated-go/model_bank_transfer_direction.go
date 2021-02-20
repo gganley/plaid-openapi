@@ -21,7 +21,7 @@ type BankTransferDirection string
 // List of BankTransferDirection
 const (
 	BANKTRANSFERDIRECTION_OUTBOUND BankTransferDirection = "outbound"
-	BANKTRANSFERDIRECTION_INBOUND BankTransferDirection = "inbound"
+	BANKTRANSFERDIRECTION_INBOUND  BankTransferDirection = "inbound"
 )
 
 func (v *BankTransferDirection) UnmarshalJSON(src []byte) error {
@@ -31,7 +31,7 @@ func (v *BankTransferDirection) UnmarshalJSON(src []byte) error {
 		return err
 	}
 	enumTypeValue := BankTransferDirection(value)
-	for _, existing := range []BankTransferDirection{ "outbound", "inbound",   } {
+	for _, existing := range []BankTransferDirection{"outbound", "inbound"} {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
@@ -81,4 +81,3 @@ func (v *NullableBankTransferDirection) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

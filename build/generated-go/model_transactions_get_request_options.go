@@ -21,7 +21,7 @@ type TransactionsGetRequestOptions struct {
 	// The number of transactions to fetch.
 	Count *int32 `json:"count,omitempty"`
 	// The number of transactions to skip. The default value is 0.
-	Offset *int32 `json:"offset,omitempty"`
+	Offset               *int32 `json:"offset,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -221,5 +221,3 @@ func (v *NullableTransactionsGetRequestOptions) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

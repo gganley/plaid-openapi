@@ -19,7 +19,7 @@ type InstitutionsSearchResponse struct {
 	// An array of institutions matching the search criteria
 	Institutions []Institution `json:"institutions"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _InstitutionsSearchResponse InstitutionsSearchResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInstitutionsSearchResponse(institutions []Institution, requestId string, ) *InstitutionsSearchResponse {
+func NewInstitutionsSearchResponse(institutions []Institution, requestId string) *InstitutionsSearchResponse {
 	this := InstitutionsSearchResponse{}
 	this.Institutions = institutions
 	this.RequestId = requestId
@@ -46,7 +46,7 @@ func NewInstitutionsSearchResponseWithDefaults() *InstitutionsSearchResponse {
 
 // GetInstitutions returns the Institutions field value
 func (o *InstitutionsSearchResponse) GetInstitutions() []Institution {
-	if o == nil  {
+	if o == nil {
 		var ret []Institution
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *InstitutionsSearchResponse) GetInstitutions() []Institution {
 // GetInstitutionsOk returns a tuple with the Institutions field value
 // and a boolean to check if the value has been set.
 func (o *InstitutionsSearchResponse) GetInstitutionsOk() (*[]Institution, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Institutions, true
@@ -70,7 +70,7 @@ func (o *InstitutionsSearchResponse) SetInstitutions(v []Institution) {
 
 // GetRequestId returns the RequestId field value
 func (o *InstitutionsSearchResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *InstitutionsSearchResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *InstitutionsSearchResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -161,5 +161,3 @@ func (v *NullableInstitutionsSearchResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

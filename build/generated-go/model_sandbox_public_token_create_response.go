@@ -19,7 +19,7 @@ type SandboxPublicTokenCreateResponse struct {
 	// A public token that can be exchanged for an access token using `/item/public_token/exchange`
 	PublicToken string `json:"public_token"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _SandboxPublicTokenCreateResponse SandboxPublicTokenCreateResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSandboxPublicTokenCreateResponse(publicToken string, requestId string, ) *SandboxPublicTokenCreateResponse {
+func NewSandboxPublicTokenCreateResponse(publicToken string, requestId string) *SandboxPublicTokenCreateResponse {
 	this := SandboxPublicTokenCreateResponse{}
 	this.PublicToken = publicToken
 	this.RequestId = requestId
@@ -46,7 +46,7 @@ func NewSandboxPublicTokenCreateResponseWithDefaults() *SandboxPublicTokenCreate
 
 // GetPublicToken returns the PublicToken field value
 func (o *SandboxPublicTokenCreateResponse) GetPublicToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *SandboxPublicTokenCreateResponse) GetPublicToken() string {
 // GetPublicTokenOk returns a tuple with the PublicToken field value
 // and a boolean to check if the value has been set.
 func (o *SandboxPublicTokenCreateResponse) GetPublicTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PublicToken, true
@@ -70,7 +70,7 @@ func (o *SandboxPublicTokenCreateResponse) SetPublicToken(v string) {
 
 // GetRequestId returns the RequestId field value
 func (o *SandboxPublicTokenCreateResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *SandboxPublicTokenCreateResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *SandboxPublicTokenCreateResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -161,5 +161,3 @@ func (v *NullableSandboxPublicTokenCreateResponse) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

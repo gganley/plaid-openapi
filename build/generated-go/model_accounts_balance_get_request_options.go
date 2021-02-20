@@ -17,7 +17,7 @@ import (
 // AccountsBalanceGetRequestOptions An optional object to filter `/accounts/balance/get` results.
 type AccountsBalanceGetRequestOptions struct {
 	// A list of `account_ids` to retrieve for the Item. The default value is `null`.  Note: An error will be returned if a provided `account_id` is not associated with the Item.
-	AccountIds *[]string `json:"account_ids,omitempty"`
+	AccountIds           *[]string `json:"account_ids,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -137,5 +137,3 @@ func (v *NullableAccountsBalanceGetRequestOptions) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

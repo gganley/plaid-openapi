@@ -23,7 +23,7 @@ type ProcessorStripeBankAccountTokenCreateRequest struct {
 	// The access token associated with the Item data is being requested for.
 	AccessToken string `json:"access_token"`
 	// The `account_id` value obtained from the `onSuccess` callback in Link
-	AccountId string `json:"account_id"`
+	AccountId            string `json:"account_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -33,7 +33,7 @@ type _ProcessorStripeBankAccountTokenCreateRequest ProcessorStripeBankAccountTok
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProcessorStripeBankAccountTokenCreateRequest(accessToken string, accountId string, ) *ProcessorStripeBankAccountTokenCreateRequest {
+func NewProcessorStripeBankAccountTokenCreateRequest(accessToken string, accountId string) *ProcessorStripeBankAccountTokenCreateRequest {
 	this := ProcessorStripeBankAccountTokenCreateRequest{}
 	this.AccessToken = accessToken
 	this.AccountId = accountId
@@ -114,7 +114,7 @@ func (o *ProcessorStripeBankAccountTokenCreateRequest) SetSecret(v string) {
 
 // GetAccessToken returns the AccessToken field value
 func (o *ProcessorStripeBankAccountTokenCreateRequest) GetAccessToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *ProcessorStripeBankAccountTokenCreateRequest) GetAccessToken() string {
 // GetAccessTokenOk returns a tuple with the AccessToken field value
 // and a boolean to check if the value has been set.
 func (o *ProcessorStripeBankAccountTokenCreateRequest) GetAccessTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccessToken, true
@@ -138,7 +138,7 @@ func (o *ProcessorStripeBankAccountTokenCreateRequest) SetAccessToken(v string) 
 
 // GetAccountId returns the AccountId field value
 func (o *ProcessorStripeBankAccountTokenCreateRequest) GetAccountId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *ProcessorStripeBankAccountTokenCreateRequest) GetAccountId() string {
 // GetAccountIdOk returns a tuple with the AccountId field value
 // and a boolean to check if the value has been set.
 func (o *ProcessorStripeBankAccountTokenCreateRequest) GetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountId, true
@@ -237,5 +237,3 @@ func (v *NullableProcessorStripeBankAccountTokenCreateRequest) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

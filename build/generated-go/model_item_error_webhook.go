@@ -21,8 +21,8 @@ type ItemErrorWebhook struct {
 	// `ERROR`
 	WebhookCode string `json:"webhook_code"`
 	// The `item_id` of the Item associated with this webhook, warning, or error
-	ItemId string `json:"item_id"`
-	Error NullableError `json:"error"`
+	ItemId               string        `json:"item_id"`
+	Error                NullableError `json:"error"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -32,7 +32,7 @@ type _ItemErrorWebhook ItemErrorWebhook
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewItemErrorWebhook(webhookType string, webhookCode string, itemId string, error_ NullableError, ) *ItemErrorWebhook {
+func NewItemErrorWebhook(webhookType string, webhookCode string, itemId string, error_ NullableError) *ItemErrorWebhook {
 	this := ItemErrorWebhook{}
 	this.WebhookType = webhookType
 	this.WebhookCode = webhookCode
@@ -51,7 +51,7 @@ func NewItemErrorWebhookWithDefaults() *ItemErrorWebhook {
 
 // GetWebhookType returns the WebhookType field value
 func (o *ItemErrorWebhook) GetWebhookType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *ItemErrorWebhook) GetWebhookType() string {
 // GetWebhookTypeOk returns a tuple with the WebhookType field value
 // and a boolean to check if the value has been set.
 func (o *ItemErrorWebhook) GetWebhookTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookType, true
@@ -75,7 +75,7 @@ func (o *ItemErrorWebhook) SetWebhookType(v string) {
 
 // GetWebhookCode returns the WebhookCode field value
 func (o *ItemErrorWebhook) GetWebhookCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ItemErrorWebhook) GetWebhookCode() string {
 // GetWebhookCodeOk returns a tuple with the WebhookCode field value
 // and a boolean to check if the value has been set.
 func (o *ItemErrorWebhook) GetWebhookCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookCode, true
@@ -99,7 +99,7 @@ func (o *ItemErrorWebhook) SetWebhookCode(v string) {
 
 // GetItemId returns the ItemId field value
 func (o *ItemErrorWebhook) GetItemId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *ItemErrorWebhook) GetItemId() string {
 // GetItemIdOk returns a tuple with the ItemId field value
 // and a boolean to check if the value has been set.
 func (o *ItemErrorWebhook) GetItemIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ItemId, true
@@ -136,7 +136,7 @@ func (o *ItemErrorWebhook) GetError() Error {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ItemErrorWebhook) GetErrorOk() (*Error, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Error.Get(), o.Error.IsSet()
@@ -224,5 +224,3 @@ func (v *NullableItemErrorWebhook) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

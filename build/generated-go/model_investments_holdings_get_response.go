@@ -18,13 +18,13 @@ import (
 type InvestmentsHoldingsGetResponse struct {
 	// The accounts associated with the Item
 	Accounts []AccountBase `json:"accounts"`
-	// The holdings belonging to investment accounts associated with the Item. Details of the securities in the holdings are provided in the `securities` field. 
+	// The holdings belonging to investment accounts associated with the Item. Details of the securities in the holdings are provided in the `securities` field.
 	Holdings []Holding `json:"holdings"`
-	// Objects describing the securities held in the accounts associated with the Item. 
+	// Objects describing the securities held in the accounts associated with the Item.
 	Securities []Security `json:"securities"`
-	Item Item `json:"item"`
+	Item       Item       `json:"item"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _InvestmentsHoldingsGetResponse InvestmentsHoldingsGetResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInvestmentsHoldingsGetResponse(accounts []AccountBase, holdings []Holding, securities []Security, item Item, requestId string, ) *InvestmentsHoldingsGetResponse {
+func NewInvestmentsHoldingsGetResponse(accounts []AccountBase, holdings []Holding, securities []Security, item Item, requestId string) *InvestmentsHoldingsGetResponse {
 	this := InvestmentsHoldingsGetResponse{}
 	this.Accounts = accounts
 	this.Holdings = holdings
@@ -54,7 +54,7 @@ func NewInvestmentsHoldingsGetResponseWithDefaults() *InvestmentsHoldingsGetResp
 
 // GetAccounts returns the Accounts field value
 func (o *InvestmentsHoldingsGetResponse) GetAccounts() []AccountBase {
-	if o == nil  {
+	if o == nil {
 		var ret []AccountBase
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *InvestmentsHoldingsGetResponse) GetAccounts() []AccountBase {
 // GetAccountsOk returns a tuple with the Accounts field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentsHoldingsGetResponse) GetAccountsOk() (*[]AccountBase, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Accounts, true
@@ -78,7 +78,7 @@ func (o *InvestmentsHoldingsGetResponse) SetAccounts(v []AccountBase) {
 
 // GetHoldings returns the Holdings field value
 func (o *InvestmentsHoldingsGetResponse) GetHoldings() []Holding {
-	if o == nil  {
+	if o == nil {
 		var ret []Holding
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *InvestmentsHoldingsGetResponse) GetHoldings() []Holding {
 // GetHoldingsOk returns a tuple with the Holdings field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentsHoldingsGetResponse) GetHoldingsOk() (*[]Holding, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Holdings, true
@@ -102,7 +102,7 @@ func (o *InvestmentsHoldingsGetResponse) SetHoldings(v []Holding) {
 
 // GetSecurities returns the Securities field value
 func (o *InvestmentsHoldingsGetResponse) GetSecurities() []Security {
-	if o == nil  {
+	if o == nil {
 		var ret []Security
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *InvestmentsHoldingsGetResponse) GetSecurities() []Security {
 // GetSecuritiesOk returns a tuple with the Securities field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentsHoldingsGetResponse) GetSecuritiesOk() (*[]Security, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Securities, true
@@ -126,7 +126,7 @@ func (o *InvestmentsHoldingsGetResponse) SetSecurities(v []Security) {
 
 // GetItem returns the Item field value
 func (o *InvestmentsHoldingsGetResponse) GetItem() Item {
-	if o == nil  {
+	if o == nil {
 		var ret Item
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *InvestmentsHoldingsGetResponse) GetItem() Item {
 // GetItemOk returns a tuple with the Item field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentsHoldingsGetResponse) GetItemOk() (*Item, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Item, true
@@ -150,7 +150,7 @@ func (o *InvestmentsHoldingsGetResponse) SetItem(v Item) {
 
 // GetRequestId returns the RequestId field value
 func (o *InvestmentsHoldingsGetResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *InvestmentsHoldingsGetResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentsHoldingsGetResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -253,5 +253,3 @@ func (v *NullableInvestmentsHoldingsGetResponse) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

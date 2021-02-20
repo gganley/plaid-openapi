@@ -19,7 +19,7 @@ type ItemStatusLastWebhook struct {
 	// ISO 8601 timestamp of when the webhook was fired.
 	SentAt NullableString `json:"sent_at,omitempty"`
 	// The last webhook code sent.
-	CodeSent NullableString `json:"code_sent,omitempty"`
+	CodeSent             NullableString `json:"code_sent,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -55,7 +55,7 @@ func (o *ItemStatusLastWebhook) GetSentAt() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ItemStatusLastWebhook) GetSentAtOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SentAt.Get(), o.SentAt.IsSet()
@@ -74,6 +74,7 @@ func (o *ItemStatusLastWebhook) HasSentAt() bool {
 func (o *ItemStatusLastWebhook) SetSentAt(v string) {
 	o.SentAt.Set(&v)
 }
+
 // SetSentAtNil sets the value for SentAt to be an explicit nil
 func (o *ItemStatusLastWebhook) SetSentAtNil() {
 	o.SentAt.Set(nil)
@@ -97,7 +98,7 @@ func (o *ItemStatusLastWebhook) GetCodeSent() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ItemStatusLastWebhook) GetCodeSentOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CodeSent.Get(), o.CodeSent.IsSet()
@@ -116,6 +117,7 @@ func (o *ItemStatusLastWebhook) HasCodeSent() bool {
 func (o *ItemStatusLastWebhook) SetCodeSent(v string) {
 	o.CodeSent.Set(&v)
 }
+
 // SetCodeSentNil sets the value for CodeSent to be an explicit nil
 func (o *ItemStatusLastWebhook) SetCodeSentNil() {
 	o.CodeSent.Set(nil)
@@ -195,5 +197,3 @@ func (v *NullableItemStatusLastWebhook) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

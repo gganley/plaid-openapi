@@ -19,7 +19,7 @@ type ItemStatusInvestments struct {
 	// ISO 8601 timestamp of the last successful investments update for the Item. The status will update each time Plaid successfully connects with the institution, regardless of whether any new data is available in the update.
 	LastSuccessfulUpdate NullableString `json:"last_successful_update,omitempty"`
 	// ISO 8601 timestamp of the last failed investments update for the Item. The status will update each time Plaid fails an attempt to connect with the institution, regardless of whether any new data is available in the update.
-	LastFailedUpdate NullableString `json:"last_failed_update,omitempty"`
+	LastFailedUpdate     NullableString `json:"last_failed_update,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -55,7 +55,7 @@ func (o *ItemStatusInvestments) GetLastSuccessfulUpdate() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ItemStatusInvestments) GetLastSuccessfulUpdateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LastSuccessfulUpdate.Get(), o.LastSuccessfulUpdate.IsSet()
@@ -74,6 +74,7 @@ func (o *ItemStatusInvestments) HasLastSuccessfulUpdate() bool {
 func (o *ItemStatusInvestments) SetLastSuccessfulUpdate(v string) {
 	o.LastSuccessfulUpdate.Set(&v)
 }
+
 // SetLastSuccessfulUpdateNil sets the value for LastSuccessfulUpdate to be an explicit nil
 func (o *ItemStatusInvestments) SetLastSuccessfulUpdateNil() {
 	o.LastSuccessfulUpdate.Set(nil)
@@ -97,7 +98,7 @@ func (o *ItemStatusInvestments) GetLastFailedUpdate() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ItemStatusInvestments) GetLastFailedUpdateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LastFailedUpdate.Get(), o.LastFailedUpdate.IsSet()
@@ -116,6 +117,7 @@ func (o *ItemStatusInvestments) HasLastFailedUpdate() bool {
 func (o *ItemStatusInvestments) SetLastFailedUpdate(v string) {
 	o.LastFailedUpdate.Set(&v)
 }
+
 // SetLastFailedUpdateNil sets the value for LastFailedUpdate to be an explicit nil
 func (o *ItemStatusInvestments) SetLastFailedUpdateNil() {
 	o.LastFailedUpdate.Set(nil)
@@ -195,5 +197,3 @@ func (v *NullableItemStatusInvestments) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -24,7 +24,7 @@ type PendingExpirationWebhook struct {
 	ItemId string `json:"item_id"`
 	// The date and time at which the Item's access consent will expire, in ISO 8601 format
 	ConsentExpirationTime string `json:"consent_expiration_time"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties  map[string]interface{}
 }
 
 type _PendingExpirationWebhook PendingExpirationWebhook
@@ -33,7 +33,7 @@ type _PendingExpirationWebhook PendingExpirationWebhook
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPendingExpirationWebhook(webhookType string, webhookCode string, itemId string, consentExpirationTime string, ) *PendingExpirationWebhook {
+func NewPendingExpirationWebhook(webhookType string, webhookCode string, itemId string, consentExpirationTime string) *PendingExpirationWebhook {
 	this := PendingExpirationWebhook{}
 	this.WebhookType = webhookType
 	this.WebhookCode = webhookCode
@@ -52,7 +52,7 @@ func NewPendingExpirationWebhookWithDefaults() *PendingExpirationWebhook {
 
 // GetWebhookType returns the WebhookType field value
 func (o *PendingExpirationWebhook) GetWebhookType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *PendingExpirationWebhook) GetWebhookType() string {
 // GetWebhookTypeOk returns a tuple with the WebhookType field value
 // and a boolean to check if the value has been set.
 func (o *PendingExpirationWebhook) GetWebhookTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookType, true
@@ -76,7 +76,7 @@ func (o *PendingExpirationWebhook) SetWebhookType(v string) {
 
 // GetWebhookCode returns the WebhookCode field value
 func (o *PendingExpirationWebhook) GetWebhookCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *PendingExpirationWebhook) GetWebhookCode() string {
 // GetWebhookCodeOk returns a tuple with the WebhookCode field value
 // and a boolean to check if the value has been set.
 func (o *PendingExpirationWebhook) GetWebhookCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookCode, true
@@ -100,7 +100,7 @@ func (o *PendingExpirationWebhook) SetWebhookCode(v string) {
 
 // GetItemId returns the ItemId field value
 func (o *PendingExpirationWebhook) GetItemId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *PendingExpirationWebhook) GetItemId() string {
 // GetItemIdOk returns a tuple with the ItemId field value
 // and a boolean to check if the value has been set.
 func (o *PendingExpirationWebhook) GetItemIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ItemId, true
@@ -124,7 +124,7 @@ func (o *PendingExpirationWebhook) SetItemId(v string) {
 
 // GetConsentExpirationTime returns the ConsentExpirationTime field value
 func (o *PendingExpirationWebhook) GetConsentExpirationTime() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -135,7 +135,7 @@ func (o *PendingExpirationWebhook) GetConsentExpirationTime() string {
 // GetConsentExpirationTimeOk returns a tuple with the ConsentExpirationTime field value
 // and a boolean to check if the value has been set.
 func (o *PendingExpirationWebhook) GetConsentExpirationTimeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ConsentExpirationTime, true
@@ -223,5 +223,3 @@ func (v *NullablePendingExpirationWebhook) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

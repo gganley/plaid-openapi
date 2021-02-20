@@ -19,7 +19,7 @@ type AssetReportAuditCopyCreateResponse struct {
 	// A token that can be shared with a third party auditor to allow them to obtain access to the Asset Report. This token should be stored securely.
 	AuditCopyToken string `json:"audit_copy_token"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _AssetReportAuditCopyCreateResponse AssetReportAuditCopyCreateResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAssetReportAuditCopyCreateResponse(auditCopyToken string, requestId string, ) *AssetReportAuditCopyCreateResponse {
+func NewAssetReportAuditCopyCreateResponse(auditCopyToken string, requestId string) *AssetReportAuditCopyCreateResponse {
 	this := AssetReportAuditCopyCreateResponse{}
 	this.AuditCopyToken = auditCopyToken
 	this.RequestId = requestId
@@ -46,7 +46,7 @@ func NewAssetReportAuditCopyCreateResponseWithDefaults() *AssetReportAuditCopyCr
 
 // GetAuditCopyToken returns the AuditCopyToken field value
 func (o *AssetReportAuditCopyCreateResponse) GetAuditCopyToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *AssetReportAuditCopyCreateResponse) GetAuditCopyToken() string {
 // GetAuditCopyTokenOk returns a tuple with the AuditCopyToken field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportAuditCopyCreateResponse) GetAuditCopyTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AuditCopyToken, true
@@ -70,7 +70,7 @@ func (o *AssetReportAuditCopyCreateResponse) SetAuditCopyToken(v string) {
 
 // GetRequestId returns the RequestId field value
 func (o *AssetReportAuditCopyCreateResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *AssetReportAuditCopyCreateResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportAuditCopyCreateResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -161,5 +161,3 @@ func (v *NullableAssetReportAuditCopyCreateResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

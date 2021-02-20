@@ -16,9 +16,9 @@ import (
 
 // ItemStatus An object with information about the status of the Item.
 type ItemStatus struct {
-	Investments NullableItemStatusInvestments `json:"investments,omitempty"`
-	Transactions NullableItemStatusTransactions `json:"transactions,omitempty"`
-	LastWebhook NullableItemStatusLastWebhook `json:"last_webhook,omitempty"`
+	Investments          NullableItemStatusInvestments  `json:"investments,omitempty"`
+	Transactions         NullableItemStatusTransactions `json:"transactions,omitempty"`
+	LastWebhook          NullableItemStatusLastWebhook  `json:"last_webhook,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -54,7 +54,7 @@ func (o *ItemStatus) GetInvestments() ItemStatusInvestments {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ItemStatus) GetInvestmentsOk() (*ItemStatusInvestments, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Investments.Get(), o.Investments.IsSet()
@@ -73,6 +73,7 @@ func (o *ItemStatus) HasInvestments() bool {
 func (o *ItemStatus) SetInvestments(v ItemStatusInvestments) {
 	o.Investments.Set(&v)
 }
+
 // SetInvestmentsNil sets the value for Investments to be an explicit nil
 func (o *ItemStatus) SetInvestmentsNil() {
 	o.Investments.Set(nil)
@@ -96,7 +97,7 @@ func (o *ItemStatus) GetTransactions() ItemStatusTransactions {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ItemStatus) GetTransactionsOk() (*ItemStatusTransactions, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Transactions.Get(), o.Transactions.IsSet()
@@ -115,6 +116,7 @@ func (o *ItemStatus) HasTransactions() bool {
 func (o *ItemStatus) SetTransactions(v ItemStatusTransactions) {
 	o.Transactions.Set(&v)
 }
+
 // SetTransactionsNil sets the value for Transactions to be an explicit nil
 func (o *ItemStatus) SetTransactionsNil() {
 	o.Transactions.Set(nil)
@@ -138,7 +140,7 @@ func (o *ItemStatus) GetLastWebhook() ItemStatusLastWebhook {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ItemStatus) GetLastWebhookOk() (*ItemStatusLastWebhook, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LastWebhook.Get(), o.LastWebhook.IsSet()
@@ -157,6 +159,7 @@ func (o *ItemStatus) HasLastWebhook() bool {
 func (o *ItemStatus) SetLastWebhook(v ItemStatusLastWebhook) {
 	o.LastWebhook.Set(&v)
 }
+
 // SetLastWebhookNil sets the value for LastWebhook to be an explicit nil
 func (o *ItemStatus) SetLastWebhookNil() {
 	o.LastWebhook.Set(nil)
@@ -240,5 +243,3 @@ func (v *NullableItemStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -23,7 +23,7 @@ type Owner struct {
 	// A list of email addresses associated with the account by the financial institution. May be an empty array if no relevant information is returned from the financial institution.
 	Emails []Email `json:"emails"`
 	// Data about the various addresses associated with the account by the financial institution. May be an empty array if no relevant information is returned from the financial institution.
-	Addresses []Address `json:"addresses"`
+	Addresses            []Address `json:"addresses"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -33,7 +33,7 @@ type _Owner Owner
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOwner(names []string, phoneNumbers []PhoneNumber, emails []Email, addresses []Address, ) *Owner {
+func NewOwner(names []string, phoneNumbers []PhoneNumber, emails []Email, addresses []Address) *Owner {
 	this := Owner{}
 	this.Names = names
 	this.PhoneNumbers = phoneNumbers
@@ -52,7 +52,7 @@ func NewOwnerWithDefaults() *Owner {
 
 // GetNames returns the Names field value
 func (o *Owner) GetNames() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *Owner) GetNames() []string {
 // GetNamesOk returns a tuple with the Names field value
 // and a boolean to check if the value has been set.
 func (o *Owner) GetNamesOk() (*[]string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Names, true
@@ -76,7 +76,7 @@ func (o *Owner) SetNames(v []string) {
 
 // GetPhoneNumbers returns the PhoneNumbers field value
 func (o *Owner) GetPhoneNumbers() []PhoneNumber {
-	if o == nil  {
+	if o == nil {
 		var ret []PhoneNumber
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *Owner) GetPhoneNumbers() []PhoneNumber {
 // GetPhoneNumbersOk returns a tuple with the PhoneNumbers field value
 // and a boolean to check if the value has been set.
 func (o *Owner) GetPhoneNumbersOk() (*[]PhoneNumber, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PhoneNumbers, true
@@ -100,7 +100,7 @@ func (o *Owner) SetPhoneNumbers(v []PhoneNumber) {
 
 // GetEmails returns the Emails field value
 func (o *Owner) GetEmails() []Email {
-	if o == nil  {
+	if o == nil {
 		var ret []Email
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *Owner) GetEmails() []Email {
 // GetEmailsOk returns a tuple with the Emails field value
 // and a boolean to check if the value has been set.
 func (o *Owner) GetEmailsOk() (*[]Email, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Emails, true
@@ -124,7 +124,7 @@ func (o *Owner) SetEmails(v []Email) {
 
 // GetAddresses returns the Addresses field value
 func (o *Owner) GetAddresses() []Address {
-	if o == nil  {
+	if o == nil {
 		var ret []Address
 		return ret
 	}
@@ -135,7 +135,7 @@ func (o *Owner) GetAddresses() []Address {
 // GetAddressesOk returns a tuple with the Addresses field value
 // and a boolean to check if the value has been set.
 func (o *Owner) GetAddressesOk() (*[]Address, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Addresses, true
@@ -223,5 +223,3 @@ func (v *NullableOwner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,8 +16,8 @@ import (
 
 // ItemImportRequestOptions An optional object to configure `/item/import` request.
 type ItemImportRequestOptions struct {
-	// Specifies a webhook URL to associate with an Item. Plaid fires a webhook if credentials fail. 
-	Webhook *string `json:"webhook,omitempty"`
+	// Specifies a webhook URL to associate with an Item. Plaid fires a webhook if credentials fail.
+	Webhook              *string `json:"webhook,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -137,5 +137,3 @@ func (v *NullableItemImportRequestOptions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -25,7 +25,7 @@ type TransactionData struct {
 	// A unique identifier for the end user's account.
 	AccountId string `json:"account_id"`
 	// A unique identifier for the transaction.
-	TransactionId string `json:"transaction_id"`
+	TransactionId        string `json:"transaction_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -35,7 +35,7 @@ type _TransactionData TransactionData
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTransactionData(description string, amount float32, date string, accountId string, transactionId string, ) *TransactionData {
+func NewTransactionData(description string, amount float32, date string, accountId string, transactionId string) *TransactionData {
 	this := TransactionData{}
 	this.Description = description
 	this.Amount = amount
@@ -55,7 +55,7 @@ func NewTransactionDataWithDefaults() *TransactionData {
 
 // GetDescription returns the Description field value
 func (o *TransactionData) GetDescription() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *TransactionData) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value
 // and a boolean to check if the value has been set.
 func (o *TransactionData) GetDescriptionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Description, true
@@ -79,7 +79,7 @@ func (o *TransactionData) SetDescription(v string) {
 
 // GetAmount returns the Amount field value
 func (o *TransactionData) GetAmount() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *TransactionData) GetAmount() float32 {
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
 func (o *TransactionData) GetAmountOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Amount, true
@@ -103,7 +103,7 @@ func (o *TransactionData) SetAmount(v float32) {
 
 // GetDate returns the Date field value
 func (o *TransactionData) GetDate() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *TransactionData) GetDate() string {
 // GetDateOk returns a tuple with the Date field value
 // and a boolean to check if the value has been set.
 func (o *TransactionData) GetDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Date, true
@@ -127,7 +127,7 @@ func (o *TransactionData) SetDate(v string) {
 
 // GetAccountId returns the AccountId field value
 func (o *TransactionData) GetAccountId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *TransactionData) GetAccountId() string {
 // GetAccountIdOk returns a tuple with the AccountId field value
 // and a boolean to check if the value has been set.
 func (o *TransactionData) GetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountId, true
@@ -151,7 +151,7 @@ func (o *TransactionData) SetAccountId(v string) {
 
 // GetTransactionId returns the TransactionId field value
 func (o *TransactionData) GetTransactionId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *TransactionData) GetTransactionId() string {
 // GetTransactionIdOk returns a tuple with the TransactionId field value
 // and a boolean to check if the value has been set.
 func (o *TransactionData) GetTransactionIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.TransactionId, true
@@ -254,5 +254,3 @@ func (v *NullableTransactionData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

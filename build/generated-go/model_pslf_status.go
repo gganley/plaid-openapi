@@ -14,14 +14,14 @@ import (
 	"encoding/json"
 )
 
-// PSLFStatus Information about the student's eligibility in the Public Service Loan Forgiveness program. This is only returned if the institution is Fedloan (`ins_116527`). 
+// PSLFStatus Information about the student's eligibility in the Public Service Loan Forgiveness program. This is only returned if the institution is Fedloan (`ins_116527`).
 type PSLFStatus struct {
 	// The estimated date borrower will have completed 120 qualifying monthly payments. Returned in ISO 8601 format (YYYY-MM-DD).
 	EstimatedEligibilityDate NullableString `json:"estimated_eligibility_date,omitempty"`
 	// The number of qualifying payments that have been made.
 	PaymentsMade NullableFloat32 `json:"payments_made,omitempty"`
 	// The number of qualifying payments remaining.
-	PaymentsRemaining NullableFloat32 `json:"payments_remaining,omitempty"`
+	PaymentsRemaining    NullableFloat32 `json:"payments_remaining,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -57,7 +57,7 @@ func (o *PSLFStatus) GetEstimatedEligibilityDate() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PSLFStatus) GetEstimatedEligibilityDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.EstimatedEligibilityDate.Get(), o.EstimatedEligibilityDate.IsSet()
@@ -76,6 +76,7 @@ func (o *PSLFStatus) HasEstimatedEligibilityDate() bool {
 func (o *PSLFStatus) SetEstimatedEligibilityDate(v string) {
 	o.EstimatedEligibilityDate.Set(&v)
 }
+
 // SetEstimatedEligibilityDateNil sets the value for EstimatedEligibilityDate to be an explicit nil
 func (o *PSLFStatus) SetEstimatedEligibilityDateNil() {
 	o.EstimatedEligibilityDate.Set(nil)
@@ -99,7 +100,7 @@ func (o *PSLFStatus) GetPaymentsMade() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PSLFStatus) GetPaymentsMadeOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PaymentsMade.Get(), o.PaymentsMade.IsSet()
@@ -118,6 +119,7 @@ func (o *PSLFStatus) HasPaymentsMade() bool {
 func (o *PSLFStatus) SetPaymentsMade(v float32) {
 	o.PaymentsMade.Set(&v)
 }
+
 // SetPaymentsMadeNil sets the value for PaymentsMade to be an explicit nil
 func (o *PSLFStatus) SetPaymentsMadeNil() {
 	o.PaymentsMade.Set(nil)
@@ -141,7 +143,7 @@ func (o *PSLFStatus) GetPaymentsRemaining() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PSLFStatus) GetPaymentsRemainingOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PaymentsRemaining.Get(), o.PaymentsRemaining.IsSet()
@@ -160,6 +162,7 @@ func (o *PSLFStatus) HasPaymentsRemaining() bool {
 func (o *PSLFStatus) SetPaymentsRemaining(v float32) {
 	o.PaymentsRemaining.Set(&v)
 }
+
 // SetPaymentsRemainingNil sets the value for PaymentsRemaining to be an explicit nil
 func (o *PSLFStatus) SetPaymentsRemainingNil() {
 	o.PaymentsRemaining.Set(nil)
@@ -243,5 +246,3 @@ func (v *NullablePSLFStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -21,8 +21,8 @@ type SandboxProcessorTokenCreateRequest struct {
 	// Your Plaid API `secret`.
 	Secret *string `json:"secret,omitempty"`
 	// The ID of the institution the Item will be associated with
-	InstitutionId string `json:"institution_id"`
-	Options *SandboxProcessorTokenCreateRequestOptions `json:"options,omitempty"`
+	InstitutionId        string                                     `json:"institution_id"`
+	Options              *SandboxProcessorTokenCreateRequestOptions `json:"options,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -32,7 +32,7 @@ type _SandboxProcessorTokenCreateRequest SandboxProcessorTokenCreateRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSandboxProcessorTokenCreateRequest(institutionId string, ) *SandboxProcessorTokenCreateRequest {
+func NewSandboxProcessorTokenCreateRequest(institutionId string) *SandboxProcessorTokenCreateRequest {
 	this := SandboxProcessorTokenCreateRequest{}
 	this.InstitutionId = institutionId
 	return &this
@@ -112,7 +112,7 @@ func (o *SandboxProcessorTokenCreateRequest) SetSecret(v string) {
 
 // GetInstitutionId returns the InstitutionId field value
 func (o *SandboxProcessorTokenCreateRequest) GetInstitutionId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *SandboxProcessorTokenCreateRequest) GetInstitutionId() string {
 // GetInstitutionIdOk returns a tuple with the InstitutionId field value
 // and a boolean to check if the value has been set.
 func (o *SandboxProcessorTokenCreateRequest) GetInstitutionIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.InstitutionId, true
@@ -243,5 +243,3 @@ func (v *NullableSandboxProcessorTokenCreateRequest) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

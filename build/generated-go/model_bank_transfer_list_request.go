@@ -30,8 +30,8 @@ type BankTransferListRequest struct {
 	// The number of bank transfers to skip before returning results.
 	Offset *int32 `json:"offset,omitempty"`
 	// Filter bank transfers to only those originated through the specified origination account.
-	OriginationAccountId NullableString `json:"origination_account_id,omitempty"`
-	Direction NullableBankTransferDirection `json:"direction,omitempty"`
+	OriginationAccountId NullableString                `json:"origination_account_id,omitempty"`
+	Direction            NullableBankTransferDirection `json:"direction,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -139,7 +139,7 @@ func (o *BankTransferListRequest) GetStartDate() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferListRequest) GetStartDateOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StartDate.Get(), o.StartDate.IsSet()
@@ -158,6 +158,7 @@ func (o *BankTransferListRequest) HasStartDate() bool {
 func (o *BankTransferListRequest) SetStartDate(v time.Time) {
 	o.StartDate.Set(&v)
 }
+
 // SetStartDateNil sets the value for StartDate to be an explicit nil
 func (o *BankTransferListRequest) SetStartDateNil() {
 	o.StartDate.Set(nil)
@@ -181,7 +182,7 @@ func (o *BankTransferListRequest) GetEndDate() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferListRequest) GetEndDateOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.EndDate.Get(), o.EndDate.IsSet()
@@ -200,6 +201,7 @@ func (o *BankTransferListRequest) HasEndDate() bool {
 func (o *BankTransferListRequest) SetEndDate(v time.Time) {
 	o.EndDate.Set(&v)
 }
+
 // SetEndDateNil sets the value for EndDate to be an explicit nil
 func (o *BankTransferListRequest) SetEndDateNil() {
 	o.EndDate.Set(nil)
@@ -287,7 +289,7 @@ func (o *BankTransferListRequest) GetOriginationAccountId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferListRequest) GetOriginationAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.OriginationAccountId.Get(), o.OriginationAccountId.IsSet()
@@ -306,6 +308,7 @@ func (o *BankTransferListRequest) HasOriginationAccountId() bool {
 func (o *BankTransferListRequest) SetOriginationAccountId(v string) {
 	o.OriginationAccountId.Set(&v)
 }
+
 // SetOriginationAccountIdNil sets the value for OriginationAccountId to be an explicit nil
 func (o *BankTransferListRequest) SetOriginationAccountIdNil() {
 	o.OriginationAccountId.Set(nil)
@@ -329,7 +332,7 @@ func (o *BankTransferListRequest) GetDirection() BankTransferDirection {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferListRequest) GetDirectionOk() (*BankTransferDirection, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Direction.Get(), o.Direction.IsSet()
@@ -348,6 +351,7 @@ func (o *BankTransferListRequest) HasDirection() bool {
 func (o *BankTransferListRequest) SetDirection(v BankTransferDirection) {
 	o.Direction.Set(&v)
 }
+
 // SetDirectionNil sets the value for Direction to be an explicit nil
 func (o *BankTransferListRequest) SetDirectionNil() {
 	o.Direction.Set(nil)
@@ -451,5 +455,3 @@ func (v *NullableBankTransferListRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

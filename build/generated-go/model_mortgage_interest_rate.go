@@ -19,7 +19,7 @@ type MortgageInterestRate struct {
 	// Percentage value (interest rate of current mortgage, not APR) of interest payable on a loan.
 	Percentage NullableFloat32 `json:"percentage,omitempty"`
 	// The type of interest charged (fixed or variable).
-	Type NullableString `json:"type,omitempty"`
+	Type                 NullableString `json:"type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -55,7 +55,7 @@ func (o *MortgageInterestRate) GetPercentage() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgageInterestRate) GetPercentageOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Percentage.Get(), o.Percentage.IsSet()
@@ -74,6 +74,7 @@ func (o *MortgageInterestRate) HasPercentage() bool {
 func (o *MortgageInterestRate) SetPercentage(v float32) {
 	o.Percentage.Set(&v)
 }
+
 // SetPercentageNil sets the value for Percentage to be an explicit nil
 func (o *MortgageInterestRate) SetPercentageNil() {
 	o.Percentage.Set(nil)
@@ -97,7 +98,7 @@ func (o *MortgageInterestRate) GetType() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgageInterestRate) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Type.Get(), o.Type.IsSet()
@@ -116,6 +117,7 @@ func (o *MortgageInterestRate) HasType() bool {
 func (o *MortgageInterestRate) SetType(v string) {
 	o.Type.Set(&v)
 }
+
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *MortgageInterestRate) SetTypeNil() {
 	o.Type.Set(nil)
@@ -195,5 +197,3 @@ func (v *NullableMortgageInterestRate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

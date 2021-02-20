@@ -40,7 +40,7 @@ type BankTransferEventListRequest struct {
 	// The origination account ID to get events for transfers from a specific origination account.
 	OriginationAccountId NullableString `json:"origination_account_id,omitempty"`
 	// Indicates the direction of the transfer: `outbound` for API-initiated transfers, or `inbound` for payments received by the FBO account.
-	Direction NullableString `json:"direction,omitempty"`
+	Direction            NullableString `json:"direction,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -148,7 +148,7 @@ func (o *BankTransferEventListRequest) GetStartDate() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferEventListRequest) GetStartDateOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StartDate.Get(), o.StartDate.IsSet()
@@ -167,6 +167,7 @@ func (o *BankTransferEventListRequest) HasStartDate() bool {
 func (o *BankTransferEventListRequest) SetStartDate(v time.Time) {
 	o.StartDate.Set(&v)
 }
+
 // SetStartDateNil sets the value for StartDate to be an explicit nil
 func (o *BankTransferEventListRequest) SetStartDateNil() {
 	o.StartDate.Set(nil)
@@ -190,7 +191,7 @@ func (o *BankTransferEventListRequest) GetEndDate() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferEventListRequest) GetEndDateOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.EndDate.Get(), o.EndDate.IsSet()
@@ -209,6 +210,7 @@ func (o *BankTransferEventListRequest) HasEndDate() bool {
 func (o *BankTransferEventListRequest) SetEndDate(v time.Time) {
 	o.EndDate.Set(&v)
 }
+
 // SetEndDateNil sets the value for EndDate to be an explicit nil
 func (o *BankTransferEventListRequest) SetEndDateNil() {
 	o.EndDate.Set(nil)
@@ -232,7 +234,7 @@ func (o *BankTransferEventListRequest) GetBankTransferId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferEventListRequest) GetBankTransferIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.BankTransferId.Get(), o.BankTransferId.IsSet()
@@ -251,6 +253,7 @@ func (o *BankTransferEventListRequest) HasBankTransferId() bool {
 func (o *BankTransferEventListRequest) SetBankTransferId(v string) {
 	o.BankTransferId.Set(&v)
 }
+
 // SetBankTransferIdNil sets the value for BankTransferId to be an explicit nil
 func (o *BankTransferEventListRequest) SetBankTransferIdNil() {
 	o.BankTransferId.Set(nil)
@@ -274,7 +277,7 @@ func (o *BankTransferEventListRequest) GetAccountId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferEventListRequest) GetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AccountId.Get(), o.AccountId.IsSet()
@@ -293,6 +296,7 @@ func (o *BankTransferEventListRequest) HasAccountId() bool {
 func (o *BankTransferEventListRequest) SetAccountId(v string) {
 	o.AccountId.Set(&v)
 }
+
 // SetAccountIdNil sets the value for AccountId to be an explicit nil
 func (o *BankTransferEventListRequest) SetAccountIdNil() {
 	o.AccountId.Set(nil)
@@ -316,7 +320,7 @@ func (o *BankTransferEventListRequest) GetBankTransferType() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferEventListRequest) GetBankTransferTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.BankTransferType.Get(), o.BankTransferType.IsSet()
@@ -335,6 +339,7 @@ func (o *BankTransferEventListRequest) HasBankTransferType() bool {
 func (o *BankTransferEventListRequest) SetBankTransferType(v string) {
 	o.BankTransferType.Set(&v)
 }
+
 // SetBankTransferTypeNil sets the value for BankTransferType to be an explicit nil
 func (o *BankTransferEventListRequest) SetBankTransferTypeNil() {
 	o.BankTransferType.Set(nil)
@@ -390,7 +395,7 @@ func (o *BankTransferEventListRequest) GetCount() int32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferEventListRequest) GetCountOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Count.Get(), o.Count.IsSet()
@@ -409,6 +414,7 @@ func (o *BankTransferEventListRequest) HasCount() bool {
 func (o *BankTransferEventListRequest) SetCount(v int32) {
 	o.Count.Set(&v)
 }
+
 // SetCountNil sets the value for Count to be an explicit nil
 func (o *BankTransferEventListRequest) SetCountNil() {
 	o.Count.Set(nil)
@@ -432,7 +438,7 @@ func (o *BankTransferEventListRequest) GetOffset() int32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferEventListRequest) GetOffsetOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Offset.Get(), o.Offset.IsSet()
@@ -451,6 +457,7 @@ func (o *BankTransferEventListRequest) HasOffset() bool {
 func (o *BankTransferEventListRequest) SetOffset(v int32) {
 	o.Offset.Set(&v)
 }
+
 // SetOffsetNil sets the value for Offset to be an explicit nil
 func (o *BankTransferEventListRequest) SetOffsetNil() {
 	o.Offset.Set(nil)
@@ -474,7 +481,7 @@ func (o *BankTransferEventListRequest) GetOriginationAccountId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferEventListRequest) GetOriginationAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.OriginationAccountId.Get(), o.OriginationAccountId.IsSet()
@@ -493,6 +500,7 @@ func (o *BankTransferEventListRequest) HasOriginationAccountId() bool {
 func (o *BankTransferEventListRequest) SetOriginationAccountId(v string) {
 	o.OriginationAccountId.Set(&v)
 }
+
 // SetOriginationAccountIdNil sets the value for OriginationAccountId to be an explicit nil
 func (o *BankTransferEventListRequest) SetOriginationAccountIdNil() {
 	o.OriginationAccountId.Set(nil)
@@ -516,7 +524,7 @@ func (o *BankTransferEventListRequest) GetDirection() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferEventListRequest) GetDirectionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Direction.Get(), o.Direction.IsSet()
@@ -535,6 +543,7 @@ func (o *BankTransferEventListRequest) HasDirection() bool {
 func (o *BankTransferEventListRequest) SetDirection(v string) {
 	o.Direction.Set(&v)
 }
+
 // SetDirectionNil sets the value for Direction to be an explicit nil
 func (o *BankTransferEventListRequest) SetDirectionNil() {
 	o.Direction.Set(nil)
@@ -654,5 +663,3 @@ func (v *NullableBankTransferEventListRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

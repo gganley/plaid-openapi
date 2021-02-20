@@ -27,8 +27,8 @@ type PaymentStatusUpdateWebhook struct {
 	// The previous status of the payment.  `PAYMENT_STATUS_INPUT_NEEDED`: This is the initial state of all payments. It indicates that the payment is waiting on user input to continue processing. A payment may re-enter this state later on if further input is needed.  `PAYMENT_STATUS_PROCESSING`: The payment is currently being processed. The payment will automatically exit this state when processing is complete.  `PAYMENT_STATUS_INITIATED`: The payment has been successfully initiated and is considered complete.  `PAYMENT_STATUS_COMPLETED`: Indicates that the standing order has been successfully established. This state is only used for standing orders.  `PAYMENT_STATUS_INSUFFICIENT_FUNDS`: The payment has failed due to insufficient funds.  `PAYMENT_STATUS_FAILED`: The payment has failed to be initiated. This error is retryable once the root cause is resolved.  `PAYMENT_STATUS_BLOCKED`: The payment has been blocked. This is a retryable error.  `PAYMENT_STATUS_UNKNOWN`: The payment status is unknown.
 	OldPaymentStatus string `json:"old_payment_status"`
 	// The timestamp of the update, in ISO 8601 format, e.g. `\"2017-09-14T14:42:19.350Z\"`
-	Timestamp string `json:"timestamp"`
-	Error NullableError `json:"error,omitempty"`
+	Timestamp            string        `json:"timestamp"`
+	Error                NullableError `json:"error,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -38,7 +38,7 @@ type _PaymentStatusUpdateWebhook PaymentStatusUpdateWebhook
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaymentStatusUpdateWebhook(webhookType string, webhookCode string, paymentId string, newPaymentStatus string, oldPaymentStatus string, timestamp string, ) *PaymentStatusUpdateWebhook {
+func NewPaymentStatusUpdateWebhook(webhookType string, webhookCode string, paymentId string, newPaymentStatus string, oldPaymentStatus string, timestamp string) *PaymentStatusUpdateWebhook {
 	this := PaymentStatusUpdateWebhook{}
 	this.WebhookType = webhookType
 	this.WebhookCode = webhookCode
@@ -59,7 +59,7 @@ func NewPaymentStatusUpdateWebhookWithDefaults() *PaymentStatusUpdateWebhook {
 
 // GetWebhookType returns the WebhookType field value
 func (o *PaymentStatusUpdateWebhook) GetWebhookType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -70,7 +70,7 @@ func (o *PaymentStatusUpdateWebhook) GetWebhookType() string {
 // GetWebhookTypeOk returns a tuple with the WebhookType field value
 // and a boolean to check if the value has been set.
 func (o *PaymentStatusUpdateWebhook) GetWebhookTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookType, true
@@ -83,7 +83,7 @@ func (o *PaymentStatusUpdateWebhook) SetWebhookType(v string) {
 
 // GetWebhookCode returns the WebhookCode field value
 func (o *PaymentStatusUpdateWebhook) GetWebhookCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *PaymentStatusUpdateWebhook) GetWebhookCode() string {
 // GetWebhookCodeOk returns a tuple with the WebhookCode field value
 // and a boolean to check if the value has been set.
 func (o *PaymentStatusUpdateWebhook) GetWebhookCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookCode, true
@@ -107,7 +107,7 @@ func (o *PaymentStatusUpdateWebhook) SetWebhookCode(v string) {
 
 // GetPaymentId returns the PaymentId field value
 func (o *PaymentStatusUpdateWebhook) GetPaymentId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *PaymentStatusUpdateWebhook) GetPaymentId() string {
 // GetPaymentIdOk returns a tuple with the PaymentId field value
 // and a boolean to check if the value has been set.
 func (o *PaymentStatusUpdateWebhook) GetPaymentIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PaymentId, true
@@ -131,7 +131,7 @@ func (o *PaymentStatusUpdateWebhook) SetPaymentId(v string) {
 
 // GetNewPaymentStatus returns the NewPaymentStatus field value
 func (o *PaymentStatusUpdateWebhook) GetNewPaymentStatus() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -142,7 +142,7 @@ func (o *PaymentStatusUpdateWebhook) GetNewPaymentStatus() string {
 // GetNewPaymentStatusOk returns a tuple with the NewPaymentStatus field value
 // and a boolean to check if the value has been set.
 func (o *PaymentStatusUpdateWebhook) GetNewPaymentStatusOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.NewPaymentStatus, true
@@ -155,7 +155,7 @@ func (o *PaymentStatusUpdateWebhook) SetNewPaymentStatus(v string) {
 
 // GetOldPaymentStatus returns the OldPaymentStatus field value
 func (o *PaymentStatusUpdateWebhook) GetOldPaymentStatus() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -166,7 +166,7 @@ func (o *PaymentStatusUpdateWebhook) GetOldPaymentStatus() string {
 // GetOldPaymentStatusOk returns a tuple with the OldPaymentStatus field value
 // and a boolean to check if the value has been set.
 func (o *PaymentStatusUpdateWebhook) GetOldPaymentStatusOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.OldPaymentStatus, true
@@ -179,7 +179,7 @@ func (o *PaymentStatusUpdateWebhook) SetOldPaymentStatus(v string) {
 
 // GetTimestamp returns the Timestamp field value
 func (o *PaymentStatusUpdateWebhook) GetTimestamp() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *PaymentStatusUpdateWebhook) GetTimestamp() string {
 // GetTimestampOk returns a tuple with the Timestamp field value
 // and a boolean to check if the value has been set.
 func (o *PaymentStatusUpdateWebhook) GetTimestampOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Timestamp, true
@@ -214,7 +214,7 @@ func (o *PaymentStatusUpdateWebhook) GetError() Error {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaymentStatusUpdateWebhook) GetErrorOk() (*Error, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Error.Get(), o.Error.IsSet()
@@ -233,6 +233,7 @@ func (o *PaymentStatusUpdateWebhook) HasError() bool {
 func (o *PaymentStatusUpdateWebhook) SetError(v Error) {
 	o.Error.Set(&v)
 }
+
 // SetErrorNil sets the value for Error to be an explicit nil
 func (o *PaymentStatusUpdateWebhook) SetErrorNil() {
 	o.Error.Set(nil)
@@ -332,5 +333,3 @@ func (v *NullablePaymentStatusUpdateWebhook) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

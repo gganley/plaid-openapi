@@ -18,10 +18,10 @@ import (
 type InvestmentsTransactionsGetRequestOptions struct {
 	// An array of `account_ids` to retrieve for the Item.
 	AccountIds *[]string `json:"account_ids,omitempty"`
-	// The number of transactions to fetch. 
+	// The number of transactions to fetch.
 	Count *int32 `json:"count,omitempty"`
 	// The number of transactions to skip when fetching transaction history
-	Offset *int32 `json:"offset,omitempty"`
+	Offset               *int32 `json:"offset,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -221,5 +221,3 @@ func (v *NullableInvestmentsTransactionsGetRequestOptions) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

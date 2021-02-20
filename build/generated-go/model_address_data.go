@@ -25,7 +25,7 @@ type AddressData struct {
 	// The postal code
 	PostalCode NullableString `json:"postal_code,omitempty"`
 	// The ISO 3166-1 alpha-2 country code
-	Country string `json:"country"`
+	Country              string `json:"country"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -35,7 +35,7 @@ type _AddressData AddressData
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddressData(city string, street string, country string, ) *AddressData {
+func NewAddressData(city string, street string, country string) *AddressData {
 	this := AddressData{}
 	this.City = city
 	this.Street = street
@@ -53,7 +53,7 @@ func NewAddressDataWithDefaults() *AddressData {
 
 // GetCity returns the City field value
 func (o *AddressData) GetCity() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -64,7 +64,7 @@ func (o *AddressData) GetCity() string {
 // GetCityOk returns a tuple with the City field value
 // and a boolean to check if the value has been set.
 func (o *AddressData) GetCityOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.City, true
@@ -88,7 +88,7 @@ func (o *AddressData) GetRegion() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddressData) GetRegionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Region.Get(), o.Region.IsSet()
@@ -107,6 +107,7 @@ func (o *AddressData) HasRegion() bool {
 func (o *AddressData) SetRegion(v string) {
 	o.Region.Set(&v)
 }
+
 // SetRegionNil sets the value for Region to be an explicit nil
 func (o *AddressData) SetRegionNil() {
 	o.Region.Set(nil)
@@ -119,7 +120,7 @@ func (o *AddressData) UnsetRegion() {
 
 // GetStreet returns the Street field value
 func (o *AddressData) GetStreet() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -130,7 +131,7 @@ func (o *AddressData) GetStreet() string {
 // GetStreetOk returns a tuple with the Street field value
 // and a boolean to check if the value has been set.
 func (o *AddressData) GetStreetOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Street, true
@@ -154,7 +155,7 @@ func (o *AddressData) GetPostalCode() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddressData) GetPostalCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PostalCode.Get(), o.PostalCode.IsSet()
@@ -173,6 +174,7 @@ func (o *AddressData) HasPostalCode() bool {
 func (o *AddressData) SetPostalCode(v string) {
 	o.PostalCode.Set(&v)
 }
+
 // SetPostalCodeNil sets the value for PostalCode to be an explicit nil
 func (o *AddressData) SetPostalCodeNil() {
 	o.PostalCode.Set(nil)
@@ -185,7 +187,7 @@ func (o *AddressData) UnsetPostalCode() {
 
 // GetCountry returns the Country field value
 func (o *AddressData) GetCountry() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -196,7 +198,7 @@ func (o *AddressData) GetCountry() string {
 // GetCountryOk returns a tuple with the Country field value
 // and a boolean to check if the value has been set.
 func (o *AddressData) GetCountryOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Country, true
@@ -288,5 +290,3 @@ func (v *NullableAddressData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

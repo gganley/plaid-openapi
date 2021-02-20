@@ -21,7 +21,7 @@ type ItemPublicTokenExchangeRequest struct {
 	// Your Plaid API `secret`.
 	Secret *string `json:"secret,omitempty"`
 	// Your `public_token`, obtained from the Link `onSuccess` callback or `/sandbox/item/public_token/create`.
-	PublicToken string `json:"public_token"`
+	PublicToken          string `json:"public_token"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _ItemPublicTokenExchangeRequest ItemPublicTokenExchangeRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewItemPublicTokenExchangeRequest(publicToken string, ) *ItemPublicTokenExchangeRequest {
+func NewItemPublicTokenExchangeRequest(publicToken string) *ItemPublicTokenExchangeRequest {
 	this := ItemPublicTokenExchangeRequest{}
 	this.PublicToken = publicToken
 	return &this
@@ -111,7 +111,7 @@ func (o *ItemPublicTokenExchangeRequest) SetSecret(v string) {
 
 // GetPublicToken returns the PublicToken field value
 func (o *ItemPublicTokenExchangeRequest) GetPublicToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *ItemPublicTokenExchangeRequest) GetPublicToken() string {
 // GetPublicTokenOk returns a tuple with the PublicToken field value
 // and a boolean to check if the value has been set.
 func (o *ItemPublicTokenExchangeRequest) GetPublicTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PublicToken, true
@@ -206,5 +206,3 @@ func (v *NullableItemPublicTokenExchangeRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -23,8 +23,8 @@ type AssetReportRefreshRequest struct {
 	// The `asset_report_token` returned by the original call to `/asset_report/create`
 	AssetReportToken string `json:"asset_report_token"`
 	// The maximum number of days of history to include in the Asset Report. Must be an integer. If not specified, the value from the original call to `/asset_report/create` will be used.
-	DaysRequested *int32 `json:"days_requested,omitempty"`
-	Options *AssetReportRefreshRequestOptions `json:"options,omitempty"`
+	DaysRequested        *int32                            `json:"days_requested,omitempty"`
+	Options              *AssetReportRefreshRequestOptions `json:"options,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _AssetReportRefreshRequest AssetReportRefreshRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAssetReportRefreshRequest(assetReportToken string, ) *AssetReportRefreshRequest {
+func NewAssetReportRefreshRequest(assetReportToken string) *AssetReportRefreshRequest {
 	this := AssetReportRefreshRequest{}
 	this.AssetReportToken = assetReportToken
 	return &this
@@ -114,7 +114,7 @@ func (o *AssetReportRefreshRequest) SetSecret(v string) {
 
 // GetAssetReportToken returns the AssetReportToken field value
 func (o *AssetReportRefreshRequest) GetAssetReportToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *AssetReportRefreshRequest) GetAssetReportToken() string {
 // GetAssetReportTokenOk returns a tuple with the AssetReportToken field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportRefreshRequest) GetAssetReportTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AssetReportToken, true
@@ -281,5 +281,3 @@ func (v *NullableAssetReportRefreshRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

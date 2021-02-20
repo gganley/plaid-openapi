@@ -16,11 +16,11 @@ import (
 
 // ItemGetResponse ItemGetResponse defines the response schema for `/item/get` and `/item/webhook/update`
 type ItemGetResponse struct {
-	Item Item `json:"item"`
+	Item   Item               `json:"item"`
 	Status NullableItemStatus `json:"status,omitempty"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
-	AccessToken NullableNullableAccessToken `json:"access_token,omitempty"`
+	RequestId            string                      `json:"request_id"`
+	AccessToken          NullableNullableAccessToken `json:"access_token,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -30,7 +30,7 @@ type _ItemGetResponse ItemGetResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewItemGetResponse(item Item, requestId string, ) *ItemGetResponse {
+func NewItemGetResponse(item Item, requestId string) *ItemGetResponse {
 	this := ItemGetResponse{}
 	this.Item = item
 	this.RequestId = requestId
@@ -47,7 +47,7 @@ func NewItemGetResponseWithDefaults() *ItemGetResponse {
 
 // GetItem returns the Item field value
 func (o *ItemGetResponse) GetItem() Item {
-	if o == nil  {
+	if o == nil {
 		var ret Item
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *ItemGetResponse) GetItem() Item {
 // GetItemOk returns a tuple with the Item field value
 // and a boolean to check if the value has been set.
 func (o *ItemGetResponse) GetItemOk() (*Item, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Item, true
@@ -82,7 +82,7 @@ func (o *ItemGetResponse) GetStatus() ItemStatus {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ItemGetResponse) GetStatusOk() (*ItemStatus, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Status.Get(), o.Status.IsSet()
@@ -101,6 +101,7 @@ func (o *ItemGetResponse) HasStatus() bool {
 func (o *ItemGetResponse) SetStatus(v ItemStatus) {
 	o.Status.Set(&v)
 }
+
 // SetStatusNil sets the value for Status to be an explicit nil
 func (o *ItemGetResponse) SetStatusNil() {
 	o.Status.Set(nil)
@@ -113,7 +114,7 @@ func (o *ItemGetResponse) UnsetStatus() {
 
 // GetRequestId returns the RequestId field value
 func (o *ItemGetResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -124,7 +125,7 @@ func (o *ItemGetResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *ItemGetResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -148,7 +149,7 @@ func (o *ItemGetResponse) GetAccessToken() NullableAccessToken {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ItemGetResponse) GetAccessTokenOk() (*NullableAccessToken, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AccessToken.Get(), o.AccessToken.IsSet()
@@ -167,6 +168,7 @@ func (o *ItemGetResponse) HasAccessToken() bool {
 func (o *ItemGetResponse) SetAccessToken(v NullableAccessToken) {
 	o.AccessToken.Set(&v)
 }
+
 // SetAccessTokenNil sets the value for AccessToken to be an explicit nil
 func (o *ItemGetResponse) SetAccessTokenNil() {
 	o.AccessToken.Set(nil)
@@ -254,5 +256,3 @@ func (v *NullableItemGetResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

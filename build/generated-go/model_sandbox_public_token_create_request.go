@@ -23,8 +23,8 @@ type SandboxPublicTokenCreateRequest struct {
 	// The ID of the institution the Item will be associated with
 	InstitutionId string `json:"institution_id"`
 	// The products to initially pull for the Item. May be any products that the specified `institution_id`  supports. This array may not be empty.
-	InitialProducts []Products `json:"initial_products"`
-	Options *SandboxPublicTokenCreateRequestOptions `json:"options,omitempty"`
+	InitialProducts      []Products                              `json:"initial_products"`
+	Options              *SandboxPublicTokenCreateRequestOptions `json:"options,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _SandboxPublicTokenCreateRequest SandboxPublicTokenCreateRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSandboxPublicTokenCreateRequest(institutionId string, initialProducts []Products, ) *SandboxPublicTokenCreateRequest {
+func NewSandboxPublicTokenCreateRequest(institutionId string, initialProducts []Products) *SandboxPublicTokenCreateRequest {
 	this := SandboxPublicTokenCreateRequest{}
 	this.InstitutionId = institutionId
 	this.InitialProducts = initialProducts
@@ -115,7 +115,7 @@ func (o *SandboxPublicTokenCreateRequest) SetSecret(v string) {
 
 // GetInstitutionId returns the InstitutionId field value
 func (o *SandboxPublicTokenCreateRequest) GetInstitutionId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *SandboxPublicTokenCreateRequest) GetInstitutionId() string {
 // GetInstitutionIdOk returns a tuple with the InstitutionId field value
 // and a boolean to check if the value has been set.
 func (o *SandboxPublicTokenCreateRequest) GetInstitutionIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.InstitutionId, true
@@ -139,7 +139,7 @@ func (o *SandboxPublicTokenCreateRequest) SetInstitutionId(v string) {
 
 // GetInitialProducts returns the InitialProducts field value
 func (o *SandboxPublicTokenCreateRequest) GetInitialProducts() []Products {
-	if o == nil  {
+	if o == nil {
 		var ret []Products
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *SandboxPublicTokenCreateRequest) GetInitialProducts() []Products {
 // GetInitialProductsOk returns a tuple with the InitialProducts field value
 // and a boolean to check if the value has been set.
 func (o *SandboxPublicTokenCreateRequest) GetInitialProductsOk() (*[]Products, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.InitialProducts, true
@@ -274,5 +274,3 @@ func (v *NullableSandboxPublicTokenCreateRequest) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

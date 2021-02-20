@@ -21,7 +21,7 @@ type NumbersInternational struct {
 	// The International Bank Account Number (IBAN) for the account
 	Iban string `json:"iban"`
 	// The Bank Identifier Code (BIC) for the account
-	Bic string `json:"bic"`
+	Bic                  string `json:"bic"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _NumbersInternational NumbersInternational
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNumbersInternational(accountId string, iban string, bic string, ) *NumbersInternational {
+func NewNumbersInternational(accountId string, iban string, bic string) *NumbersInternational {
 	this := NumbersInternational{}
 	this.AccountId = accountId
 	this.Iban = iban
@@ -49,7 +49,7 @@ func NewNumbersInternationalWithDefaults() *NumbersInternational {
 
 // GetAccountId returns the AccountId field value
 func (o *NumbersInternational) GetAccountId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *NumbersInternational) GetAccountId() string {
 // GetAccountIdOk returns a tuple with the AccountId field value
 // and a boolean to check if the value has been set.
 func (o *NumbersInternational) GetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountId, true
@@ -73,7 +73,7 @@ func (o *NumbersInternational) SetAccountId(v string) {
 
 // GetIban returns the Iban field value
 func (o *NumbersInternational) GetIban() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *NumbersInternational) GetIban() string {
 // GetIbanOk returns a tuple with the Iban field value
 // and a boolean to check if the value has been set.
 func (o *NumbersInternational) GetIbanOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Iban, true
@@ -97,7 +97,7 @@ func (o *NumbersInternational) SetIban(v string) {
 
 // GetBic returns the Bic field value
 func (o *NumbersInternational) GetBic() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *NumbersInternational) GetBic() string {
 // GetBicOk returns a tuple with the Bic field value
 // and a boolean to check if the value has been set.
 func (o *NumbersInternational) GetBicOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Bic, true
@@ -192,5 +192,3 @@ func (v *NullableNumbersInternational) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

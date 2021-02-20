@@ -23,7 +23,7 @@ type HealthIncident struct {
 	// The title of the incident
 	Title *string `json:"title,omitempty"`
 	// Updates on the health incident.
-	IncidentUpdates *[]IncidentUpdate `json:"incident_updates,omitempty"`
+	IncidentUpdates      *[]IncidentUpdate `json:"incident_updates,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -59,7 +59,7 @@ func (o *HealthIncident) GetStartDate() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HealthIncident) GetStartDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StartDate.Get(), o.StartDate.IsSet()
@@ -78,6 +78,7 @@ func (o *HealthIncident) HasStartDate() bool {
 func (o *HealthIncident) SetStartDate(v string) {
 	o.StartDate.Set(&v)
 }
+
 // SetStartDateNil sets the value for StartDate to be an explicit nil
 func (o *HealthIncident) SetStartDateNil() {
 	o.StartDate.Set(nil)
@@ -101,7 +102,7 @@ func (o *HealthIncident) GetEndDate() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HealthIncident) GetEndDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.EndDate.Get(), o.EndDate.IsSet()
@@ -120,6 +121,7 @@ func (o *HealthIncident) HasEndDate() bool {
 func (o *HealthIncident) SetEndDate(v string) {
 	o.EndDate.Set(&v)
 }
+
 // SetEndDateNil sets the value for EndDate to be an explicit nil
 func (o *HealthIncident) SetEndDateNil() {
 	o.EndDate.Set(nil)
@@ -271,5 +273,3 @@ func (v *NullableHealthIncident) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

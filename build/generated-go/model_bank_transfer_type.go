@@ -20,7 +20,7 @@ type BankTransferType string
 
 // List of BankTransferType
 const (
-	BANKTRANSFERTYPE_DEBIT BankTransferType = "debit"
+	BANKTRANSFERTYPE_DEBIT  BankTransferType = "debit"
 	BANKTRANSFERTYPE_CREDIT BankTransferType = "credit"
 )
 
@@ -31,7 +31,7 @@ func (v *BankTransferType) UnmarshalJSON(src []byte) error {
 		return err
 	}
 	enumTypeValue := BankTransferType(value)
-	for _, existing := range []BankTransferType{ "debit", "credit",   } {
+	for _, existing := range []BankTransferType{"debit", "credit"} {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
@@ -81,4 +81,3 @@ func (v *NullableBankTransferType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

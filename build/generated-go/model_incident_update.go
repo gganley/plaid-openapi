@@ -21,7 +21,7 @@ type IncidentUpdate struct {
 	// The status of the incident.
 	Status *string `json:"status,omitempty"`
 	// The date when the update was published, in ISO 8601 format, e.g. `\"2020-10-30T15:26:48Z\"`.
-	UpdatedDate *string `json:"updated_date,omitempty"`
+	UpdatedDate          *string `json:"updated_date,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -213,5 +213,3 @@ func (v *NullableIncidentUpdate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

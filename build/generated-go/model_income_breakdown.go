@@ -23,7 +23,7 @@ type IncomeBreakdown struct {
 	// The number of hours logged for this income for this pay period.
 	Hours NullableFloat32 `json:"hours,omitempty"`
 	// The total pay for this pay period.
-	Total NullableFloat32 `json:"total,omitempty"`
+	Total                NullableFloat32 `json:"total,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -59,7 +59,7 @@ func (o *IncomeBreakdown) GetType() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IncomeBreakdown) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Type.Get(), o.Type.IsSet()
@@ -78,6 +78,7 @@ func (o *IncomeBreakdown) HasType() bool {
 func (o *IncomeBreakdown) SetType(v string) {
 	o.Type.Set(&v)
 }
+
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *IncomeBreakdown) SetTypeNil() {
 	o.Type.Set(nil)
@@ -101,7 +102,7 @@ func (o *IncomeBreakdown) GetRate() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IncomeBreakdown) GetRateOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Rate.Get(), o.Rate.IsSet()
@@ -120,6 +121,7 @@ func (o *IncomeBreakdown) HasRate() bool {
 func (o *IncomeBreakdown) SetRate(v float32) {
 	o.Rate.Set(&v)
 }
+
 // SetRateNil sets the value for Rate to be an explicit nil
 func (o *IncomeBreakdown) SetRateNil() {
 	o.Rate.Set(nil)
@@ -143,7 +145,7 @@ func (o *IncomeBreakdown) GetHours() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IncomeBreakdown) GetHoursOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Hours.Get(), o.Hours.IsSet()
@@ -162,6 +164,7 @@ func (o *IncomeBreakdown) HasHours() bool {
 func (o *IncomeBreakdown) SetHours(v float32) {
 	o.Hours.Set(&v)
 }
+
 // SetHoursNil sets the value for Hours to be an explicit nil
 func (o *IncomeBreakdown) SetHoursNil() {
 	o.Hours.Set(nil)
@@ -185,7 +188,7 @@ func (o *IncomeBreakdown) GetTotal() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IncomeBreakdown) GetTotalOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Total.Get(), o.Total.IsSet()
@@ -204,6 +207,7 @@ func (o *IncomeBreakdown) HasTotal() bool {
 func (o *IncomeBreakdown) SetTotal(v float32) {
 	o.Total.Set(&v)
 }
+
 // SetTotalNil sets the value for Total to be an explicit nil
 func (o *IncomeBreakdown) SetTotalNil() {
 	o.Total.Set(nil)
@@ -291,5 +295,3 @@ func (v *NullableIncomeBreakdown) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

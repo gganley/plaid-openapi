@@ -25,7 +25,7 @@ type InitialUpdateWebhook struct {
 	// The number of new, unfetched transactions available.
 	NewTransactions float32 `json:"new_transactions"`
 	// The `item_id` of the Item associated with this webhook, warning, or error
-	ItemId string `json:"item_id"`
+	ItemId               string `json:"item_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -35,7 +35,7 @@ type _InitialUpdateWebhook InitialUpdateWebhook
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInitialUpdateWebhook(webhookType string, webhookCode string, newTransactions float32, itemId string, ) *InitialUpdateWebhook {
+func NewInitialUpdateWebhook(webhookType string, webhookCode string, newTransactions float32, itemId string) *InitialUpdateWebhook {
 	this := InitialUpdateWebhook{}
 	this.WebhookType = webhookType
 	this.WebhookCode = webhookCode
@@ -54,7 +54,7 @@ func NewInitialUpdateWebhookWithDefaults() *InitialUpdateWebhook {
 
 // GetWebhookType returns the WebhookType field value
 func (o *InitialUpdateWebhook) GetWebhookType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *InitialUpdateWebhook) GetWebhookType() string {
 // GetWebhookTypeOk returns a tuple with the WebhookType field value
 // and a boolean to check if the value has been set.
 func (o *InitialUpdateWebhook) GetWebhookTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookType, true
@@ -78,7 +78,7 @@ func (o *InitialUpdateWebhook) SetWebhookType(v string) {
 
 // GetWebhookCode returns the WebhookCode field value
 func (o *InitialUpdateWebhook) GetWebhookCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *InitialUpdateWebhook) GetWebhookCode() string {
 // GetWebhookCodeOk returns a tuple with the WebhookCode field value
 // and a boolean to check if the value has been set.
 func (o *InitialUpdateWebhook) GetWebhookCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookCode, true
@@ -113,7 +113,7 @@ func (o *InitialUpdateWebhook) GetError() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InitialUpdateWebhook) GetErrorOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Error.Get(), o.Error.IsSet()
@@ -132,6 +132,7 @@ func (o *InitialUpdateWebhook) HasError() bool {
 func (o *InitialUpdateWebhook) SetError(v string) {
 	o.Error.Set(&v)
 }
+
 // SetErrorNil sets the value for Error to be an explicit nil
 func (o *InitialUpdateWebhook) SetErrorNil() {
 	o.Error.Set(nil)
@@ -144,7 +145,7 @@ func (o *InitialUpdateWebhook) UnsetError() {
 
 // GetNewTransactions returns the NewTransactions field value
 func (o *InitialUpdateWebhook) GetNewTransactions() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -155,7 +156,7 @@ func (o *InitialUpdateWebhook) GetNewTransactions() float32 {
 // GetNewTransactionsOk returns a tuple with the NewTransactions field value
 // and a boolean to check if the value has been set.
 func (o *InitialUpdateWebhook) GetNewTransactionsOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.NewTransactions, true
@@ -168,7 +169,7 @@ func (o *InitialUpdateWebhook) SetNewTransactions(v float32) {
 
 // GetItemId returns the ItemId field value
 func (o *InitialUpdateWebhook) GetItemId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -179,7 +180,7 @@ func (o *InitialUpdateWebhook) GetItemId() string {
 // GetItemIdOk returns a tuple with the ItemId field value
 // and a boolean to check if the value has been set.
 func (o *InitialUpdateWebhook) GetItemIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ItemId, true
@@ -271,5 +272,3 @@ func (v *NullableInitialUpdateWebhook) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

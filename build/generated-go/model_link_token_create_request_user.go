@@ -22,7 +22,7 @@ type LinkTokenCreateRequestUser struct {
 	LegalName *string `json:"legal_name,omitempty"`
 	// The user's phone number in [E.164](https://en.wikipedia.org/wiki/E.164) format. This field is optional, but required to enable the [returning user experience](/docs/link/returning-user).
 	PhoneNumber *string `json:"phone_number,omitempty"`
-	// The date and time the phone number was verified in ISO 8601 format (`YYYY-MM-DDThh:mm:ssZ`). This field is optional, but required to enable any [returning user experience](/docs/link/returning-user).   Only pass a verification time for a phone number that you have verified. If you have performed verification but don’t have the time, you may supply a signal value of the start of the UNIX epoch.   Example: `2020-01-01T00:00:00Z` 
+	// The date and time the phone number was verified in ISO 8601 format (`YYYY-MM-DDThh:mm:ssZ`). This field is optional, but required to enable any [returning user experience](/docs/link/returning-user).   Only pass a verification time for a phone number that you have verified. If you have performed verification but don’t have the time, you may supply a signal value of the start of the UNIX epoch.   Example: `2020-01-01T00:00:00Z`
 	PhoneNumberVerifiedTime *string `json:"phone_number_verified_time,omitempty"`
 	// The user's email address. This field is optional, but required to enable the [pre-authenticated returning user flow](/docs/link/returning-user/#enabling-the-returning-user-experience).
 	EmailAddress *string `json:"email_address,omitempty"`
@@ -31,7 +31,7 @@ type LinkTokenCreateRequestUser struct {
 	// To be provided in the format \"ddd-dd-dddd\". This field is optional and will support not-yet-implemented functionality for new products.
 	Ssn *string `json:"ssn,omitempty"`
 	// To be provided in the format \"yyyy-mm-dd\". This field is optional and will support not-yet-implemented functionality for new products.
-	DateOfBirth *string `json:"date_of_birth,omitempty"`
+	DateOfBirth          *string `json:"date_of_birth,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -41,7 +41,7 @@ type _LinkTokenCreateRequestUser LinkTokenCreateRequestUser
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLinkTokenCreateRequestUser(clientUserId string, ) *LinkTokenCreateRequestUser {
+func NewLinkTokenCreateRequestUser(clientUserId string) *LinkTokenCreateRequestUser {
 	this := LinkTokenCreateRequestUser{}
 	this.ClientUserId = clientUserId
 	return &this
@@ -57,7 +57,7 @@ func NewLinkTokenCreateRequestUserWithDefaults() *LinkTokenCreateRequestUser {
 
 // GetClientUserId returns the ClientUserId field value
 func (o *LinkTokenCreateRequestUser) GetClientUserId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -68,7 +68,7 @@ func (o *LinkTokenCreateRequestUser) GetClientUserId() string {
 // GetClientUserIdOk returns a tuple with the ClientUserId field value
 // and a boolean to check if the value has been set.
 func (o *LinkTokenCreateRequestUser) GetClientUserIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClientUserId, true
@@ -396,5 +396,3 @@ func (v *NullableLinkTokenCreateRequestUser) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

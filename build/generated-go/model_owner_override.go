@@ -23,7 +23,7 @@ type OwnerOverride struct {
 	// A list of email addresses associated with the account.
 	Emails []Email `json:"emails"`
 	// Data about the various addresses associated with the account.
-	Addresses []Address `json:"addresses"`
+	Addresses            []Address `json:"addresses"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -33,7 +33,7 @@ type _OwnerOverride OwnerOverride
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOwnerOverride(names []string, phoneNumbers []PhoneNumber, emails []Email, addresses []Address, ) *OwnerOverride {
+func NewOwnerOverride(names []string, phoneNumbers []PhoneNumber, emails []Email, addresses []Address) *OwnerOverride {
 	this := OwnerOverride{}
 	this.Names = names
 	this.PhoneNumbers = phoneNumbers
@@ -52,7 +52,7 @@ func NewOwnerOverrideWithDefaults() *OwnerOverride {
 
 // GetNames returns the Names field value
 func (o *OwnerOverride) GetNames() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *OwnerOverride) GetNames() []string {
 // GetNamesOk returns a tuple with the Names field value
 // and a boolean to check if the value has been set.
 func (o *OwnerOverride) GetNamesOk() (*[]string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Names, true
@@ -76,7 +76,7 @@ func (o *OwnerOverride) SetNames(v []string) {
 
 // GetPhoneNumbers returns the PhoneNumbers field value
 func (o *OwnerOverride) GetPhoneNumbers() []PhoneNumber {
-	if o == nil  {
+	if o == nil {
 		var ret []PhoneNumber
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *OwnerOverride) GetPhoneNumbers() []PhoneNumber {
 // GetPhoneNumbersOk returns a tuple with the PhoneNumbers field value
 // and a boolean to check if the value has been set.
 func (o *OwnerOverride) GetPhoneNumbersOk() (*[]PhoneNumber, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PhoneNumbers, true
@@ -100,7 +100,7 @@ func (o *OwnerOverride) SetPhoneNumbers(v []PhoneNumber) {
 
 // GetEmails returns the Emails field value
 func (o *OwnerOverride) GetEmails() []Email {
-	if o == nil  {
+	if o == nil {
 		var ret []Email
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *OwnerOverride) GetEmails() []Email {
 // GetEmailsOk returns a tuple with the Emails field value
 // and a boolean to check if the value has been set.
 func (o *OwnerOverride) GetEmailsOk() (*[]Email, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Emails, true
@@ -124,7 +124,7 @@ func (o *OwnerOverride) SetEmails(v []Email) {
 
 // GetAddresses returns the Addresses field value
 func (o *OwnerOverride) GetAddresses() []Address {
-	if o == nil  {
+	if o == nil {
 		var ret []Address
 		return ret
 	}
@@ -135,7 +135,7 @@ func (o *OwnerOverride) GetAddresses() []Address {
 // GetAddressesOk returns a tuple with the Addresses field value
 // and a boolean to check if the value has been set.
 func (o *OwnerOverride) GetAddressesOk() (*[]Address, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Addresses, true
@@ -223,5 +223,3 @@ func (v *NullableOwnerOverride) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

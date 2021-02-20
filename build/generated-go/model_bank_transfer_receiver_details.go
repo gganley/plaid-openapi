@@ -17,7 +17,7 @@ import (
 // BankTransferReceiverDetails The receiver details if the type of this event is `reciever_pending` or `reciever_posted`. Null value otherwise.
 type BankTransferReceiverDetails struct {
 	// The sign of the available balance for the receiver bank account associated with the receiver event at the time the matching transaction was found. Can be `positive`, `negative`, or null if the balance was not available at the time.
-	AvailableBalance NullableString `json:"available_balance,omitempty"`
+	AvailableBalance     NullableString `json:"available_balance,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -53,7 +53,7 @@ func (o *BankTransferReceiverDetails) GetAvailableBalance() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferReceiverDetails) GetAvailableBalanceOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AvailableBalance.Get(), o.AvailableBalance.IsSet()
@@ -72,6 +72,7 @@ func (o *BankTransferReceiverDetails) HasAvailableBalance() bool {
 func (o *BankTransferReceiverDetails) SetAvailableBalance(v string) {
 	o.AvailableBalance.Set(&v)
 }
+
 // SetAvailableBalanceNil sets the value for AvailableBalance to be an explicit nil
 func (o *BankTransferReceiverDetails) SetAvailableBalanceNil() {
 	o.AvailableBalance.Set(nil)
@@ -147,5 +148,3 @@ func (v *NullableBankTransferReceiverDetails) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

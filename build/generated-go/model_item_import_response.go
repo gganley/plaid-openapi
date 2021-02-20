@@ -19,7 +19,7 @@ type ItemImportResponse struct {
 	// The access token associated with the Item data is being requested for.
 	AccessToken string `json:"access_token"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _ItemImportResponse ItemImportResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewItemImportResponse(accessToken string, requestId string, ) *ItemImportResponse {
+func NewItemImportResponse(accessToken string, requestId string) *ItemImportResponse {
 	this := ItemImportResponse{}
 	this.AccessToken = accessToken
 	this.RequestId = requestId
@@ -46,7 +46,7 @@ func NewItemImportResponseWithDefaults() *ItemImportResponse {
 
 // GetAccessToken returns the AccessToken field value
 func (o *ItemImportResponse) GetAccessToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *ItemImportResponse) GetAccessToken() string {
 // GetAccessTokenOk returns a tuple with the AccessToken field value
 // and a boolean to check if the value has been set.
 func (o *ItemImportResponse) GetAccessTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccessToken, true
@@ -70,7 +70,7 @@ func (o *ItemImportResponse) SetAccessToken(v string) {
 
 // GetRequestId returns the RequestId field value
 func (o *ItemImportResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *ItemImportResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *ItemImportResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -161,5 +161,3 @@ func (v *NullableItemImportResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

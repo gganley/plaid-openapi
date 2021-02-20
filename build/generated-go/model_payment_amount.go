@@ -19,7 +19,7 @@ type PaymentAmount struct {
 	// The ISO-4217 currency code of the payment amount
 	Currency string `json:"currency"`
 	// The payment amount
-	Value float32 `json:"value"`
+	Value                float32 `json:"value"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _PaymentAmount PaymentAmount
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaymentAmount(currency string, value float32, ) *PaymentAmount {
+func NewPaymentAmount(currency string, value float32) *PaymentAmount {
 	this := PaymentAmount{}
 	this.Currency = currency
 	this.Value = value
@@ -46,7 +46,7 @@ func NewPaymentAmountWithDefaults() *PaymentAmount {
 
 // GetCurrency returns the Currency field value
 func (o *PaymentAmount) GetCurrency() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *PaymentAmount) GetCurrency() string {
 // GetCurrencyOk returns a tuple with the Currency field value
 // and a boolean to check if the value has been set.
 func (o *PaymentAmount) GetCurrencyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Currency, true
@@ -70,7 +70,7 @@ func (o *PaymentAmount) SetCurrency(v string) {
 
 // GetValue returns the Value field value
 func (o *PaymentAmount) GetValue() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *PaymentAmount) GetValue() float32 {
 // GetValueOk returns a tuple with the Value field value
 // and a boolean to check if the value has been set.
 func (o *PaymentAmount) GetValueOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Value, true
@@ -161,5 +161,3 @@ func (v *NullablePaymentAmount) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

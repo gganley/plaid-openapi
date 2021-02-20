@@ -23,7 +23,7 @@ type DepositSwitchTargetAccount struct {
 	// The name of the deposit switch destination account, as it will be displayed to the end user in the Deposit Switch interface. It is not required to match the name used in online banking.
 	AccountName string `json:"account_name"`
 	// The account subtype of the account, either `checking` or `savings`.
-	AccountSubtype string `json:"account_subtype"`
+	AccountSubtype       string `json:"account_subtype"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -33,7 +33,7 @@ type _DepositSwitchTargetAccount DepositSwitchTargetAccount
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDepositSwitchTargetAccount(accountNumber string, routingNumber string, accountName string, accountSubtype string, ) *DepositSwitchTargetAccount {
+func NewDepositSwitchTargetAccount(accountNumber string, routingNumber string, accountName string, accountSubtype string) *DepositSwitchTargetAccount {
 	this := DepositSwitchTargetAccount{}
 	this.AccountNumber = accountNumber
 	this.RoutingNumber = routingNumber
@@ -52,7 +52,7 @@ func NewDepositSwitchTargetAccountWithDefaults() *DepositSwitchTargetAccount {
 
 // GetAccountNumber returns the AccountNumber field value
 func (o *DepositSwitchTargetAccount) GetAccountNumber() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *DepositSwitchTargetAccount) GetAccountNumber() string {
 // GetAccountNumberOk returns a tuple with the AccountNumber field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchTargetAccount) GetAccountNumberOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountNumber, true
@@ -76,7 +76,7 @@ func (o *DepositSwitchTargetAccount) SetAccountNumber(v string) {
 
 // GetRoutingNumber returns the RoutingNumber field value
 func (o *DepositSwitchTargetAccount) GetRoutingNumber() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *DepositSwitchTargetAccount) GetRoutingNumber() string {
 // GetRoutingNumberOk returns a tuple with the RoutingNumber field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchTargetAccount) GetRoutingNumberOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RoutingNumber, true
@@ -100,7 +100,7 @@ func (o *DepositSwitchTargetAccount) SetRoutingNumber(v string) {
 
 // GetAccountName returns the AccountName field value
 func (o *DepositSwitchTargetAccount) GetAccountName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *DepositSwitchTargetAccount) GetAccountName() string {
 // GetAccountNameOk returns a tuple with the AccountName field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchTargetAccount) GetAccountNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountName, true
@@ -124,7 +124,7 @@ func (o *DepositSwitchTargetAccount) SetAccountName(v string) {
 
 // GetAccountSubtype returns the AccountSubtype field value
 func (o *DepositSwitchTargetAccount) GetAccountSubtype() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -135,7 +135,7 @@ func (o *DepositSwitchTargetAccount) GetAccountSubtype() string {
 // GetAccountSubtypeOk returns a tuple with the AccountSubtype field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchTargetAccount) GetAccountSubtypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountSubtype, true
@@ -223,5 +223,3 @@ func (v *NullableDepositSwitchTargetAccount) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

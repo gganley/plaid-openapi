@@ -21,7 +21,7 @@ type PaymentInitiationPaymentListResponse struct {
 	// The value that, when used as the optional `cursor` parameter to `/payment_initiation/payment/list`, will return the next unreturned payment as its first payment.
 	NextCursor string `json:"next_cursor"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _PaymentInitiationPaymentListResponse PaymentInitiationPaymentListResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaymentInitiationPaymentListResponse(payments []PaymentInitiationPaymentGetResponse, nextCursor string, requestId string, ) *PaymentInitiationPaymentListResponse {
+func NewPaymentInitiationPaymentListResponse(payments []PaymentInitiationPaymentGetResponse, nextCursor string, requestId string) *PaymentInitiationPaymentListResponse {
 	this := PaymentInitiationPaymentListResponse{}
 	this.Payments = payments
 	this.NextCursor = nextCursor
@@ -49,7 +49,7 @@ func NewPaymentInitiationPaymentListResponseWithDefaults() *PaymentInitiationPay
 
 // GetPayments returns the Payments field value
 func (o *PaymentInitiationPaymentListResponse) GetPayments() []PaymentInitiationPaymentGetResponse {
-	if o == nil  {
+	if o == nil {
 		var ret []PaymentInitiationPaymentGetResponse
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *PaymentInitiationPaymentListResponse) GetPayments() []PaymentInitiation
 // GetPaymentsOk returns a tuple with the Payments field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationPaymentListResponse) GetPaymentsOk() (*[]PaymentInitiationPaymentGetResponse, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Payments, true
@@ -73,7 +73,7 @@ func (o *PaymentInitiationPaymentListResponse) SetPayments(v []PaymentInitiation
 
 // GetNextCursor returns the NextCursor field value
 func (o *PaymentInitiationPaymentListResponse) GetNextCursor() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *PaymentInitiationPaymentListResponse) GetNextCursor() string {
 // GetNextCursorOk returns a tuple with the NextCursor field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationPaymentListResponse) GetNextCursorOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.NextCursor, true
@@ -97,7 +97,7 @@ func (o *PaymentInitiationPaymentListResponse) SetNextCursor(v string) {
 
 // GetRequestId returns the RequestId field value
 func (o *PaymentInitiationPaymentListResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *PaymentInitiationPaymentListResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationPaymentListResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -192,5 +192,3 @@ func (v *NullablePaymentInitiationPaymentListResponse) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

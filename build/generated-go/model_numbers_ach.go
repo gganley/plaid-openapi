@@ -23,7 +23,7 @@ type NumbersACH struct {
 	// The ACH routing number for the account
 	Routing string `json:"routing"`
 	// The wire transfer routing number for the account, if available
-	WireRouting NullableString `json:"wire_routing,omitempty"`
+	WireRouting          NullableString `json:"wire_routing,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -33,7 +33,7 @@ type _NumbersACH NumbersACH
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNumbersACH(accountId string, account string, routing string, ) *NumbersACH {
+func NewNumbersACH(accountId string, account string, routing string) *NumbersACH {
 	this := NumbersACH{}
 	this.AccountId = accountId
 	this.Account = account
@@ -51,7 +51,7 @@ func NewNumbersACHWithDefaults() *NumbersACH {
 
 // GetAccountId returns the AccountId field value
 func (o *NumbersACH) GetAccountId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *NumbersACH) GetAccountId() string {
 // GetAccountIdOk returns a tuple with the AccountId field value
 // and a boolean to check if the value has been set.
 func (o *NumbersACH) GetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountId, true
@@ -75,7 +75,7 @@ func (o *NumbersACH) SetAccountId(v string) {
 
 // GetAccount returns the Account field value
 func (o *NumbersACH) GetAccount() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *NumbersACH) GetAccount() string {
 // GetAccountOk returns a tuple with the Account field value
 // and a boolean to check if the value has been set.
 func (o *NumbersACH) GetAccountOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Account, true
@@ -99,7 +99,7 @@ func (o *NumbersACH) SetAccount(v string) {
 
 // GetRouting returns the Routing field value
 func (o *NumbersACH) GetRouting() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *NumbersACH) GetRouting() string {
 // GetRoutingOk returns a tuple with the Routing field value
 // and a boolean to check if the value has been set.
 func (o *NumbersACH) GetRoutingOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Routing, true
@@ -134,7 +134,7 @@ func (o *NumbersACH) GetWireRouting() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NumbersACH) GetWireRoutingOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.WireRouting.Get(), o.WireRouting.IsSet()
@@ -153,6 +153,7 @@ func (o *NumbersACH) HasWireRouting() bool {
 func (o *NumbersACH) SetWireRouting(v string) {
 	o.WireRouting.Set(&v)
 }
+
 // SetWireRoutingNil sets the value for WireRouting to be an explicit nil
 func (o *NumbersACH) SetWireRoutingNil() {
 	o.WireRouting.Set(nil)
@@ -240,5 +241,3 @@ func (v *NullableNumbersACH) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

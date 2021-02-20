@@ -19,12 +19,12 @@ type TransactionsRemovedWebhook struct {
 	// `TRANSACTIONS`
 	WebhookType string `json:"webhook_type"`
 	// `TRANSACTIONS_REMOVED`
-	WebhookCode string `json:"webhook_code"`
-	Error NullableError `json:"error,omitempty"`
+	WebhookCode string        `json:"webhook_code"`
+	Error       NullableError `json:"error,omitempty"`
 	// An array of `transaction_ids` corresponding to the removed transactions
 	RemovedTransactions []string `json:"removed_transactions"`
 	// The `item_id` of the Item associated with this webhook, warning, or error
-	ItemId string `json:"item_id"`
+	ItemId               string `json:"item_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _TransactionsRemovedWebhook TransactionsRemovedWebhook
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTransactionsRemovedWebhook(webhookType string, webhookCode string, removedTransactions []string, itemId string, ) *TransactionsRemovedWebhook {
+func NewTransactionsRemovedWebhook(webhookType string, webhookCode string, removedTransactions []string, itemId string) *TransactionsRemovedWebhook {
 	this := TransactionsRemovedWebhook{}
 	this.WebhookType = webhookType
 	this.WebhookCode = webhookCode
@@ -53,7 +53,7 @@ func NewTransactionsRemovedWebhookWithDefaults() *TransactionsRemovedWebhook {
 
 // GetWebhookType returns the WebhookType field value
 func (o *TransactionsRemovedWebhook) GetWebhookType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -64,7 +64,7 @@ func (o *TransactionsRemovedWebhook) GetWebhookType() string {
 // GetWebhookTypeOk returns a tuple with the WebhookType field value
 // and a boolean to check if the value has been set.
 func (o *TransactionsRemovedWebhook) GetWebhookTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookType, true
@@ -77,7 +77,7 @@ func (o *TransactionsRemovedWebhook) SetWebhookType(v string) {
 
 // GetWebhookCode returns the WebhookCode field value
 func (o *TransactionsRemovedWebhook) GetWebhookCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *TransactionsRemovedWebhook) GetWebhookCode() string {
 // GetWebhookCodeOk returns a tuple with the WebhookCode field value
 // and a boolean to check if the value has been set.
 func (o *TransactionsRemovedWebhook) GetWebhookCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookCode, true
@@ -112,7 +112,7 @@ func (o *TransactionsRemovedWebhook) GetError() Error {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TransactionsRemovedWebhook) GetErrorOk() (*Error, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Error.Get(), o.Error.IsSet()
@@ -131,6 +131,7 @@ func (o *TransactionsRemovedWebhook) HasError() bool {
 func (o *TransactionsRemovedWebhook) SetError(v Error) {
 	o.Error.Set(&v)
 }
+
 // SetErrorNil sets the value for Error to be an explicit nil
 func (o *TransactionsRemovedWebhook) SetErrorNil() {
 	o.Error.Set(nil)
@@ -143,7 +144,7 @@ func (o *TransactionsRemovedWebhook) UnsetError() {
 
 // GetRemovedTransactions returns the RemovedTransactions field value
 func (o *TransactionsRemovedWebhook) GetRemovedTransactions() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -154,7 +155,7 @@ func (o *TransactionsRemovedWebhook) GetRemovedTransactions() []string {
 // GetRemovedTransactionsOk returns a tuple with the RemovedTransactions field value
 // and a boolean to check if the value has been set.
 func (o *TransactionsRemovedWebhook) GetRemovedTransactionsOk() (*[]string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RemovedTransactions, true
@@ -167,7 +168,7 @@ func (o *TransactionsRemovedWebhook) SetRemovedTransactions(v []string) {
 
 // GetItemId returns the ItemId field value
 func (o *TransactionsRemovedWebhook) GetItemId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -178,7 +179,7 @@ func (o *TransactionsRemovedWebhook) GetItemId() string {
 // GetItemIdOk returns a tuple with the ItemId field value
 // and a boolean to check if the value has been set.
 func (o *TransactionsRemovedWebhook) GetItemIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ItemId, true
@@ -270,5 +271,3 @@ func (v *NullableTransactionsRemovedWebhook) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

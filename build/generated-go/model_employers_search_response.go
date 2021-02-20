@@ -19,7 +19,7 @@ type EmployersSearchResponse struct {
 	// A list of employers matching the search criteria.
 	Employers []Employer `json:"employers"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _EmployersSearchResponse EmployersSearchResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEmployersSearchResponse(employers []Employer, requestId string, ) *EmployersSearchResponse {
+func NewEmployersSearchResponse(employers []Employer, requestId string) *EmployersSearchResponse {
 	this := EmployersSearchResponse{}
 	this.Employers = employers
 	this.RequestId = requestId
@@ -46,7 +46,7 @@ func NewEmployersSearchResponseWithDefaults() *EmployersSearchResponse {
 
 // GetEmployers returns the Employers field value
 func (o *EmployersSearchResponse) GetEmployers() []Employer {
-	if o == nil  {
+	if o == nil {
 		var ret []Employer
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *EmployersSearchResponse) GetEmployers() []Employer {
 // GetEmployersOk returns a tuple with the Employers field value
 // and a boolean to check if the value has been set.
 func (o *EmployersSearchResponse) GetEmployersOk() (*[]Employer, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Employers, true
@@ -70,7 +70,7 @@ func (o *EmployersSearchResponse) SetEmployers(v []Employer) {
 
 // GetRequestId returns the RequestId field value
 func (o *EmployersSearchResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *EmployersSearchResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *EmployersSearchResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -161,5 +161,3 @@ func (v *NullableEmployersSearchResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

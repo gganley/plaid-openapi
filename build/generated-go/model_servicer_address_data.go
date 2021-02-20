@@ -25,7 +25,7 @@ type ServicerAddressData struct {
 	// The postal code
 	PostalCode NullableString `json:"postal_code,omitempty"`
 	// The ISO 3166-1 alpha-2 country code
-	Country NullableString `json:"country,omitempty"`
+	Country              NullableString `json:"country,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -61,7 +61,7 @@ func (o *ServicerAddressData) GetCity() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ServicerAddressData) GetCityOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.City.Get(), o.City.IsSet()
@@ -80,6 +80,7 @@ func (o *ServicerAddressData) HasCity() bool {
 func (o *ServicerAddressData) SetCity(v string) {
 	o.City.Set(&v)
 }
+
 // SetCityNil sets the value for City to be an explicit nil
 func (o *ServicerAddressData) SetCityNil() {
 	o.City.Set(nil)
@@ -103,7 +104,7 @@ func (o *ServicerAddressData) GetRegion() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ServicerAddressData) GetRegionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Region.Get(), o.Region.IsSet()
@@ -122,6 +123,7 @@ func (o *ServicerAddressData) HasRegion() bool {
 func (o *ServicerAddressData) SetRegion(v string) {
 	o.Region.Set(&v)
 }
+
 // SetRegionNil sets the value for Region to be an explicit nil
 func (o *ServicerAddressData) SetRegionNil() {
 	o.Region.Set(nil)
@@ -145,7 +147,7 @@ func (o *ServicerAddressData) GetStreet() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ServicerAddressData) GetStreetOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Street.Get(), o.Street.IsSet()
@@ -164,6 +166,7 @@ func (o *ServicerAddressData) HasStreet() bool {
 func (o *ServicerAddressData) SetStreet(v string) {
 	o.Street.Set(&v)
 }
+
 // SetStreetNil sets the value for Street to be an explicit nil
 func (o *ServicerAddressData) SetStreetNil() {
 	o.Street.Set(nil)
@@ -187,7 +190,7 @@ func (o *ServicerAddressData) GetPostalCode() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ServicerAddressData) GetPostalCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PostalCode.Get(), o.PostalCode.IsSet()
@@ -206,6 +209,7 @@ func (o *ServicerAddressData) HasPostalCode() bool {
 func (o *ServicerAddressData) SetPostalCode(v string) {
 	o.PostalCode.Set(&v)
 }
+
 // SetPostalCodeNil sets the value for PostalCode to be an explicit nil
 func (o *ServicerAddressData) SetPostalCodeNil() {
 	o.PostalCode.Set(nil)
@@ -229,7 +233,7 @@ func (o *ServicerAddressData) GetCountry() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ServicerAddressData) GetCountryOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Country.Get(), o.Country.IsSet()
@@ -248,6 +252,7 @@ func (o *ServicerAddressData) HasCountry() bool {
 func (o *ServicerAddressData) SetCountry(v string) {
 	o.Country.Set(&v)
 }
+
 // SetCountryNil sets the value for Country to be an explicit nil
 func (o *ServicerAddressData) SetCountryNil() {
 	o.Country.Set(nil)
@@ -339,5 +344,3 @@ func (v *NullableServicerAddressData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

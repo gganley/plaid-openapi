@@ -20,7 +20,7 @@ type StandaloneCurrencyCodeList struct {
 	IsoCurrencyCode string `json:"iso_currency_code"`
 	// List of unofficial currency codes
 	UnofficialCurrencyCode string `json:"unofficial_currency_code"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties   map[string]interface{}
 }
 
 type _StandaloneCurrencyCodeList StandaloneCurrencyCodeList
@@ -29,7 +29,7 @@ type _StandaloneCurrencyCodeList StandaloneCurrencyCodeList
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStandaloneCurrencyCodeList(isoCurrencyCode string, unofficialCurrencyCode string, ) *StandaloneCurrencyCodeList {
+func NewStandaloneCurrencyCodeList(isoCurrencyCode string, unofficialCurrencyCode string) *StandaloneCurrencyCodeList {
 	this := StandaloneCurrencyCodeList{}
 	this.IsoCurrencyCode = isoCurrencyCode
 	this.UnofficialCurrencyCode = unofficialCurrencyCode
@@ -46,7 +46,7 @@ func NewStandaloneCurrencyCodeListWithDefaults() *StandaloneCurrencyCodeList {
 
 // GetIsoCurrencyCode returns the IsoCurrencyCode field value
 func (o *StandaloneCurrencyCodeList) GetIsoCurrencyCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *StandaloneCurrencyCodeList) GetIsoCurrencyCode() string {
 // GetIsoCurrencyCodeOk returns a tuple with the IsoCurrencyCode field value
 // and a boolean to check if the value has been set.
 func (o *StandaloneCurrencyCodeList) GetIsoCurrencyCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.IsoCurrencyCode, true
@@ -70,7 +70,7 @@ func (o *StandaloneCurrencyCodeList) SetIsoCurrencyCode(v string) {
 
 // GetUnofficialCurrencyCode returns the UnofficialCurrencyCode field value
 func (o *StandaloneCurrencyCodeList) GetUnofficialCurrencyCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *StandaloneCurrencyCodeList) GetUnofficialCurrencyCode() string {
 // GetUnofficialCurrencyCodeOk returns a tuple with the UnofficialCurrencyCode field value
 // and a boolean to check if the value has been set.
 func (o *StandaloneCurrencyCodeList) GetUnofficialCurrencyCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.UnofficialCurrencyCode, true
@@ -161,5 +161,3 @@ func (v *NullableStandaloneCurrencyCodeList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

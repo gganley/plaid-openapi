@@ -21,7 +21,7 @@ type Category struct {
 	// `place` for physical transactions or `special` for other transactions such as bank charges.
 	Group string `json:"group"`
 	// A hierarchical array of the categories to which this `category_id` belongs.
-	Hierarchy []string `json:"hierarchy"`
+	Hierarchy            []string `json:"hierarchy"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _Category Category
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCategory(categoryId string, group string, hierarchy []string, ) *Category {
+func NewCategory(categoryId string, group string, hierarchy []string) *Category {
 	this := Category{}
 	this.CategoryId = categoryId
 	this.Group = group
@@ -49,7 +49,7 @@ func NewCategoryWithDefaults() *Category {
 
 // GetCategoryId returns the CategoryId field value
 func (o *Category) GetCategoryId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *Category) GetCategoryId() string {
 // GetCategoryIdOk returns a tuple with the CategoryId field value
 // and a boolean to check if the value has been set.
 func (o *Category) GetCategoryIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.CategoryId, true
@@ -73,7 +73,7 @@ func (o *Category) SetCategoryId(v string) {
 
 // GetGroup returns the Group field value
 func (o *Category) GetGroup() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *Category) GetGroup() string {
 // GetGroupOk returns a tuple with the Group field value
 // and a boolean to check if the value has been set.
 func (o *Category) GetGroupOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Group, true
@@ -97,7 +97,7 @@ func (o *Category) SetGroup(v string) {
 
 // GetHierarchy returns the Hierarchy field value
 func (o *Category) GetHierarchy() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *Category) GetHierarchy() []string {
 // GetHierarchyOk returns a tuple with the Hierarchy field value
 // and a boolean to check if the value has been set.
 func (o *Category) GetHierarchyOk() (*[]string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Hierarchy, true
@@ -192,5 +192,3 @@ func (v *NullableCategory) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

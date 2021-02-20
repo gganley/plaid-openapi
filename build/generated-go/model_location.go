@@ -31,7 +31,7 @@ type Location struct {
 	// The longitude where the transaction occurred.
 	Lon NullableFloat32 `json:"lon,omitempty"`
 	// The merchant defined store number where the transaction occurred.
-	StoreNumber NullableString `json:"store_number,omitempty"`
+	StoreNumber          NullableString `json:"store_number,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *Location) GetAddress() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Location) GetAddressOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Address.Get(), o.Address.IsSet()
@@ -86,6 +86,7 @@ func (o *Location) HasAddress() bool {
 func (o *Location) SetAddress(v string) {
 	o.Address.Set(&v)
 }
+
 // SetAddressNil sets the value for Address to be an explicit nil
 func (o *Location) SetAddressNil() {
 	o.Address.Set(nil)
@@ -109,7 +110,7 @@ func (o *Location) GetCity() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Location) GetCityOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.City.Get(), o.City.IsSet()
@@ -128,6 +129,7 @@ func (o *Location) HasCity() bool {
 func (o *Location) SetCity(v string) {
 	o.City.Set(&v)
 }
+
 // SetCityNil sets the value for City to be an explicit nil
 func (o *Location) SetCityNil() {
 	o.City.Set(nil)
@@ -151,7 +153,7 @@ func (o *Location) GetRegion() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Location) GetRegionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Region.Get(), o.Region.IsSet()
@@ -170,6 +172,7 @@ func (o *Location) HasRegion() bool {
 func (o *Location) SetRegion(v string) {
 	o.Region.Set(&v)
 }
+
 // SetRegionNil sets the value for Region to be an explicit nil
 func (o *Location) SetRegionNil() {
 	o.Region.Set(nil)
@@ -193,7 +196,7 @@ func (o *Location) GetPostalCode() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Location) GetPostalCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PostalCode.Get(), o.PostalCode.IsSet()
@@ -212,6 +215,7 @@ func (o *Location) HasPostalCode() bool {
 func (o *Location) SetPostalCode(v string) {
 	o.PostalCode.Set(&v)
 }
+
 // SetPostalCodeNil sets the value for PostalCode to be an explicit nil
 func (o *Location) SetPostalCodeNil() {
 	o.PostalCode.Set(nil)
@@ -235,7 +239,7 @@ func (o *Location) GetCountry() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Location) GetCountryOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Country.Get(), o.Country.IsSet()
@@ -254,6 +258,7 @@ func (o *Location) HasCountry() bool {
 func (o *Location) SetCountry(v string) {
 	o.Country.Set(&v)
 }
+
 // SetCountryNil sets the value for Country to be an explicit nil
 func (o *Location) SetCountryNil() {
 	o.Country.Set(nil)
@@ -277,7 +282,7 @@ func (o *Location) GetLat() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Location) GetLatOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Lat.Get(), o.Lat.IsSet()
@@ -296,6 +301,7 @@ func (o *Location) HasLat() bool {
 func (o *Location) SetLat(v float32) {
 	o.Lat.Set(&v)
 }
+
 // SetLatNil sets the value for Lat to be an explicit nil
 func (o *Location) SetLatNil() {
 	o.Lat.Set(nil)
@@ -319,7 +325,7 @@ func (o *Location) GetLon() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Location) GetLonOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Lon.Get(), o.Lon.IsSet()
@@ -338,6 +344,7 @@ func (o *Location) HasLon() bool {
 func (o *Location) SetLon(v float32) {
 	o.Lon.Set(&v)
 }
+
 // SetLonNil sets the value for Lon to be an explicit nil
 func (o *Location) SetLonNil() {
 	o.Lon.Set(nil)
@@ -361,7 +368,7 @@ func (o *Location) GetStoreNumber() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Location) GetStoreNumberOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StoreNumber.Get(), o.StoreNumber.IsSet()
@@ -380,6 +387,7 @@ func (o *Location) HasStoreNumber() bool {
 func (o *Location) SetStoreNumber(v string) {
 	o.StoreNumber.Set(&v)
 }
+
 // SetStoreNumberNil sets the value for StoreNumber to be an explicit nil
 func (o *Location) SetStoreNumberNil() {
 	o.StoreNumber.Set(nil)
@@ -483,5 +491,3 @@ func (v *NullableLocation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

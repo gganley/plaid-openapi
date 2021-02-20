@@ -16,13 +16,13 @@ import (
 
 // IncomeSummary The verified fields from a paystub verification. All fields are provided as reported on the paystub.
 type IncomeSummary struct {
-	EmployerName *EmployerIncomeSummaryFieldString `json:"employer_name,omitempty"`
-	EmployeeName *EmployeeIncomeSummaryFieldString `json:"employee_name,omitempty"`
-	YtdGrossIncome *YTDGrossIncomeSummaryFieldNumber `json:"ytd_gross_income,omitempty"`
-	YtdNetIncome *YTDNetIncomeSummaryFieldNumber `json:"ytd_net_income,omitempty"`
-	PayFrequency NullablePayFrequency `json:"pay_frequency,omitempty"`
-	ProjectedWage *ProjectedIncomeSummaryFieldNumber `json:"projected_wage,omitempty"`
-	VerifiedTransaction NullableTransactionData `json:"verified_transaction,omitempty"`
+	EmployerName         *EmployerIncomeSummaryFieldString  `json:"employer_name,omitempty"`
+	EmployeeName         *EmployeeIncomeSummaryFieldString  `json:"employee_name,omitempty"`
+	YtdGrossIncome       *YTDGrossIncomeSummaryFieldNumber  `json:"ytd_gross_income,omitempty"`
+	YtdNetIncome         *YTDNetIncomeSummaryFieldNumber    `json:"ytd_net_income,omitempty"`
+	PayFrequency         NullablePayFrequency               `json:"pay_frequency,omitempty"`
+	ProjectedWage        *ProjectedIncomeSummaryFieldNumber `json:"projected_wage,omitempty"`
+	VerifiedTransaction  NullableTransactionData            `json:"verified_transaction,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -186,7 +186,7 @@ func (o *IncomeSummary) GetPayFrequency() PayFrequency {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IncomeSummary) GetPayFrequencyOk() (*PayFrequency, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PayFrequency.Get(), o.PayFrequency.IsSet()
@@ -205,6 +205,7 @@ func (o *IncomeSummary) HasPayFrequency() bool {
 func (o *IncomeSummary) SetPayFrequency(v PayFrequency) {
 	o.PayFrequency.Set(&v)
 }
+
 // SetPayFrequencyNil sets the value for PayFrequency to be an explicit nil
 func (o *IncomeSummary) SetPayFrequencyNil() {
 	o.PayFrequency.Set(nil)
@@ -260,7 +261,7 @@ func (o *IncomeSummary) GetVerifiedTransaction() TransactionData {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IncomeSummary) GetVerifiedTransactionOk() (*TransactionData, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VerifiedTransaction.Get(), o.VerifiedTransaction.IsSet()
@@ -279,6 +280,7 @@ func (o *IncomeSummary) HasVerifiedTransaction() bool {
 func (o *IncomeSummary) SetVerifiedTransaction(v TransactionData) {
 	o.VerifiedTransaction.Set(&v)
 }
+
 // SetVerifiedTransactionNil sets the value for VerifiedTransaction to be an explicit nil
 func (o *IncomeSummary) SetVerifiedTransactionNil() {
 	o.VerifiedTransaction.Set(nil)
@@ -378,5 +380,3 @@ func (v *NullableIncomeSummary) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

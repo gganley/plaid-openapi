@@ -23,7 +23,7 @@ type BankTransferEventSyncRequest struct {
 	// The latest (largest) `event_id` fetched via the sync endpoint, or 0 initially.
 	AfterId int32 `json:"after_id"`
 	// The maximum number of bank transfer events to return.
-	Count NullableInt32 `json:"count,omitempty"`
+	Count                NullableInt32 `json:"count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -33,7 +33,7 @@ type _BankTransferEventSyncRequest BankTransferEventSyncRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBankTransferEventSyncRequest(afterId int32, ) *BankTransferEventSyncRequest {
+func NewBankTransferEventSyncRequest(afterId int32) *BankTransferEventSyncRequest {
 	this := BankTransferEventSyncRequest{}
 	this.AfterId = afterId
 	var count int32 = 25
@@ -117,7 +117,7 @@ func (o *BankTransferEventSyncRequest) SetSecret(v string) {
 
 // GetAfterId returns the AfterId field value
 func (o *BankTransferEventSyncRequest) GetAfterId() int32 {
-	if o == nil  {
+	if o == nil {
 		var ret int32
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *BankTransferEventSyncRequest) GetAfterId() int32 {
 // GetAfterIdOk returns a tuple with the AfterId field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferEventSyncRequest) GetAfterIdOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AfterId, true
@@ -152,7 +152,7 @@ func (o *BankTransferEventSyncRequest) GetCount() int32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferEventSyncRequest) GetCountOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Count.Get(), o.Count.IsSet()
@@ -171,6 +171,7 @@ func (o *BankTransferEventSyncRequest) HasCount() bool {
 func (o *BankTransferEventSyncRequest) SetCount(v int32) {
 	o.Count.Set(&v)
 }
+
 // SetCountNil sets the value for Count to be an explicit nil
 func (o *BankTransferEventSyncRequest) SetCountNil() {
 	o.Count.Set(nil)
@@ -258,5 +259,3 @@ func (v *NullableBankTransferEventSyncRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

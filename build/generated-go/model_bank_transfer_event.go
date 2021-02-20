@@ -19,23 +19,23 @@ type BankTransferEvent struct {
 	// Plaid’s unique identifier for this event. IDs are sequential unsigned 64-bit integers.
 	EventId int32 `json:"event_id"`
 	// The datetime when this event occurred. This will be of the form `2006-01-02T15:04:05Z`.
-	Timestamp string `json:"timestamp"`
+	Timestamp string                `json:"timestamp"`
 	EventType BankTransferEventType `json:"event_type"`
 	// The account ID associated with the bank transfer.
 	AccountId string `json:"account_id"`
 	// Plaid’s unique identifier for a bank transfer.
 	BankTransferId string `json:"bank_transfer_id"`
 	// The ID of the origination account that this balance belongs to.
-	OriginationAccountId NullableString `json:"origination_account_id,omitempty"`
-	BankTransferType BankTransferType `json:"bank_transfer_type"`
+	OriginationAccountId NullableString   `json:"origination_account_id,omitempty"`
+	BankTransferType     BankTransferType `json:"bank_transfer_type"`
 	// The bank transfer amount.
 	BankTransferAmount string `json:"bank_transfer_amount"`
 	// The currency of the bank transfer amount.
-	BankTransferIsoCurrencyCode string `json:"bank_transfer_iso_currency_code"`
-	FailureReason NullableBankTransferFailure `json:"failure_reason"`
-	Direction NullableBankTransferDirection `json:"direction"`
-	ReceiverDetails NullableBankTransferReceiverDetails `json:"receiver_details"`
-	AdditionalProperties map[string]interface{}
+	BankTransferIsoCurrencyCode string                              `json:"bank_transfer_iso_currency_code"`
+	FailureReason               NullableBankTransferFailure         `json:"failure_reason"`
+	Direction                   NullableBankTransferDirection       `json:"direction"`
+	ReceiverDetails             NullableBankTransferReceiverDetails `json:"receiver_details"`
+	AdditionalProperties        map[string]interface{}
 }
 
 type _BankTransferEvent BankTransferEvent
@@ -44,7 +44,7 @@ type _BankTransferEvent BankTransferEvent
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBankTransferEvent(eventId int32, timestamp string, eventType BankTransferEventType, accountId string, bankTransferId string, bankTransferType BankTransferType, bankTransferAmount string, bankTransferIsoCurrencyCode string, failureReason NullableBankTransferFailure, direction NullableBankTransferDirection, receiverDetails NullableBankTransferReceiverDetails, ) *BankTransferEvent {
+func NewBankTransferEvent(eventId int32, timestamp string, eventType BankTransferEventType, accountId string, bankTransferId string, bankTransferType BankTransferType, bankTransferAmount string, bankTransferIsoCurrencyCode string, failureReason NullableBankTransferFailure, direction NullableBankTransferDirection, receiverDetails NullableBankTransferReceiverDetails) *BankTransferEvent {
 	this := BankTransferEvent{}
 	this.EventId = eventId
 	this.Timestamp = timestamp
@@ -70,7 +70,7 @@ func NewBankTransferEventWithDefaults() *BankTransferEvent {
 
 // GetEventId returns the EventId field value
 func (o *BankTransferEvent) GetEventId() int32 {
-	if o == nil  {
+	if o == nil {
 		var ret int32
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *BankTransferEvent) GetEventId() int32 {
 // GetEventIdOk returns a tuple with the EventId field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferEvent) GetEventIdOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.EventId, true
@@ -94,7 +94,7 @@ func (o *BankTransferEvent) SetEventId(v int32) {
 
 // GetTimestamp returns the Timestamp field value
 func (o *BankTransferEvent) GetTimestamp() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *BankTransferEvent) GetTimestamp() string {
 // GetTimestampOk returns a tuple with the Timestamp field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferEvent) GetTimestampOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Timestamp, true
@@ -118,7 +118,7 @@ func (o *BankTransferEvent) SetTimestamp(v string) {
 
 // GetEventType returns the EventType field value
 func (o *BankTransferEvent) GetEventType() BankTransferEventType {
-	if o == nil  {
+	if o == nil {
 		var ret BankTransferEventType
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *BankTransferEvent) GetEventType() BankTransferEventType {
 // GetEventTypeOk returns a tuple with the EventType field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferEvent) GetEventTypeOk() (*BankTransferEventType, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.EventType, true
@@ -142,7 +142,7 @@ func (o *BankTransferEvent) SetEventType(v BankTransferEventType) {
 
 // GetAccountId returns the AccountId field value
 func (o *BankTransferEvent) GetAccountId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *BankTransferEvent) GetAccountId() string {
 // GetAccountIdOk returns a tuple with the AccountId field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferEvent) GetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountId, true
@@ -166,7 +166,7 @@ func (o *BankTransferEvent) SetAccountId(v string) {
 
 // GetBankTransferId returns the BankTransferId field value
 func (o *BankTransferEvent) GetBankTransferId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *BankTransferEvent) GetBankTransferId() string {
 // GetBankTransferIdOk returns a tuple with the BankTransferId field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferEvent) GetBankTransferIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.BankTransferId, true
@@ -201,7 +201,7 @@ func (o *BankTransferEvent) GetOriginationAccountId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferEvent) GetOriginationAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.OriginationAccountId.Get(), o.OriginationAccountId.IsSet()
@@ -220,6 +220,7 @@ func (o *BankTransferEvent) HasOriginationAccountId() bool {
 func (o *BankTransferEvent) SetOriginationAccountId(v string) {
 	o.OriginationAccountId.Set(&v)
 }
+
 // SetOriginationAccountIdNil sets the value for OriginationAccountId to be an explicit nil
 func (o *BankTransferEvent) SetOriginationAccountIdNil() {
 	o.OriginationAccountId.Set(nil)
@@ -232,7 +233,7 @@ func (o *BankTransferEvent) UnsetOriginationAccountId() {
 
 // GetBankTransferType returns the BankTransferType field value
 func (o *BankTransferEvent) GetBankTransferType() BankTransferType {
-	if o == nil  {
+	if o == nil {
 		var ret BankTransferType
 		return ret
 	}
@@ -243,7 +244,7 @@ func (o *BankTransferEvent) GetBankTransferType() BankTransferType {
 // GetBankTransferTypeOk returns a tuple with the BankTransferType field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferEvent) GetBankTransferTypeOk() (*BankTransferType, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.BankTransferType, true
@@ -256,7 +257,7 @@ func (o *BankTransferEvent) SetBankTransferType(v BankTransferType) {
 
 // GetBankTransferAmount returns the BankTransferAmount field value
 func (o *BankTransferEvent) GetBankTransferAmount() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -267,7 +268,7 @@ func (o *BankTransferEvent) GetBankTransferAmount() string {
 // GetBankTransferAmountOk returns a tuple with the BankTransferAmount field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferEvent) GetBankTransferAmountOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.BankTransferAmount, true
@@ -280,7 +281,7 @@ func (o *BankTransferEvent) SetBankTransferAmount(v string) {
 
 // GetBankTransferIsoCurrencyCode returns the BankTransferIsoCurrencyCode field value
 func (o *BankTransferEvent) GetBankTransferIsoCurrencyCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -291,7 +292,7 @@ func (o *BankTransferEvent) GetBankTransferIsoCurrencyCode() string {
 // GetBankTransferIsoCurrencyCodeOk returns a tuple with the BankTransferIsoCurrencyCode field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferEvent) GetBankTransferIsoCurrencyCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.BankTransferIsoCurrencyCode, true
@@ -317,7 +318,7 @@ func (o *BankTransferEvent) GetFailureReason() BankTransferFailure {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferEvent) GetFailureReasonOk() (*BankTransferFailure, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.FailureReason.Get(), o.FailureReason.IsSet()
@@ -343,7 +344,7 @@ func (o *BankTransferEvent) GetDirection() BankTransferDirection {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferEvent) GetDirectionOk() (*BankTransferDirection, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Direction.Get(), o.Direction.IsSet()
@@ -369,7 +370,7 @@ func (o *BankTransferEvent) GetReceiverDetails() BankTransferReceiverDetails {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferEvent) GetReceiverDetailsOk() (*BankTransferReceiverDetails, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ReceiverDetails.Get(), o.ReceiverDetails.IsSet()
@@ -489,5 +490,3 @@ func (v *NullableBankTransferEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

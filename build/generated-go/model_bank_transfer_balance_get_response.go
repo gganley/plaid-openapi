@@ -20,7 +20,7 @@ type BankTransferBalanceGetResponse struct {
 	// The ID of the origination account that this balance belongs to.
 	OriginationAccountId NullableString `json:"origination_account_id,omitempty"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -30,7 +30,7 @@ type _BankTransferBalanceGetResponse BankTransferBalanceGetResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBankTransferBalanceGetResponse(balance BankTransferBalance, requestId string, ) *BankTransferBalanceGetResponse {
+func NewBankTransferBalanceGetResponse(balance BankTransferBalance, requestId string) *BankTransferBalanceGetResponse {
 	this := BankTransferBalanceGetResponse{}
 	this.Balance = balance
 	this.RequestId = requestId
@@ -47,7 +47,7 @@ func NewBankTransferBalanceGetResponseWithDefaults() *BankTransferBalanceGetResp
 
 // GetBalance returns the Balance field value
 func (o *BankTransferBalanceGetResponse) GetBalance() BankTransferBalance {
-	if o == nil  {
+	if o == nil {
 		var ret BankTransferBalance
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *BankTransferBalanceGetResponse) GetBalance() BankTransferBalance {
 // GetBalanceOk returns a tuple with the Balance field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferBalanceGetResponse) GetBalanceOk() (*BankTransferBalance, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Balance, true
@@ -82,7 +82,7 @@ func (o *BankTransferBalanceGetResponse) GetOriginationAccountId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferBalanceGetResponse) GetOriginationAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.OriginationAccountId.Get(), o.OriginationAccountId.IsSet()
@@ -101,6 +101,7 @@ func (o *BankTransferBalanceGetResponse) HasOriginationAccountId() bool {
 func (o *BankTransferBalanceGetResponse) SetOriginationAccountId(v string) {
 	o.OriginationAccountId.Set(&v)
 }
+
 // SetOriginationAccountIdNil sets the value for OriginationAccountId to be an explicit nil
 func (o *BankTransferBalanceGetResponse) SetOriginationAccountIdNil() {
 	o.OriginationAccountId.Set(nil)
@@ -113,7 +114,7 @@ func (o *BankTransferBalanceGetResponse) UnsetOriginationAccountId() {
 
 // GetRequestId returns the RequestId field value
 func (o *BankTransferBalanceGetResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -124,7 +125,7 @@ func (o *BankTransferBalanceGetResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferBalanceGetResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -208,5 +209,3 @@ func (v *NullableBankTransferBalanceGetResponse) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

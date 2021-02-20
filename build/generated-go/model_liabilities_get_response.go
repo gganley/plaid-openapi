@@ -17,11 +17,11 @@ import (
 // LiabilitiesGetResponse LiabilitiesGetResponse defines the response schema for `/liabilities/get`
 type LiabilitiesGetResponse struct {
 	// An array of accounts associated with the Item
-	Accounts []AccountBase `json:"accounts"`
-	Item Item `json:"item"`
+	Accounts    []AccountBase     `json:"accounts"`
+	Item        Item              `json:"item"`
 	Liabilities LiabilitiesObject `json:"liabilities"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _LiabilitiesGetResponse LiabilitiesGetResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLiabilitiesGetResponse(accounts []AccountBase, item Item, liabilities LiabilitiesObject, requestId string, ) *LiabilitiesGetResponse {
+func NewLiabilitiesGetResponse(accounts []AccountBase, item Item, liabilities LiabilitiesObject, requestId string) *LiabilitiesGetResponse {
 	this := LiabilitiesGetResponse{}
 	this.Accounts = accounts
 	this.Item = item
@@ -50,7 +50,7 @@ func NewLiabilitiesGetResponseWithDefaults() *LiabilitiesGetResponse {
 
 // GetAccounts returns the Accounts field value
 func (o *LiabilitiesGetResponse) GetAccounts() []AccountBase {
-	if o == nil  {
+	if o == nil {
 		var ret []AccountBase
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *LiabilitiesGetResponse) GetAccounts() []AccountBase {
 // GetAccountsOk returns a tuple with the Accounts field value
 // and a boolean to check if the value has been set.
 func (o *LiabilitiesGetResponse) GetAccountsOk() (*[]AccountBase, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Accounts, true
@@ -74,7 +74,7 @@ func (o *LiabilitiesGetResponse) SetAccounts(v []AccountBase) {
 
 // GetItem returns the Item field value
 func (o *LiabilitiesGetResponse) GetItem() Item {
-	if o == nil  {
+	if o == nil {
 		var ret Item
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *LiabilitiesGetResponse) GetItem() Item {
 // GetItemOk returns a tuple with the Item field value
 // and a boolean to check if the value has been set.
 func (o *LiabilitiesGetResponse) GetItemOk() (*Item, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Item, true
@@ -98,7 +98,7 @@ func (o *LiabilitiesGetResponse) SetItem(v Item) {
 
 // GetLiabilities returns the Liabilities field value
 func (o *LiabilitiesGetResponse) GetLiabilities() LiabilitiesObject {
-	if o == nil  {
+	if o == nil {
 		var ret LiabilitiesObject
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *LiabilitiesGetResponse) GetLiabilities() LiabilitiesObject {
 // GetLiabilitiesOk returns a tuple with the Liabilities field value
 // and a boolean to check if the value has been set.
 func (o *LiabilitiesGetResponse) GetLiabilitiesOk() (*LiabilitiesObject, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Liabilities, true
@@ -122,7 +122,7 @@ func (o *LiabilitiesGetResponse) SetLiabilities(v LiabilitiesObject) {
 
 // GetRequestId returns the RequestId field value
 func (o *LiabilitiesGetResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -133,7 +133,7 @@ func (o *LiabilitiesGetResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *LiabilitiesGetResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -221,5 +221,3 @@ func (v *NullableLiabilitiesGetResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

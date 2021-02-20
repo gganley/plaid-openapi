@@ -22,9 +22,9 @@ type TransactionsGetResponse struct {
 	Transactions []Transaction `json:"transactions"`
 	// The total number of transactions available within the date range specified. If `total_transactions` is larger than the size of the `transactions` array, more transactions are available and can be fetched via manipulating the `offset` parameter.
 	TotalTransactions int32 `json:"total_transactions"`
-	Item Item `json:"item"`
+	Item              Item  `json:"item"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _TransactionsGetResponse TransactionsGetResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTransactionsGetResponse(accounts []AccountBase, transactions []Transaction, totalTransactions int32, item Item, requestId string, ) *TransactionsGetResponse {
+func NewTransactionsGetResponse(accounts []AccountBase, transactions []Transaction, totalTransactions int32, item Item, requestId string) *TransactionsGetResponse {
 	this := TransactionsGetResponse{}
 	this.Accounts = accounts
 	this.Transactions = transactions
@@ -54,7 +54,7 @@ func NewTransactionsGetResponseWithDefaults() *TransactionsGetResponse {
 
 // GetAccounts returns the Accounts field value
 func (o *TransactionsGetResponse) GetAccounts() []AccountBase {
-	if o == nil  {
+	if o == nil {
 		var ret []AccountBase
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *TransactionsGetResponse) GetAccounts() []AccountBase {
 // GetAccountsOk returns a tuple with the Accounts field value
 // and a boolean to check if the value has been set.
 func (o *TransactionsGetResponse) GetAccountsOk() (*[]AccountBase, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Accounts, true
@@ -78,7 +78,7 @@ func (o *TransactionsGetResponse) SetAccounts(v []AccountBase) {
 
 // GetTransactions returns the Transactions field value
 func (o *TransactionsGetResponse) GetTransactions() []Transaction {
-	if o == nil  {
+	if o == nil {
 		var ret []Transaction
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *TransactionsGetResponse) GetTransactions() []Transaction {
 // GetTransactionsOk returns a tuple with the Transactions field value
 // and a boolean to check if the value has been set.
 func (o *TransactionsGetResponse) GetTransactionsOk() (*[]Transaction, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Transactions, true
@@ -102,7 +102,7 @@ func (o *TransactionsGetResponse) SetTransactions(v []Transaction) {
 
 // GetTotalTransactions returns the TotalTransactions field value
 func (o *TransactionsGetResponse) GetTotalTransactions() int32 {
-	if o == nil  {
+	if o == nil {
 		var ret int32
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *TransactionsGetResponse) GetTotalTransactions() int32 {
 // GetTotalTransactionsOk returns a tuple with the TotalTransactions field value
 // and a boolean to check if the value has been set.
 func (o *TransactionsGetResponse) GetTotalTransactionsOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.TotalTransactions, true
@@ -126,7 +126,7 @@ func (o *TransactionsGetResponse) SetTotalTransactions(v int32) {
 
 // GetItem returns the Item field value
 func (o *TransactionsGetResponse) GetItem() Item {
-	if o == nil  {
+	if o == nil {
 		var ret Item
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *TransactionsGetResponse) GetItem() Item {
 // GetItemOk returns a tuple with the Item field value
 // and a boolean to check if the value has been set.
 func (o *TransactionsGetResponse) GetItemOk() (*Item, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Item, true
@@ -150,7 +150,7 @@ func (o *TransactionsGetResponse) SetItem(v Item) {
 
 // GetRequestId returns the RequestId field value
 func (o *TransactionsGetResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *TransactionsGetResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *TransactionsGetResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -253,5 +253,3 @@ func (v *NullableTransactionsGetResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -21,8 +21,8 @@ type AccountsGetRequest struct {
 	// Your Plaid API `secret`.
 	Secret *string `json:"secret,omitempty"`
 	// The access token associated with the Item data is being requested for.
-	AccessToken string `json:"access_token"`
-	Options *AccountsGetRequestOptions `json:"options,omitempty"`
+	AccessToken          string                     `json:"access_token"`
+	Options              *AccountsGetRequestOptions `json:"options,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -32,7 +32,7 @@ type _AccountsGetRequest AccountsGetRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAccountsGetRequest(accessToken string, ) *AccountsGetRequest {
+func NewAccountsGetRequest(accessToken string) *AccountsGetRequest {
 	this := AccountsGetRequest{}
 	this.AccessToken = accessToken
 	return &this
@@ -112,7 +112,7 @@ func (o *AccountsGetRequest) SetSecret(v string) {
 
 // GetAccessToken returns the AccessToken field value
 func (o *AccountsGetRequest) GetAccessToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *AccountsGetRequest) GetAccessToken() string {
 // GetAccessTokenOk returns a tuple with the AccessToken field value
 // and a boolean to check if the value has been set.
 func (o *AccountsGetRequest) GetAccessTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccessToken, true
@@ -243,5 +243,3 @@ func (v *NullableAccountsGetRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

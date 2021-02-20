@@ -34,34 +34,34 @@ type StudentLoan struct {
 	LastPaymentAmount NullableFloat32 `json:"last_payment_amount,omitempty"`
 	// The date of the last payment. Dates are returned in an ISO 8601 format (YYYY-MM-DD).
 	LastPaymentDate NullableString `json:"last_payment_date,omitempty"`
-	// The outstanding balance on the last statement. This field could also be interpreted as the next payment due. Availability for this field is limited. 
+	// The outstanding balance on the last statement. This field could also be interpreted as the next payment due. Availability for this field is limited.
 	LastStatementBalance NullableFloat32 `json:"last_statement_balance,omitempty"`
 	// The date of the last statement. Dates are returned in an ISO 8601 format (YYYY-MM-DD).
 	LastStatementIssueDate NullableString `json:"last_statement_issue_date,omitempty"`
 	// The type of loan, e.g., \"Consolidation Loans\".
-	LoanName NullableString `json:"loan_name,omitempty"`
+	LoanName   NullableString     `json:"loan_name,omitempty"`
 	LoanStatus *StudentLoanStatus `json:"loan_status,omitempty"`
 	// The minimum payment due for the next billing cycle. There are some exceptions: Some institutions require a minimum payment across all loans associated with an account number. Our API presents that same minimum payment amount on each loan. The institutions that do this are: Great Lakes ( `ins_116861`), Firstmark (`ins_116295`), Commonbond Firstmark Services (`ins_116950`), Nelnet (`ins_116528`), EdFinancial Services (`ins_116304`), Granite State (`ins_116308`), and Oklahoma Student Loan Authority (`ins_116945`). Firstmark (`ins_116295` ) will display as $0 if there is an autopay program in effect.
 	MinimumPaymentAmount NullableFloat32 `json:"minimum_payment_amount,omitempty"`
 	// The due date for the next payment. The due date is `null` if a payment is not expected. A payment is not expected if `loan_status.type` is `deferment`, `in_school`, `consolidated`, `paid in full`, or `transferred`. Dates are returned in an ISO 8601 format (YYYY-MM-DD).
 	NextPaymentDueDate NullableString `json:"next_payment_due_date,omitempty"`
-	// The date on which the loan was initially lent. Dates are returned in an ISO 8601 format (YYYY-MM-DD). 
+	// The date on which the loan was initially lent. Dates are returned in an ISO 8601 format (YYYY-MM-DD).
 	OriginationDate NullableString `json:"origination_date,omitempty"`
 	// The original principal balance of the loan.
 	OriginationPrincipalAmount NullableFloat32 `json:"origination_principal_amount,omitempty"`
 	// The total dollar amount of the accrued interest balance. For Sallie Mae ( `ins_116944`), this amount is included in the current balance of the loan, so this field will return as `null`.
 	OutstandingInterestAmount NullableFloat32 `json:"outstanding_interest_amount,omitempty"`
 	// The relevant account number that should be used to reference this loan for payments. In the majority of cases, `payment_reference_number` will match a`ccount_number,` but in some institutions, such as Great Lakes (`ins_116861`), it will be different.
-	PaymentReferenceNumber NullableString `json:"payment_reference_number,omitempty"`
-	PslfStatus *PSLFStatus `json:"pslf_status,omitempty"`
-	RepaymentPlan *StudentRepaymentPlan `json:"repayment_plan,omitempty"`
+	PaymentReferenceNumber NullableString        `json:"payment_reference_number,omitempty"`
+	PslfStatus             *PSLFStatus           `json:"pslf_status,omitempty"`
+	RepaymentPlan          *StudentRepaymentPlan `json:"repayment_plan,omitempty"`
 	// The sequence number of the student loan. Heartland ECSI (`ins_116948`) does not make this field available.
-	SequenceNumber NullableString `json:"sequence_number,omitempty"`
+	SequenceNumber  NullableString       `json:"sequence_number,omitempty"`
 	ServicerAddress *ServicerAddressData `json:"servicer_address,omitempty"`
 	// The year to date (YTD) interest paid. Availability for this field is limited.
 	YtdInterestPaid NullableFloat32 `json:"ytd_interest_paid,omitempty"`
 	// The year to date (YTD) principal paid. Availability for this field is limited.
-	YtdPrincipalPaid NullableFloat32 `json:"ytd_principal_paid,omitempty"`
+	YtdPrincipalPaid     NullableFloat32 `json:"ytd_principal_paid,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ type _StudentLoan StudentLoan
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStudentLoan(interestRatePercentage float32, ) *StudentLoan {
+func NewStudentLoan(interestRatePercentage float32) *StudentLoan {
 	this := StudentLoan{}
 	this.InterestRatePercentage = interestRatePercentage
 	return &this
@@ -98,7 +98,7 @@ func (o *StudentLoan) GetAccountId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentLoan) GetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AccountId.Get(), o.AccountId.IsSet()
@@ -117,6 +117,7 @@ func (o *StudentLoan) HasAccountId() bool {
 func (o *StudentLoan) SetAccountId(v string) {
 	o.AccountId.Set(&v)
 }
+
 // SetAccountIdNil sets the value for AccountId to be an explicit nil
 func (o *StudentLoan) SetAccountIdNil() {
 	o.AccountId.Set(nil)
@@ -140,7 +141,7 @@ func (o *StudentLoan) GetAccountNumber() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentLoan) GetAccountNumberOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AccountNumber.Get(), o.AccountNumber.IsSet()
@@ -159,6 +160,7 @@ func (o *StudentLoan) HasAccountNumber() bool {
 func (o *StudentLoan) SetAccountNumber(v string) {
 	o.AccountNumber.Set(&v)
 }
+
 // SetAccountNumberNil sets the value for AccountNumber to be an explicit nil
 func (o *StudentLoan) SetAccountNumberNil() {
 	o.AccountNumber.Set(nil)
@@ -171,7 +173,7 @@ func (o *StudentLoan) UnsetAccountNumber() {
 
 // GetDisbursementDates returns the DisbursementDates field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StudentLoan) GetDisbursementDates() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -215,7 +217,7 @@ func (o *StudentLoan) GetExpectedPayoffDate() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentLoan) GetExpectedPayoffDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ExpectedPayoffDate.Get(), o.ExpectedPayoffDate.IsSet()
@@ -234,6 +236,7 @@ func (o *StudentLoan) HasExpectedPayoffDate() bool {
 func (o *StudentLoan) SetExpectedPayoffDate(v string) {
 	o.ExpectedPayoffDate.Set(&v)
 }
+
 // SetExpectedPayoffDateNil sets the value for ExpectedPayoffDate to be an explicit nil
 func (o *StudentLoan) SetExpectedPayoffDateNil() {
 	o.ExpectedPayoffDate.Set(nil)
@@ -257,7 +260,7 @@ func (o *StudentLoan) GetGuarantor() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentLoan) GetGuarantorOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Guarantor.Get(), o.Guarantor.IsSet()
@@ -276,6 +279,7 @@ func (o *StudentLoan) HasGuarantor() bool {
 func (o *StudentLoan) SetGuarantor(v string) {
 	o.Guarantor.Set(&v)
 }
+
 // SetGuarantorNil sets the value for Guarantor to be an explicit nil
 func (o *StudentLoan) SetGuarantorNil() {
 	o.Guarantor.Set(nil)
@@ -288,7 +292,7 @@ func (o *StudentLoan) UnsetGuarantor() {
 
 // GetInterestRatePercentage returns the InterestRatePercentage field value
 func (o *StudentLoan) GetInterestRatePercentage() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -299,7 +303,7 @@ func (o *StudentLoan) GetInterestRatePercentage() float32 {
 // GetInterestRatePercentageOk returns a tuple with the InterestRatePercentage field value
 // and a boolean to check if the value has been set.
 func (o *StudentLoan) GetInterestRatePercentageOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.InterestRatePercentage, true
@@ -323,7 +327,7 @@ func (o *StudentLoan) GetIsOverdue() bool {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentLoan) GetIsOverdueOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.IsOverdue.Get(), o.IsOverdue.IsSet()
@@ -342,6 +346,7 @@ func (o *StudentLoan) HasIsOverdue() bool {
 func (o *StudentLoan) SetIsOverdue(v bool) {
 	o.IsOverdue.Set(&v)
 }
+
 // SetIsOverdueNil sets the value for IsOverdue to be an explicit nil
 func (o *StudentLoan) SetIsOverdueNil() {
 	o.IsOverdue.Set(nil)
@@ -365,7 +370,7 @@ func (o *StudentLoan) GetLastPaymentAmount() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentLoan) GetLastPaymentAmountOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LastPaymentAmount.Get(), o.LastPaymentAmount.IsSet()
@@ -384,6 +389,7 @@ func (o *StudentLoan) HasLastPaymentAmount() bool {
 func (o *StudentLoan) SetLastPaymentAmount(v float32) {
 	o.LastPaymentAmount.Set(&v)
 }
+
 // SetLastPaymentAmountNil sets the value for LastPaymentAmount to be an explicit nil
 func (o *StudentLoan) SetLastPaymentAmountNil() {
 	o.LastPaymentAmount.Set(nil)
@@ -407,7 +413,7 @@ func (o *StudentLoan) GetLastPaymentDate() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentLoan) GetLastPaymentDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LastPaymentDate.Get(), o.LastPaymentDate.IsSet()
@@ -426,6 +432,7 @@ func (o *StudentLoan) HasLastPaymentDate() bool {
 func (o *StudentLoan) SetLastPaymentDate(v string) {
 	o.LastPaymentDate.Set(&v)
 }
+
 // SetLastPaymentDateNil sets the value for LastPaymentDate to be an explicit nil
 func (o *StudentLoan) SetLastPaymentDateNil() {
 	o.LastPaymentDate.Set(nil)
@@ -449,7 +456,7 @@ func (o *StudentLoan) GetLastStatementBalance() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentLoan) GetLastStatementBalanceOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LastStatementBalance.Get(), o.LastStatementBalance.IsSet()
@@ -468,6 +475,7 @@ func (o *StudentLoan) HasLastStatementBalance() bool {
 func (o *StudentLoan) SetLastStatementBalance(v float32) {
 	o.LastStatementBalance.Set(&v)
 }
+
 // SetLastStatementBalanceNil sets the value for LastStatementBalance to be an explicit nil
 func (o *StudentLoan) SetLastStatementBalanceNil() {
 	o.LastStatementBalance.Set(nil)
@@ -491,7 +499,7 @@ func (o *StudentLoan) GetLastStatementIssueDate() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentLoan) GetLastStatementIssueDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LastStatementIssueDate.Get(), o.LastStatementIssueDate.IsSet()
@@ -510,6 +518,7 @@ func (o *StudentLoan) HasLastStatementIssueDate() bool {
 func (o *StudentLoan) SetLastStatementIssueDate(v string) {
 	o.LastStatementIssueDate.Set(&v)
 }
+
 // SetLastStatementIssueDateNil sets the value for LastStatementIssueDate to be an explicit nil
 func (o *StudentLoan) SetLastStatementIssueDateNil() {
 	o.LastStatementIssueDate.Set(nil)
@@ -533,7 +542,7 @@ func (o *StudentLoan) GetLoanName() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentLoan) GetLoanNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LoanName.Get(), o.LoanName.IsSet()
@@ -552,6 +561,7 @@ func (o *StudentLoan) HasLoanName() bool {
 func (o *StudentLoan) SetLoanName(v string) {
 	o.LoanName.Set(&v)
 }
+
 // SetLoanNameNil sets the value for LoanName to be an explicit nil
 func (o *StudentLoan) SetLoanNameNil() {
 	o.LoanName.Set(nil)
@@ -607,7 +617,7 @@ func (o *StudentLoan) GetMinimumPaymentAmount() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentLoan) GetMinimumPaymentAmountOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MinimumPaymentAmount.Get(), o.MinimumPaymentAmount.IsSet()
@@ -626,6 +636,7 @@ func (o *StudentLoan) HasMinimumPaymentAmount() bool {
 func (o *StudentLoan) SetMinimumPaymentAmount(v float32) {
 	o.MinimumPaymentAmount.Set(&v)
 }
+
 // SetMinimumPaymentAmountNil sets the value for MinimumPaymentAmount to be an explicit nil
 func (o *StudentLoan) SetMinimumPaymentAmountNil() {
 	o.MinimumPaymentAmount.Set(nil)
@@ -649,7 +660,7 @@ func (o *StudentLoan) GetNextPaymentDueDate() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentLoan) GetNextPaymentDueDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NextPaymentDueDate.Get(), o.NextPaymentDueDate.IsSet()
@@ -668,6 +679,7 @@ func (o *StudentLoan) HasNextPaymentDueDate() bool {
 func (o *StudentLoan) SetNextPaymentDueDate(v string) {
 	o.NextPaymentDueDate.Set(&v)
 }
+
 // SetNextPaymentDueDateNil sets the value for NextPaymentDueDate to be an explicit nil
 func (o *StudentLoan) SetNextPaymentDueDateNil() {
 	o.NextPaymentDueDate.Set(nil)
@@ -691,7 +703,7 @@ func (o *StudentLoan) GetOriginationDate() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentLoan) GetOriginationDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.OriginationDate.Get(), o.OriginationDate.IsSet()
@@ -710,6 +722,7 @@ func (o *StudentLoan) HasOriginationDate() bool {
 func (o *StudentLoan) SetOriginationDate(v string) {
 	o.OriginationDate.Set(&v)
 }
+
 // SetOriginationDateNil sets the value for OriginationDate to be an explicit nil
 func (o *StudentLoan) SetOriginationDateNil() {
 	o.OriginationDate.Set(nil)
@@ -733,7 +746,7 @@ func (o *StudentLoan) GetOriginationPrincipalAmount() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentLoan) GetOriginationPrincipalAmountOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.OriginationPrincipalAmount.Get(), o.OriginationPrincipalAmount.IsSet()
@@ -752,6 +765,7 @@ func (o *StudentLoan) HasOriginationPrincipalAmount() bool {
 func (o *StudentLoan) SetOriginationPrincipalAmount(v float32) {
 	o.OriginationPrincipalAmount.Set(&v)
 }
+
 // SetOriginationPrincipalAmountNil sets the value for OriginationPrincipalAmount to be an explicit nil
 func (o *StudentLoan) SetOriginationPrincipalAmountNil() {
 	o.OriginationPrincipalAmount.Set(nil)
@@ -775,7 +789,7 @@ func (o *StudentLoan) GetOutstandingInterestAmount() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentLoan) GetOutstandingInterestAmountOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.OutstandingInterestAmount.Get(), o.OutstandingInterestAmount.IsSet()
@@ -794,6 +808,7 @@ func (o *StudentLoan) HasOutstandingInterestAmount() bool {
 func (o *StudentLoan) SetOutstandingInterestAmount(v float32) {
 	o.OutstandingInterestAmount.Set(&v)
 }
+
 // SetOutstandingInterestAmountNil sets the value for OutstandingInterestAmount to be an explicit nil
 func (o *StudentLoan) SetOutstandingInterestAmountNil() {
 	o.OutstandingInterestAmount.Set(nil)
@@ -817,7 +832,7 @@ func (o *StudentLoan) GetPaymentReferenceNumber() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentLoan) GetPaymentReferenceNumberOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PaymentReferenceNumber.Get(), o.PaymentReferenceNumber.IsSet()
@@ -836,6 +851,7 @@ func (o *StudentLoan) HasPaymentReferenceNumber() bool {
 func (o *StudentLoan) SetPaymentReferenceNumber(v string) {
 	o.PaymentReferenceNumber.Set(&v)
 }
+
 // SetPaymentReferenceNumberNil sets the value for PaymentReferenceNumber to be an explicit nil
 func (o *StudentLoan) SetPaymentReferenceNumberNil() {
 	o.PaymentReferenceNumber.Set(nil)
@@ -923,7 +939,7 @@ func (o *StudentLoan) GetSequenceNumber() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentLoan) GetSequenceNumberOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SequenceNumber.Get(), o.SequenceNumber.IsSet()
@@ -942,6 +958,7 @@ func (o *StudentLoan) HasSequenceNumber() bool {
 func (o *StudentLoan) SetSequenceNumber(v string) {
 	o.SequenceNumber.Set(&v)
 }
+
 // SetSequenceNumberNil sets the value for SequenceNumber to be an explicit nil
 func (o *StudentLoan) SetSequenceNumberNil() {
 	o.SequenceNumber.Set(nil)
@@ -997,7 +1014,7 @@ func (o *StudentLoan) GetYtdInterestPaid() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentLoan) GetYtdInterestPaidOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.YtdInterestPaid.Get(), o.YtdInterestPaid.IsSet()
@@ -1016,6 +1033,7 @@ func (o *StudentLoan) HasYtdInterestPaid() bool {
 func (o *StudentLoan) SetYtdInterestPaid(v float32) {
 	o.YtdInterestPaid.Set(&v)
 }
+
 // SetYtdInterestPaidNil sets the value for YtdInterestPaid to be an explicit nil
 func (o *StudentLoan) SetYtdInterestPaidNil() {
 	o.YtdInterestPaid.Set(nil)
@@ -1039,7 +1057,7 @@ func (o *StudentLoan) GetYtdPrincipalPaid() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentLoan) GetYtdPrincipalPaidOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.YtdPrincipalPaid.Get(), o.YtdPrincipalPaid.IsSet()
@@ -1058,6 +1076,7 @@ func (o *StudentLoan) HasYtdPrincipalPaid() bool {
 func (o *StudentLoan) SetYtdPrincipalPaid(v float32) {
 	o.YtdPrincipalPaid.Set(&v)
 }
+
 // SetYtdPrincipalPaidNil sets the value for YtdPrincipalPaid to be an explicit nil
 func (o *StudentLoan) SetYtdPrincipalPaidNil() {
 	o.YtdPrincipalPaid.Set(nil)
@@ -1229,5 +1248,3 @@ func (v *NullableStudentLoan) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

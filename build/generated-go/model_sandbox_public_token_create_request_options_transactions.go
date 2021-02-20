@@ -19,7 +19,7 @@ type SandboxPublicTokenCreateRequestOptionsTransactions struct {
 	// The earliest date for which to fetch transaction history. Dates should be formatted as YYYY-MM-DD.
 	StartDate *string `json:"start_date,omitempty"`
 	// The most recent date for which to fetch transaction history. Dates should be formatted as YYYY-MM-DD.
-	EndDate *string `json:"end_date,omitempty"`
+	EndDate              *string `json:"end_date,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -175,5 +175,3 @@ func (v *NullableSandboxPublicTokenCreateRequestOptionsTransactions) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

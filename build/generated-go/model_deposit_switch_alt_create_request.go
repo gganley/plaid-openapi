@@ -19,9 +19,9 @@ type DepositSwitchAltCreateRequest struct {
 	// Your Plaid API `client_id`.
 	ClientId *string `json:"client_id,omitempty"`
 	// Your Plaid API `secret`.
-	Secret *string `json:"secret,omitempty"`
-	TargetAccount DepositSwitchTargetAccount `json:"target_account"`
-	TargetUser DepositSwitchTargetUser `json:"target_user"`
+	Secret               *string                    `json:"secret,omitempty"`
+	TargetAccount        DepositSwitchTargetAccount `json:"target_account"`
+	TargetUser           DepositSwitchTargetUser    `json:"target_user"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _DepositSwitchAltCreateRequest DepositSwitchAltCreateRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDepositSwitchAltCreateRequest(targetAccount DepositSwitchTargetAccount, targetUser DepositSwitchTargetUser, ) *DepositSwitchAltCreateRequest {
+func NewDepositSwitchAltCreateRequest(targetAccount DepositSwitchTargetAccount, targetUser DepositSwitchTargetUser) *DepositSwitchAltCreateRequest {
 	this := DepositSwitchAltCreateRequest{}
 	this.TargetAccount = targetAccount
 	this.TargetUser = targetUser
@@ -112,7 +112,7 @@ func (o *DepositSwitchAltCreateRequest) SetSecret(v string) {
 
 // GetTargetAccount returns the TargetAccount field value
 func (o *DepositSwitchAltCreateRequest) GetTargetAccount() DepositSwitchTargetAccount {
-	if o == nil  {
+	if o == nil {
 		var ret DepositSwitchTargetAccount
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *DepositSwitchAltCreateRequest) GetTargetAccount() DepositSwitchTargetAc
 // GetTargetAccountOk returns a tuple with the TargetAccount field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchAltCreateRequest) GetTargetAccountOk() (*DepositSwitchTargetAccount, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.TargetAccount, true
@@ -136,7 +136,7 @@ func (o *DepositSwitchAltCreateRequest) SetTargetAccount(v DepositSwitchTargetAc
 
 // GetTargetUser returns the TargetUser field value
 func (o *DepositSwitchAltCreateRequest) GetTargetUser() DepositSwitchTargetUser {
-	if o == nil  {
+	if o == nil {
 		var ret DepositSwitchTargetUser
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *DepositSwitchAltCreateRequest) GetTargetUser() DepositSwitchTargetUser 
 // GetTargetUserOk returns a tuple with the TargetUser field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchAltCreateRequest) GetTargetUserOk() (*DepositSwitchTargetUser, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.TargetUser, true
@@ -235,5 +235,3 @@ func (v *NullableDepositSwitchAltCreateRequest) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

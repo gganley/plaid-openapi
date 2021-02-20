@@ -22,7 +22,7 @@ type LinkTokenCreateResponse struct {
 	// The expiration date for the `link_token`, in ISO 8601 format. A `link_token` created to generate a `public_token` that will be exchanged for a new `access_token` expires after 24 hours. A `link_token` created for an existing Item (such as when updating an existing `access_token` by launching Link in update mode) expires after 30 minutes.
 	Expiration time.Time `json:"expiration"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -32,7 +32,7 @@ type _LinkTokenCreateResponse LinkTokenCreateResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLinkTokenCreateResponse(linkToken string, expiration time.Time, requestId string, ) *LinkTokenCreateResponse {
+func NewLinkTokenCreateResponse(linkToken string, expiration time.Time, requestId string) *LinkTokenCreateResponse {
 	this := LinkTokenCreateResponse{}
 	this.LinkToken = linkToken
 	this.Expiration = expiration
@@ -50,7 +50,7 @@ func NewLinkTokenCreateResponseWithDefaults() *LinkTokenCreateResponse {
 
 // GetLinkToken returns the LinkToken field value
 func (o *LinkTokenCreateResponse) GetLinkToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *LinkTokenCreateResponse) GetLinkToken() string {
 // GetLinkTokenOk returns a tuple with the LinkToken field value
 // and a boolean to check if the value has been set.
 func (o *LinkTokenCreateResponse) GetLinkTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.LinkToken, true
@@ -74,7 +74,7 @@ func (o *LinkTokenCreateResponse) SetLinkToken(v string) {
 
 // GetExpiration returns the Expiration field value
 func (o *LinkTokenCreateResponse) GetExpiration() time.Time {
-	if o == nil  {
+	if o == nil {
 		var ret time.Time
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *LinkTokenCreateResponse) GetExpiration() time.Time {
 // GetExpirationOk returns a tuple with the Expiration field value
 // and a boolean to check if the value has been set.
 func (o *LinkTokenCreateResponse) GetExpirationOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Expiration, true
@@ -98,7 +98,7 @@ func (o *LinkTokenCreateResponse) SetExpiration(v time.Time) {
 
 // GetRequestId returns the RequestId field value
 func (o *LinkTokenCreateResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *LinkTokenCreateResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *LinkTokenCreateResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -193,5 +193,3 @@ func (v *NullableLinkTokenCreateResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

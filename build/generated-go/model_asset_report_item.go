@@ -25,7 +25,7 @@ type AssetReportItem struct {
 	// The date and time when this Item’s data was last retrieved from the financial institution, in ISO 8601 format.
 	DateLastUpdated string `json:"date_last_updated"`
 	// Data about each of the accounts open on the Item.
-	Accounts []AccountAssets `json:"accounts"`
+	Accounts             []AccountAssets `json:"accounts"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -35,7 +35,7 @@ type _AssetReportItem AssetReportItem
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAssetReportItem(itemId string, institutionName string, institutionId string, dateLastUpdated string, accounts []AccountAssets, ) *AssetReportItem {
+func NewAssetReportItem(itemId string, institutionName string, institutionId string, dateLastUpdated string, accounts []AccountAssets) *AssetReportItem {
 	this := AssetReportItem{}
 	this.ItemId = itemId
 	this.InstitutionName = institutionName
@@ -55,7 +55,7 @@ func NewAssetReportItemWithDefaults() *AssetReportItem {
 
 // GetItemId returns the ItemId field value
 func (o *AssetReportItem) GetItemId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *AssetReportItem) GetItemId() string {
 // GetItemIdOk returns a tuple with the ItemId field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportItem) GetItemIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ItemId, true
@@ -79,7 +79,7 @@ func (o *AssetReportItem) SetItemId(v string) {
 
 // GetInstitutionName returns the InstitutionName field value
 func (o *AssetReportItem) GetInstitutionName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *AssetReportItem) GetInstitutionName() string {
 // GetInstitutionNameOk returns a tuple with the InstitutionName field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportItem) GetInstitutionNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.InstitutionName, true
@@ -103,7 +103,7 @@ func (o *AssetReportItem) SetInstitutionName(v string) {
 
 // GetInstitutionId returns the InstitutionId field value
 func (o *AssetReportItem) GetInstitutionId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *AssetReportItem) GetInstitutionId() string {
 // GetInstitutionIdOk returns a tuple with the InstitutionId field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportItem) GetInstitutionIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.InstitutionId, true
@@ -127,7 +127,7 @@ func (o *AssetReportItem) SetInstitutionId(v string) {
 
 // GetDateLastUpdated returns the DateLastUpdated field value
 func (o *AssetReportItem) GetDateLastUpdated() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *AssetReportItem) GetDateLastUpdated() string {
 // GetDateLastUpdatedOk returns a tuple with the DateLastUpdated field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportItem) GetDateLastUpdatedOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DateLastUpdated, true
@@ -151,7 +151,7 @@ func (o *AssetReportItem) SetDateLastUpdated(v string) {
 
 // GetAccounts returns the Accounts field value
 func (o *AssetReportItem) GetAccounts() []AccountAssets {
-	if o == nil  {
+	if o == nil {
 		var ret []AccountAssets
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *AssetReportItem) GetAccounts() []AccountAssets {
 // GetAccountsOk returns a tuple with the Accounts field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportItem) GetAccountsOk() (*[]AccountAssets, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Accounts, true
@@ -254,5 +254,3 @@ func (v *NullableAssetReportItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -23,7 +23,7 @@ type AssetReportFilterRequest struct {
 	// A token that can be provided to endpoints such as `/asset_report/get` or `/asset_report/pdf/get` to fetch or update an Asset Report.
 	AssetReportToken string `json:"asset_report_token"`
 	// The accounts to exclude from the Asset Report, identified by `account_id`.
-	AccountIdsToExclude []string `json:"account_ids_to_exclude"`
+	AccountIdsToExclude  []string `json:"account_ids_to_exclude"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -33,7 +33,7 @@ type _AssetReportFilterRequest AssetReportFilterRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAssetReportFilterRequest(assetReportToken string, accountIdsToExclude []string, ) *AssetReportFilterRequest {
+func NewAssetReportFilterRequest(assetReportToken string, accountIdsToExclude []string) *AssetReportFilterRequest {
 	this := AssetReportFilterRequest{}
 	this.AssetReportToken = assetReportToken
 	this.AccountIdsToExclude = accountIdsToExclude
@@ -114,7 +114,7 @@ func (o *AssetReportFilterRequest) SetSecret(v string) {
 
 // GetAssetReportToken returns the AssetReportToken field value
 func (o *AssetReportFilterRequest) GetAssetReportToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *AssetReportFilterRequest) GetAssetReportToken() string {
 // GetAssetReportTokenOk returns a tuple with the AssetReportToken field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportFilterRequest) GetAssetReportTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AssetReportToken, true
@@ -138,7 +138,7 @@ func (o *AssetReportFilterRequest) SetAssetReportToken(v string) {
 
 // GetAccountIdsToExclude returns the AccountIdsToExclude field value
 func (o *AssetReportFilterRequest) GetAccountIdsToExclude() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *AssetReportFilterRequest) GetAccountIdsToExclude() []string {
 // GetAccountIdsToExcludeOk returns a tuple with the AccountIdsToExclude field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportFilterRequest) GetAccountIdsToExcludeOk() (*[]string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountIdsToExclude, true
@@ -237,5 +237,3 @@ func (v *NullableAssetReportFilterRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

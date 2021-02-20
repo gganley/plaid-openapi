@@ -24,9 +24,9 @@ type InstitutionsSearchRequest struct {
 	Query string `json:"query"`
 	// Filter the Institutions based on whether they support all products listed in products. Provide `null` to get institutions regardless of supported products
 	Products []Products `json:"products"`
-	// Specify an array of Plaid-supported country codes this institution supports, using the ISO-3166-1 alpha-2 country code standard. 
-	CountryCodes []CountryCode `json:"country_codes"`
-	Options *InstitutionsSearchRequestOptions `json:"options,omitempty"`
+	// Specify an array of Plaid-supported country codes this institution supports, using the ISO-3166-1 alpha-2 country code standard.
+	CountryCodes         []CountryCode                     `json:"country_codes"`
+	Options              *InstitutionsSearchRequestOptions `json:"options,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -36,7 +36,7 @@ type _InstitutionsSearchRequest InstitutionsSearchRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInstitutionsSearchRequest(query string, products []Products, countryCodes []CountryCode, ) *InstitutionsSearchRequest {
+func NewInstitutionsSearchRequest(query string, products []Products, countryCodes []CountryCode) *InstitutionsSearchRequest {
 	this := InstitutionsSearchRequest{}
 	this.Query = query
 	this.Products = products
@@ -118,7 +118,7 @@ func (o *InstitutionsSearchRequest) SetSecret(v string) {
 
 // GetQuery returns the Query field value
 func (o *InstitutionsSearchRequest) GetQuery() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *InstitutionsSearchRequest) GetQuery() string {
 // GetQueryOk returns a tuple with the Query field value
 // and a boolean to check if the value has been set.
 func (o *InstitutionsSearchRequest) GetQueryOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Query, true
@@ -142,7 +142,7 @@ func (o *InstitutionsSearchRequest) SetQuery(v string) {
 
 // GetProducts returns the Products field value
 func (o *InstitutionsSearchRequest) GetProducts() []Products {
-	if o == nil  {
+	if o == nil {
 		var ret []Products
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *InstitutionsSearchRequest) GetProducts() []Products {
 // GetProductsOk returns a tuple with the Products field value
 // and a boolean to check if the value has been set.
 func (o *InstitutionsSearchRequest) GetProductsOk() (*[]Products, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Products, true
@@ -166,7 +166,7 @@ func (o *InstitutionsSearchRequest) SetProducts(v []Products) {
 
 // GetCountryCodes returns the CountryCodes field value
 func (o *InstitutionsSearchRequest) GetCountryCodes() []CountryCode {
-	if o == nil  {
+	if o == nil {
 		var ret []CountryCode
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *InstitutionsSearchRequest) GetCountryCodes() []CountryCode {
 // GetCountryCodesOk returns a tuple with the CountryCodes field value
 // and a boolean to check if the value has been set.
 func (o *InstitutionsSearchRequest) GetCountryCodesOk() (*[]CountryCode, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.CountryCodes, true
@@ -305,5 +305,3 @@ func (v *NullableInstitutionsSearchRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

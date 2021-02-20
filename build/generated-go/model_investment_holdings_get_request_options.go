@@ -17,7 +17,7 @@ import (
 // InvestmentHoldingsGetRequestOptions An optional object to filter `/investments/holdings/get` results. If provided, must not be `null`.
 type InvestmentHoldingsGetRequestOptions struct {
 	// An array of `account_id`s to retrieve for the Item. An error will be returned if a provided `account_id` is not associated with the Item.
-	AccountIds *[]string `json:"account_ids,omitempty"`
+	AccountIds           *[]string `json:"account_ids,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -137,5 +137,3 @@ func (v *NullableInvestmentHoldingsGetRequestOptions) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

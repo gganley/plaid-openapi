@@ -25,7 +25,7 @@ type MortgagePropertyAddress struct {
 	// The region or state (example \"NC\").
 	Region NullableString `json:"region,omitempty"`
 	// The full street address (example \"564 Main Street, Apt 15\").
-	Street NullableString `json:"street,omitempty"`
+	Street               NullableString `json:"street,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -61,7 +61,7 @@ func (o *MortgagePropertyAddress) GetCity() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgagePropertyAddress) GetCityOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.City.Get(), o.City.IsSet()
@@ -80,6 +80,7 @@ func (o *MortgagePropertyAddress) HasCity() bool {
 func (o *MortgagePropertyAddress) SetCity(v string) {
 	o.City.Set(&v)
 }
+
 // SetCityNil sets the value for City to be an explicit nil
 func (o *MortgagePropertyAddress) SetCityNil() {
 	o.City.Set(nil)
@@ -103,7 +104,7 @@ func (o *MortgagePropertyAddress) GetCountry() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgagePropertyAddress) GetCountryOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Country.Get(), o.Country.IsSet()
@@ -122,6 +123,7 @@ func (o *MortgagePropertyAddress) HasCountry() bool {
 func (o *MortgagePropertyAddress) SetCountry(v string) {
 	o.Country.Set(&v)
 }
+
 // SetCountryNil sets the value for Country to be an explicit nil
 func (o *MortgagePropertyAddress) SetCountryNil() {
 	o.Country.Set(nil)
@@ -145,7 +147,7 @@ func (o *MortgagePropertyAddress) GetPostalCode() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgagePropertyAddress) GetPostalCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PostalCode.Get(), o.PostalCode.IsSet()
@@ -164,6 +166,7 @@ func (o *MortgagePropertyAddress) HasPostalCode() bool {
 func (o *MortgagePropertyAddress) SetPostalCode(v string) {
 	o.PostalCode.Set(&v)
 }
+
 // SetPostalCodeNil sets the value for PostalCode to be an explicit nil
 func (o *MortgagePropertyAddress) SetPostalCodeNil() {
 	o.PostalCode.Set(nil)
@@ -187,7 +190,7 @@ func (o *MortgagePropertyAddress) GetRegion() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgagePropertyAddress) GetRegionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Region.Get(), o.Region.IsSet()
@@ -206,6 +209,7 @@ func (o *MortgagePropertyAddress) HasRegion() bool {
 func (o *MortgagePropertyAddress) SetRegion(v string) {
 	o.Region.Set(&v)
 }
+
 // SetRegionNil sets the value for Region to be an explicit nil
 func (o *MortgagePropertyAddress) SetRegionNil() {
 	o.Region.Set(nil)
@@ -229,7 +233,7 @@ func (o *MortgagePropertyAddress) GetStreet() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgagePropertyAddress) GetStreetOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Street.Get(), o.Street.IsSet()
@@ -248,6 +252,7 @@ func (o *MortgagePropertyAddress) HasStreet() bool {
 func (o *MortgagePropertyAddress) SetStreet(v string) {
 	o.Street.Set(&v)
 }
+
 // SetStreetNil sets the value for Street to be an explicit nil
 func (o *MortgagePropertyAddress) SetStreetNil() {
 	o.Street.Set(nil)
@@ -339,5 +344,3 @@ func (v *NullableMortgagePropertyAddress) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

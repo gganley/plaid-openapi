@@ -21,12 +21,12 @@ type HoldingsDefaultUpdateWebhook struct {
 	// `DEFAULT_UPDATE`
 	WebhookCode string `json:"webhook_code"`
 	// The `item_id` of the Item associated with this webhook, warning, or error
-	ItemId string `json:"item_id"`
-	Error NullableError `json:"error,omitempty"`
+	ItemId string        `json:"item_id"`
+	Error  NullableError `json:"error,omitempty"`
 	// The number of new holdings reported since the last time this webhook was fired.
 	NewHoldings float32 `json:"new_holdings"`
 	// The number of updated holdings reported since the last time this webhook was fired.
-	UpdatedHoldings float32 `json:"updated_holdings"`
+	UpdatedHoldings      float32 `json:"updated_holdings"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -36,7 +36,7 @@ type _HoldingsDefaultUpdateWebhook HoldingsDefaultUpdateWebhook
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewHoldingsDefaultUpdateWebhook(webhookType string, webhookCode string, itemId string, newHoldings float32, updatedHoldings float32, ) *HoldingsDefaultUpdateWebhook {
+func NewHoldingsDefaultUpdateWebhook(webhookType string, webhookCode string, itemId string, newHoldings float32, updatedHoldings float32) *HoldingsDefaultUpdateWebhook {
 	this := HoldingsDefaultUpdateWebhook{}
 	this.WebhookType = webhookType
 	this.WebhookCode = webhookCode
@@ -56,7 +56,7 @@ func NewHoldingsDefaultUpdateWebhookWithDefaults() *HoldingsDefaultUpdateWebhook
 
 // GetWebhookType returns the WebhookType field value
 func (o *HoldingsDefaultUpdateWebhook) GetWebhookType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *HoldingsDefaultUpdateWebhook) GetWebhookType() string {
 // GetWebhookTypeOk returns a tuple with the WebhookType field value
 // and a boolean to check if the value has been set.
 func (o *HoldingsDefaultUpdateWebhook) GetWebhookTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookType, true
@@ -80,7 +80,7 @@ func (o *HoldingsDefaultUpdateWebhook) SetWebhookType(v string) {
 
 // GetWebhookCode returns the WebhookCode field value
 func (o *HoldingsDefaultUpdateWebhook) GetWebhookCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *HoldingsDefaultUpdateWebhook) GetWebhookCode() string {
 // GetWebhookCodeOk returns a tuple with the WebhookCode field value
 // and a boolean to check if the value has been set.
 func (o *HoldingsDefaultUpdateWebhook) GetWebhookCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookCode, true
@@ -104,7 +104,7 @@ func (o *HoldingsDefaultUpdateWebhook) SetWebhookCode(v string) {
 
 // GetItemId returns the ItemId field value
 func (o *HoldingsDefaultUpdateWebhook) GetItemId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *HoldingsDefaultUpdateWebhook) GetItemId() string {
 // GetItemIdOk returns a tuple with the ItemId field value
 // and a boolean to check if the value has been set.
 func (o *HoldingsDefaultUpdateWebhook) GetItemIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ItemId, true
@@ -139,7 +139,7 @@ func (o *HoldingsDefaultUpdateWebhook) GetError() Error {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HoldingsDefaultUpdateWebhook) GetErrorOk() (*Error, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Error.Get(), o.Error.IsSet()
@@ -158,6 +158,7 @@ func (o *HoldingsDefaultUpdateWebhook) HasError() bool {
 func (o *HoldingsDefaultUpdateWebhook) SetError(v Error) {
 	o.Error.Set(&v)
 }
+
 // SetErrorNil sets the value for Error to be an explicit nil
 func (o *HoldingsDefaultUpdateWebhook) SetErrorNil() {
 	o.Error.Set(nil)
@@ -170,7 +171,7 @@ func (o *HoldingsDefaultUpdateWebhook) UnsetError() {
 
 // GetNewHoldings returns the NewHoldings field value
 func (o *HoldingsDefaultUpdateWebhook) GetNewHoldings() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -181,7 +182,7 @@ func (o *HoldingsDefaultUpdateWebhook) GetNewHoldings() float32 {
 // GetNewHoldingsOk returns a tuple with the NewHoldings field value
 // and a boolean to check if the value has been set.
 func (o *HoldingsDefaultUpdateWebhook) GetNewHoldingsOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.NewHoldings, true
@@ -194,7 +195,7 @@ func (o *HoldingsDefaultUpdateWebhook) SetNewHoldings(v float32) {
 
 // GetUpdatedHoldings returns the UpdatedHoldings field value
 func (o *HoldingsDefaultUpdateWebhook) GetUpdatedHoldings() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -205,7 +206,7 @@ func (o *HoldingsDefaultUpdateWebhook) GetUpdatedHoldings() float32 {
 // GetUpdatedHoldingsOk returns a tuple with the UpdatedHoldings field value
 // and a boolean to check if the value has been set.
 func (o *HoldingsDefaultUpdateWebhook) GetUpdatedHoldingsOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.UpdatedHoldings, true
@@ -301,5 +302,3 @@ func (v *NullableHoldingsDefaultUpdateWebhook) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -23,7 +23,7 @@ type ExternalPaymentSchedule struct {
 	// A date in ISO 8601 format (YYYY-MM-DD). Standing order payments will begin on the first `interval_execution_day` on or after the `start_date`.  If the first `interval_execution_day` on or after the start date is also the same day that `/payment_initiation/payment/create` was called, the bank *may* make the first payment on that day, but it is not guaranteed to do so.
 	StartDate string `json:"start_date"`
 	// A date in ISO 8601 format (YYYY-MM-DD). Standing order payments will end on the last `interval_execution_day` on or before the `end_date`.  If the only `interval_execution_day` between the start date and the end date (inclusive) is also the same day that `/payment_initiation/payment/create` was called, the bank *may* make a payment on that day, but it is not guaranteed to do so.
-	EndDate *string `json:"end_date,omitempty"`
+	EndDate              *string `json:"end_date,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -33,7 +33,7 @@ type _ExternalPaymentSchedule ExternalPaymentSchedule
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalPaymentSchedule(interval string, intervalExecutionDay float32, startDate string, ) *ExternalPaymentSchedule {
+func NewExternalPaymentSchedule(interval string, intervalExecutionDay float32, startDate string) *ExternalPaymentSchedule {
 	this := ExternalPaymentSchedule{}
 	this.Interval = interval
 	this.IntervalExecutionDay = intervalExecutionDay
@@ -51,7 +51,7 @@ func NewExternalPaymentScheduleWithDefaults() *ExternalPaymentSchedule {
 
 // GetInterval returns the Interval field value
 func (o *ExternalPaymentSchedule) GetInterval() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *ExternalPaymentSchedule) GetInterval() string {
 // GetIntervalOk returns a tuple with the Interval field value
 // and a boolean to check if the value has been set.
 func (o *ExternalPaymentSchedule) GetIntervalOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Interval, true
@@ -75,7 +75,7 @@ func (o *ExternalPaymentSchedule) SetInterval(v string) {
 
 // GetIntervalExecutionDay returns the IntervalExecutionDay field value
 func (o *ExternalPaymentSchedule) GetIntervalExecutionDay() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ExternalPaymentSchedule) GetIntervalExecutionDay() float32 {
 // GetIntervalExecutionDayOk returns a tuple with the IntervalExecutionDay field value
 // and a boolean to check if the value has been set.
 func (o *ExternalPaymentSchedule) GetIntervalExecutionDayOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.IntervalExecutionDay, true
@@ -99,7 +99,7 @@ func (o *ExternalPaymentSchedule) SetIntervalExecutionDay(v float32) {
 
 // GetStartDate returns the StartDate field value
 func (o *ExternalPaymentSchedule) GetStartDate() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *ExternalPaymentSchedule) GetStartDate() string {
 // GetStartDateOk returns a tuple with the StartDate field value
 // and a boolean to check if the value has been set.
 func (o *ExternalPaymentSchedule) GetStartDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.StartDate, true
@@ -230,5 +230,3 @@ func (v *NullableExternalPaymentSchedule) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

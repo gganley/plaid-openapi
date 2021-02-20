@@ -16,10 +16,10 @@ import (
 
 // ProcessorNumber An object containing identifying numbers used for making electronic transfers to and from the `account`. The identifying number type (ACH, EFT, IBAN, or BACS) used will depend on the country of the account. An account may have more than one number type. If a particular identifying number type is not used by the `account` for which auth data has been requested, a null value will be returned.
 type ProcessorNumber struct {
-	Ach NullableNumbersACH `json:"ach,omitempty"`
-	Eft NullableNumbersEFT `json:"eft,omitempty"`
-	International NullableNumbersInternational `json:"international,omitempty"`
-	Bacs NullableNumbersBACS `json:"bacs,omitempty"`
+	Ach                  NullableNumbersACH           `json:"ach,omitempty"`
+	Eft                  NullableNumbersEFT           `json:"eft,omitempty"`
+	International        NullableNumbersInternational `json:"international,omitempty"`
+	Bacs                 NullableNumbersBACS          `json:"bacs,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -55,7 +55,7 @@ func (o *ProcessorNumber) GetAch() NumbersACH {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ProcessorNumber) GetAchOk() (*NumbersACH, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Ach.Get(), o.Ach.IsSet()
@@ -74,6 +74,7 @@ func (o *ProcessorNumber) HasAch() bool {
 func (o *ProcessorNumber) SetAch(v NumbersACH) {
 	o.Ach.Set(&v)
 }
+
 // SetAchNil sets the value for Ach to be an explicit nil
 func (o *ProcessorNumber) SetAchNil() {
 	o.Ach.Set(nil)
@@ -97,7 +98,7 @@ func (o *ProcessorNumber) GetEft() NumbersEFT {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ProcessorNumber) GetEftOk() (*NumbersEFT, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Eft.Get(), o.Eft.IsSet()
@@ -116,6 +117,7 @@ func (o *ProcessorNumber) HasEft() bool {
 func (o *ProcessorNumber) SetEft(v NumbersEFT) {
 	o.Eft.Set(&v)
 }
+
 // SetEftNil sets the value for Eft to be an explicit nil
 func (o *ProcessorNumber) SetEftNil() {
 	o.Eft.Set(nil)
@@ -139,7 +141,7 @@ func (o *ProcessorNumber) GetInternational() NumbersInternational {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ProcessorNumber) GetInternationalOk() (*NumbersInternational, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.International.Get(), o.International.IsSet()
@@ -158,6 +160,7 @@ func (o *ProcessorNumber) HasInternational() bool {
 func (o *ProcessorNumber) SetInternational(v NumbersInternational) {
 	o.International.Set(&v)
 }
+
 // SetInternationalNil sets the value for International to be an explicit nil
 func (o *ProcessorNumber) SetInternationalNil() {
 	o.International.Set(nil)
@@ -181,7 +184,7 @@ func (o *ProcessorNumber) GetBacs() NumbersBACS {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ProcessorNumber) GetBacsOk() (*NumbersBACS, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Bacs.Get(), o.Bacs.IsSet()
@@ -200,6 +203,7 @@ func (o *ProcessorNumber) HasBacs() bool {
 func (o *ProcessorNumber) SetBacs(v NumbersBACS) {
 	o.Bacs.Set(&v)
 }
+
 // SetBacsNil sets the value for Bacs to be an explicit nil
 func (o *ProcessorNumber) SetBacsNil() {
 	o.Bacs.Set(nil)
@@ -287,5 +291,3 @@ func (v *NullableProcessorNumber) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,7 +29,7 @@ type AssetReportUser struct {
 	// The user's phone number, in E.164 format: +{countrycode}{number}. For example: \"+14151234567\"
 	PhoneNumber NullableString `json:"phone_number,omitempty"`
 	// The user's email address.
-	Email NullableString `json:"email,omitempty"`
+	Email                NullableString `json:"email,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -65,7 +65,7 @@ func (o *AssetReportUser) GetClientUserId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetReportUser) GetClientUserIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ClientUserId.Get(), o.ClientUserId.IsSet()
@@ -84,6 +84,7 @@ func (o *AssetReportUser) HasClientUserId() bool {
 func (o *AssetReportUser) SetClientUserId(v string) {
 	o.ClientUserId.Set(&v)
 }
+
 // SetClientUserIdNil sets the value for ClientUserId to be an explicit nil
 func (o *AssetReportUser) SetClientUserIdNil() {
 	o.ClientUserId.Set(nil)
@@ -107,7 +108,7 @@ func (o *AssetReportUser) GetFirstName() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetReportUser) GetFirstNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.FirstName.Get(), o.FirstName.IsSet()
@@ -126,6 +127,7 @@ func (o *AssetReportUser) HasFirstName() bool {
 func (o *AssetReportUser) SetFirstName(v string) {
 	o.FirstName.Set(&v)
 }
+
 // SetFirstNameNil sets the value for FirstName to be an explicit nil
 func (o *AssetReportUser) SetFirstNameNil() {
 	o.FirstName.Set(nil)
@@ -149,7 +151,7 @@ func (o *AssetReportUser) GetMiddleName() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetReportUser) GetMiddleNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MiddleName.Get(), o.MiddleName.IsSet()
@@ -168,6 +170,7 @@ func (o *AssetReportUser) HasMiddleName() bool {
 func (o *AssetReportUser) SetMiddleName(v string) {
 	o.MiddleName.Set(&v)
 }
+
 // SetMiddleNameNil sets the value for MiddleName to be an explicit nil
 func (o *AssetReportUser) SetMiddleNameNil() {
 	o.MiddleName.Set(nil)
@@ -191,7 +194,7 @@ func (o *AssetReportUser) GetLastName() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetReportUser) GetLastNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LastName.Get(), o.LastName.IsSet()
@@ -210,6 +213,7 @@ func (o *AssetReportUser) HasLastName() bool {
 func (o *AssetReportUser) SetLastName(v string) {
 	o.LastName.Set(&v)
 }
+
 // SetLastNameNil sets the value for LastName to be an explicit nil
 func (o *AssetReportUser) SetLastNameNil() {
 	o.LastName.Set(nil)
@@ -233,7 +237,7 @@ func (o *AssetReportUser) GetSsn() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetReportUser) GetSsnOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Ssn.Get(), o.Ssn.IsSet()
@@ -252,6 +256,7 @@ func (o *AssetReportUser) HasSsn() bool {
 func (o *AssetReportUser) SetSsn(v string) {
 	o.Ssn.Set(&v)
 }
+
 // SetSsnNil sets the value for Ssn to be an explicit nil
 func (o *AssetReportUser) SetSsnNil() {
 	o.Ssn.Set(nil)
@@ -275,7 +280,7 @@ func (o *AssetReportUser) GetPhoneNumber() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetReportUser) GetPhoneNumberOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PhoneNumber.Get(), o.PhoneNumber.IsSet()
@@ -294,6 +299,7 @@ func (o *AssetReportUser) HasPhoneNumber() bool {
 func (o *AssetReportUser) SetPhoneNumber(v string) {
 	o.PhoneNumber.Set(&v)
 }
+
 // SetPhoneNumberNil sets the value for PhoneNumber to be an explicit nil
 func (o *AssetReportUser) SetPhoneNumberNil() {
 	o.PhoneNumber.Set(nil)
@@ -317,7 +323,7 @@ func (o *AssetReportUser) GetEmail() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetReportUser) GetEmailOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Email.Get(), o.Email.IsSet()
@@ -336,6 +342,7 @@ func (o *AssetReportUser) HasEmail() bool {
 func (o *AssetReportUser) SetEmail(v string) {
 	o.Email.Set(&v)
 }
+
 // SetEmailNil sets the value for Email to be an explicit nil
 func (o *AssetReportUser) SetEmailNil() {
 	o.Email.Set(nil)
@@ -435,5 +442,3 @@ func (v *NullableAssetReportUser) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,9 +29,9 @@ type JWKPublicKey struct {
 	// The x member contains the x coordinate for the elliptic curve point.
 	X *string `json:"x,omitempty"`
 	// The y member contains the y coordinate for the elliptic curve point.
-	Y *string `json:"y,omitempty"`
-	CreatedAt *int32 `json:"created_at,omitempty"`
-	ExpiredAt NullableInt32 `json:"expired_at,omitempty"`
+	Y                    *string       `json:"y,omitempty"`
+	CreatedAt            *int32        `json:"created_at,omitempty"`
+	ExpiredAt            NullableInt32 `json:"expired_at,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -323,7 +323,7 @@ func (o *JWKPublicKey) GetExpiredAt() int32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *JWKPublicKey) GetExpiredAtOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ExpiredAt.Get(), o.ExpiredAt.IsSet()
@@ -342,6 +342,7 @@ func (o *JWKPublicKey) HasExpiredAt() bool {
 func (o *JWKPublicKey) SetExpiredAt(v int32) {
 	o.ExpiredAt.Set(&v)
 }
+
 // SetExpiredAtNil sets the value for ExpiredAt to be an explicit nil
 func (o *JWKPublicKey) SetExpiredAtNil() {
 	o.ExpiredAt.Set(nil)
@@ -449,5 +450,3 @@ func (v *NullableJWKPublicKey) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

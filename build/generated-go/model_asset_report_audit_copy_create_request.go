@@ -23,7 +23,7 @@ type AssetReportAuditCopyCreateRequest struct {
 	// A token that can be provided to endpoints such as `/asset_report/get` or `/asset_report/pdf/get` to fetch or update an Asset Report.
 	AssetReportToken string `json:"asset_report_token"`
 	// The `auditor_id` of the third party with whom you would like to share the Asset Report.
-	AuditorId string `json:"auditor_id"`
+	AuditorId            string `json:"auditor_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -33,7 +33,7 @@ type _AssetReportAuditCopyCreateRequest AssetReportAuditCopyCreateRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAssetReportAuditCopyCreateRequest(assetReportToken string, auditorId string, ) *AssetReportAuditCopyCreateRequest {
+func NewAssetReportAuditCopyCreateRequest(assetReportToken string, auditorId string) *AssetReportAuditCopyCreateRequest {
 	this := AssetReportAuditCopyCreateRequest{}
 	this.AssetReportToken = assetReportToken
 	this.AuditorId = auditorId
@@ -114,7 +114,7 @@ func (o *AssetReportAuditCopyCreateRequest) SetSecret(v string) {
 
 // GetAssetReportToken returns the AssetReportToken field value
 func (o *AssetReportAuditCopyCreateRequest) GetAssetReportToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *AssetReportAuditCopyCreateRequest) GetAssetReportToken() string {
 // GetAssetReportTokenOk returns a tuple with the AssetReportToken field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportAuditCopyCreateRequest) GetAssetReportTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AssetReportToken, true
@@ -138,7 +138,7 @@ func (o *AssetReportAuditCopyCreateRequest) SetAssetReportToken(v string) {
 
 // GetAuditorId returns the AuditorId field value
 func (o *AssetReportAuditCopyCreateRequest) GetAuditorId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *AssetReportAuditCopyCreateRequest) GetAuditorId() string {
 // GetAuditorIdOk returns a tuple with the AuditorId field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportAuditCopyCreateRequest) GetAuditorIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AuditorId, true
@@ -237,5 +237,3 @@ func (v *NullableAssetReportAuditCopyCreateRequest) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

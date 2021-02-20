@@ -23,7 +23,7 @@ type ItemWebhookUpdateRequest struct {
 	// The access token associated with the Item data is being requested for.
 	AccessToken string `json:"access_token"`
 	// The new webhook URL to associate with the Item.
-	Webhook string `json:"webhook"`
+	Webhook              string `json:"webhook"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -33,7 +33,7 @@ type _ItemWebhookUpdateRequest ItemWebhookUpdateRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewItemWebhookUpdateRequest(accessToken string, webhook string, ) *ItemWebhookUpdateRequest {
+func NewItemWebhookUpdateRequest(accessToken string, webhook string) *ItemWebhookUpdateRequest {
 	this := ItemWebhookUpdateRequest{}
 	this.AccessToken = accessToken
 	this.Webhook = webhook
@@ -114,7 +114,7 @@ func (o *ItemWebhookUpdateRequest) SetSecret(v string) {
 
 // GetAccessToken returns the AccessToken field value
 func (o *ItemWebhookUpdateRequest) GetAccessToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *ItemWebhookUpdateRequest) GetAccessToken() string {
 // GetAccessTokenOk returns a tuple with the AccessToken field value
 // and a boolean to check if the value has been set.
 func (o *ItemWebhookUpdateRequest) GetAccessTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccessToken, true
@@ -138,7 +138,7 @@ func (o *ItemWebhookUpdateRequest) SetAccessToken(v string) {
 
 // GetWebhook returns the Webhook field value
 func (o *ItemWebhookUpdateRequest) GetWebhook() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *ItemWebhookUpdateRequest) GetWebhook() string {
 // GetWebhookOk returns a tuple with the Webhook field value
 // and a boolean to check if the value has been set.
 func (o *ItemWebhookUpdateRequest) GetWebhookOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Webhook, true
@@ -237,5 +237,3 @@ func (v *NullableItemWebhookUpdateRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

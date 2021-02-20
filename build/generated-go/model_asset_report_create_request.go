@@ -23,8 +23,8 @@ type AssetReportCreateRequest struct {
 	// An array of access tokens corresponding to the Items that will be included in the report. The `assets` product must have been initialized for the Items during link; the Assets product cannot be added after initialization.
 	AccessTokens []string `json:"access_tokens"`
 	// The maximum integer number of days of history to include in the Asset Report. If using Fannie Mae Day 1 Certainty, `days_requested` must be at least 61 for new originations or at least 31 for refinancings.
-	DaysRequested int32 `json:"days_requested"`
-	Options *AssetReportCreateRequestOptions `json:"options,omitempty"`
+	DaysRequested        int32                            `json:"days_requested"`
+	Options              *AssetReportCreateRequestOptions `json:"options,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _AssetReportCreateRequest AssetReportCreateRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAssetReportCreateRequest(accessTokens []string, daysRequested int32, ) *AssetReportCreateRequest {
+func NewAssetReportCreateRequest(accessTokens []string, daysRequested int32) *AssetReportCreateRequest {
 	this := AssetReportCreateRequest{}
 	this.AccessTokens = accessTokens
 	this.DaysRequested = daysRequested
@@ -115,7 +115,7 @@ func (o *AssetReportCreateRequest) SetSecret(v string) {
 
 // GetAccessTokens returns the AccessTokens field value
 func (o *AssetReportCreateRequest) GetAccessTokens() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *AssetReportCreateRequest) GetAccessTokens() []string {
 // GetAccessTokensOk returns a tuple with the AccessTokens field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportCreateRequest) GetAccessTokensOk() (*[]string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccessTokens, true
@@ -139,7 +139,7 @@ func (o *AssetReportCreateRequest) SetAccessTokens(v []string) {
 
 // GetDaysRequested returns the DaysRequested field value
 func (o *AssetReportCreateRequest) GetDaysRequested() int32 {
-	if o == nil  {
+	if o == nil {
 		var ret int32
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *AssetReportCreateRequest) GetDaysRequested() int32 {
 // GetDaysRequestedOk returns a tuple with the DaysRequested field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportCreateRequest) GetDaysRequestedOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DaysRequested, true
@@ -274,5 +274,3 @@ func (v *NullableAssetReportCreateRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

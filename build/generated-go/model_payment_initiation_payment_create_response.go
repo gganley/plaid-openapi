@@ -21,7 +21,7 @@ type PaymentInitiationPaymentCreateResponse struct {
 	// For a payment returned by this endpoint, there is only one possible value:  `PAYMENT_STATUS_INPUT_NEEDED`: The initial phase of the payment
 	Status string `json:"status"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _PaymentInitiationPaymentCreateResponse PaymentInitiationPaymentCreateRespo
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaymentInitiationPaymentCreateResponse(paymentId string, status string, requestId string, ) *PaymentInitiationPaymentCreateResponse {
+func NewPaymentInitiationPaymentCreateResponse(paymentId string, status string, requestId string) *PaymentInitiationPaymentCreateResponse {
 	this := PaymentInitiationPaymentCreateResponse{}
 	this.PaymentId = paymentId
 	this.Status = status
@@ -49,7 +49,7 @@ func NewPaymentInitiationPaymentCreateResponseWithDefaults() *PaymentInitiationP
 
 // GetPaymentId returns the PaymentId field value
 func (o *PaymentInitiationPaymentCreateResponse) GetPaymentId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *PaymentInitiationPaymentCreateResponse) GetPaymentId() string {
 // GetPaymentIdOk returns a tuple with the PaymentId field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationPaymentCreateResponse) GetPaymentIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PaymentId, true
@@ -73,7 +73,7 @@ func (o *PaymentInitiationPaymentCreateResponse) SetPaymentId(v string) {
 
 // GetStatus returns the Status field value
 func (o *PaymentInitiationPaymentCreateResponse) GetStatus() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *PaymentInitiationPaymentCreateResponse) GetStatus() string {
 // GetStatusOk returns a tuple with the Status field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationPaymentCreateResponse) GetStatusOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Status, true
@@ -97,7 +97,7 @@ func (o *PaymentInitiationPaymentCreateResponse) SetStatus(v string) {
 
 // GetRequestId returns the RequestId field value
 func (o *PaymentInitiationPaymentCreateResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *PaymentInitiationPaymentCreateResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationPaymentCreateResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -192,5 +192,3 @@ func (v *NullablePaymentInitiationPaymentCreateResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

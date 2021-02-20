@@ -25,7 +25,7 @@ type ProcessorTokenCreateRequest struct {
 	// The `account_id` value obtained from the `onSuccess` callback in Link
 	AccountId string `json:"account_id"`
 	// The processor you are integrating with. Valid values are `\"achq\"`, `\"check\"`, `\"checkbook\"`, `\"circle\"`, `\"drivewealth\"`, `\"dwolla\"`, `\"galileo\"`, \"`interactive_brokers`\", `\"modern_treasury\"`, `\"ocrolus\"`, `\"prime_trust\"`, `\"rize\"`, `\"sila_money\"`, `\"unit\"`, `\"velox\"`, `\"vesta\"`, `\"vopay\"`, `\"wyre\"`
-	Processor string `json:"processor"`
+	Processor            string `json:"processor"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -35,7 +35,7 @@ type _ProcessorTokenCreateRequest ProcessorTokenCreateRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProcessorTokenCreateRequest(accessToken string, accountId string, processor string, ) *ProcessorTokenCreateRequest {
+func NewProcessorTokenCreateRequest(accessToken string, accountId string, processor string) *ProcessorTokenCreateRequest {
 	this := ProcessorTokenCreateRequest{}
 	this.AccessToken = accessToken
 	this.AccountId = accountId
@@ -117,7 +117,7 @@ func (o *ProcessorTokenCreateRequest) SetSecret(v string) {
 
 // GetAccessToken returns the AccessToken field value
 func (o *ProcessorTokenCreateRequest) GetAccessToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *ProcessorTokenCreateRequest) GetAccessToken() string {
 // GetAccessTokenOk returns a tuple with the AccessToken field value
 // and a boolean to check if the value has been set.
 func (o *ProcessorTokenCreateRequest) GetAccessTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccessToken, true
@@ -141,7 +141,7 @@ func (o *ProcessorTokenCreateRequest) SetAccessToken(v string) {
 
 // GetAccountId returns the AccountId field value
 func (o *ProcessorTokenCreateRequest) GetAccountId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *ProcessorTokenCreateRequest) GetAccountId() string {
 // GetAccountIdOk returns a tuple with the AccountId field value
 // and a boolean to check if the value has been set.
 func (o *ProcessorTokenCreateRequest) GetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountId, true
@@ -165,7 +165,7 @@ func (o *ProcessorTokenCreateRequest) SetAccountId(v string) {
 
 // GetProcessor returns the Processor field value
 func (o *ProcessorTokenCreateRequest) GetProcessor() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *ProcessorTokenCreateRequest) GetProcessor() string {
 // GetProcessorOk returns a tuple with the Processor field value
 // and a boolean to check if the value has been set.
 func (o *ProcessorTokenCreateRequest) GetProcessorOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Processor, true
@@ -268,5 +268,3 @@ func (v *NullableProcessorTokenCreateRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

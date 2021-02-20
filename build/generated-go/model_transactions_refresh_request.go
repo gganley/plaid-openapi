@@ -21,7 +21,7 @@ type TransactionsRefreshRequest struct {
 	// The access token associated with the Item data is being requested for.
 	AccessToken *string `json:"access_token,omitempty"`
 	// Your Plaid API `secret`.
-	Secret *string `json:"secret,omitempty"`
+	Secret               *string `json:"secret,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -213,5 +213,3 @@ func (v *NullableTransactionsRefreshRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

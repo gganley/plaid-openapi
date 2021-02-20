@@ -17,7 +17,7 @@ import (
 // IdentityGetRequestOptions An optional object to filter `/identity/get` results.
 type IdentityGetRequestOptions struct {
 	// A list of `account_ids` to retrieve for the Item. Note: An error will be returned if a provided `account_id` is not associated with the Item.
-	AccountIds *[]string `json:"account_ids,omitempty"`
+	AccountIds           *[]string `json:"account_ids,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -137,5 +137,3 @@ func (v *NullableIdentityGetRequestOptions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

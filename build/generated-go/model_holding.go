@@ -32,9 +32,9 @@ type Holding struct {
 	Quantity float32 `json:"quantity"`
 	// The ISO-4217 currency code of the holding. Always `null` if `unofficial_currency_code` is non-`null`.
 	IsoCurrencyCode NullableString `json:"iso_currency_code,omitempty"`
-	// The unofficial currency code associated with the holding. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.  See the [currency code schema](/docs/api/accounts#currency-code-schema) for a full listing of supported `iso_currency_code`s. 
+	// The unofficial currency code associated with the holding. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.  See the [currency code schema](/docs/api/accounts#currency-code-schema) for a full listing of supported `iso_currency_code`s.
 	UnofficialCurrencyCode NullableString `json:"unofficial_currency_code,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties   map[string]interface{}
 }
 
 type _Holding Holding
@@ -43,7 +43,7 @@ type _Holding Holding
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewHolding(accountId string, securityId string, institutionPrice float32, institutionValue float32, quantity float32, ) *Holding {
+func NewHolding(accountId string, securityId string, institutionPrice float32, institutionValue float32, quantity float32) *Holding {
 	this := Holding{}
 	this.AccountId = accountId
 	this.SecurityId = securityId
@@ -63,7 +63,7 @@ func NewHoldingWithDefaults() *Holding {
 
 // GetAccountId returns the AccountId field value
 func (o *Holding) GetAccountId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -74,7 +74,7 @@ func (o *Holding) GetAccountId() string {
 // GetAccountIdOk returns a tuple with the AccountId field value
 // and a boolean to check if the value has been set.
 func (o *Holding) GetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountId, true
@@ -87,7 +87,7 @@ func (o *Holding) SetAccountId(v string) {
 
 // GetSecurityId returns the SecurityId field value
 func (o *Holding) GetSecurityId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *Holding) GetSecurityId() string {
 // GetSecurityIdOk returns a tuple with the SecurityId field value
 // and a boolean to check if the value has been set.
 func (o *Holding) GetSecurityIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.SecurityId, true
@@ -111,7 +111,7 @@ func (o *Holding) SetSecurityId(v string) {
 
 // GetInstitutionPrice returns the InstitutionPrice field value
 func (o *Holding) GetInstitutionPrice() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *Holding) GetInstitutionPrice() float32 {
 // GetInstitutionPriceOk returns a tuple with the InstitutionPrice field value
 // and a boolean to check if the value has been set.
 func (o *Holding) GetInstitutionPriceOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.InstitutionPrice, true
@@ -146,7 +146,7 @@ func (o *Holding) GetInstitutionPriceAsOf() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Holding) GetInstitutionPriceAsOfOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.InstitutionPriceAsOf.Get(), o.InstitutionPriceAsOf.IsSet()
@@ -165,6 +165,7 @@ func (o *Holding) HasInstitutionPriceAsOf() bool {
 func (o *Holding) SetInstitutionPriceAsOf(v string) {
 	o.InstitutionPriceAsOf.Set(&v)
 }
+
 // SetInstitutionPriceAsOfNil sets the value for InstitutionPriceAsOf to be an explicit nil
 func (o *Holding) SetInstitutionPriceAsOfNil() {
 	o.InstitutionPriceAsOf.Set(nil)
@@ -177,7 +178,7 @@ func (o *Holding) UnsetInstitutionPriceAsOf() {
 
 // GetInstitutionValue returns the InstitutionValue field value
 func (o *Holding) GetInstitutionValue() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -188,7 +189,7 @@ func (o *Holding) GetInstitutionValue() float32 {
 // GetInstitutionValueOk returns a tuple with the InstitutionValue field value
 // and a boolean to check if the value has been set.
 func (o *Holding) GetInstitutionValueOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.InstitutionValue, true
@@ -212,7 +213,7 @@ func (o *Holding) GetCostBasis() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Holding) GetCostBasisOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CostBasis.Get(), o.CostBasis.IsSet()
@@ -231,6 +232,7 @@ func (o *Holding) HasCostBasis() bool {
 func (o *Holding) SetCostBasis(v float32) {
 	o.CostBasis.Set(&v)
 }
+
 // SetCostBasisNil sets the value for CostBasis to be an explicit nil
 func (o *Holding) SetCostBasisNil() {
 	o.CostBasis.Set(nil)
@@ -243,7 +245,7 @@ func (o *Holding) UnsetCostBasis() {
 
 // GetQuantity returns the Quantity field value
 func (o *Holding) GetQuantity() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -254,7 +256,7 @@ func (o *Holding) GetQuantity() float32 {
 // GetQuantityOk returns a tuple with the Quantity field value
 // and a boolean to check if the value has been set.
 func (o *Holding) GetQuantityOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Quantity, true
@@ -278,7 +280,7 @@ func (o *Holding) GetIsoCurrencyCode() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Holding) GetIsoCurrencyCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.IsoCurrencyCode.Get(), o.IsoCurrencyCode.IsSet()
@@ -297,6 +299,7 @@ func (o *Holding) HasIsoCurrencyCode() bool {
 func (o *Holding) SetIsoCurrencyCode(v string) {
 	o.IsoCurrencyCode.Set(&v)
 }
+
 // SetIsoCurrencyCodeNil sets the value for IsoCurrencyCode to be an explicit nil
 func (o *Holding) SetIsoCurrencyCodeNil() {
 	o.IsoCurrencyCode.Set(nil)
@@ -320,7 +323,7 @@ func (o *Holding) GetUnofficialCurrencyCode() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Holding) GetUnofficialCurrencyCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UnofficialCurrencyCode.Get(), o.UnofficialCurrencyCode.IsSet()
@@ -339,6 +342,7 @@ func (o *Holding) HasUnofficialCurrencyCode() bool {
 func (o *Holding) SetUnofficialCurrencyCode(v string) {
 	o.UnofficialCurrencyCode.Set(&v)
 }
+
 // SetUnofficialCurrencyCodeNil sets the value for UnofficialCurrencyCode to be an explicit nil
 func (o *Holding) SetUnofficialCurrencyCodeNil() {
 	o.UnofficialCurrencyCode.Set(nil)
@@ -446,5 +450,3 @@ func (v *NullableHolding) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

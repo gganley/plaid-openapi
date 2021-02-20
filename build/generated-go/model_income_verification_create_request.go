@@ -21,7 +21,7 @@ type IncomeVerificationCreateRequest struct {
 	// Your Plaid API `secret`.
 	Secret *string `json:"secret,omitempty"`
 	// The URL endpoint to which Plaid should send webhooks related to the progress of the income verification process.
-	Webhook string `json:"webhook"`
+	Webhook              string `json:"webhook"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _IncomeVerificationCreateRequest IncomeVerificationCreateRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIncomeVerificationCreateRequest(webhook string, ) *IncomeVerificationCreateRequest {
+func NewIncomeVerificationCreateRequest(webhook string) *IncomeVerificationCreateRequest {
 	this := IncomeVerificationCreateRequest{}
 	this.Webhook = webhook
 	return &this
@@ -111,7 +111,7 @@ func (o *IncomeVerificationCreateRequest) SetSecret(v string) {
 
 // GetWebhook returns the Webhook field value
 func (o *IncomeVerificationCreateRequest) GetWebhook() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *IncomeVerificationCreateRequest) GetWebhook() string {
 // GetWebhookOk returns a tuple with the Webhook field value
 // and a boolean to check if the value has been set.
 func (o *IncomeVerificationCreateRequest) GetWebhookOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Webhook, true
@@ -206,5 +206,3 @@ func (v *NullableIncomeVerificationCreateRequest) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

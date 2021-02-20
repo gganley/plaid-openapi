@@ -16,21 +16,21 @@ import (
 
 // OverrideAccounts Data to use to set values of test accounts. Some values cannot be specified in the schema and will instead will be calculated from other test data in order to achieve more consistent, realistic test data.
 type OverrideAccounts struct {
-	Type AccountType `json:"type"`
+	Type    AccountType            `json:"type"`
 	Subtype NullableAccountSubtype `json:"subtype"`
-	// If provided, the account will start with this amount as the current balance. 
+	// If provided, the account will start with this amount as the current balance.
 	StartingBalance float32 `json:"starting_balance"`
 	// If provided, the account will always have this amount as its  available balance, regardless of current balance or changes in transactions over time.
 	ForceAvailableBalance float32 `json:"force_available_balance"`
 	// ISO-4217 currency code. If provided, the account will be denominated in the given currency. Transactions will also be in this currency by default.
-	Currency string `json:"currency"`
-	Meta Meta `json:"meta"`
-	Numbers Numbers `json:"numbers"`
+	Currency string  `json:"currency"`
+	Meta     Meta    `json:"meta"`
+	Numbers  Numbers `json:"numbers"`
 	// Specify the list of transactions on the account.
-	Transactions []TransactionOverride `json:"transactions"`
-	Identity OwnerOverride `json:"identity"`
-	Liability LiabilityOverride `json:"liability"`
-	InflowModel InflowModel `json:"inflow_model"`
+	Transactions         []TransactionOverride `json:"transactions"`
+	Identity             OwnerOverride         `json:"identity"`
+	Liability            LiabilityOverride     `json:"liability"`
+	InflowModel          InflowModel           `json:"inflow_model"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -40,7 +40,7 @@ type _OverrideAccounts OverrideAccounts
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOverrideAccounts(type_ AccountType, subtype NullableAccountSubtype, startingBalance float32, forceAvailableBalance float32, currency string, meta Meta, numbers Numbers, transactions []TransactionOverride, identity OwnerOverride, liability LiabilityOverride, inflowModel InflowModel, ) *OverrideAccounts {
+func NewOverrideAccounts(type_ AccountType, subtype NullableAccountSubtype, startingBalance float32, forceAvailableBalance float32, currency string, meta Meta, numbers Numbers, transactions []TransactionOverride, identity OwnerOverride, liability LiabilityOverride, inflowModel InflowModel) *OverrideAccounts {
 	this := OverrideAccounts{}
 	this.Type = type_
 	this.Subtype = subtype
@@ -66,7 +66,7 @@ func NewOverrideAccountsWithDefaults() *OverrideAccounts {
 
 // GetType returns the Type field value
 func (o *OverrideAccounts) GetType() AccountType {
-	if o == nil  {
+	if o == nil {
 		var ret AccountType
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *OverrideAccounts) GetType() AccountType {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *OverrideAccounts) GetTypeOk() (*AccountType, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -103,7 +103,7 @@ func (o *OverrideAccounts) GetSubtype() AccountSubtype {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OverrideAccounts) GetSubtypeOk() (*AccountSubtype, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Subtype.Get(), o.Subtype.IsSet()
@@ -116,7 +116,7 @@ func (o *OverrideAccounts) SetSubtype(v AccountSubtype) {
 
 // GetStartingBalance returns the StartingBalance field value
 func (o *OverrideAccounts) GetStartingBalance() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *OverrideAccounts) GetStartingBalance() float32 {
 // GetStartingBalanceOk returns a tuple with the StartingBalance field value
 // and a boolean to check if the value has been set.
 func (o *OverrideAccounts) GetStartingBalanceOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.StartingBalance, true
@@ -140,7 +140,7 @@ func (o *OverrideAccounts) SetStartingBalance(v float32) {
 
 // GetForceAvailableBalance returns the ForceAvailableBalance field value
 func (o *OverrideAccounts) GetForceAvailableBalance() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *OverrideAccounts) GetForceAvailableBalance() float32 {
 // GetForceAvailableBalanceOk returns a tuple with the ForceAvailableBalance field value
 // and a boolean to check if the value has been set.
 func (o *OverrideAccounts) GetForceAvailableBalanceOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ForceAvailableBalance, true
@@ -164,7 +164,7 @@ func (o *OverrideAccounts) SetForceAvailableBalance(v float32) {
 
 // GetCurrency returns the Currency field value
 func (o *OverrideAccounts) GetCurrency() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *OverrideAccounts) GetCurrency() string {
 // GetCurrencyOk returns a tuple with the Currency field value
 // and a boolean to check if the value has been set.
 func (o *OverrideAccounts) GetCurrencyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Currency, true
@@ -188,7 +188,7 @@ func (o *OverrideAccounts) SetCurrency(v string) {
 
 // GetMeta returns the Meta field value
 func (o *OverrideAccounts) GetMeta() Meta {
-	if o == nil  {
+	if o == nil {
 		var ret Meta
 		return ret
 	}
@@ -199,7 +199,7 @@ func (o *OverrideAccounts) GetMeta() Meta {
 // GetMetaOk returns a tuple with the Meta field value
 // and a boolean to check if the value has been set.
 func (o *OverrideAccounts) GetMetaOk() (*Meta, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Meta, true
@@ -212,7 +212,7 @@ func (o *OverrideAccounts) SetMeta(v Meta) {
 
 // GetNumbers returns the Numbers field value
 func (o *OverrideAccounts) GetNumbers() Numbers {
-	if o == nil  {
+	if o == nil {
 		var ret Numbers
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *OverrideAccounts) GetNumbers() Numbers {
 // GetNumbersOk returns a tuple with the Numbers field value
 // and a boolean to check if the value has been set.
 func (o *OverrideAccounts) GetNumbersOk() (*Numbers, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Numbers, true
@@ -236,7 +236,7 @@ func (o *OverrideAccounts) SetNumbers(v Numbers) {
 
 // GetTransactions returns the Transactions field value
 func (o *OverrideAccounts) GetTransactions() []TransactionOverride {
-	if o == nil  {
+	if o == nil {
 		var ret []TransactionOverride
 		return ret
 	}
@@ -247,7 +247,7 @@ func (o *OverrideAccounts) GetTransactions() []TransactionOverride {
 // GetTransactionsOk returns a tuple with the Transactions field value
 // and a boolean to check if the value has been set.
 func (o *OverrideAccounts) GetTransactionsOk() (*[]TransactionOverride, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Transactions, true
@@ -260,7 +260,7 @@ func (o *OverrideAccounts) SetTransactions(v []TransactionOverride) {
 
 // GetIdentity returns the Identity field value
 func (o *OverrideAccounts) GetIdentity() OwnerOverride {
-	if o == nil  {
+	if o == nil {
 		var ret OwnerOverride
 		return ret
 	}
@@ -271,7 +271,7 @@ func (o *OverrideAccounts) GetIdentity() OwnerOverride {
 // GetIdentityOk returns a tuple with the Identity field value
 // and a boolean to check if the value has been set.
 func (o *OverrideAccounts) GetIdentityOk() (*OwnerOverride, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Identity, true
@@ -284,7 +284,7 @@ func (o *OverrideAccounts) SetIdentity(v OwnerOverride) {
 
 // GetLiability returns the Liability field value
 func (o *OverrideAccounts) GetLiability() LiabilityOverride {
-	if o == nil  {
+	if o == nil {
 		var ret LiabilityOverride
 		return ret
 	}
@@ -295,7 +295,7 @@ func (o *OverrideAccounts) GetLiability() LiabilityOverride {
 // GetLiabilityOk returns a tuple with the Liability field value
 // and a boolean to check if the value has been set.
 func (o *OverrideAccounts) GetLiabilityOk() (*LiabilityOverride, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Liability, true
@@ -308,7 +308,7 @@ func (o *OverrideAccounts) SetLiability(v LiabilityOverride) {
 
 // GetInflowModel returns the InflowModel field value
 func (o *OverrideAccounts) GetInflowModel() InflowModel {
-	if o == nil  {
+	if o == nil {
 		var ret InflowModel
 		return ret
 	}
@@ -319,7 +319,7 @@ func (o *OverrideAccounts) GetInflowModel() InflowModel {
 // GetInflowModelOk returns a tuple with the InflowModel field value
 // and a boolean to check if the value has been set.
 func (o *OverrideAccounts) GetInflowModelOk() (*InflowModel, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.InflowModel, true
@@ -435,5 +435,3 @@ func (v *NullableOverrideAccounts) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

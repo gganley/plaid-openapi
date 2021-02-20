@@ -22,9 +22,9 @@ type InstitutionsGetByIdRequest struct {
 	Secret *string `json:"secret,omitempty"`
 	// The ID of the institution to get details about
 	InstitutionId string `json:"institution_id"`
-	// Specify an array of Plaid-supported country codes this institution supports, using the ISO-3166-1 alpha-2 country code standard. 
-	CountryCodes []CountryCode `json:"country_codes"`
-	Options *InstitutionsGetByIdRequestOptions `json:"options,omitempty"`
+	// Specify an array of Plaid-supported country codes this institution supports, using the ISO-3166-1 alpha-2 country code standard.
+	CountryCodes         []CountryCode                      `json:"country_codes"`
+	Options              *InstitutionsGetByIdRequestOptions `json:"options,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _InstitutionsGetByIdRequest InstitutionsGetByIdRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInstitutionsGetByIdRequest(institutionId string, countryCodes []CountryCode, ) *InstitutionsGetByIdRequest {
+func NewInstitutionsGetByIdRequest(institutionId string, countryCodes []CountryCode) *InstitutionsGetByIdRequest {
 	this := InstitutionsGetByIdRequest{}
 	this.InstitutionId = institutionId
 	this.CountryCodes = countryCodes
@@ -115,7 +115,7 @@ func (o *InstitutionsGetByIdRequest) SetSecret(v string) {
 
 // GetInstitutionId returns the InstitutionId field value
 func (o *InstitutionsGetByIdRequest) GetInstitutionId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *InstitutionsGetByIdRequest) GetInstitutionId() string {
 // GetInstitutionIdOk returns a tuple with the InstitutionId field value
 // and a boolean to check if the value has been set.
 func (o *InstitutionsGetByIdRequest) GetInstitutionIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.InstitutionId, true
@@ -139,7 +139,7 @@ func (o *InstitutionsGetByIdRequest) SetInstitutionId(v string) {
 
 // GetCountryCodes returns the CountryCodes field value
 func (o *InstitutionsGetByIdRequest) GetCountryCodes() []CountryCode {
-	if o == nil  {
+	if o == nil {
 		var ret []CountryCode
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *InstitutionsGetByIdRequest) GetCountryCodes() []CountryCode {
 // GetCountryCodesOk returns a tuple with the CountryCodes field value
 // and a boolean to check if the value has been set.
 func (o *InstitutionsGetByIdRequest) GetCountryCodesOk() (*[]CountryCode, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.CountryCodes, true
@@ -274,5 +274,3 @@ func (v *NullableInstitutionsGetByIdRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

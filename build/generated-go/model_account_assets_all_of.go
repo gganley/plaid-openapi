@@ -23,7 +23,7 @@ type AccountAssetsAllOf struct {
 	// Data returned by the financial institution about the account owner or owners. Only returned by Identity or Assets endpoints. Multiple owners on a single account will be represented in the same `owner` object, not in multiple owner objects within the array.
 	Owners []Owner `json:"owners"`
 	// Calculated data about the historical balances on the account. Only returned by Assets endpoints.
-	HistoricalBalances []HistoricalBalance `json:"historical_balances,omitempty"`
+	HistoricalBalances   []HistoricalBalance `json:"historical_balances,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -33,7 +33,7 @@ type _AccountAssetsAllOf AccountAssetsAllOf
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAccountAssetsAllOf(owners []Owner, ) *AccountAssetsAllOf {
+func NewAccountAssetsAllOf(owners []Owner) *AccountAssetsAllOf {
 	this := AccountAssetsAllOf{}
 	this.Owners = owners
 	return &this
@@ -60,7 +60,7 @@ func (o *AccountAssetsAllOf) GetDaysAvailable() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AccountAssetsAllOf) GetDaysAvailableOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DaysAvailable.Get(), o.DaysAvailable.IsSet()
@@ -79,6 +79,7 @@ func (o *AccountAssetsAllOf) HasDaysAvailable() bool {
 func (o *AccountAssetsAllOf) SetDaysAvailable(v float32) {
 	o.DaysAvailable.Set(&v)
 }
+
 // SetDaysAvailableNil sets the value for DaysAvailable to be an explicit nil
 func (o *AccountAssetsAllOf) SetDaysAvailableNil() {
 	o.DaysAvailable.Set(nil)
@@ -91,7 +92,7 @@ func (o *AccountAssetsAllOf) UnsetDaysAvailable() {
 
 // GetTransactions returns the Transactions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AccountAssetsAllOf) GetTransactions() []AssetReportTransaction {
-	if o == nil  {
+	if o == nil {
 		var ret []AssetReportTransaction
 		return ret
 	}
@@ -124,7 +125,7 @@ func (o *AccountAssetsAllOf) SetTransactions(v []AssetReportTransaction) {
 
 // GetOwners returns the Owners field value
 func (o *AccountAssetsAllOf) GetOwners() []Owner {
-	if o == nil  {
+	if o == nil {
 		var ret []Owner
 		return ret
 	}
@@ -135,7 +136,7 @@ func (o *AccountAssetsAllOf) GetOwners() []Owner {
 // GetOwnersOk returns a tuple with the Owners field value
 // and a boolean to check if the value has been set.
 func (o *AccountAssetsAllOf) GetOwnersOk() (*[]Owner, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Owners, true
@@ -148,7 +149,7 @@ func (o *AccountAssetsAllOf) SetOwners(v []Owner) {
 
 // GetHistoricalBalances returns the HistoricalBalances field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AccountAssetsAllOf) GetHistoricalBalances() []HistoricalBalance {
-	if o == nil  {
+	if o == nil {
 		var ret []HistoricalBalance
 		return ret
 	}
@@ -256,5 +257,3 @@ func (v *NullableAccountAssetsAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

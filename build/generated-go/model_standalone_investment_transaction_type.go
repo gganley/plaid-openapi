@@ -27,7 +27,7 @@ type StandaloneInvestmentTransactionType struct {
 	// Fees on the account, e.g. commission, bookkeeping, options-related.
 	Fee string `json:"fee"`
 	// Activity which modifies a position, but not through buy/sell activity e.g. options exercise, portfolio transfer
-	Transfer string `json:"transfer"`
+	Transfer             string `json:"transfer"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -37,7 +37,7 @@ type _StandaloneInvestmentTransactionType StandaloneInvestmentTransactionType
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStandaloneInvestmentTransactionType(buy string, sell string, cancel string, cash string, fee string, transfer string, ) *StandaloneInvestmentTransactionType {
+func NewStandaloneInvestmentTransactionType(buy string, sell string, cancel string, cash string, fee string, transfer string) *StandaloneInvestmentTransactionType {
 	this := StandaloneInvestmentTransactionType{}
 	this.Buy = buy
 	this.Sell = sell
@@ -58,7 +58,7 @@ func NewStandaloneInvestmentTransactionTypeWithDefaults() *StandaloneInvestmentT
 
 // GetBuy returns the Buy field value
 func (o *StandaloneInvestmentTransactionType) GetBuy() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -69,7 +69,7 @@ func (o *StandaloneInvestmentTransactionType) GetBuy() string {
 // GetBuyOk returns a tuple with the Buy field value
 // and a boolean to check if the value has been set.
 func (o *StandaloneInvestmentTransactionType) GetBuyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Buy, true
@@ -82,7 +82,7 @@ func (o *StandaloneInvestmentTransactionType) SetBuy(v string) {
 
 // GetSell returns the Sell field value
 func (o *StandaloneInvestmentTransactionType) GetSell() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *StandaloneInvestmentTransactionType) GetSell() string {
 // GetSellOk returns a tuple with the Sell field value
 // and a boolean to check if the value has been set.
 func (o *StandaloneInvestmentTransactionType) GetSellOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Sell, true
@@ -106,7 +106,7 @@ func (o *StandaloneInvestmentTransactionType) SetSell(v string) {
 
 // GetCancel returns the Cancel field value
 func (o *StandaloneInvestmentTransactionType) GetCancel() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *StandaloneInvestmentTransactionType) GetCancel() string {
 // GetCancelOk returns a tuple with the Cancel field value
 // and a boolean to check if the value has been set.
 func (o *StandaloneInvestmentTransactionType) GetCancelOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Cancel, true
@@ -130,7 +130,7 @@ func (o *StandaloneInvestmentTransactionType) SetCancel(v string) {
 
 // GetCash returns the Cash field value
 func (o *StandaloneInvestmentTransactionType) GetCash() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *StandaloneInvestmentTransactionType) GetCash() string {
 // GetCashOk returns a tuple with the Cash field value
 // and a boolean to check if the value has been set.
 func (o *StandaloneInvestmentTransactionType) GetCashOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Cash, true
@@ -154,7 +154,7 @@ func (o *StandaloneInvestmentTransactionType) SetCash(v string) {
 
 // GetFee returns the Fee field value
 func (o *StandaloneInvestmentTransactionType) GetFee() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -165,7 +165,7 @@ func (o *StandaloneInvestmentTransactionType) GetFee() string {
 // GetFeeOk returns a tuple with the Fee field value
 // and a boolean to check if the value has been set.
 func (o *StandaloneInvestmentTransactionType) GetFeeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Fee, true
@@ -178,7 +178,7 @@ func (o *StandaloneInvestmentTransactionType) SetFee(v string) {
 
 // GetTransfer returns the Transfer field value
 func (o *StandaloneInvestmentTransactionType) GetTransfer() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *StandaloneInvestmentTransactionType) GetTransfer() string {
 // GetTransferOk returns a tuple with the Transfer field value
 // and a boolean to check if the value has been set.
 func (o *StandaloneInvestmentTransactionType) GetTransferOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Transfer, true
@@ -285,5 +285,3 @@ func (v *NullableStandaloneInvestmentTransactionType) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

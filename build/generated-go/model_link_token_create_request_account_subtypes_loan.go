@@ -16,8 +16,8 @@ import (
 
 // LinkTokenCreateRequestAccountSubtypesLoan A filter to apply to `loan`-type accounts
 type LinkTokenCreateRequestAccountSubtypesLoan struct {
-	// An array of account subtypes to display in Link. If not specified, all account subtypes will be shown. For a full list of valid types and subtypes, see the [Account schema](/docs/api/accounts#accounts-schema). 
-	AccountSubtypes *[]AccountSubtype `json:"account_subtypes,omitempty"`
+	// An array of account subtypes to display in Link. If not specified, all account subtypes will be shown. For a full list of valid types and subtypes, see the [Account schema](/docs/api/accounts#accounts-schema).
+	AccountSubtypes      *[]AccountSubtype `json:"account_subtypes,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -137,5 +137,3 @@ func (v *NullableLinkTokenCreateRequestAccountSubtypesLoan) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

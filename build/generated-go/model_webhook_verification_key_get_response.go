@@ -18,7 +18,7 @@ import (
 type WebhookVerificationKeyGetResponse struct {
 	Key JWKPublicKey `json:"key"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -28,7 +28,7 @@ type _WebhookVerificationKeyGetResponse WebhookVerificationKeyGetResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWebhookVerificationKeyGetResponse(key JWKPublicKey, requestId string, ) *WebhookVerificationKeyGetResponse {
+func NewWebhookVerificationKeyGetResponse(key JWKPublicKey, requestId string) *WebhookVerificationKeyGetResponse {
 	this := WebhookVerificationKeyGetResponse{}
 	this.Key = key
 	this.RequestId = requestId
@@ -45,7 +45,7 @@ func NewWebhookVerificationKeyGetResponseWithDefaults() *WebhookVerificationKeyG
 
 // GetKey returns the Key field value
 func (o *WebhookVerificationKeyGetResponse) GetKey() JWKPublicKey {
-	if o == nil  {
+	if o == nil {
 		var ret JWKPublicKey
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *WebhookVerificationKeyGetResponse) GetKey() JWKPublicKey {
 // GetKeyOk returns a tuple with the Key field value
 // and a boolean to check if the value has been set.
 func (o *WebhookVerificationKeyGetResponse) GetKeyOk() (*JWKPublicKey, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Key, true
@@ -69,7 +69,7 @@ func (o *WebhookVerificationKeyGetResponse) SetKey(v JWKPublicKey) {
 
 // GetRequestId returns the RequestId field value
 func (o *WebhookVerificationKeyGetResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *WebhookVerificationKeyGetResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *WebhookVerificationKeyGetResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -160,5 +160,3 @@ func (v *NullableWebhookVerificationKeyGetResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

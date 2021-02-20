@@ -21,7 +21,7 @@ type DepositSwitchTokenCreateResponse struct {
 	// Expiration time of the token, in ISO8601 format
 	DepositSwitchTokenExpirationTime string `json:"deposit_switch_token_expiration_time"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _DepositSwitchTokenCreateResponse DepositSwitchTokenCreateResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDepositSwitchTokenCreateResponse(depositSwitchToken string, depositSwitchTokenExpirationTime string, requestId string, ) *DepositSwitchTokenCreateResponse {
+func NewDepositSwitchTokenCreateResponse(depositSwitchToken string, depositSwitchTokenExpirationTime string, requestId string) *DepositSwitchTokenCreateResponse {
 	this := DepositSwitchTokenCreateResponse{}
 	this.DepositSwitchToken = depositSwitchToken
 	this.DepositSwitchTokenExpirationTime = depositSwitchTokenExpirationTime
@@ -49,7 +49,7 @@ func NewDepositSwitchTokenCreateResponseWithDefaults() *DepositSwitchTokenCreate
 
 // GetDepositSwitchToken returns the DepositSwitchToken field value
 func (o *DepositSwitchTokenCreateResponse) GetDepositSwitchToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *DepositSwitchTokenCreateResponse) GetDepositSwitchToken() string {
 // GetDepositSwitchTokenOk returns a tuple with the DepositSwitchToken field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchTokenCreateResponse) GetDepositSwitchTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DepositSwitchToken, true
@@ -73,7 +73,7 @@ func (o *DepositSwitchTokenCreateResponse) SetDepositSwitchToken(v string) {
 
 // GetDepositSwitchTokenExpirationTime returns the DepositSwitchTokenExpirationTime field value
 func (o *DepositSwitchTokenCreateResponse) GetDepositSwitchTokenExpirationTime() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *DepositSwitchTokenCreateResponse) GetDepositSwitchTokenExpirationTime()
 // GetDepositSwitchTokenExpirationTimeOk returns a tuple with the DepositSwitchTokenExpirationTime field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchTokenCreateResponse) GetDepositSwitchTokenExpirationTimeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DepositSwitchTokenExpirationTime, true
@@ -97,7 +97,7 @@ func (o *DepositSwitchTokenCreateResponse) SetDepositSwitchTokenExpirationTime(v
 
 // GetRequestId returns the RequestId field value
 func (o *DepositSwitchTokenCreateResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *DepositSwitchTokenCreateResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchTokenCreateResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -192,5 +192,3 @@ func (v *NullableDepositSwitchTokenCreateResponse) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

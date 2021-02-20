@@ -20,10 +20,10 @@ type DepositSwitchCreateRequest struct {
 	ClientId *string `json:"client_id,omitempty"`
 	// Your Plaid API `secret`.
 	Secret *string `json:"secret,omitempty"`
-	// Access token for the target Item, typically provided in the Import Item response. 
+	// Access token for the target Item, typically provided in the Import Item response.
 	TargetAccessToken string `json:"target_access_token"`
 	// Plaid Account ID that specifies the target bank account. This account will become the recipient for a user's direct deposit.
-	TargetAccountId string `json:"target_account_id"`
+	TargetAccountId      string `json:"target_account_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -33,7 +33,7 @@ type _DepositSwitchCreateRequest DepositSwitchCreateRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDepositSwitchCreateRequest(targetAccessToken string, targetAccountId string, ) *DepositSwitchCreateRequest {
+func NewDepositSwitchCreateRequest(targetAccessToken string, targetAccountId string) *DepositSwitchCreateRequest {
 	this := DepositSwitchCreateRequest{}
 	this.TargetAccessToken = targetAccessToken
 	this.TargetAccountId = targetAccountId
@@ -114,7 +114,7 @@ func (o *DepositSwitchCreateRequest) SetSecret(v string) {
 
 // GetTargetAccessToken returns the TargetAccessToken field value
 func (o *DepositSwitchCreateRequest) GetTargetAccessToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *DepositSwitchCreateRequest) GetTargetAccessToken() string {
 // GetTargetAccessTokenOk returns a tuple with the TargetAccessToken field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchCreateRequest) GetTargetAccessTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.TargetAccessToken, true
@@ -138,7 +138,7 @@ func (o *DepositSwitchCreateRequest) SetTargetAccessToken(v string) {
 
 // GetTargetAccountId returns the TargetAccountId field value
 func (o *DepositSwitchCreateRequest) GetTargetAccountId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *DepositSwitchCreateRequest) GetTargetAccountId() string {
 // GetTargetAccountIdOk returns a tuple with the TargetAccountId field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchCreateRequest) GetTargetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.TargetAccountId, true
@@ -237,5 +237,3 @@ func (v *NullableDepositSwitchCreateRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

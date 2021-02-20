@@ -22,11 +22,11 @@ type UserCustomPassword struct {
 	Seed string `json:"seed"`
 	// An array of account overrides to configure the accounts for the Item. By default, if no override is specified, transactions and account data will be randomly generated based on the account type and subtype, and other products will have fixed or empty data.
 	OverrideAccounts []OverrideAccounts `json:"override_accounts"`
-	Mfa MFA `json:"mfa"`
+	Mfa              MFA                `json:"mfa"`
 	// You may trigger a reCAPTCHA in Plaid Link in the Sandbox environment by using the recaptcha field. Possible values are `good` or `bad`. A value of `good` will result in successful Item creation and `bad` will result in a `RECAPTCHA_BAD` error to simulate a failed reCAPTCHA. Both values require the reCAPTCHA to be manually solved within Plaid Link.
 	Recaptcha string `json:"recaptcha"`
 	// An error code to force on Item creation. Possible values are:  `\"INSTITUTION_NOT_RESPONDING\"` `\"INSTITUTION_NO_LONGER_SUPPORTED\"` `\"INVALID_CREDENTIALS\"` `\"INVALID_MFA\"` `\"ITEM_LOCKED\"` `\"ITEM_LOGIN_REQUIRED\"` `\"ITEM_NOT_SUPPORTED\"` `\"INVALID_LINK_TOKEN\"` `\"MFA_NOT_SUPPORTED\"` `\"NO_ACCOUNTS\"` `\"PLAID_ERROR\"` `\"PRODUCTS_NOT_SUPPORTED\"` `\"USER_SETUP_REQUIRED\"`
-	ForceError string `json:"force_error"`
+	ForceError           string `json:"force_error"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -36,7 +36,7 @@ type _UserCustomPassword UserCustomPassword
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUserCustomPassword(seed string, overrideAccounts []OverrideAccounts, mfa MFA, recaptcha string, forceError string, ) *UserCustomPassword {
+func NewUserCustomPassword(seed string, overrideAccounts []OverrideAccounts, mfa MFA, recaptcha string, forceError string) *UserCustomPassword {
 	this := UserCustomPassword{}
 	this.Seed = seed
 	this.OverrideAccounts = overrideAccounts
@@ -67,7 +67,7 @@ func (o *UserCustomPassword) GetVersion() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UserCustomPassword) GetVersionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Version.Get(), o.Version.IsSet()
@@ -86,6 +86,7 @@ func (o *UserCustomPassword) HasVersion() bool {
 func (o *UserCustomPassword) SetVersion(v string) {
 	o.Version.Set(&v)
 }
+
 // SetVersionNil sets the value for Version to be an explicit nil
 func (o *UserCustomPassword) SetVersionNil() {
 	o.Version.Set(nil)
@@ -98,7 +99,7 @@ func (o *UserCustomPassword) UnsetVersion() {
 
 // GetSeed returns the Seed field value
 func (o *UserCustomPassword) GetSeed() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -109,7 +110,7 @@ func (o *UserCustomPassword) GetSeed() string {
 // GetSeedOk returns a tuple with the Seed field value
 // and a boolean to check if the value has been set.
 func (o *UserCustomPassword) GetSeedOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Seed, true
@@ -122,7 +123,7 @@ func (o *UserCustomPassword) SetSeed(v string) {
 
 // GetOverrideAccounts returns the OverrideAccounts field value
 func (o *UserCustomPassword) GetOverrideAccounts() []OverrideAccounts {
-	if o == nil  {
+	if o == nil {
 		var ret []OverrideAccounts
 		return ret
 	}
@@ -133,7 +134,7 @@ func (o *UserCustomPassword) GetOverrideAccounts() []OverrideAccounts {
 // GetOverrideAccountsOk returns a tuple with the OverrideAccounts field value
 // and a boolean to check if the value has been set.
 func (o *UserCustomPassword) GetOverrideAccountsOk() (*[]OverrideAccounts, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.OverrideAccounts, true
@@ -146,7 +147,7 @@ func (o *UserCustomPassword) SetOverrideAccounts(v []OverrideAccounts) {
 
 // GetMfa returns the Mfa field value
 func (o *UserCustomPassword) GetMfa() MFA {
-	if o == nil  {
+	if o == nil {
 		var ret MFA
 		return ret
 	}
@@ -157,7 +158,7 @@ func (o *UserCustomPassword) GetMfa() MFA {
 // GetMfaOk returns a tuple with the Mfa field value
 // and a boolean to check if the value has been set.
 func (o *UserCustomPassword) GetMfaOk() (*MFA, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Mfa, true
@@ -170,7 +171,7 @@ func (o *UserCustomPassword) SetMfa(v MFA) {
 
 // GetRecaptcha returns the Recaptcha field value
 func (o *UserCustomPassword) GetRecaptcha() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -181,7 +182,7 @@ func (o *UserCustomPassword) GetRecaptcha() string {
 // GetRecaptchaOk returns a tuple with the Recaptcha field value
 // and a boolean to check if the value has been set.
 func (o *UserCustomPassword) GetRecaptchaOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Recaptcha, true
@@ -194,7 +195,7 @@ func (o *UserCustomPassword) SetRecaptcha(v string) {
 
 // GetForceError returns the ForceError field value
 func (o *UserCustomPassword) GetForceError() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -205,7 +206,7 @@ func (o *UserCustomPassword) GetForceError() string {
 // GetForceErrorOk returns a tuple with the ForceError field value
 // and a boolean to check if the value has been set.
 func (o *UserCustomPassword) GetForceErrorOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ForceError, true
@@ -301,5 +302,3 @@ func (v *NullableUserCustomPassword) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

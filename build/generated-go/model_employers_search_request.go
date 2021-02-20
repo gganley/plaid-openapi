@@ -23,7 +23,7 @@ type EmployersSearchRequest struct {
 	// The employer name to be searched for.
 	Query string `json:"query"`
 	// The Plaid products the returned employers should support. Currently, this field must be set to `\"deposit_switch\"`.
-	Products []string `json:"products"`
+	Products             []string `json:"products"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -33,7 +33,7 @@ type _EmployersSearchRequest EmployersSearchRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEmployersSearchRequest(query string, products []string, ) *EmployersSearchRequest {
+func NewEmployersSearchRequest(query string, products []string) *EmployersSearchRequest {
 	this := EmployersSearchRequest{}
 	this.Query = query
 	this.Products = products
@@ -114,7 +114,7 @@ func (o *EmployersSearchRequest) SetSecret(v string) {
 
 // GetQuery returns the Query field value
 func (o *EmployersSearchRequest) GetQuery() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *EmployersSearchRequest) GetQuery() string {
 // GetQueryOk returns a tuple with the Query field value
 // and a boolean to check if the value has been set.
 func (o *EmployersSearchRequest) GetQueryOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Query, true
@@ -138,7 +138,7 @@ func (o *EmployersSearchRequest) SetQuery(v string) {
 
 // GetProducts returns the Products field value
 func (o *EmployersSearchRequest) GetProducts() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *EmployersSearchRequest) GetProducts() []string {
 // GetProductsOk returns a tuple with the Products field value
 // and a boolean to check if the value has been set.
 func (o *EmployersSearchRequest) GetProductsOk() (*[]string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Products, true
@@ -237,5 +237,3 @@ func (v *NullableEmployersSearchRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

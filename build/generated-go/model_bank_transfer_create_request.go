@@ -25,20 +25,20 @@ type BankTransferCreateRequest struct {
 	// The Plaid `access_token` for the account that will be debited or credited.
 	AccessToken string `json:"access_token"`
 	// The Plaid `account_id` for the account that will be debited or credited.
-	AccountId string `json:"account_id"`
-	Type BankTransferType `json:"type"`
-	Network BankTransferNetwork `json:"network"`
+	AccountId string              `json:"account_id"`
+	Type      BankTransferType    `json:"type"`
+	Network   BankTransferNetwork `json:"network"`
 	// The transfer amount (decimal string with two digits of precision e.g. \"10.00\").
 	Amount string `json:"amount"`
 	// The currency of the transfer amount – should be set to \"USD\".
 	IsoCurrencyCode string `json:"iso_currency_code"`
 	// The transfer description. Maximum of 10 characters.
-	Description string `json:"description"`
-	AchClass *ACHClass `json:"ach_class,omitempty"`
-	User BankTransferUser `json:"user"`
+	Description string           `json:"description"`
+	AchClass    *ACHClass        `json:"ach_class,omitempty"`
+	User        BankTransferUser `json:"user"`
 	// An arbitrary string provided by the client for storage with the bank transfer. Will be returned in all `BankTransfer` objects. May be up to 100 characters.
 	CustomTag NullableString `json:"custom_tag,omitempty"`
-	// The Metadata object is a mapping of client-provided string fields to any string value. The following limitations apply: - The JSON values must be Strings (no nested JSON objects allowed) - Only ASCII characters may be used - Maximum of 50 key/value pairs - Maximum key length of 40 characters - Maximum value length of 500 characters 
+	// The Metadata object is a mapping of client-provided string fields to any string value. The following limitations apply: - The JSON values must be Strings (no nested JSON objects allowed) - Only ASCII characters may be used - Maximum of 50 key/value pairs - Maximum key length of 40 characters - Maximum value length of 500 characters
 	Metadata map[string]string `json:"metadata,omitempty"`
 	// Plaid’s unique identifier for the origination account for this transfer. If you have more than one origination account, this value must be specified.
 	OriginationAccountId NullableString `json:"origination_account_id,omitempty"`
@@ -51,7 +51,7 @@ type _BankTransferCreateRequest BankTransferCreateRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBankTransferCreateRequest(idempotencyKey string, accessToken string, accountId string, type_ BankTransferType, network BankTransferNetwork, amount string, isoCurrencyCode string, description string, user BankTransferUser, ) *BankTransferCreateRequest {
+func NewBankTransferCreateRequest(idempotencyKey string, accessToken string, accountId string, type_ BankTransferType, network BankTransferNetwork, amount string, isoCurrencyCode string, description string, user BankTransferUser) *BankTransferCreateRequest {
 	this := BankTransferCreateRequest{}
 	this.IdempotencyKey = idempotencyKey
 	this.AccessToken = accessToken
@@ -139,7 +139,7 @@ func (o *BankTransferCreateRequest) SetSecret(v string) {
 
 // GetIdempotencyKey returns the IdempotencyKey field value
 func (o *BankTransferCreateRequest) GetIdempotencyKey() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *BankTransferCreateRequest) GetIdempotencyKey() string {
 // GetIdempotencyKeyOk returns a tuple with the IdempotencyKey field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferCreateRequest) GetIdempotencyKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.IdempotencyKey, true
@@ -163,7 +163,7 @@ func (o *BankTransferCreateRequest) SetIdempotencyKey(v string) {
 
 // GetAccessToken returns the AccessToken field value
 func (o *BankTransferCreateRequest) GetAccessToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -174,7 +174,7 @@ func (o *BankTransferCreateRequest) GetAccessToken() string {
 // GetAccessTokenOk returns a tuple with the AccessToken field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferCreateRequest) GetAccessTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccessToken, true
@@ -187,7 +187,7 @@ func (o *BankTransferCreateRequest) SetAccessToken(v string) {
 
 // GetAccountId returns the AccountId field value
 func (o *BankTransferCreateRequest) GetAccountId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -198,7 +198,7 @@ func (o *BankTransferCreateRequest) GetAccountId() string {
 // GetAccountIdOk returns a tuple with the AccountId field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferCreateRequest) GetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountId, true
@@ -211,7 +211,7 @@ func (o *BankTransferCreateRequest) SetAccountId(v string) {
 
 // GetType returns the Type field value
 func (o *BankTransferCreateRequest) GetType() BankTransferType {
-	if o == nil  {
+	if o == nil {
 		var ret BankTransferType
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *BankTransferCreateRequest) GetType() BankTransferType {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferCreateRequest) GetTypeOk() (*BankTransferType, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -235,7 +235,7 @@ func (o *BankTransferCreateRequest) SetType(v BankTransferType) {
 
 // GetNetwork returns the Network field value
 func (o *BankTransferCreateRequest) GetNetwork() BankTransferNetwork {
-	if o == nil  {
+	if o == nil {
 		var ret BankTransferNetwork
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *BankTransferCreateRequest) GetNetwork() BankTransferNetwork {
 // GetNetworkOk returns a tuple with the Network field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferCreateRequest) GetNetworkOk() (*BankTransferNetwork, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Network, true
@@ -259,7 +259,7 @@ func (o *BankTransferCreateRequest) SetNetwork(v BankTransferNetwork) {
 
 // GetAmount returns the Amount field value
 func (o *BankTransferCreateRequest) GetAmount() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -270,7 +270,7 @@ func (o *BankTransferCreateRequest) GetAmount() string {
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferCreateRequest) GetAmountOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Amount, true
@@ -283,7 +283,7 @@ func (o *BankTransferCreateRequest) SetAmount(v string) {
 
 // GetIsoCurrencyCode returns the IsoCurrencyCode field value
 func (o *BankTransferCreateRequest) GetIsoCurrencyCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -294,7 +294,7 @@ func (o *BankTransferCreateRequest) GetIsoCurrencyCode() string {
 // GetIsoCurrencyCodeOk returns a tuple with the IsoCurrencyCode field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferCreateRequest) GetIsoCurrencyCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.IsoCurrencyCode, true
@@ -307,7 +307,7 @@ func (o *BankTransferCreateRequest) SetIsoCurrencyCode(v string) {
 
 // GetDescription returns the Description field value
 func (o *BankTransferCreateRequest) GetDescription() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -318,7 +318,7 @@ func (o *BankTransferCreateRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferCreateRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Description, true
@@ -363,7 +363,7 @@ func (o *BankTransferCreateRequest) SetAchClass(v ACHClass) {
 
 // GetUser returns the User field value
 func (o *BankTransferCreateRequest) GetUser() BankTransferUser {
-	if o == nil  {
+	if o == nil {
 		var ret BankTransferUser
 		return ret
 	}
@@ -374,7 +374,7 @@ func (o *BankTransferCreateRequest) GetUser() BankTransferUser {
 // GetUserOk returns a tuple with the User field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferCreateRequest) GetUserOk() (*BankTransferUser, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.User, true
@@ -398,7 +398,7 @@ func (o *BankTransferCreateRequest) GetCustomTag() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferCreateRequest) GetCustomTagOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CustomTag.Get(), o.CustomTag.IsSet()
@@ -417,6 +417,7 @@ func (o *BankTransferCreateRequest) HasCustomTag() bool {
 func (o *BankTransferCreateRequest) SetCustomTag(v string) {
 	o.CustomTag.Set(&v)
 }
+
 // SetCustomTagNil sets the value for CustomTag to be an explicit nil
 func (o *BankTransferCreateRequest) SetCustomTagNil() {
 	o.CustomTag.Set(nil)
@@ -429,7 +430,7 @@ func (o *BankTransferCreateRequest) UnsetCustomTag() {
 
 // GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BankTransferCreateRequest) GetMetadata() map[string]string {
-	if o == nil  {
+	if o == nil {
 		var ret map[string]string
 		return ret
 	}
@@ -473,7 +474,7 @@ func (o *BankTransferCreateRequest) GetOriginationAccountId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BankTransferCreateRequest) GetOriginationAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.OriginationAccountId.Get(), o.OriginationAccountId.IsSet()
@@ -492,6 +493,7 @@ func (o *BankTransferCreateRequest) HasOriginationAccountId() bool {
 func (o *BankTransferCreateRequest) SetOriginationAccountId(v string) {
 	o.OriginationAccountId.Set(&v)
 }
+
 // SetOriginationAccountIdNil sets the value for OriginationAccountId to be an explicit nil
 func (o *BankTransferCreateRequest) SetOriginationAccountIdNil() {
 	o.OriginationAccountId.Set(nil)
@@ -623,5 +625,3 @@ func (v *NullableBankTransferCreateRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

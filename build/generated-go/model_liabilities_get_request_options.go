@@ -17,7 +17,7 @@ import (
 // LiabilitiesGetRequestOptions An optional object to filter `/liabilities/get` results. If provided, `options` cannot be null.
 type LiabilitiesGetRequestOptions struct {
 	// A list of accounts to retrieve for the Item.  An error will be returned if a provided `account_id` is not associated with the Item
-	AccountIds *[]string `json:"account_ids,omitempty"`
+	AccountIds           *[]string `json:"account_ids,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -137,5 +137,3 @@ func (v *NullableLiabilitiesGetRequestOptions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -21,8 +21,8 @@ type UserPermissionRevokedWebhook struct {
 	// `USER_PERMISSION_REVOKED`
 	WebhookCode string `json:"webhook_code"`
 	// The `item_id` of the Item associated with this webhook, warning, or error
-	ItemId string `json:"item_id"`
-	Error NullableError `json:"error,omitempty"`
+	ItemId               string        `json:"item_id"`
+	Error                NullableError `json:"error,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -32,7 +32,7 @@ type _UserPermissionRevokedWebhook UserPermissionRevokedWebhook
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUserPermissionRevokedWebhook(webhookType string, webhookCode string, itemId string, ) *UserPermissionRevokedWebhook {
+func NewUserPermissionRevokedWebhook(webhookType string, webhookCode string, itemId string) *UserPermissionRevokedWebhook {
 	this := UserPermissionRevokedWebhook{}
 	this.WebhookType = webhookType
 	this.WebhookCode = webhookCode
@@ -50,7 +50,7 @@ func NewUserPermissionRevokedWebhookWithDefaults() *UserPermissionRevokedWebhook
 
 // GetWebhookType returns the WebhookType field value
 func (o *UserPermissionRevokedWebhook) GetWebhookType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *UserPermissionRevokedWebhook) GetWebhookType() string {
 // GetWebhookTypeOk returns a tuple with the WebhookType field value
 // and a boolean to check if the value has been set.
 func (o *UserPermissionRevokedWebhook) GetWebhookTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookType, true
@@ -74,7 +74,7 @@ func (o *UserPermissionRevokedWebhook) SetWebhookType(v string) {
 
 // GetWebhookCode returns the WebhookCode field value
 func (o *UserPermissionRevokedWebhook) GetWebhookCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *UserPermissionRevokedWebhook) GetWebhookCode() string {
 // GetWebhookCodeOk returns a tuple with the WebhookCode field value
 // and a boolean to check if the value has been set.
 func (o *UserPermissionRevokedWebhook) GetWebhookCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookCode, true
@@ -98,7 +98,7 @@ func (o *UserPermissionRevokedWebhook) SetWebhookCode(v string) {
 
 // GetItemId returns the ItemId field value
 func (o *UserPermissionRevokedWebhook) GetItemId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *UserPermissionRevokedWebhook) GetItemId() string {
 // GetItemIdOk returns a tuple with the ItemId field value
 // and a boolean to check if the value has been set.
 func (o *UserPermissionRevokedWebhook) GetItemIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ItemId, true
@@ -133,7 +133,7 @@ func (o *UserPermissionRevokedWebhook) GetError() Error {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UserPermissionRevokedWebhook) GetErrorOk() (*Error, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Error.Get(), o.Error.IsSet()
@@ -152,6 +152,7 @@ func (o *UserPermissionRevokedWebhook) HasError() bool {
 func (o *UserPermissionRevokedWebhook) SetError(v Error) {
 	o.Error.Set(&v)
 }
+
 // SetErrorNil sets the value for Error to be an explicit nil
 func (o *UserPermissionRevokedWebhook) SetErrorNil() {
 	o.Error.Set(nil)
@@ -239,5 +240,3 @@ func (v *NullableUserPermissionRevokedWebhook) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

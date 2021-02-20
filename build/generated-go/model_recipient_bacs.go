@@ -19,7 +19,7 @@ type RecipientBACS struct {
 	// The account number of the account. Maximum of 10 characters.
 	Account *string `json:"account,omitempty"`
 	// The 6-character sort code of the account.
-	SortCode *string `json:"sort_code,omitempty"`
+	SortCode             *string `json:"sort_code,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -175,5 +175,3 @@ func (v *NullableRecipientBACS) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

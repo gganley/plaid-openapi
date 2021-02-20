@@ -21,7 +21,7 @@ type LiabilitiesObject struct {
 	// The mortgage accounts returned. If no mortgage accounts are returned, `mortgage` will not be present in the schema.
 	Mortgage []MortgageLiability `json:"mortgage,omitempty"`
 	// The student loan accounts returned. If no student loan accounts are returned, `student` will not be present in the schema.
-	Student []StudentLoan `json:"student,omitempty"`
+	Student              []StudentLoan `json:"student,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -46,7 +46,7 @@ func NewLiabilitiesObjectWithDefaults() *LiabilitiesObject {
 
 // GetCredit returns the Credit field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LiabilitiesObject) GetCredit() []CreditCardLiability {
-	if o == nil  {
+	if o == nil {
 		var ret []CreditCardLiability
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *LiabilitiesObject) SetCredit(v []CreditCardLiability) {
 
 // GetMortgage returns the Mortgage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LiabilitiesObject) GetMortgage() []MortgageLiability {
-	if o == nil  {
+	if o == nil {
 		var ret []MortgageLiability
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *LiabilitiesObject) SetMortgage(v []MortgageLiability) {
 
 // GetStudent returns the Student field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LiabilitiesObject) GetStudent() []StudentLoan {
-	if o == nil  {
+	if o == nil {
 		var ret []StudentLoan
 		return ret
 	}
@@ -216,5 +216,3 @@ func (v *NullableLiabilitiesObject) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,8 +16,8 @@ import (
 
 // PaymentInitiationRecipientBacs struct for PaymentInitiationRecipientBacs
 type PaymentInitiationRecipientBacs struct {
-	Account string `json:"account"`
-	SortCode string `json:"sort_code"`
+	Account              string `json:"account"`
+	SortCode             string `json:"sort_code"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -27,7 +27,7 @@ type _PaymentInitiationRecipientBacs PaymentInitiationRecipientBacs
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaymentInitiationRecipientBacs(account string, sortCode string, ) *PaymentInitiationRecipientBacs {
+func NewPaymentInitiationRecipientBacs(account string, sortCode string) *PaymentInitiationRecipientBacs {
 	this := PaymentInitiationRecipientBacs{}
 	this.Account = account
 	this.SortCode = sortCode
@@ -44,7 +44,7 @@ func NewPaymentInitiationRecipientBacsWithDefaults() *PaymentInitiationRecipient
 
 // GetAccount returns the Account field value
 func (o *PaymentInitiationRecipientBacs) GetAccount() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *PaymentInitiationRecipientBacs) GetAccount() string {
 // GetAccountOk returns a tuple with the Account field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationRecipientBacs) GetAccountOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Account, true
@@ -68,7 +68,7 @@ func (o *PaymentInitiationRecipientBacs) SetAccount(v string) {
 
 // GetSortCode returns the SortCode field value
 func (o *PaymentInitiationRecipientBacs) GetSortCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *PaymentInitiationRecipientBacs) GetSortCode() string {
 // GetSortCodeOk returns a tuple with the SortCode field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationRecipientBacs) GetSortCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.SortCode, true
@@ -159,5 +159,3 @@ func (v *NullablePaymentInitiationRecipientBacs) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

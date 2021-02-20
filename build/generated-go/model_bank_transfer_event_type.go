@@ -20,13 +20,13 @@ type BankTransferEventType string
 
 // List of BankTransferEventType
 const (
-	BANKTRANSFEREVENTTYPE_PENDING BankTransferEventType = "pending"
-	BANKTRANSFEREVENTTYPE_CANCELLED BankTransferEventType = "cancelled"
-	BANKTRANSFEREVENTTYPE_FAILED BankTransferEventType = "failed"
-	BANKTRANSFEREVENTTYPE_POSTED BankTransferEventType = "posted"
-	BANKTRANSFEREVENTTYPE_REVERSED BankTransferEventType = "reversed"
+	BANKTRANSFEREVENTTYPE_PENDING          BankTransferEventType = "pending"
+	BANKTRANSFEREVENTTYPE_CANCELLED        BankTransferEventType = "cancelled"
+	BANKTRANSFEREVENTTYPE_FAILED           BankTransferEventType = "failed"
+	BANKTRANSFEREVENTTYPE_POSTED           BankTransferEventType = "posted"
+	BANKTRANSFEREVENTTYPE_REVERSED         BankTransferEventType = "reversed"
 	BANKTRANSFEREVENTTYPE_RECEIVER_PENDING BankTransferEventType = "receiver_pending"
-	BANKTRANSFEREVENTTYPE_RECEIVER_POSTED BankTransferEventType = "receiver_posted"
+	BANKTRANSFEREVENTTYPE_RECEIVER_POSTED  BankTransferEventType = "receiver_posted"
 )
 
 func (v *BankTransferEventType) UnmarshalJSON(src []byte) error {
@@ -36,7 +36,7 @@ func (v *BankTransferEventType) UnmarshalJSON(src []byte) error {
 		return err
 	}
 	enumTypeValue := BankTransferEventType(value)
-	for _, existing := range []BankTransferEventType{ "pending", "cancelled", "failed", "posted", "reversed", "receiver_pending", "receiver_posted",   } {
+	for _, existing := range []BankTransferEventType{"pending", "cancelled", "failed", "posted", "reversed", "receiver_pending", "receiver_posted"} {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
@@ -86,4 +86,3 @@ func (v *NullableBankTransferEventType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

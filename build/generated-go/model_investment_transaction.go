@@ -17,8 +17,8 @@ import (
 // InvestmentTransaction A transaction within an investment account.
 type InvestmentTransaction struct {
 	// The ID of the Investment transaction, unique across all Plaid transactions. Like all Plaid identifiers, the `investment_transaction_id` is case sensitive.
-	InvestmentTransactionId string `json:"investment_transaction_id"`
-	CancelTransactionId NullableString `json:"cancel_transaction_id,omitempty"`
+	InvestmentTransactionId string         `json:"investment_transaction_id"`
+	CancelTransactionId     NullableString `json:"cancel_transaction_id,omitempty"`
 	// The `account_id` of the account against which this transaction posted.
 	AccountId string `json:"account_id"`
 	// The `security_id` to which this transaction is related.
@@ -43,7 +43,7 @@ type InvestmentTransaction struct {
 	IsoCurrencyCode NullableString `json:"iso_currency_code,omitempty"`
 	// The unofficial currency code associated with the holding. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.  See the [currency code schema](/docs/api/accounts#currency-code-schema) for a full listing of supported `iso_currency_code`s.
 	UnofficialCurrencyCode NullableString `json:"unofficial_currency_code,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties   map[string]interface{}
 }
 
 type _InvestmentTransaction InvestmentTransaction
@@ -52,7 +52,7 @@ type _InvestmentTransaction InvestmentTransaction
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInvestmentTransaction(investmentTransactionId string, accountId string, date string, name string, quantity float32, amount float32, price float32, type_ string, subtype string, ) *InvestmentTransaction {
+func NewInvestmentTransaction(investmentTransactionId string, accountId string, date string, name string, quantity float32, amount float32, price float32, type_ string, subtype string) *InvestmentTransaction {
 	this := InvestmentTransaction{}
 	this.InvestmentTransactionId = investmentTransactionId
 	this.AccountId = accountId
@@ -76,7 +76,7 @@ func NewInvestmentTransactionWithDefaults() *InvestmentTransaction {
 
 // GetInvestmentTransactionId returns the InvestmentTransactionId field value
 func (o *InvestmentTransaction) GetInvestmentTransactionId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *InvestmentTransaction) GetInvestmentTransactionId() string {
 // GetInvestmentTransactionIdOk returns a tuple with the InvestmentTransactionId field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentTransaction) GetInvestmentTransactionIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.InvestmentTransactionId, true
@@ -111,7 +111,7 @@ func (o *InvestmentTransaction) GetCancelTransactionId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InvestmentTransaction) GetCancelTransactionIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CancelTransactionId.Get(), o.CancelTransactionId.IsSet()
@@ -130,6 +130,7 @@ func (o *InvestmentTransaction) HasCancelTransactionId() bool {
 func (o *InvestmentTransaction) SetCancelTransactionId(v string) {
 	o.CancelTransactionId.Set(&v)
 }
+
 // SetCancelTransactionIdNil sets the value for CancelTransactionId to be an explicit nil
 func (o *InvestmentTransaction) SetCancelTransactionIdNil() {
 	o.CancelTransactionId.Set(nil)
@@ -142,7 +143,7 @@ func (o *InvestmentTransaction) UnsetCancelTransactionId() {
 
 // GetAccountId returns the AccountId field value
 func (o *InvestmentTransaction) GetAccountId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -153,7 +154,7 @@ func (o *InvestmentTransaction) GetAccountId() string {
 // GetAccountIdOk returns a tuple with the AccountId field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentTransaction) GetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountId, true
@@ -177,7 +178,7 @@ func (o *InvestmentTransaction) GetSecurityId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InvestmentTransaction) GetSecurityIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SecurityId.Get(), o.SecurityId.IsSet()
@@ -196,6 +197,7 @@ func (o *InvestmentTransaction) HasSecurityId() bool {
 func (o *InvestmentTransaction) SetSecurityId(v string) {
 	o.SecurityId.Set(&v)
 }
+
 // SetSecurityIdNil sets the value for SecurityId to be an explicit nil
 func (o *InvestmentTransaction) SetSecurityIdNil() {
 	o.SecurityId.Set(nil)
@@ -208,7 +210,7 @@ func (o *InvestmentTransaction) UnsetSecurityId() {
 
 // GetDate returns the Date field value
 func (o *InvestmentTransaction) GetDate() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -219,7 +221,7 @@ func (o *InvestmentTransaction) GetDate() string {
 // GetDateOk returns a tuple with the Date field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentTransaction) GetDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Date, true
@@ -232,7 +234,7 @@ func (o *InvestmentTransaction) SetDate(v string) {
 
 // GetName returns the Name field value
 func (o *InvestmentTransaction) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -243,7 +245,7 @@ func (o *InvestmentTransaction) GetName() string {
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentTransaction) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Name, true
@@ -256,7 +258,7 @@ func (o *InvestmentTransaction) SetName(v string) {
 
 // GetQuantity returns the Quantity field value
 func (o *InvestmentTransaction) GetQuantity() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -267,7 +269,7 @@ func (o *InvestmentTransaction) GetQuantity() float32 {
 // GetQuantityOk returns a tuple with the Quantity field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentTransaction) GetQuantityOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Quantity, true
@@ -280,7 +282,7 @@ func (o *InvestmentTransaction) SetQuantity(v float32) {
 
 // GetAmount returns the Amount field value
 func (o *InvestmentTransaction) GetAmount() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -291,7 +293,7 @@ func (o *InvestmentTransaction) GetAmount() float32 {
 // GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentTransaction) GetAmountOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Amount, true
@@ -304,7 +306,7 @@ func (o *InvestmentTransaction) SetAmount(v float32) {
 
 // GetPrice returns the Price field value
 func (o *InvestmentTransaction) GetPrice() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -315,7 +317,7 @@ func (o *InvestmentTransaction) GetPrice() float32 {
 // GetPriceOk returns a tuple with the Price field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentTransaction) GetPriceOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Price, true
@@ -339,7 +341,7 @@ func (o *InvestmentTransaction) GetFees() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InvestmentTransaction) GetFeesOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Fees.Get(), o.Fees.IsSet()
@@ -358,6 +360,7 @@ func (o *InvestmentTransaction) HasFees() bool {
 func (o *InvestmentTransaction) SetFees(v float32) {
 	o.Fees.Set(&v)
 }
+
 // SetFeesNil sets the value for Fees to be an explicit nil
 func (o *InvestmentTransaction) SetFeesNil() {
 	o.Fees.Set(nil)
@@ -370,7 +373,7 @@ func (o *InvestmentTransaction) UnsetFees() {
 
 // GetType returns the Type field value
 func (o *InvestmentTransaction) GetType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -381,7 +384,7 @@ func (o *InvestmentTransaction) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentTransaction) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -394,7 +397,7 @@ func (o *InvestmentTransaction) SetType(v string) {
 
 // GetSubtype returns the Subtype field value
 func (o *InvestmentTransaction) GetSubtype() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -405,7 +408,7 @@ func (o *InvestmentTransaction) GetSubtype() string {
 // GetSubtypeOk returns a tuple with the Subtype field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentTransaction) GetSubtypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Subtype, true
@@ -429,7 +432,7 @@ func (o *InvestmentTransaction) GetIsoCurrencyCode() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InvestmentTransaction) GetIsoCurrencyCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.IsoCurrencyCode.Get(), o.IsoCurrencyCode.IsSet()
@@ -448,6 +451,7 @@ func (o *InvestmentTransaction) HasIsoCurrencyCode() bool {
 func (o *InvestmentTransaction) SetIsoCurrencyCode(v string) {
 	o.IsoCurrencyCode.Set(&v)
 }
+
 // SetIsoCurrencyCodeNil sets the value for IsoCurrencyCode to be an explicit nil
 func (o *InvestmentTransaction) SetIsoCurrencyCodeNil() {
 	o.IsoCurrencyCode.Set(nil)
@@ -471,7 +475,7 @@ func (o *InvestmentTransaction) GetUnofficialCurrencyCode() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InvestmentTransaction) GetUnofficialCurrencyCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UnofficialCurrencyCode.Get(), o.UnofficialCurrencyCode.IsSet()
@@ -490,6 +494,7 @@ func (o *InvestmentTransaction) HasUnofficialCurrencyCode() bool {
 func (o *InvestmentTransaction) SetUnofficialCurrencyCode(v string) {
 	o.UnofficialCurrencyCode.Set(&v)
 }
+
 // SetUnofficialCurrencyCodeNil sets the value for UnofficialCurrencyCode to be an explicit nil
 func (o *InvestmentTransaction) SetUnofficialCurrencyCodeNil() {
 	o.UnofficialCurrencyCode.Set(nil)
@@ -617,5 +622,3 @@ func (v *NullableInvestmentTransaction) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

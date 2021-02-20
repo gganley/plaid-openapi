@@ -21,7 +21,7 @@ type WebhookVerificationKeyGetRequest struct {
 	// Your Plaid API `secret`.
 	Secret *string `json:"secret,omitempty"`
 	// The key ID ( `kid` ) from the JWT header.
-	KeyId string `json:"key_id"`
+	KeyId                string `json:"key_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _WebhookVerificationKeyGetRequest WebhookVerificationKeyGetRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWebhookVerificationKeyGetRequest(keyId string, ) *WebhookVerificationKeyGetRequest {
+func NewWebhookVerificationKeyGetRequest(keyId string) *WebhookVerificationKeyGetRequest {
 	this := WebhookVerificationKeyGetRequest{}
 	this.KeyId = keyId
 	return &this
@@ -111,7 +111,7 @@ func (o *WebhookVerificationKeyGetRequest) SetSecret(v string) {
 
 // GetKeyId returns the KeyId field value
 func (o *WebhookVerificationKeyGetRequest) GetKeyId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *WebhookVerificationKeyGetRequest) GetKeyId() string {
 // GetKeyIdOk returns a tuple with the KeyId field value
 // and a boolean to check if the value has been set.
 func (o *WebhookVerificationKeyGetRequest) GetKeyIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.KeyId, true
@@ -206,5 +206,3 @@ func (v *NullableWebhookVerificationKeyGetRequest) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

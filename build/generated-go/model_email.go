@@ -21,7 +21,7 @@ type Email struct {
 	// When `true`, identifies the email address as the primary email on an account.
 	Primary bool `json:"primary"`
 	// The type of email account as described by the financial institution.
-	Type string `json:"type"`
+	Type                 string `json:"type"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _Email Email
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEmail(data string, primary bool, type_ string, ) *Email {
+func NewEmail(data string, primary bool, type_ string) *Email {
 	this := Email{}
 	this.Data = data
 	this.Primary = primary
@@ -49,7 +49,7 @@ func NewEmailWithDefaults() *Email {
 
 // GetData returns the Data field value
 func (o *Email) GetData() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *Email) GetData() string {
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
 func (o *Email) GetDataOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Data, true
@@ -73,7 +73,7 @@ func (o *Email) SetData(v string) {
 
 // GetPrimary returns the Primary field value
 func (o *Email) GetPrimary() bool {
-	if o == nil  {
+	if o == nil {
 		var ret bool
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *Email) GetPrimary() bool {
 // GetPrimaryOk returns a tuple with the Primary field value
 // and a boolean to check if the value has been set.
 func (o *Email) GetPrimaryOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Primary, true
@@ -97,7 +97,7 @@ func (o *Email) SetPrimary(v bool) {
 
 // GetType returns the Type field value
 func (o *Email) GetType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *Email) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *Email) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -192,5 +192,3 @@ func (v *NullableEmail) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

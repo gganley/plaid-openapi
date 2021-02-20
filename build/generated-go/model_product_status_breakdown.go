@@ -18,12 +18,12 @@ import (
 type ProductStatusBreakdown struct {
 	// The percentage of login attempts that are successful, expressed as a decimal.
 	Success float32 `json:"success"`
-	// The percentage of logins that are failing due to an internal Plaid issue, expressed as a decimal. 
+	// The percentage of logins that are failing due to an internal Plaid issue, expressed as a decimal.
 	ErrorPlaid float32 `json:"error_plaid"`
 	// The percentage of logins that are failing due to an issue in the institution's system, expressed as a decimal.
 	ErrorInstitution float32 `json:"error_institution"`
 	// The `refresh_interval` may be `DELAYED` or `STOPPED` even when the success rate is high. This value is only returned for Transactions status breakdowns.
-	RefreshInterval NullableString `json:"refresh_interval,omitempty"`
+	RefreshInterval      NullableString `json:"refresh_interval,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -33,7 +33,7 @@ type _ProductStatusBreakdown ProductStatusBreakdown
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProductStatusBreakdown(success float32, errorPlaid float32, errorInstitution float32, ) *ProductStatusBreakdown {
+func NewProductStatusBreakdown(success float32, errorPlaid float32, errorInstitution float32) *ProductStatusBreakdown {
 	this := ProductStatusBreakdown{}
 	this.Success = success
 	this.ErrorPlaid = errorPlaid
@@ -51,7 +51,7 @@ func NewProductStatusBreakdownWithDefaults() *ProductStatusBreakdown {
 
 // GetSuccess returns the Success field value
 func (o *ProductStatusBreakdown) GetSuccess() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *ProductStatusBreakdown) GetSuccess() float32 {
 // GetSuccessOk returns a tuple with the Success field value
 // and a boolean to check if the value has been set.
 func (o *ProductStatusBreakdown) GetSuccessOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Success, true
@@ -75,7 +75,7 @@ func (o *ProductStatusBreakdown) SetSuccess(v float32) {
 
 // GetErrorPlaid returns the ErrorPlaid field value
 func (o *ProductStatusBreakdown) GetErrorPlaid() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ProductStatusBreakdown) GetErrorPlaid() float32 {
 // GetErrorPlaidOk returns a tuple with the ErrorPlaid field value
 // and a boolean to check if the value has been set.
 func (o *ProductStatusBreakdown) GetErrorPlaidOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ErrorPlaid, true
@@ -99,7 +99,7 @@ func (o *ProductStatusBreakdown) SetErrorPlaid(v float32) {
 
 // GetErrorInstitution returns the ErrorInstitution field value
 func (o *ProductStatusBreakdown) GetErrorInstitution() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *ProductStatusBreakdown) GetErrorInstitution() float32 {
 // GetErrorInstitutionOk returns a tuple with the ErrorInstitution field value
 // and a boolean to check if the value has been set.
 func (o *ProductStatusBreakdown) GetErrorInstitutionOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ErrorInstitution, true
@@ -134,7 +134,7 @@ func (o *ProductStatusBreakdown) GetRefreshInterval() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ProductStatusBreakdown) GetRefreshIntervalOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RefreshInterval.Get(), o.RefreshInterval.IsSet()
@@ -153,6 +153,7 @@ func (o *ProductStatusBreakdown) HasRefreshInterval() bool {
 func (o *ProductStatusBreakdown) SetRefreshInterval(v string) {
 	o.RefreshInterval.Set(&v)
 }
+
 // SetRefreshIntervalNil sets the value for RefreshInterval to be an explicit nil
 func (o *ProductStatusBreakdown) SetRefreshIntervalNil() {
 	o.RefreshInterval.Set(nil)
@@ -240,5 +241,3 @@ func (v *NullableProductStatusBreakdown) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

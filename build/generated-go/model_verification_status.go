@@ -20,11 +20,11 @@ type VerificationStatus string
 
 // List of VerificationStatus
 const (
-	VERIFICATIONSTATUS_VERIFIED VerificationStatus = "VERIFIED"
-	VERIFICATIONSTATUS_UNVERIFIED VerificationStatus = "UNVERIFIED"
-	VERIFICATIONSTATUS_NEEDS_INFO VerificationStatus = "NEEDS_INFO"
+	VERIFICATIONSTATUS_VERIFIED         VerificationStatus = "VERIFIED"
+	VERIFICATIONSTATUS_UNVERIFIED       VerificationStatus = "UNVERIFIED"
+	VERIFICATIONSTATUS_NEEDS_INFO       VerificationStatus = "NEEDS_INFO"
 	VERIFICATIONSTATUS_UNABLE_TO_VERIFY VerificationStatus = "UNABLE_TO_VERIFY"
-	VERIFICATIONSTATUS_UNKNOWN VerificationStatus = "UNKNOWN"
+	VERIFICATIONSTATUS_UNKNOWN          VerificationStatus = "UNKNOWN"
 )
 
 func (v *VerificationStatus) UnmarshalJSON(src []byte) error {
@@ -34,7 +34,7 @@ func (v *VerificationStatus) UnmarshalJSON(src []byte) error {
 		return err
 	}
 	enumTypeValue := VerificationStatus(value)
-	for _, existing := range []VerificationStatus{ "VERIFIED", "UNVERIFIED", "NEEDS_INFO", "UNABLE_TO_VERIFY", "UNKNOWN",   } {
+	for _, existing := range []VerificationStatus{"VERIFIED", "UNVERIFIED", "NEEDS_INFO", "UNABLE_TO_VERIFY", "UNKNOWN"} {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
@@ -84,4 +84,3 @@ func (v *NullableVerificationStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

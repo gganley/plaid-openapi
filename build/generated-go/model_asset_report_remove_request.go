@@ -21,7 +21,7 @@ type AssetReportRemoveRequest struct {
 	// Your Plaid API `secret`.
 	Secret *string `json:"secret,omitempty"`
 	// A token that can be provided to endpoints such as `/asset_report/get` or `/asset_report/pdf/get` to fetch or update an Asset Report.
-	AssetReportToken string `json:"asset_report_token"`
+	AssetReportToken     string `json:"asset_report_token"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _AssetReportRemoveRequest AssetReportRemoveRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAssetReportRemoveRequest(assetReportToken string, ) *AssetReportRemoveRequest {
+func NewAssetReportRemoveRequest(assetReportToken string) *AssetReportRemoveRequest {
 	this := AssetReportRemoveRequest{}
 	this.AssetReportToken = assetReportToken
 	return &this
@@ -111,7 +111,7 @@ func (o *AssetReportRemoveRequest) SetSecret(v string) {
 
 // GetAssetReportToken returns the AssetReportToken field value
 func (o *AssetReportRemoveRequest) GetAssetReportToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *AssetReportRemoveRequest) GetAssetReportToken() string {
 // GetAssetReportTokenOk returns a tuple with the AssetReportToken field value
 // and a boolean to check if the value has been set.
 func (o *AssetReportRemoveRequest) GetAssetReportTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AssetReportToken, true
@@ -206,5 +206,3 @@ func (v *NullableAssetReportRemoveRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

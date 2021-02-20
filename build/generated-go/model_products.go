@@ -20,17 +20,17 @@ type Products string
 
 // List of Products
 const (
-	PRODUCTS_ASSETS Products = "assets"
-	PRODUCTS_AUTH Products = "auth"
-	PRODUCTS_BALANCE Products = "balance"
-	PRODUCTS_IDENTITY Products = "identity"
-	PRODUCTS_INVESTMENTS Products = "investments"
-	PRODUCTS_LIABILITIES Products = "liabilities"
+	PRODUCTS_ASSETS             Products = "assets"
+	PRODUCTS_AUTH               Products = "auth"
+	PRODUCTS_BALANCE            Products = "balance"
+	PRODUCTS_IDENTITY           Products = "identity"
+	PRODUCTS_INVESTMENTS        Products = "investments"
+	PRODUCTS_LIABILITIES        Products = "liabilities"
 	PRODUCTS_PAYMENT_INITIATION Products = "payment_initiation"
-	PRODUCTS_TRANSACTIONS Products = "transactions"
-	PRODUCTS_CREDIT_DETAILS Products = "credit_details"
-	PRODUCTS_INCOME Products = "income"
-	PRODUCTS_DEPOSIT_SWITCH Products = "deposit_switch"
+	PRODUCTS_TRANSACTIONS       Products = "transactions"
+	PRODUCTS_CREDIT_DETAILS     Products = "credit_details"
+	PRODUCTS_INCOME             Products = "income"
+	PRODUCTS_DEPOSIT_SWITCH     Products = "deposit_switch"
 )
 
 func (v *Products) UnmarshalJSON(src []byte) error {
@@ -40,7 +40,7 @@ func (v *Products) UnmarshalJSON(src []byte) error {
 		return err
 	}
 	enumTypeValue := Products(value)
-	for _, existing := range []Products{ "assets", "auth", "balance", "identity", "investments", "liabilities", "payment_initiation", "transactions", "credit_details", "income", "deposit_switch",   } {
+	for _, existing := range []Products{"assets", "auth", "balance", "identity", "investments", "liabilities", "payment_initiation", "transactions", "credit_details", "income", "deposit_switch"} {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
@@ -90,4 +90,3 @@ func (v *NullableProducts) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -16,8 +16,8 @@ import (
 
 // LoanFilter A filter to apply to `loan`-type accounts
 type LoanFilter struct {
-	// An array of account subtypes to display in Link. If not specified, all account subtypes will be shown. For a full list of valid types and subtypes, see the [Account schema](/docs/api/accounts#accounts-schema). 
-	AccountSubtypes []AccountSubtype `json:"account_subtypes"`
+	// An array of account subtypes to display in Link. If not specified, all account subtypes will be shown. For a full list of valid types and subtypes, see the [Account schema](/docs/api/accounts#accounts-schema).
+	AccountSubtypes      []AccountSubtype `json:"account_subtypes"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -27,7 +27,7 @@ type _LoanFilter LoanFilter
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLoanFilter(accountSubtypes []AccountSubtype, ) *LoanFilter {
+func NewLoanFilter(accountSubtypes []AccountSubtype) *LoanFilter {
 	this := LoanFilter{}
 	this.AccountSubtypes = accountSubtypes
 	return &this
@@ -43,7 +43,7 @@ func NewLoanFilterWithDefaults() *LoanFilter {
 
 // GetAccountSubtypes returns the AccountSubtypes field value
 func (o *LoanFilter) GetAccountSubtypes() []AccountSubtype {
-	if o == nil  {
+	if o == nil {
 		var ret []AccountSubtype
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *LoanFilter) GetAccountSubtypes() []AccountSubtype {
 // GetAccountSubtypesOk returns a tuple with the AccountSubtypes field value
 // and a boolean to check if the value has been set.
 func (o *LoanFilter) GetAccountSubtypesOk() (*[]AccountSubtype, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountSubtypes, true
@@ -130,5 +130,3 @@ func (v *NullableLoanFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

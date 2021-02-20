@@ -25,8 +25,8 @@ type InvestmentsTransactionsGetRequest struct {
 	// The earliest date for which to fetch transaction history. Dates should be formatted as YYYY-MM-DD.
 	StartDate string `json:"start_date"`
 	// The most recent date for which to fetch transaction history. Dates should be formatted as YYYY-MM-DD.
-	EndDate string `json:"end_date"`
-	Options *InvestmentsTransactionsGetRequestOptions `json:"options,omitempty"`
+	EndDate              string                                    `json:"end_date"`
+	Options              *InvestmentsTransactionsGetRequestOptions `json:"options,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -36,7 +36,7 @@ type _InvestmentsTransactionsGetRequest InvestmentsTransactionsGetRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInvestmentsTransactionsGetRequest(accessToken string, startDate string, endDate string, ) *InvestmentsTransactionsGetRequest {
+func NewInvestmentsTransactionsGetRequest(accessToken string, startDate string, endDate string) *InvestmentsTransactionsGetRequest {
 	this := InvestmentsTransactionsGetRequest{}
 	this.AccessToken = accessToken
 	this.StartDate = startDate
@@ -118,7 +118,7 @@ func (o *InvestmentsTransactionsGetRequest) SetSecret(v string) {
 
 // GetAccessToken returns the AccessToken field value
 func (o *InvestmentsTransactionsGetRequest) GetAccessToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *InvestmentsTransactionsGetRequest) GetAccessToken() string {
 // GetAccessTokenOk returns a tuple with the AccessToken field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentsTransactionsGetRequest) GetAccessTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccessToken, true
@@ -142,7 +142,7 @@ func (o *InvestmentsTransactionsGetRequest) SetAccessToken(v string) {
 
 // GetStartDate returns the StartDate field value
 func (o *InvestmentsTransactionsGetRequest) GetStartDate() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *InvestmentsTransactionsGetRequest) GetStartDate() string {
 // GetStartDateOk returns a tuple with the StartDate field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentsTransactionsGetRequest) GetStartDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.StartDate, true
@@ -166,7 +166,7 @@ func (o *InvestmentsTransactionsGetRequest) SetStartDate(v string) {
 
 // GetEndDate returns the EndDate field value
 func (o *InvestmentsTransactionsGetRequest) GetEndDate() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *InvestmentsTransactionsGetRequest) GetEndDate() string {
 // GetEndDateOk returns a tuple with the EndDate field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentsTransactionsGetRequest) GetEndDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.EndDate, true
@@ -305,5 +305,3 @@ func (v *NullableInvestmentsTransactionsGetRequest) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

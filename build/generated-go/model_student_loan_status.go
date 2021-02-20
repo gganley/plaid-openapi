@@ -16,10 +16,10 @@ import (
 
 // StudentLoanStatus An object representing the status of the student loan
 type StudentLoanStatus struct {
-	// The date until which the loan will be in its current status. Dates are returned in an ISO 8601 format (YYYY-MM-DD). 
+	// The date until which the loan will be in its current status. Dates are returned in an ISO 8601 format (YYYY-MM-DD).
 	EndDate NullableString `json:"end_date,omitempty"`
 	// The status type of the student loan
-	Type NullableString `json:"type,omitempty"`
+	Type                 NullableString `json:"type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -55,7 +55,7 @@ func (o *StudentLoanStatus) GetEndDate() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentLoanStatus) GetEndDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.EndDate.Get(), o.EndDate.IsSet()
@@ -74,6 +74,7 @@ func (o *StudentLoanStatus) HasEndDate() bool {
 func (o *StudentLoanStatus) SetEndDate(v string) {
 	o.EndDate.Set(&v)
 }
+
 // SetEndDateNil sets the value for EndDate to be an explicit nil
 func (o *StudentLoanStatus) SetEndDateNil() {
 	o.EndDate.Set(nil)
@@ -97,7 +98,7 @@ func (o *StudentLoanStatus) GetType() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StudentLoanStatus) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Type.Get(), o.Type.IsSet()
@@ -116,6 +117,7 @@ func (o *StudentLoanStatus) HasType() bool {
 func (o *StudentLoanStatus) SetType(v string) {
 	o.Type.Set(&v)
 }
+
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *StudentLoanStatus) SetTypeNil() {
 	o.Type.Set(nil)
@@ -195,5 +197,3 @@ func (v *NullableStudentLoanStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

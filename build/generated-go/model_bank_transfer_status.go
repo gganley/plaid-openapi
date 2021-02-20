@@ -20,11 +20,11 @@ type BankTransferStatus string
 
 // List of BankTransferStatus
 const (
-	BANKTRANSFERSTATUS_PENDING BankTransferStatus = "pending"
-	BANKTRANSFERSTATUS_POSTED BankTransferStatus = "posted"
+	BANKTRANSFERSTATUS_PENDING   BankTransferStatus = "pending"
+	BANKTRANSFERSTATUS_POSTED    BankTransferStatus = "posted"
 	BANKTRANSFERSTATUS_CANCELLED BankTransferStatus = "cancelled"
-	BANKTRANSFERSTATUS_FAILED BankTransferStatus = "failed"
-	BANKTRANSFERSTATUS_REVERSED BankTransferStatus = "reversed"
+	BANKTRANSFERSTATUS_FAILED    BankTransferStatus = "failed"
+	BANKTRANSFERSTATUS_REVERSED  BankTransferStatus = "reversed"
 )
 
 func (v *BankTransferStatus) UnmarshalJSON(src []byte) error {
@@ -34,7 +34,7 @@ func (v *BankTransferStatus) UnmarshalJSON(src []byte) error {
 		return err
 	}
 	enumTypeValue := BankTransferStatus(value)
-	for _, existing := range []BankTransferStatus{ "pending", "posted", "cancelled", "failed", "reversed",   } {
+	for _, existing := range []BankTransferStatus{"pending", "posted", "cancelled", "failed", "reversed"} {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
@@ -84,4 +84,3 @@ func (v *NullableBankTransferStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -20,19 +20,19 @@ type TransactionCode string
 
 // List of TransactionCode
 const (
-	TRANSACTIONCODE_ADJUSTMENT TransactionCode = "adjustment"
-	TRANSACTIONCODE_ATM TransactionCode = "atm"
-	TRANSACTIONCODE_BANK_CHARGE TransactionCode = "bank charge"
-	TRANSACTIONCODE_BILL_PAYMENT TransactionCode = "bill payment"
-	TRANSACTIONCODE_CASH TransactionCode = "cash"
-	TRANSACTIONCODE_CASHBACK TransactionCode = "cashback"
-	TRANSACTIONCODE_CHEQUE TransactionCode = "cheque"
-	TRANSACTIONCODE_DIRECT_DEBIT TransactionCode = "direct debit"
-	TRANSACTIONCODE_INTEREST TransactionCode = "interest"
-	TRANSACTIONCODE_PURCHASE TransactionCode = "purchase"
+	TRANSACTIONCODE_ADJUSTMENT     TransactionCode = "adjustment"
+	TRANSACTIONCODE_ATM            TransactionCode = "atm"
+	TRANSACTIONCODE_BANK_CHARGE    TransactionCode = "bank charge"
+	TRANSACTIONCODE_BILL_PAYMENT   TransactionCode = "bill payment"
+	TRANSACTIONCODE_CASH           TransactionCode = "cash"
+	TRANSACTIONCODE_CASHBACK       TransactionCode = "cashback"
+	TRANSACTIONCODE_CHEQUE         TransactionCode = "cheque"
+	TRANSACTIONCODE_DIRECT_DEBIT   TransactionCode = "direct debit"
+	TRANSACTIONCODE_INTEREST       TransactionCode = "interest"
+	TRANSACTIONCODE_PURCHASE       TransactionCode = "purchase"
 	TRANSACTIONCODE_STANDING_ORDER TransactionCode = "standing order"
-	TRANSACTIONCODE_TRANSFER TransactionCode = "transfer"
-	TRANSACTIONCODE_NULL TransactionCode = "null"
+	TRANSACTIONCODE_TRANSFER       TransactionCode = "transfer"
+	TRANSACTIONCODE_NULL           TransactionCode = "null"
 )
 
 func (v *TransactionCode) UnmarshalJSON(src []byte) error {
@@ -42,7 +42,7 @@ func (v *TransactionCode) UnmarshalJSON(src []byte) error {
 		return err
 	}
 	enumTypeValue := TransactionCode(value)
-	for _, existing := range []TransactionCode{ "adjustment", "atm", "bank charge", "bill payment", "cash", "cashback", "cheque", "direct debit", "interest", "purchase", "standing order", "transfer", "null",   } {
+	for _, existing := range []TransactionCode{"adjustment", "atm", "bank charge", "bill payment", "cash", "cashback", "cheque", "direct debit", "interest", "purchase", "standing order", "transfer", "null"} {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
@@ -92,4 +92,3 @@ func (v *NullableTransactionCode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

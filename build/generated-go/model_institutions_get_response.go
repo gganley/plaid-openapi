@@ -21,7 +21,7 @@ type InstitutionsGetResponse struct {
 	// The number of institutions returned
 	Total int32 `json:"total"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _InstitutionsGetResponse InstitutionsGetResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInstitutionsGetResponse(institutions []Institution, total int32, requestId string, ) *InstitutionsGetResponse {
+func NewInstitutionsGetResponse(institutions []Institution, total int32, requestId string) *InstitutionsGetResponse {
 	this := InstitutionsGetResponse{}
 	this.Institutions = institutions
 	this.Total = total
@@ -49,7 +49,7 @@ func NewInstitutionsGetResponseWithDefaults() *InstitutionsGetResponse {
 
 // GetInstitutions returns the Institutions field value
 func (o *InstitutionsGetResponse) GetInstitutions() []Institution {
-	if o == nil  {
+	if o == nil {
 		var ret []Institution
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *InstitutionsGetResponse) GetInstitutions() []Institution {
 // GetInstitutionsOk returns a tuple with the Institutions field value
 // and a boolean to check if the value has been set.
 func (o *InstitutionsGetResponse) GetInstitutionsOk() (*[]Institution, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Institutions, true
@@ -73,7 +73,7 @@ func (o *InstitutionsGetResponse) SetInstitutions(v []Institution) {
 
 // GetTotal returns the Total field value
 func (o *InstitutionsGetResponse) GetTotal() int32 {
-	if o == nil  {
+	if o == nil {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *InstitutionsGetResponse) GetTotal() int32 {
 // GetTotalOk returns a tuple with the Total field value
 // and a boolean to check if the value has been set.
 func (o *InstitutionsGetResponse) GetTotalOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Total, true
@@ -97,7 +97,7 @@ func (o *InstitutionsGetResponse) SetTotal(v int32) {
 
 // GetRequestId returns the RequestId field value
 func (o *InstitutionsGetResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *InstitutionsGetResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *InstitutionsGetResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -192,5 +192,3 @@ func (v *NullableInstitutionsGetResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

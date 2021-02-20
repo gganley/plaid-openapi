@@ -14,16 +14,16 @@ import (
 	"encoding/json"
 )
 
-// InstitutionStatus The status of an institution is determined by the health of its Item logins, Transactions updates, Investments updates, Auth requests, Balance requests, and Identity requests. A login attempt is conducted during the initial Item add in Link. If there is not enough traffic to accurately calculate an institution's status, Plaid will return null rather than potentially inaccurate data.  Institution status is accessible in the Dashboard and via the API using the `/institutions/get_by_id` endpoint with the `include_status` option set to true. Note that institution status is not available in the Sandbox environment. 
+// InstitutionStatus The status of an institution is determined by the health of its Item logins, Transactions updates, Investments updates, Auth requests, Balance requests, and Identity requests. A login attempt is conducted during the initial Item add in Link. If there is not enough traffic to accurately calculate an institution's status, Plaid will return null rather than potentially inaccurate data.  Institution status is accessible in the Dashboard and via the API using the `/institutions/get_by_id` endpoint with the `include_status` option set to true. Note that institution status is not available in the Sandbox environment.
 type InstitutionStatus struct {
-	ItemLogins ProductStatus `json:"item_logins"`
+	ItemLogins          ProductStatus `json:"item_logins"`
 	TransactionsUpdates ProductStatus `json:"transactions_updates"`
-	Auth ProductStatus `json:"auth"`
-	Balance ProductStatus `json:"balance"`
-	Identity ProductStatus `json:"identity"`
-	InvestmentsUpdates ProductStatus `json:"investments_updates"`
+	Auth                ProductStatus `json:"auth"`
+	Balance             ProductStatus `json:"balance"`
+	Identity            ProductStatus `json:"identity"`
+	InvestmentsUpdates  ProductStatus `json:"investments_updates"`
 	// Details of recent health incidents associated with the institution.
-	HealthIncidents []HealthIncident `json:"health_incidents,omitempty"`
+	HealthIncidents      []HealthIncident `json:"health_incidents,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -33,7 +33,7 @@ type _InstitutionStatus InstitutionStatus
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInstitutionStatus(itemLogins ProductStatus, transactionsUpdates ProductStatus, auth ProductStatus, balance ProductStatus, identity ProductStatus, investmentsUpdates ProductStatus, ) *InstitutionStatus {
+func NewInstitutionStatus(itemLogins ProductStatus, transactionsUpdates ProductStatus, auth ProductStatus, balance ProductStatus, identity ProductStatus, investmentsUpdates ProductStatus) *InstitutionStatus {
 	this := InstitutionStatus{}
 	this.ItemLogins = itemLogins
 	this.TransactionsUpdates = transactionsUpdates
@@ -54,7 +54,7 @@ func NewInstitutionStatusWithDefaults() *InstitutionStatus {
 
 // GetItemLogins returns the ItemLogins field value
 func (o *InstitutionStatus) GetItemLogins() ProductStatus {
-	if o == nil  {
+	if o == nil {
 		var ret ProductStatus
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *InstitutionStatus) GetItemLogins() ProductStatus {
 // GetItemLoginsOk returns a tuple with the ItemLogins field value
 // and a boolean to check if the value has been set.
 func (o *InstitutionStatus) GetItemLoginsOk() (*ProductStatus, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ItemLogins, true
@@ -78,7 +78,7 @@ func (o *InstitutionStatus) SetItemLogins(v ProductStatus) {
 
 // GetTransactionsUpdates returns the TransactionsUpdates field value
 func (o *InstitutionStatus) GetTransactionsUpdates() ProductStatus {
-	if o == nil  {
+	if o == nil {
 		var ret ProductStatus
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *InstitutionStatus) GetTransactionsUpdates() ProductStatus {
 // GetTransactionsUpdatesOk returns a tuple with the TransactionsUpdates field value
 // and a boolean to check if the value has been set.
 func (o *InstitutionStatus) GetTransactionsUpdatesOk() (*ProductStatus, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.TransactionsUpdates, true
@@ -102,7 +102,7 @@ func (o *InstitutionStatus) SetTransactionsUpdates(v ProductStatus) {
 
 // GetAuth returns the Auth field value
 func (o *InstitutionStatus) GetAuth() ProductStatus {
-	if o == nil  {
+	if o == nil {
 		var ret ProductStatus
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *InstitutionStatus) GetAuth() ProductStatus {
 // GetAuthOk returns a tuple with the Auth field value
 // and a boolean to check if the value has been set.
 func (o *InstitutionStatus) GetAuthOk() (*ProductStatus, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Auth, true
@@ -126,7 +126,7 @@ func (o *InstitutionStatus) SetAuth(v ProductStatus) {
 
 // GetBalance returns the Balance field value
 func (o *InstitutionStatus) GetBalance() ProductStatus {
-	if o == nil  {
+	if o == nil {
 		var ret ProductStatus
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *InstitutionStatus) GetBalance() ProductStatus {
 // GetBalanceOk returns a tuple with the Balance field value
 // and a boolean to check if the value has been set.
 func (o *InstitutionStatus) GetBalanceOk() (*ProductStatus, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Balance, true
@@ -150,7 +150,7 @@ func (o *InstitutionStatus) SetBalance(v ProductStatus) {
 
 // GetIdentity returns the Identity field value
 func (o *InstitutionStatus) GetIdentity() ProductStatus {
-	if o == nil  {
+	if o == nil {
 		var ret ProductStatus
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *InstitutionStatus) GetIdentity() ProductStatus {
 // GetIdentityOk returns a tuple with the Identity field value
 // and a boolean to check if the value has been set.
 func (o *InstitutionStatus) GetIdentityOk() (*ProductStatus, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Identity, true
@@ -174,7 +174,7 @@ func (o *InstitutionStatus) SetIdentity(v ProductStatus) {
 
 // GetInvestmentsUpdates returns the InvestmentsUpdates field value
 func (o *InstitutionStatus) GetInvestmentsUpdates() ProductStatus {
-	if o == nil  {
+	if o == nil {
 		var ret ProductStatus
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *InstitutionStatus) GetInvestmentsUpdates() ProductStatus {
 // GetInvestmentsUpdatesOk returns a tuple with the InvestmentsUpdates field value
 // and a boolean to check if the value has been set.
 func (o *InstitutionStatus) GetInvestmentsUpdatesOk() (*ProductStatus, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.InvestmentsUpdates, true
@@ -198,7 +198,7 @@ func (o *InstitutionStatus) SetInvestmentsUpdates(v ProductStatus) {
 
 // GetHealthIncidents returns the HealthIncidents field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstitutionStatus) GetHealthIncidents() []HealthIncident {
-	if o == nil  {
+	if o == nil {
 		var ret []HealthIncident
 		return ret
 	}
@@ -318,5 +318,3 @@ func (v *NullableInstitutionStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

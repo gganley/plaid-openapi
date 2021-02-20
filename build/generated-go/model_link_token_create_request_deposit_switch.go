@@ -17,7 +17,7 @@ import (
 // LinkTokenCreateRequestDepositSwitch Specifies options for initializing Link for use with the Deposit Switch (beta) product. This field is required if `deposit_switch` is included in the `products` array.
 type LinkTokenCreateRequestDepositSwitch struct {
 	// The `deposit_switch_id` provided by the `/deposit_switch/create` endpoint.
-	DepositSwitchId string `json:"deposit_switch_id"`
+	DepositSwitchId      string `json:"deposit_switch_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -27,7 +27,7 @@ type _LinkTokenCreateRequestDepositSwitch LinkTokenCreateRequestDepositSwitch
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLinkTokenCreateRequestDepositSwitch(depositSwitchId string, ) *LinkTokenCreateRequestDepositSwitch {
+func NewLinkTokenCreateRequestDepositSwitch(depositSwitchId string) *LinkTokenCreateRequestDepositSwitch {
 	this := LinkTokenCreateRequestDepositSwitch{}
 	this.DepositSwitchId = depositSwitchId
 	return &this
@@ -43,7 +43,7 @@ func NewLinkTokenCreateRequestDepositSwitchWithDefaults() *LinkTokenCreateReques
 
 // GetDepositSwitchId returns the DepositSwitchId field value
 func (o *LinkTokenCreateRequestDepositSwitch) GetDepositSwitchId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *LinkTokenCreateRequestDepositSwitch) GetDepositSwitchId() string {
 // GetDepositSwitchIdOk returns a tuple with the DepositSwitchId field value
 // and a boolean to check if the value has been set.
 func (o *LinkTokenCreateRequestDepositSwitch) GetDepositSwitchIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DepositSwitchId, true
@@ -130,5 +130,3 @@ func (v *NullableLinkTokenCreateRequestDepositSwitch) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

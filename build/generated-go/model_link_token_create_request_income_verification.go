@@ -19,7 +19,7 @@ type LinkTokenCreateRequestIncomeVerification struct {
 	// The `income_verification_id` of the verification instance, as provided by `/income/verification/create`.
 	IncomeVerificationId string `json:"income_verification_id"`
 	// The `asset_report_id` of an asset report associated with the user, as provided by `/asset_report/create`. Providing an `asset_report_id` is optional and can be used to verify the user through a streamlined flow. If provided, the bank linking flow will be skipped.
-	AssetReportId NullableString `json:"asset_report_id,omitempty"`
+	AssetReportId        NullableString `json:"asset_report_id,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _LinkTokenCreateRequestIncomeVerification LinkTokenCreateRequestIncomeVerif
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLinkTokenCreateRequestIncomeVerification(incomeVerificationId string, ) *LinkTokenCreateRequestIncomeVerification {
+func NewLinkTokenCreateRequestIncomeVerification(incomeVerificationId string) *LinkTokenCreateRequestIncomeVerification {
 	this := LinkTokenCreateRequestIncomeVerification{}
 	this.IncomeVerificationId = incomeVerificationId
 	return &this
@@ -45,7 +45,7 @@ func NewLinkTokenCreateRequestIncomeVerificationWithDefaults() *LinkTokenCreateR
 
 // GetIncomeVerificationId returns the IncomeVerificationId field value
 func (o *LinkTokenCreateRequestIncomeVerification) GetIncomeVerificationId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *LinkTokenCreateRequestIncomeVerification) GetIncomeVerificationId() str
 // GetIncomeVerificationIdOk returns a tuple with the IncomeVerificationId field value
 // and a boolean to check if the value has been set.
 func (o *LinkTokenCreateRequestIncomeVerification) GetIncomeVerificationIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.IncomeVerificationId, true
@@ -80,7 +80,7 @@ func (o *LinkTokenCreateRequestIncomeVerification) GetAssetReportId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LinkTokenCreateRequestIncomeVerification) GetAssetReportIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AssetReportId.Get(), o.AssetReportId.IsSet()
@@ -99,6 +99,7 @@ func (o *LinkTokenCreateRequestIncomeVerification) HasAssetReportId() bool {
 func (o *LinkTokenCreateRequestIncomeVerification) SetAssetReportId(v string) {
 	o.AssetReportId.Set(&v)
 }
+
 // SetAssetReportIdNil sets the value for AssetReportId to be an explicit nil
 func (o *LinkTokenCreateRequestIncomeVerification) SetAssetReportIdNil() {
 	o.AssetReportId.Set(nil)
@@ -178,5 +179,3 @@ func (v *NullableLinkTokenCreateRequestIncomeVerification) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

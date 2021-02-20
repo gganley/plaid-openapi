@@ -19,7 +19,7 @@ type ItemAccessTokenInvalidateResponse struct {
 	// The access token associated with the Item data is being requested for.
 	NewAccessToken string `json:"new_access_token"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _ItemAccessTokenInvalidateResponse ItemAccessTokenInvalidateResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewItemAccessTokenInvalidateResponse(newAccessToken string, requestId string, ) *ItemAccessTokenInvalidateResponse {
+func NewItemAccessTokenInvalidateResponse(newAccessToken string, requestId string) *ItemAccessTokenInvalidateResponse {
 	this := ItemAccessTokenInvalidateResponse{}
 	this.NewAccessToken = newAccessToken
 	this.RequestId = requestId
@@ -46,7 +46,7 @@ func NewItemAccessTokenInvalidateResponseWithDefaults() *ItemAccessTokenInvalida
 
 // GetNewAccessToken returns the NewAccessToken field value
 func (o *ItemAccessTokenInvalidateResponse) GetNewAccessToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *ItemAccessTokenInvalidateResponse) GetNewAccessToken() string {
 // GetNewAccessTokenOk returns a tuple with the NewAccessToken field value
 // and a boolean to check if the value has been set.
 func (o *ItemAccessTokenInvalidateResponse) GetNewAccessTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.NewAccessToken, true
@@ -70,7 +70,7 @@ func (o *ItemAccessTokenInvalidateResponse) SetNewAccessToken(v string) {
 
 // GetRequestId returns the RequestId field value
 func (o *ItemAccessTokenInvalidateResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *ItemAccessTokenInvalidateResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *ItemAccessTokenInvalidateResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -161,5 +161,3 @@ func (v *NullableItemAccessTokenInvalidateResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

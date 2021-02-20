@@ -18,7 +18,7 @@ import (
 type IncomeVerificationPaystubGetResponse struct {
 	Paystub *Paystub `json:"paystub,omitempty"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId *string `json:"request_id,omitempty"`
+	RequestId            *string `json:"request_id,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -174,5 +174,3 @@ func (v *NullableIncomeVerificationPaystubGetResponse) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

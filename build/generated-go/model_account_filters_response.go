@@ -14,12 +14,12 @@ import (
 	"encoding/json"
 )
 
-// AccountFiltersResponse The `account_filters` specified in the original call to `/link/token/create`. 
+// AccountFiltersResponse The `account_filters` specified in the original call to `/link/token/create`.
 type AccountFiltersResponse struct {
-	Depository *DepositoryFilter `json:"depository,omitempty"`
-	Credit *CreditFilter `json:"credit,omitempty"`
-	Loan *LoanFilter `json:"loan,omitempty"`
-	Investment *InvestmentFilter `json:"investment,omitempty"`
+	Depository           *DepositoryFilter `json:"depository,omitempty"`
+	Credit               *CreditFilter     `json:"credit,omitempty"`
+	Loan                 *LoanFilter       `json:"loan,omitempty"`
+	Investment           *InvestmentFilter `json:"investment,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -247,5 +247,3 @@ func (v *NullableAccountFiltersResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

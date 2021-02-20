@@ -23,7 +23,7 @@ type AuthGetNumbers struct {
 	// An array of IBAN numbers identifying accounts.
 	International *[]NumbersInternational `json:"international,omitempty"`
 	// An array of BACS numbers identifying accounts.
-	Bacs *[]NumbersBACS `json:"bacs,omitempty"`
+	Bacs                 *[]NumbersBACS `json:"bacs,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -251,5 +251,3 @@ func (v *NullableAuthGetNumbers) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

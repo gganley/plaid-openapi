@@ -25,7 +25,7 @@ type StandaloneAccountType struct {
 	// An investment account. Supported products for `investment` accounts are: Balance and Investments.
 	Investment string `json:"investment"`
 	// Other or unknown account type. Supported products for `other` accounts are: Balance, Transactions, Identity, and Assets.
-	Other string `json:"other"`
+	Other                string `json:"other"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -35,7 +35,7 @@ type _StandaloneAccountType StandaloneAccountType
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStandaloneAccountType(depository string, credit string, loan string, investment string, other string, ) *StandaloneAccountType {
+func NewStandaloneAccountType(depository string, credit string, loan string, investment string, other string) *StandaloneAccountType {
 	this := StandaloneAccountType{}
 	this.Depository = depository
 	this.Credit = credit
@@ -55,7 +55,7 @@ func NewStandaloneAccountTypeWithDefaults() *StandaloneAccountType {
 
 // GetDepository returns the Depository field value
 func (o *StandaloneAccountType) GetDepository() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *StandaloneAccountType) GetDepository() string {
 // GetDepositoryOk returns a tuple with the Depository field value
 // and a boolean to check if the value has been set.
 func (o *StandaloneAccountType) GetDepositoryOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Depository, true
@@ -79,7 +79,7 @@ func (o *StandaloneAccountType) SetDepository(v string) {
 
 // GetCredit returns the Credit field value
 func (o *StandaloneAccountType) GetCredit() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *StandaloneAccountType) GetCredit() string {
 // GetCreditOk returns a tuple with the Credit field value
 // and a boolean to check if the value has been set.
 func (o *StandaloneAccountType) GetCreditOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Credit, true
@@ -103,7 +103,7 @@ func (o *StandaloneAccountType) SetCredit(v string) {
 
 // GetLoan returns the Loan field value
 func (o *StandaloneAccountType) GetLoan() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *StandaloneAccountType) GetLoan() string {
 // GetLoanOk returns a tuple with the Loan field value
 // and a boolean to check if the value has been set.
 func (o *StandaloneAccountType) GetLoanOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Loan, true
@@ -127,7 +127,7 @@ func (o *StandaloneAccountType) SetLoan(v string) {
 
 // GetInvestment returns the Investment field value
 func (o *StandaloneAccountType) GetInvestment() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *StandaloneAccountType) GetInvestment() string {
 // GetInvestmentOk returns a tuple with the Investment field value
 // and a boolean to check if the value has been set.
 func (o *StandaloneAccountType) GetInvestmentOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Investment, true
@@ -151,7 +151,7 @@ func (o *StandaloneAccountType) SetInvestment(v string) {
 
 // GetOther returns the Other field value
 func (o *StandaloneAccountType) GetOther() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *StandaloneAccountType) GetOther() string {
 // GetOtherOk returns a tuple with the Other field value
 // and a boolean to check if the value has been set.
 func (o *StandaloneAccountType) GetOtherOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Other, true
@@ -254,5 +254,3 @@ func (v *NullableStandaloneAccountType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -21,7 +21,7 @@ type PaystubDeduction struct {
 	// `true` if the deduction is pre-tax; `false` otherwise.
 	IsPretax NullableBool `json:"is_pretax,omitempty"`
 	// The amount of the deduction.
-	Total NullableFloat32 `json:"total,omitempty"`
+	Total                NullableFloat32 `json:"total,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -57,7 +57,7 @@ func (o *PaystubDeduction) GetType() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaystubDeduction) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Type.Get(), o.Type.IsSet()
@@ -76,6 +76,7 @@ func (o *PaystubDeduction) HasType() bool {
 func (o *PaystubDeduction) SetType(v string) {
 	o.Type.Set(&v)
 }
+
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *PaystubDeduction) SetTypeNil() {
 	o.Type.Set(nil)
@@ -99,7 +100,7 @@ func (o *PaystubDeduction) GetIsPretax() bool {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaystubDeduction) GetIsPretaxOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.IsPretax.Get(), o.IsPretax.IsSet()
@@ -118,6 +119,7 @@ func (o *PaystubDeduction) HasIsPretax() bool {
 func (o *PaystubDeduction) SetIsPretax(v bool) {
 	o.IsPretax.Set(&v)
 }
+
 // SetIsPretaxNil sets the value for IsPretax to be an explicit nil
 func (o *PaystubDeduction) SetIsPretaxNil() {
 	o.IsPretax.Set(nil)
@@ -141,7 +143,7 @@ func (o *PaystubDeduction) GetTotal() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaystubDeduction) GetTotalOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Total.Get(), o.Total.IsSet()
@@ -160,6 +162,7 @@ func (o *PaystubDeduction) HasTotal() bool {
 func (o *PaystubDeduction) SetTotal(v float32) {
 	o.Total.Set(&v)
 }
+
 // SetTotalNil sets the value for Total to be an explicit nil
 func (o *PaystubDeduction) SetTotalNil() {
 	o.Total.Set(nil)
@@ -243,5 +246,3 @@ func (v *NullablePaystubDeduction) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

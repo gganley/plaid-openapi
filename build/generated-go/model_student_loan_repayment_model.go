@@ -21,7 +21,7 @@ type StudentLoanRepaymentModel struct {
 	// Configures the number of months before repayment starts.
 	NonRepaymentMonths float32 `json:"non_repayment_months"`
 	// Configures the number of months of repayments before the loan is paid off.
-	RepaymentMonths float32 `json:"repayment_months"`
+	RepaymentMonths      float32 `json:"repayment_months"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _StudentLoanRepaymentModel StudentLoanRepaymentModel
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStudentLoanRepaymentModel(type_ string, nonRepaymentMonths float32, repaymentMonths float32, ) *StudentLoanRepaymentModel {
+func NewStudentLoanRepaymentModel(type_ string, nonRepaymentMonths float32, repaymentMonths float32) *StudentLoanRepaymentModel {
 	this := StudentLoanRepaymentModel{}
 	this.Type = type_
 	this.NonRepaymentMonths = nonRepaymentMonths
@@ -49,7 +49,7 @@ func NewStudentLoanRepaymentModelWithDefaults() *StudentLoanRepaymentModel {
 
 // GetType returns the Type field value
 func (o *StudentLoanRepaymentModel) GetType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *StudentLoanRepaymentModel) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *StudentLoanRepaymentModel) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -73,7 +73,7 @@ func (o *StudentLoanRepaymentModel) SetType(v string) {
 
 // GetNonRepaymentMonths returns the NonRepaymentMonths field value
 func (o *StudentLoanRepaymentModel) GetNonRepaymentMonths() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *StudentLoanRepaymentModel) GetNonRepaymentMonths() float32 {
 // GetNonRepaymentMonthsOk returns a tuple with the NonRepaymentMonths field value
 // and a boolean to check if the value has been set.
 func (o *StudentLoanRepaymentModel) GetNonRepaymentMonthsOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.NonRepaymentMonths, true
@@ -97,7 +97,7 @@ func (o *StudentLoanRepaymentModel) SetNonRepaymentMonths(v float32) {
 
 // GetRepaymentMonths returns the RepaymentMonths field value
 func (o *StudentLoanRepaymentModel) GetRepaymentMonths() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *StudentLoanRepaymentModel) GetRepaymentMonths() float32 {
 // GetRepaymentMonthsOk returns a tuple with the RepaymentMonths field value
 // and a boolean to check if the value has been set.
 func (o *StudentLoanRepaymentModel) GetRepaymentMonthsOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RepaymentMonths, true
@@ -192,5 +192,3 @@ func (v *NullableStudentLoanRepaymentModel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

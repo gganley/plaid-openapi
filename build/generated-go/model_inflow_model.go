@@ -25,7 +25,7 @@ type InflowModel struct {
 	// The name of the income transaction. This field is required if `type` is `monthly-income`, `monthly-balance-payment` or `monthly-interest-only-payment`.
 	TransactionName string `json:"transaction_name"`
 	// Number between 1 and 28, or `last` meaning the last day of the month. The day of the month on which the balance is calculated for the next payment. The name of the income transaction. This field is required if `type` is `monthly-balance-payment` or `monthly-interest-only-payment`.
-	StatementDayOfMonth string `json:"statement_day_of_month"`
+	StatementDayOfMonth  string `json:"statement_day_of_month"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -35,7 +35,7 @@ type _InflowModel InflowModel
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInflowModel(type_ string, incomeAmount float32, paymentDayOfMonth float32, transactionName string, statementDayOfMonth string, ) *InflowModel {
+func NewInflowModel(type_ string, incomeAmount float32, paymentDayOfMonth float32, transactionName string, statementDayOfMonth string) *InflowModel {
 	this := InflowModel{}
 	this.Type = type_
 	this.IncomeAmount = incomeAmount
@@ -55,7 +55,7 @@ func NewInflowModelWithDefaults() *InflowModel {
 
 // GetType returns the Type field value
 func (o *InflowModel) GetType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *InflowModel) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *InflowModel) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -79,7 +79,7 @@ func (o *InflowModel) SetType(v string) {
 
 // GetIncomeAmount returns the IncomeAmount field value
 func (o *InflowModel) GetIncomeAmount() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *InflowModel) GetIncomeAmount() float32 {
 // GetIncomeAmountOk returns a tuple with the IncomeAmount field value
 // and a boolean to check if the value has been set.
 func (o *InflowModel) GetIncomeAmountOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.IncomeAmount, true
@@ -103,7 +103,7 @@ func (o *InflowModel) SetIncomeAmount(v float32) {
 
 // GetPaymentDayOfMonth returns the PaymentDayOfMonth field value
 func (o *InflowModel) GetPaymentDayOfMonth() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *InflowModel) GetPaymentDayOfMonth() float32 {
 // GetPaymentDayOfMonthOk returns a tuple with the PaymentDayOfMonth field value
 // and a boolean to check if the value has been set.
 func (o *InflowModel) GetPaymentDayOfMonthOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PaymentDayOfMonth, true
@@ -127,7 +127,7 @@ func (o *InflowModel) SetPaymentDayOfMonth(v float32) {
 
 // GetTransactionName returns the TransactionName field value
 func (o *InflowModel) GetTransactionName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *InflowModel) GetTransactionName() string {
 // GetTransactionNameOk returns a tuple with the TransactionName field value
 // and a boolean to check if the value has been set.
 func (o *InflowModel) GetTransactionNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.TransactionName, true
@@ -151,7 +151,7 @@ func (o *InflowModel) SetTransactionName(v string) {
 
 // GetStatementDayOfMonth returns the StatementDayOfMonth field value
 func (o *InflowModel) GetStatementDayOfMonth() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *InflowModel) GetStatementDayOfMonth() string {
 // GetStatementDayOfMonthOk returns a tuple with the StatementDayOfMonth field value
 // and a boolean to check if the value has been set.
 func (o *InflowModel) GetStatementDayOfMonthOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.StatementDayOfMonth, true
@@ -254,5 +254,3 @@ func (v *NullableInflowModel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

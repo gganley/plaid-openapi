@@ -21,7 +21,7 @@ type BankTransferMigrateAccountResponse struct {
 	// The Plaid `account_id` for the newly created Item.
 	AccountId string `json:"account_id"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _BankTransferMigrateAccountResponse BankTransferMigrateAccountResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBankTransferMigrateAccountResponse(accessToken string, accountId string, requestId string, ) *BankTransferMigrateAccountResponse {
+func NewBankTransferMigrateAccountResponse(accessToken string, accountId string, requestId string) *BankTransferMigrateAccountResponse {
 	this := BankTransferMigrateAccountResponse{}
 	this.AccessToken = accessToken
 	this.AccountId = accountId
@@ -49,7 +49,7 @@ func NewBankTransferMigrateAccountResponseWithDefaults() *BankTransferMigrateAcc
 
 // GetAccessToken returns the AccessToken field value
 func (o *BankTransferMigrateAccountResponse) GetAccessToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *BankTransferMigrateAccountResponse) GetAccessToken() string {
 // GetAccessTokenOk returns a tuple with the AccessToken field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferMigrateAccountResponse) GetAccessTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccessToken, true
@@ -73,7 +73,7 @@ func (o *BankTransferMigrateAccountResponse) SetAccessToken(v string) {
 
 // GetAccountId returns the AccountId field value
 func (o *BankTransferMigrateAccountResponse) GetAccountId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *BankTransferMigrateAccountResponse) GetAccountId() string {
 // GetAccountIdOk returns a tuple with the AccountId field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferMigrateAccountResponse) GetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountId, true
@@ -97,7 +97,7 @@ func (o *BankTransferMigrateAccountResponse) SetAccountId(v string) {
 
 // GetRequestId returns the RequestId field value
 func (o *BankTransferMigrateAccountResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *BankTransferMigrateAccountResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferMigrateAccountResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -192,5 +192,3 @@ func (v *NullableBankTransferMigrateAccountResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

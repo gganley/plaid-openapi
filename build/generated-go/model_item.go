@@ -22,15 +22,15 @@ type Item struct {
 	InstitutionId NullableString `json:"institution_id,omitempty"`
 	// The URL registered to receive webhooks for the Item.
 	Webhook NullableString `json:"webhook,omitempty"`
-	Error NullableError `json:"error,omitempty"`
+	Error   NullableError  `json:"error,omitempty"`
 	// A list of products available for the Item that have not yet been accessed.
 	AvailableProducts []Products `json:"available_products"`
-	// A list of products that have been billed for the Item. Note - `billed_products` is populated in all environments but only requests in Production are billed. 
+	// A list of products that have been billed for the Item. Note - `billed_products` is populated in all environments but only requests in Production are billed.
 	BilledProducts []Products `json:"billed_products"`
-	// The RFC 3339 timestamp after which the consent provided by the end user will expire. Upon consent expiration, the item will enter the `ITEM_LOGIN_REQUIRED` error state. To circumvent the `ITEM_LOGIN_REQUIRED` error and maintain continuous consent, the end user can reauthenticate via Link’s update mode in advance of the consent expiration time.  Note - This is only relevant for European institutions subject to PSD2 regulations mandating a 90-day consent window. For all other institutions, this field will be null. 
+	// The RFC 3339 timestamp after which the consent provided by the end user will expire. Upon consent expiration, the item will enter the `ITEM_LOGIN_REQUIRED` error state. To circumvent the `ITEM_LOGIN_REQUIRED` error and maintain continuous consent, the end user can reauthenticate via Link’s update mode in advance of the consent expiration time.  Note - This is only relevant for European institutions subject to PSD2 regulations mandating a 90-day consent window. For all other institutions, this field will be null.
 	ConsentExpirationTime NullableString `json:"consent_expiration_time,omitempty"`
-	UpdateType *string `json:"update_type,omitempty"`
-	AdditionalProperties map[string]interface{}
+	UpdateType            *string        `json:"update_type,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _Item Item
@@ -39,7 +39,7 @@ type _Item Item
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewItem(itemId string, availableProducts []Products, billedProducts []Products, ) *Item {
+func NewItem(itemId string, availableProducts []Products, billedProducts []Products) *Item {
 	this := Item{}
 	this.ItemId = itemId
 	this.AvailableProducts = availableProducts
@@ -57,7 +57,7 @@ func NewItemWithDefaults() *Item {
 
 // GetItemId returns the ItemId field value
 func (o *Item) GetItemId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -68,7 +68,7 @@ func (o *Item) GetItemId() string {
 // GetItemIdOk returns a tuple with the ItemId field value
 // and a boolean to check if the value has been set.
 func (o *Item) GetItemIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ItemId, true
@@ -92,7 +92,7 @@ func (o *Item) GetInstitutionId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Item) GetInstitutionIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.InstitutionId.Get(), o.InstitutionId.IsSet()
@@ -111,6 +111,7 @@ func (o *Item) HasInstitutionId() bool {
 func (o *Item) SetInstitutionId(v string) {
 	o.InstitutionId.Set(&v)
 }
+
 // SetInstitutionIdNil sets the value for InstitutionId to be an explicit nil
 func (o *Item) SetInstitutionIdNil() {
 	o.InstitutionId.Set(nil)
@@ -134,7 +135,7 @@ func (o *Item) GetWebhook() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Item) GetWebhookOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Webhook.Get(), o.Webhook.IsSet()
@@ -153,6 +154,7 @@ func (o *Item) HasWebhook() bool {
 func (o *Item) SetWebhook(v string) {
 	o.Webhook.Set(&v)
 }
+
 // SetWebhookNil sets the value for Webhook to be an explicit nil
 func (o *Item) SetWebhookNil() {
 	o.Webhook.Set(nil)
@@ -176,7 +178,7 @@ func (o *Item) GetError() Error {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Item) GetErrorOk() (*Error, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Error.Get(), o.Error.IsSet()
@@ -195,6 +197,7 @@ func (o *Item) HasError() bool {
 func (o *Item) SetError(v Error) {
 	o.Error.Set(&v)
 }
+
 // SetErrorNil sets the value for Error to be an explicit nil
 func (o *Item) SetErrorNil() {
 	o.Error.Set(nil)
@@ -207,7 +210,7 @@ func (o *Item) UnsetError() {
 
 // GetAvailableProducts returns the AvailableProducts field value
 func (o *Item) GetAvailableProducts() []Products {
-	if o == nil  {
+	if o == nil {
 		var ret []Products
 		return ret
 	}
@@ -218,7 +221,7 @@ func (o *Item) GetAvailableProducts() []Products {
 // GetAvailableProductsOk returns a tuple with the AvailableProducts field value
 // and a boolean to check if the value has been set.
 func (o *Item) GetAvailableProductsOk() (*[]Products, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AvailableProducts, true
@@ -231,7 +234,7 @@ func (o *Item) SetAvailableProducts(v []Products) {
 
 // GetBilledProducts returns the BilledProducts field value
 func (o *Item) GetBilledProducts() []Products {
-	if o == nil  {
+	if o == nil {
 		var ret []Products
 		return ret
 	}
@@ -242,7 +245,7 @@ func (o *Item) GetBilledProducts() []Products {
 // GetBilledProductsOk returns a tuple with the BilledProducts field value
 // and a boolean to check if the value has been set.
 func (o *Item) GetBilledProductsOk() (*[]Products, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.BilledProducts, true
@@ -266,7 +269,7 @@ func (o *Item) GetConsentExpirationTime() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Item) GetConsentExpirationTimeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ConsentExpirationTime.Get(), o.ConsentExpirationTime.IsSet()
@@ -285,6 +288,7 @@ func (o *Item) HasConsentExpirationTime() bool {
 func (o *Item) SetConsentExpirationTime(v string) {
 	o.ConsentExpirationTime.Set(&v)
 }
+
 // SetConsentExpirationTimeNil sets the value for ConsentExpirationTime to be an explicit nil
 func (o *Item) SetConsentExpirationTimeNil() {
 	o.ConsentExpirationTime.Set(nil)
@@ -420,5 +424,3 @@ func (v *NullableItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

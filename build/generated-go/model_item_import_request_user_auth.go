@@ -19,7 +19,7 @@ type ItemImportRequestUserAuth struct {
 	// Opaque user identifier
 	UserId string `json:"user_id"`
 	// Authorization token Plaid will use to aggregate this user’s accounts
-	AuthToken string `json:"auth_token"`
+	AuthToken            string `json:"auth_token"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _ItemImportRequestUserAuth ItemImportRequestUserAuth
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewItemImportRequestUserAuth(userId string, authToken string, ) *ItemImportRequestUserAuth {
+func NewItemImportRequestUserAuth(userId string, authToken string) *ItemImportRequestUserAuth {
 	this := ItemImportRequestUserAuth{}
 	this.UserId = userId
 	this.AuthToken = authToken
@@ -46,7 +46,7 @@ func NewItemImportRequestUserAuthWithDefaults() *ItemImportRequestUserAuth {
 
 // GetUserId returns the UserId field value
 func (o *ItemImportRequestUserAuth) GetUserId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *ItemImportRequestUserAuth) GetUserId() string {
 // GetUserIdOk returns a tuple with the UserId field value
 // and a boolean to check if the value has been set.
 func (o *ItemImportRequestUserAuth) GetUserIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.UserId, true
@@ -70,7 +70,7 @@ func (o *ItemImportRequestUserAuth) SetUserId(v string) {
 
 // GetAuthToken returns the AuthToken field value
 func (o *ItemImportRequestUserAuth) GetAuthToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *ItemImportRequestUserAuth) GetAuthToken() string {
 // GetAuthTokenOk returns a tuple with the AuthToken field value
 // and a boolean to check if the value has been set.
 func (o *ItemImportRequestUserAuth) GetAuthTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AuthToken, true
@@ -161,5 +161,3 @@ func (v *NullableItemImportRequestUserAuth) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

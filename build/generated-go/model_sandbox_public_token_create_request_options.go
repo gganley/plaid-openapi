@@ -21,8 +21,8 @@ type SandboxPublicTokenCreateRequestOptions struct {
 	// Test username to use for the creation of the Sandbox Item. Default value is `user_good`.
 	OverrideUsername NullableString `json:"override_username,omitempty"`
 	// Test password to use for the creation of the Sandbox Item. Default value is `pass_good`.
-	OverridePassword NullableString `json:"override_password,omitempty"`
-	Transactions *SandboxPublicTokenCreateRequestOptionsTransactions `json:"transactions,omitempty"`
+	OverridePassword     NullableString                                      `json:"override_password,omitempty"`
+	Transactions         *SandboxPublicTokenCreateRequestOptionsTransactions `json:"transactions,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -98,7 +98,7 @@ func (o *SandboxPublicTokenCreateRequestOptions) GetOverrideUsername() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SandboxPublicTokenCreateRequestOptions) GetOverrideUsernameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.OverrideUsername.Get(), o.OverrideUsername.IsSet()
@@ -117,6 +117,7 @@ func (o *SandboxPublicTokenCreateRequestOptions) HasOverrideUsername() bool {
 func (o *SandboxPublicTokenCreateRequestOptions) SetOverrideUsername(v string) {
 	o.OverrideUsername.Set(&v)
 }
+
 // SetOverrideUsernameNil sets the value for OverrideUsername to be an explicit nil
 func (o *SandboxPublicTokenCreateRequestOptions) SetOverrideUsernameNil() {
 	o.OverrideUsername.Set(nil)
@@ -140,7 +141,7 @@ func (o *SandboxPublicTokenCreateRequestOptions) GetOverridePassword() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SandboxPublicTokenCreateRequestOptions) GetOverridePasswordOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.OverridePassword.Get(), o.OverridePassword.IsSet()
@@ -159,6 +160,7 @@ func (o *SandboxPublicTokenCreateRequestOptions) HasOverridePassword() bool {
 func (o *SandboxPublicTokenCreateRequestOptions) SetOverridePassword(v string) {
 	o.OverridePassword.Set(&v)
 }
+
 // SetOverridePasswordNil sets the value for OverridePassword to be an explicit nil
 func (o *SandboxPublicTokenCreateRequestOptions) SetOverridePasswordNil() {
 	o.OverridePassword.Set(nil)
@@ -278,5 +280,3 @@ func (v *NullableSandboxPublicTokenCreateRequestOptions) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

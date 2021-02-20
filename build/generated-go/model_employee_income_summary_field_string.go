@@ -17,8 +17,8 @@ import (
 // EmployeeIncomeSummaryFieldString struct for EmployeeIncomeSummaryFieldString
 type EmployeeIncomeSummaryFieldString struct {
 	// The value of the field.
-	Value string `json:"value"`
-	VerificationStatus VerificationStatus `json:"verification_status"`
+	Value                string             `json:"value"`
+	VerificationStatus   VerificationStatus `json:"verification_status"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -28,7 +28,7 @@ type _EmployeeIncomeSummaryFieldString EmployeeIncomeSummaryFieldString
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEmployeeIncomeSummaryFieldString(value string, verificationStatus VerificationStatus, ) *EmployeeIncomeSummaryFieldString {
+func NewEmployeeIncomeSummaryFieldString(value string, verificationStatus VerificationStatus) *EmployeeIncomeSummaryFieldString {
 	this := EmployeeIncomeSummaryFieldString{}
 	this.Value = value
 	this.VerificationStatus = verificationStatus
@@ -45,7 +45,7 @@ func NewEmployeeIncomeSummaryFieldStringWithDefaults() *EmployeeIncomeSummaryFie
 
 // GetValue returns the Value field value
 func (o *EmployeeIncomeSummaryFieldString) GetValue() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *EmployeeIncomeSummaryFieldString) GetValue() string {
 // GetValueOk returns a tuple with the Value field value
 // and a boolean to check if the value has been set.
 func (o *EmployeeIncomeSummaryFieldString) GetValueOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Value, true
@@ -69,7 +69,7 @@ func (o *EmployeeIncomeSummaryFieldString) SetValue(v string) {
 
 // GetVerificationStatus returns the VerificationStatus field value
 func (o *EmployeeIncomeSummaryFieldString) GetVerificationStatus() VerificationStatus {
-	if o == nil  {
+	if o == nil {
 		var ret VerificationStatus
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *EmployeeIncomeSummaryFieldString) GetVerificationStatus() VerificationS
 // GetVerificationStatusOk returns a tuple with the VerificationStatus field value
 // and a boolean to check if the value has been set.
 func (o *EmployeeIncomeSummaryFieldString) GetVerificationStatusOk() (*VerificationStatus, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.VerificationStatus, true
@@ -160,5 +160,3 @@ func (v *NullableEmployeeIncomeSummaryFieldString) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

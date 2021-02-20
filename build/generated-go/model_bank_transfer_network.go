@@ -20,9 +20,9 @@ type BankTransferNetwork string
 
 // List of BankTransferNetwork
 const (
-	BANKTRANSFERNETWORK_ACH BankTransferNetwork = "ach"
+	BANKTRANSFERNETWORK_ACH          BankTransferNetwork = "ach"
 	BANKTRANSFERNETWORK_SAME_DAY_ACH BankTransferNetwork = "same-day-ach"
-	BANKTRANSFERNETWORK_WIRE BankTransferNetwork = "wire"
+	BANKTRANSFERNETWORK_WIRE         BankTransferNetwork = "wire"
 )
 
 func (v *BankTransferNetwork) UnmarshalJSON(src []byte) error {
@@ -32,7 +32,7 @@ func (v *BankTransferNetwork) UnmarshalJSON(src []byte) error {
 		return err
 	}
 	enumTypeValue := BankTransferNetwork(value)
-	for _, existing := range []BankTransferNetwork{ "ach", "same-day-ach", "wire",   } {
+	for _, existing := range []BankTransferNetwork{"ach", "same-day-ach", "wire"} {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
@@ -82,4 +82,3 @@ func (v *NullableBankTransferNetwork) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

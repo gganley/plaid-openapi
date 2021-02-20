@@ -19,7 +19,7 @@ type PaymentInitiationRecipientListRequest struct {
 	// Your Plaid API `client_id`.
 	ClientId *string `json:"client_id,omitempty"`
 	// Your Plaid API `secret`.
-	Secret *string `json:"secret,omitempty"`
+	Secret               *string `json:"secret,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -175,5 +175,3 @@ func (v *NullablePaymentInitiationRecipientListRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

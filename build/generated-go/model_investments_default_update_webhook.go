@@ -21,13 +21,13 @@ type InvestmentsDefaultUpdateWebhook struct {
 	// `DEFAULT_UPDATE`
 	WebhookCode string `json:"webhook_code"`
 	// The `item_id` of the Item associated with this webhook, warning, or error
-	ItemId string `json:"item_id"`
-	Error NullableError `json:"error,omitempty"`
+	ItemId string        `json:"item_id"`
+	Error  NullableError `json:"error,omitempty"`
 	// The number of new transactions reported since the last time this webhook was fired.
 	NewInvestmentsTransactions float32 `json:"new_investments_transactions"`
 	// The number of canceled transactions reported since the last time this webhook was fired.
 	CanceledInvestmentsTransactions float32 `json:"canceled_investments_transactions"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties            map[string]interface{}
 }
 
 type _InvestmentsDefaultUpdateWebhook InvestmentsDefaultUpdateWebhook
@@ -36,7 +36,7 @@ type _InvestmentsDefaultUpdateWebhook InvestmentsDefaultUpdateWebhook
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInvestmentsDefaultUpdateWebhook(webhookType string, webhookCode string, itemId string, newInvestmentsTransactions float32, canceledInvestmentsTransactions float32, ) *InvestmentsDefaultUpdateWebhook {
+func NewInvestmentsDefaultUpdateWebhook(webhookType string, webhookCode string, itemId string, newInvestmentsTransactions float32, canceledInvestmentsTransactions float32) *InvestmentsDefaultUpdateWebhook {
 	this := InvestmentsDefaultUpdateWebhook{}
 	this.WebhookType = webhookType
 	this.WebhookCode = webhookCode
@@ -56,7 +56,7 @@ func NewInvestmentsDefaultUpdateWebhookWithDefaults() *InvestmentsDefaultUpdateW
 
 // GetWebhookType returns the WebhookType field value
 func (o *InvestmentsDefaultUpdateWebhook) GetWebhookType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *InvestmentsDefaultUpdateWebhook) GetWebhookType() string {
 // GetWebhookTypeOk returns a tuple with the WebhookType field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentsDefaultUpdateWebhook) GetWebhookTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookType, true
@@ -80,7 +80,7 @@ func (o *InvestmentsDefaultUpdateWebhook) SetWebhookType(v string) {
 
 // GetWebhookCode returns the WebhookCode field value
 func (o *InvestmentsDefaultUpdateWebhook) GetWebhookCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *InvestmentsDefaultUpdateWebhook) GetWebhookCode() string {
 // GetWebhookCodeOk returns a tuple with the WebhookCode field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentsDefaultUpdateWebhook) GetWebhookCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookCode, true
@@ -104,7 +104,7 @@ func (o *InvestmentsDefaultUpdateWebhook) SetWebhookCode(v string) {
 
 // GetItemId returns the ItemId field value
 func (o *InvestmentsDefaultUpdateWebhook) GetItemId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *InvestmentsDefaultUpdateWebhook) GetItemId() string {
 // GetItemIdOk returns a tuple with the ItemId field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentsDefaultUpdateWebhook) GetItemIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ItemId, true
@@ -139,7 +139,7 @@ func (o *InvestmentsDefaultUpdateWebhook) GetError() Error {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InvestmentsDefaultUpdateWebhook) GetErrorOk() (*Error, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Error.Get(), o.Error.IsSet()
@@ -158,6 +158,7 @@ func (o *InvestmentsDefaultUpdateWebhook) HasError() bool {
 func (o *InvestmentsDefaultUpdateWebhook) SetError(v Error) {
 	o.Error.Set(&v)
 }
+
 // SetErrorNil sets the value for Error to be an explicit nil
 func (o *InvestmentsDefaultUpdateWebhook) SetErrorNil() {
 	o.Error.Set(nil)
@@ -170,7 +171,7 @@ func (o *InvestmentsDefaultUpdateWebhook) UnsetError() {
 
 // GetNewInvestmentsTransactions returns the NewInvestmentsTransactions field value
 func (o *InvestmentsDefaultUpdateWebhook) GetNewInvestmentsTransactions() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -181,7 +182,7 @@ func (o *InvestmentsDefaultUpdateWebhook) GetNewInvestmentsTransactions() float3
 // GetNewInvestmentsTransactionsOk returns a tuple with the NewInvestmentsTransactions field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentsDefaultUpdateWebhook) GetNewInvestmentsTransactionsOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.NewInvestmentsTransactions, true
@@ -194,7 +195,7 @@ func (o *InvestmentsDefaultUpdateWebhook) SetNewInvestmentsTransactions(v float3
 
 // GetCanceledInvestmentsTransactions returns the CanceledInvestmentsTransactions field value
 func (o *InvestmentsDefaultUpdateWebhook) GetCanceledInvestmentsTransactions() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -205,7 +206,7 @@ func (o *InvestmentsDefaultUpdateWebhook) GetCanceledInvestmentsTransactions() f
 // GetCanceledInvestmentsTransactionsOk returns a tuple with the CanceledInvestmentsTransactions field value
 // and a boolean to check if the value has been set.
 func (o *InvestmentsDefaultUpdateWebhook) GetCanceledInvestmentsTransactionsOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.CanceledInvestmentsTransactions, true
@@ -301,5 +302,3 @@ func (v *NullableInvestmentsDefaultUpdateWebhook) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

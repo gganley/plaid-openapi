@@ -23,7 +23,7 @@ type VerificationExpiredWebhook struct {
 	// The `item_id` of the Item associated with this webhook, warning, or error
 	ItemId string `json:"item_id"`
 	// The `account_id` of the account associated with the webhook
-	AccountId string `json:"account_id"`
+	AccountId            string `json:"account_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -33,7 +33,7 @@ type _VerificationExpiredWebhook VerificationExpiredWebhook
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVerificationExpiredWebhook(webhookType string, webhookCode string, itemId string, accountId string, ) *VerificationExpiredWebhook {
+func NewVerificationExpiredWebhook(webhookType string, webhookCode string, itemId string, accountId string) *VerificationExpiredWebhook {
 	this := VerificationExpiredWebhook{}
 	this.WebhookType = webhookType
 	this.WebhookCode = webhookCode
@@ -52,7 +52,7 @@ func NewVerificationExpiredWebhookWithDefaults() *VerificationExpiredWebhook {
 
 // GetWebhookType returns the WebhookType field value
 func (o *VerificationExpiredWebhook) GetWebhookType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *VerificationExpiredWebhook) GetWebhookType() string {
 // GetWebhookTypeOk returns a tuple with the WebhookType field value
 // and a boolean to check if the value has been set.
 func (o *VerificationExpiredWebhook) GetWebhookTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookType, true
@@ -76,7 +76,7 @@ func (o *VerificationExpiredWebhook) SetWebhookType(v string) {
 
 // GetWebhookCode returns the WebhookCode field value
 func (o *VerificationExpiredWebhook) GetWebhookCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *VerificationExpiredWebhook) GetWebhookCode() string {
 // GetWebhookCodeOk returns a tuple with the WebhookCode field value
 // and a boolean to check if the value has been set.
 func (o *VerificationExpiredWebhook) GetWebhookCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookCode, true
@@ -100,7 +100,7 @@ func (o *VerificationExpiredWebhook) SetWebhookCode(v string) {
 
 // GetItemId returns the ItemId field value
 func (o *VerificationExpiredWebhook) GetItemId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *VerificationExpiredWebhook) GetItemId() string {
 // GetItemIdOk returns a tuple with the ItemId field value
 // and a boolean to check if the value has been set.
 func (o *VerificationExpiredWebhook) GetItemIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ItemId, true
@@ -124,7 +124,7 @@ func (o *VerificationExpiredWebhook) SetItemId(v string) {
 
 // GetAccountId returns the AccountId field value
 func (o *VerificationExpiredWebhook) GetAccountId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -135,7 +135,7 @@ func (o *VerificationExpiredWebhook) GetAccountId() string {
 // GetAccountIdOk returns a tuple with the AccountId field value
 // and a boolean to check if the value has been set.
 func (o *VerificationExpiredWebhook) GetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountId, true
@@ -223,5 +223,3 @@ func (v *NullableVerificationExpiredWebhook) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

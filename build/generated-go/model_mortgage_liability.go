@@ -27,8 +27,8 @@ type MortgageLiability struct {
 	// Indicates whether the borrower has private mortgage insurance in effect.
 	HasPmi NullableBool `json:"has_pmi,omitempty"`
 	// Indicates whether the borrower will pay a penalty for early payoff of mortgage.
-	HasPrepaymentPenalty NullableBool `json:"has_prepayment_penalty,omitempty"`
-	InterestRate *MortgageInterestRate `json:"interest_rate,omitempty"`
+	HasPrepaymentPenalty NullableBool          `json:"has_prepayment_penalty,omitempty"`
+	InterestRate         *MortgageInterestRate `json:"interest_rate,omitempty"`
 	// The amount of the last payment.
 	LastPaymentAmount NullableFloat32 `json:"last_payment_amount,omitempty"`
 	// The date of the last payment. Dates are returned in an ISO 8601 format (YYYY-MM-DD).
@@ -48,12 +48,12 @@ type MortgageLiability struct {
 	// The original principal balance of the mortgage.
 	OriginationPrincipalAmount NullableFloat32 `json:"origination_principal_amount,omitempty"`
 	// Amount of loan (principal + interest) past due for payment.
-	PastDueAmount NullableFloat32 `json:"past_due_amount,omitempty"`
+	PastDueAmount   NullableFloat32          `json:"past_due_amount,omitempty"`
 	PropertyAddress *MortgagePropertyAddress `json:"property_address,omitempty"`
 	// The year to date (YTD) interest paid.
 	YtdInterestPaid NullableFloat32 `json:"ytd_interest_paid,omitempty"`
 	// The YTD principal paid.
-	YtdPrincipalPaid NullableFloat32 `json:"ytd_principal_paid,omitempty"`
+	YtdPrincipalPaid     NullableFloat32 `json:"ytd_principal_paid,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -63,7 +63,7 @@ type _MortgageLiability MortgageLiability
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMortgageLiability(accountNumber string, ) *MortgageLiability {
+func NewMortgageLiability(accountNumber string) *MortgageLiability {
 	this := MortgageLiability{}
 	this.AccountNumber = accountNumber
 	return &this
@@ -90,7 +90,7 @@ func (o *MortgageLiability) GetAccountId() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgageLiability) GetAccountIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AccountId.Get(), o.AccountId.IsSet()
@@ -109,6 +109,7 @@ func (o *MortgageLiability) HasAccountId() bool {
 func (o *MortgageLiability) SetAccountId(v string) {
 	o.AccountId.Set(&v)
 }
+
 // SetAccountIdNil sets the value for AccountId to be an explicit nil
 func (o *MortgageLiability) SetAccountIdNil() {
 	o.AccountId.Set(nil)
@@ -121,7 +122,7 @@ func (o *MortgageLiability) UnsetAccountId() {
 
 // GetAccountNumber returns the AccountNumber field value
 func (o *MortgageLiability) GetAccountNumber() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -132,7 +133,7 @@ func (o *MortgageLiability) GetAccountNumber() string {
 // GetAccountNumberOk returns a tuple with the AccountNumber field value
 // and a boolean to check if the value has been set.
 func (o *MortgageLiability) GetAccountNumberOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountNumber, true
@@ -156,7 +157,7 @@ func (o *MortgageLiability) GetCurrentLateFee() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgageLiability) GetCurrentLateFeeOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CurrentLateFee.Get(), o.CurrentLateFee.IsSet()
@@ -175,6 +176,7 @@ func (o *MortgageLiability) HasCurrentLateFee() bool {
 func (o *MortgageLiability) SetCurrentLateFee(v float32) {
 	o.CurrentLateFee.Set(&v)
 }
+
 // SetCurrentLateFeeNil sets the value for CurrentLateFee to be an explicit nil
 func (o *MortgageLiability) SetCurrentLateFeeNil() {
 	o.CurrentLateFee.Set(nil)
@@ -198,7 +200,7 @@ func (o *MortgageLiability) GetEscrowBalance() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgageLiability) GetEscrowBalanceOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.EscrowBalance.Get(), o.EscrowBalance.IsSet()
@@ -217,6 +219,7 @@ func (o *MortgageLiability) HasEscrowBalance() bool {
 func (o *MortgageLiability) SetEscrowBalance(v float32) {
 	o.EscrowBalance.Set(&v)
 }
+
 // SetEscrowBalanceNil sets the value for EscrowBalance to be an explicit nil
 func (o *MortgageLiability) SetEscrowBalanceNil() {
 	o.EscrowBalance.Set(nil)
@@ -240,7 +243,7 @@ func (o *MortgageLiability) GetHasPmi() bool {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgageLiability) GetHasPmiOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.HasPmi.Get(), o.HasPmi.IsSet()
@@ -259,6 +262,7 @@ func (o *MortgageLiability) HasHasPmi() bool {
 func (o *MortgageLiability) SetHasPmi(v bool) {
 	o.HasPmi.Set(&v)
 }
+
 // SetHasPmiNil sets the value for HasPmi to be an explicit nil
 func (o *MortgageLiability) SetHasPmiNil() {
 	o.HasPmi.Set(nil)
@@ -282,7 +286,7 @@ func (o *MortgageLiability) GetHasPrepaymentPenalty() bool {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgageLiability) GetHasPrepaymentPenaltyOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.HasPrepaymentPenalty.Get(), o.HasPrepaymentPenalty.IsSet()
@@ -301,6 +305,7 @@ func (o *MortgageLiability) HasHasPrepaymentPenalty() bool {
 func (o *MortgageLiability) SetHasPrepaymentPenalty(v bool) {
 	o.HasPrepaymentPenalty.Set(&v)
 }
+
 // SetHasPrepaymentPenaltyNil sets the value for HasPrepaymentPenalty to be an explicit nil
 func (o *MortgageLiability) SetHasPrepaymentPenaltyNil() {
 	o.HasPrepaymentPenalty.Set(nil)
@@ -356,7 +361,7 @@ func (o *MortgageLiability) GetLastPaymentAmount() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgageLiability) GetLastPaymentAmountOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LastPaymentAmount.Get(), o.LastPaymentAmount.IsSet()
@@ -375,6 +380,7 @@ func (o *MortgageLiability) HasLastPaymentAmount() bool {
 func (o *MortgageLiability) SetLastPaymentAmount(v float32) {
 	o.LastPaymentAmount.Set(&v)
 }
+
 // SetLastPaymentAmountNil sets the value for LastPaymentAmount to be an explicit nil
 func (o *MortgageLiability) SetLastPaymentAmountNil() {
 	o.LastPaymentAmount.Set(nil)
@@ -398,7 +404,7 @@ func (o *MortgageLiability) GetLastPaymentDate() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgageLiability) GetLastPaymentDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LastPaymentDate.Get(), o.LastPaymentDate.IsSet()
@@ -417,6 +423,7 @@ func (o *MortgageLiability) HasLastPaymentDate() bool {
 func (o *MortgageLiability) SetLastPaymentDate(v string) {
 	o.LastPaymentDate.Set(&v)
 }
+
 // SetLastPaymentDateNil sets the value for LastPaymentDate to be an explicit nil
 func (o *MortgageLiability) SetLastPaymentDateNil() {
 	o.LastPaymentDate.Set(nil)
@@ -440,7 +447,7 @@ func (o *MortgageLiability) GetLoanTypeDescription() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgageLiability) GetLoanTypeDescriptionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LoanTypeDescription.Get(), o.LoanTypeDescription.IsSet()
@@ -459,6 +466,7 @@ func (o *MortgageLiability) HasLoanTypeDescription() bool {
 func (o *MortgageLiability) SetLoanTypeDescription(v string) {
 	o.LoanTypeDescription.Set(&v)
 }
+
 // SetLoanTypeDescriptionNil sets the value for LoanTypeDescription to be an explicit nil
 func (o *MortgageLiability) SetLoanTypeDescriptionNil() {
 	o.LoanTypeDescription.Set(nil)
@@ -482,7 +490,7 @@ func (o *MortgageLiability) GetLoanTerm() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgageLiability) GetLoanTermOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LoanTerm.Get(), o.LoanTerm.IsSet()
@@ -501,6 +509,7 @@ func (o *MortgageLiability) HasLoanTerm() bool {
 func (o *MortgageLiability) SetLoanTerm(v string) {
 	o.LoanTerm.Set(&v)
 }
+
 // SetLoanTermNil sets the value for LoanTerm to be an explicit nil
 func (o *MortgageLiability) SetLoanTermNil() {
 	o.LoanTerm.Set(nil)
@@ -524,7 +533,7 @@ func (o *MortgageLiability) GetMaturityDate() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgageLiability) GetMaturityDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MaturityDate.Get(), o.MaturityDate.IsSet()
@@ -543,6 +552,7 @@ func (o *MortgageLiability) HasMaturityDate() bool {
 func (o *MortgageLiability) SetMaturityDate(v string) {
 	o.MaturityDate.Set(&v)
 }
+
 // SetMaturityDateNil sets the value for MaturityDate to be an explicit nil
 func (o *MortgageLiability) SetMaturityDateNil() {
 	o.MaturityDate.Set(nil)
@@ -566,7 +576,7 @@ func (o *MortgageLiability) GetNextMonthlyPayment() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgageLiability) GetNextMonthlyPaymentOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NextMonthlyPayment.Get(), o.NextMonthlyPayment.IsSet()
@@ -585,6 +595,7 @@ func (o *MortgageLiability) HasNextMonthlyPayment() bool {
 func (o *MortgageLiability) SetNextMonthlyPayment(v float32) {
 	o.NextMonthlyPayment.Set(&v)
 }
+
 // SetNextMonthlyPaymentNil sets the value for NextMonthlyPayment to be an explicit nil
 func (o *MortgageLiability) SetNextMonthlyPaymentNil() {
 	o.NextMonthlyPayment.Set(nil)
@@ -608,7 +619,7 @@ func (o *MortgageLiability) GetNextPaymentDueDate() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgageLiability) GetNextPaymentDueDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NextPaymentDueDate.Get(), o.NextPaymentDueDate.IsSet()
@@ -627,6 +638,7 @@ func (o *MortgageLiability) HasNextPaymentDueDate() bool {
 func (o *MortgageLiability) SetNextPaymentDueDate(v string) {
 	o.NextPaymentDueDate.Set(&v)
 }
+
 // SetNextPaymentDueDateNil sets the value for NextPaymentDueDate to be an explicit nil
 func (o *MortgageLiability) SetNextPaymentDueDateNil() {
 	o.NextPaymentDueDate.Set(nil)
@@ -650,7 +662,7 @@ func (o *MortgageLiability) GetOriginationDate() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgageLiability) GetOriginationDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.OriginationDate.Get(), o.OriginationDate.IsSet()
@@ -669,6 +681,7 @@ func (o *MortgageLiability) HasOriginationDate() bool {
 func (o *MortgageLiability) SetOriginationDate(v string) {
 	o.OriginationDate.Set(&v)
 }
+
 // SetOriginationDateNil sets the value for OriginationDate to be an explicit nil
 func (o *MortgageLiability) SetOriginationDateNil() {
 	o.OriginationDate.Set(nil)
@@ -692,7 +705,7 @@ func (o *MortgageLiability) GetOriginationPrincipalAmount() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgageLiability) GetOriginationPrincipalAmountOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.OriginationPrincipalAmount.Get(), o.OriginationPrincipalAmount.IsSet()
@@ -711,6 +724,7 @@ func (o *MortgageLiability) HasOriginationPrincipalAmount() bool {
 func (o *MortgageLiability) SetOriginationPrincipalAmount(v float32) {
 	o.OriginationPrincipalAmount.Set(&v)
 }
+
 // SetOriginationPrincipalAmountNil sets the value for OriginationPrincipalAmount to be an explicit nil
 func (o *MortgageLiability) SetOriginationPrincipalAmountNil() {
 	o.OriginationPrincipalAmount.Set(nil)
@@ -734,7 +748,7 @@ func (o *MortgageLiability) GetPastDueAmount() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgageLiability) GetPastDueAmountOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PastDueAmount.Get(), o.PastDueAmount.IsSet()
@@ -753,6 +767,7 @@ func (o *MortgageLiability) HasPastDueAmount() bool {
 func (o *MortgageLiability) SetPastDueAmount(v float32) {
 	o.PastDueAmount.Set(&v)
 }
+
 // SetPastDueAmountNil sets the value for PastDueAmount to be an explicit nil
 func (o *MortgageLiability) SetPastDueAmountNil() {
 	o.PastDueAmount.Set(nil)
@@ -808,7 +823,7 @@ func (o *MortgageLiability) GetYtdInterestPaid() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgageLiability) GetYtdInterestPaidOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.YtdInterestPaid.Get(), o.YtdInterestPaid.IsSet()
@@ -827,6 +842,7 @@ func (o *MortgageLiability) HasYtdInterestPaid() bool {
 func (o *MortgageLiability) SetYtdInterestPaid(v float32) {
 	o.YtdInterestPaid.Set(&v)
 }
+
 // SetYtdInterestPaidNil sets the value for YtdInterestPaid to be an explicit nil
 func (o *MortgageLiability) SetYtdInterestPaidNil() {
 	o.YtdInterestPaid.Set(nil)
@@ -850,7 +866,7 @@ func (o *MortgageLiability) GetYtdPrincipalPaid() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MortgageLiability) GetYtdPrincipalPaidOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.YtdPrincipalPaid.Get(), o.YtdPrincipalPaid.IsSet()
@@ -869,6 +885,7 @@ func (o *MortgageLiability) HasYtdPrincipalPaid() bool {
 func (o *MortgageLiability) SetYtdPrincipalPaid(v float32) {
 	o.YtdPrincipalPaid.Set(&v)
 }
+
 // SetYtdPrincipalPaidNil sets the value for YtdPrincipalPaid to be an explicit nil
 func (o *MortgageLiability) SetYtdPrincipalPaidNil() {
 	o.YtdPrincipalPaid.Set(nil)
@@ -1020,5 +1037,3 @@ func (v *NullableMortgageLiability) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

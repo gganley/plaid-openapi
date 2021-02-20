@@ -19,7 +19,7 @@ type BankTransferBalance struct {
 	// The total available balance - the sum of all successful debit transfer amounts minus all credit transfer amounts.
 	Available string `json:"available"`
 	// The transactable balance shows the amount in your account that you are able to use for transfers, and is essentially your available balance minus your minimum balance.
-	Transactable string `json:"transactable"`
+	Transactable         string `json:"transactable"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _BankTransferBalance BankTransferBalance
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBankTransferBalance(available string, transactable string, ) *BankTransferBalance {
+func NewBankTransferBalance(available string, transactable string) *BankTransferBalance {
 	this := BankTransferBalance{}
 	this.Available = available
 	this.Transactable = transactable
@@ -46,7 +46,7 @@ func NewBankTransferBalanceWithDefaults() *BankTransferBalance {
 
 // GetAvailable returns the Available field value
 func (o *BankTransferBalance) GetAvailable() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *BankTransferBalance) GetAvailable() string {
 // GetAvailableOk returns a tuple with the Available field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferBalance) GetAvailableOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Available, true
@@ -70,7 +70,7 @@ func (o *BankTransferBalance) SetAvailable(v string) {
 
 // GetTransactable returns the Transactable field value
 func (o *BankTransferBalance) GetTransactable() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *BankTransferBalance) GetTransactable() string {
 // GetTransactableOk returns a tuple with the Transactable field value
 // and a boolean to check if the value has been set.
 func (o *BankTransferBalance) GetTransactableOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Transactable, true
@@ -161,5 +161,3 @@ func (v *NullableBankTransferBalance) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

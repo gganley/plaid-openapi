@@ -25,7 +25,7 @@ type DepositSwitchAddressData struct {
 	// The postal code
 	PostalCode string `json:"postal_code"`
 	// The ISO 3166-1 alpha-2 country code
-	Country string `json:"country"`
+	Country              string `json:"country"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -35,7 +35,7 @@ type _DepositSwitchAddressData DepositSwitchAddressData
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDepositSwitchAddressData(city string, region string, street string, postalCode string, country string, ) *DepositSwitchAddressData {
+func NewDepositSwitchAddressData(city string, region string, street string, postalCode string, country string) *DepositSwitchAddressData {
 	this := DepositSwitchAddressData{}
 	this.City = city
 	this.Region = region
@@ -55,7 +55,7 @@ func NewDepositSwitchAddressDataWithDefaults() *DepositSwitchAddressData {
 
 // GetCity returns the City field value
 func (o *DepositSwitchAddressData) GetCity() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *DepositSwitchAddressData) GetCity() string {
 // GetCityOk returns a tuple with the City field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchAddressData) GetCityOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.City, true
@@ -79,7 +79,7 @@ func (o *DepositSwitchAddressData) SetCity(v string) {
 
 // GetRegion returns the Region field value
 func (o *DepositSwitchAddressData) GetRegion() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *DepositSwitchAddressData) GetRegion() string {
 // GetRegionOk returns a tuple with the Region field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchAddressData) GetRegionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Region, true
@@ -103,7 +103,7 @@ func (o *DepositSwitchAddressData) SetRegion(v string) {
 
 // GetStreet returns the Street field value
 func (o *DepositSwitchAddressData) GetStreet() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *DepositSwitchAddressData) GetStreet() string {
 // GetStreetOk returns a tuple with the Street field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchAddressData) GetStreetOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Street, true
@@ -127,7 +127,7 @@ func (o *DepositSwitchAddressData) SetStreet(v string) {
 
 // GetPostalCode returns the PostalCode field value
 func (o *DepositSwitchAddressData) GetPostalCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *DepositSwitchAddressData) GetPostalCode() string {
 // GetPostalCodeOk returns a tuple with the PostalCode field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchAddressData) GetPostalCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PostalCode, true
@@ -151,7 +151,7 @@ func (o *DepositSwitchAddressData) SetPostalCode(v string) {
 
 // GetCountry returns the Country field value
 func (o *DepositSwitchAddressData) GetCountry() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *DepositSwitchAddressData) GetCountry() string {
 // GetCountryOk returns a tuple with the Country field value
 // and a boolean to check if the value has been set.
 func (o *DepositSwitchAddressData) GetCountryOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Country, true
@@ -254,5 +254,3 @@ func (v *NullableDepositSwitchAddressData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

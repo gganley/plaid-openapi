@@ -23,8 +23,8 @@ type WebhookUpdateAcknowledgedWebhook struct {
 	// The `item_id` of the Item associated with this webhook, warning, or error
 	ItemId string `json:"item_id"`
 	// The new webhook URL
-	NewWebhookUrl string `json:"new_webhook_url"`
-	Error NullableError `json:"error,omitempty"`
+	NewWebhookUrl        string        `json:"new_webhook_url"`
+	Error                NullableError `json:"error,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _WebhookUpdateAcknowledgedWebhook WebhookUpdateAcknowledgedWebhook
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWebhookUpdateAcknowledgedWebhook(webhookType string, webhookCode string, itemId string, newWebhookUrl string, ) *WebhookUpdateAcknowledgedWebhook {
+func NewWebhookUpdateAcknowledgedWebhook(webhookType string, webhookCode string, itemId string, newWebhookUrl string) *WebhookUpdateAcknowledgedWebhook {
 	this := WebhookUpdateAcknowledgedWebhook{}
 	this.WebhookType = webhookType
 	this.WebhookCode = webhookCode
@@ -53,7 +53,7 @@ func NewWebhookUpdateAcknowledgedWebhookWithDefaults() *WebhookUpdateAcknowledge
 
 // GetWebhookType returns the WebhookType field value
 func (o *WebhookUpdateAcknowledgedWebhook) GetWebhookType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -64,7 +64,7 @@ func (o *WebhookUpdateAcknowledgedWebhook) GetWebhookType() string {
 // GetWebhookTypeOk returns a tuple with the WebhookType field value
 // and a boolean to check if the value has been set.
 func (o *WebhookUpdateAcknowledgedWebhook) GetWebhookTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookType, true
@@ -77,7 +77,7 @@ func (o *WebhookUpdateAcknowledgedWebhook) SetWebhookType(v string) {
 
 // GetWebhookCode returns the WebhookCode field value
 func (o *WebhookUpdateAcknowledgedWebhook) GetWebhookCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *WebhookUpdateAcknowledgedWebhook) GetWebhookCode() string {
 // GetWebhookCodeOk returns a tuple with the WebhookCode field value
 // and a boolean to check if the value has been set.
 func (o *WebhookUpdateAcknowledgedWebhook) GetWebhookCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebhookCode, true
@@ -101,7 +101,7 @@ func (o *WebhookUpdateAcknowledgedWebhook) SetWebhookCode(v string) {
 
 // GetItemId returns the ItemId field value
 func (o *WebhookUpdateAcknowledgedWebhook) GetItemId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *WebhookUpdateAcknowledgedWebhook) GetItemId() string {
 // GetItemIdOk returns a tuple with the ItemId field value
 // and a boolean to check if the value has been set.
 func (o *WebhookUpdateAcknowledgedWebhook) GetItemIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ItemId, true
@@ -125,7 +125,7 @@ func (o *WebhookUpdateAcknowledgedWebhook) SetItemId(v string) {
 
 // GetNewWebhookUrl returns the NewWebhookUrl field value
 func (o *WebhookUpdateAcknowledgedWebhook) GetNewWebhookUrl() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *WebhookUpdateAcknowledgedWebhook) GetNewWebhookUrl() string {
 // GetNewWebhookUrlOk returns a tuple with the NewWebhookUrl field value
 // and a boolean to check if the value has been set.
 func (o *WebhookUpdateAcknowledgedWebhook) GetNewWebhookUrlOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.NewWebhookUrl, true
@@ -160,7 +160,7 @@ func (o *WebhookUpdateAcknowledgedWebhook) GetError() Error {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WebhookUpdateAcknowledgedWebhook) GetErrorOk() (*Error, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Error.Get(), o.Error.IsSet()
@@ -179,6 +179,7 @@ func (o *WebhookUpdateAcknowledgedWebhook) HasError() bool {
 func (o *WebhookUpdateAcknowledgedWebhook) SetError(v Error) {
 	o.Error.Set(&v)
 }
+
 // SetErrorNil sets the value for Error to be an explicit nil
 func (o *WebhookUpdateAcknowledgedWebhook) SetErrorNil() {
 	o.Error.Set(nil)
@@ -270,5 +271,3 @@ func (v *NullableWebhookUpdateAcknowledgedWebhook) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

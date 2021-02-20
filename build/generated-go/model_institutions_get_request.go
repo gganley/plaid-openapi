@@ -24,9 +24,9 @@ type InstitutionsGetRequest struct {
 	Count int32 `json:"count"`
 	// The number of Institutions to skip.
 	Offset int32 `json:"offset"`
-	// Specify an array of Plaid-supported country codes this institution supports, using the ISO-3166-1 alpha-2 country code standard. 
-	CountryCodes []CountryCode `json:"country_codes"`
-	Options *InstitutionsGetRequestOptions `json:"options,omitempty"`
+	// Specify an array of Plaid-supported country codes this institution supports, using the ISO-3166-1 alpha-2 country code standard.
+	CountryCodes         []CountryCode                  `json:"country_codes"`
+	Options              *InstitutionsGetRequestOptions `json:"options,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -36,7 +36,7 @@ type _InstitutionsGetRequest InstitutionsGetRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInstitutionsGetRequest(count int32, offset int32, countryCodes []CountryCode, ) *InstitutionsGetRequest {
+func NewInstitutionsGetRequest(count int32, offset int32, countryCodes []CountryCode) *InstitutionsGetRequest {
 	this := InstitutionsGetRequest{}
 	this.Count = count
 	this.Offset = offset
@@ -118,7 +118,7 @@ func (o *InstitutionsGetRequest) SetSecret(v string) {
 
 // GetCount returns the Count field value
 func (o *InstitutionsGetRequest) GetCount() int32 {
-	if o == nil  {
+	if o == nil {
 		var ret int32
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *InstitutionsGetRequest) GetCount() int32 {
 // GetCountOk returns a tuple with the Count field value
 // and a boolean to check if the value has been set.
 func (o *InstitutionsGetRequest) GetCountOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Count, true
@@ -142,7 +142,7 @@ func (o *InstitutionsGetRequest) SetCount(v int32) {
 
 // GetOffset returns the Offset field value
 func (o *InstitutionsGetRequest) GetOffset() int32 {
-	if o == nil  {
+	if o == nil {
 		var ret int32
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *InstitutionsGetRequest) GetOffset() int32 {
 // GetOffsetOk returns a tuple with the Offset field value
 // and a boolean to check if the value has been set.
 func (o *InstitutionsGetRequest) GetOffsetOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Offset, true
@@ -166,7 +166,7 @@ func (o *InstitutionsGetRequest) SetOffset(v int32) {
 
 // GetCountryCodes returns the CountryCodes field value
 func (o *InstitutionsGetRequest) GetCountryCodes() []CountryCode {
-	if o == nil  {
+	if o == nil {
 		var ret []CountryCode
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *InstitutionsGetRequest) GetCountryCodes() []CountryCode {
 // GetCountryCodesOk returns a tuple with the CountryCodes field value
 // and a boolean to check if the value has been set.
 func (o *InstitutionsGetRequest) GetCountryCodesOk() (*[]CountryCode, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.CountryCodes, true
@@ -305,5 +305,3 @@ func (v *NullableInstitutionsGetRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

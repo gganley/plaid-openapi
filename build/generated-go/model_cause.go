@@ -17,8 +17,8 @@ import (
 // Cause An error object and associated `item_id` used to identify a specific Item and error when a batch operation operating on multiple Items has encountered an error in one of the Items.
 type Cause struct {
 	// The `item_id` of the Item associated with this webhook, warning, or error
-	ItemId string `json:"item_id"`
-	Error NullableError `json:"error"`
+	ItemId               string        `json:"item_id"`
+	Error                NullableError `json:"error"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -28,7 +28,7 @@ type _Cause Cause
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCause(itemId string, error_ NullableError, ) *Cause {
+func NewCause(itemId string, error_ NullableError) *Cause {
 	this := Cause{}
 	this.ItemId = itemId
 	this.Error = error_
@@ -45,7 +45,7 @@ func NewCauseWithDefaults() *Cause {
 
 // GetItemId returns the ItemId field value
 func (o *Cause) GetItemId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *Cause) GetItemId() string {
 // GetItemIdOk returns a tuple with the ItemId field value
 // and a boolean to check if the value has been set.
 func (o *Cause) GetItemIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ItemId, true
@@ -82,7 +82,7 @@ func (o *Cause) GetError() Error {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Cause) GetErrorOk() (*Error, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Error.Get(), o.Error.IsSet()
@@ -162,5 +162,3 @@ func (v *NullableCause) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

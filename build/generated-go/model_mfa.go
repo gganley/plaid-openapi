@@ -18,15 +18,15 @@ import (
 type MFA struct {
 	// Possible values are `device`, `selections`, or `questions`.  If value is `device`, the MFA answer is `1234`.  If value is `selections`, the MFA answer is always the first option.  If value is `questions`, the MFA answer is  `answer_<i>_<j>` for the j-th question in the i-th round, starting from 0. For example, the answer to the first question in the second round is `answer_1_0`.
 	Type string `json:"type"`
-	// Number of rounds of questions. Required if value of `type` is `questions`. 
+	// Number of rounds of questions. Required if value of `type` is `questions`.
 	QuestionRounds float32 `json:"question_rounds"`
 	// Number of questions per round. Required if value of `type` is `questions`. If value of type is `selections`, default value is 2.
 	QuestionsPerRound float32 `json:"questions_per_round"`
 	// Number of rounds of selections, used if `type` is `selections`. Defaults to 1.
 	SelectionRounds float32 `json:"selection_rounds"`
-	// Number of available answers per question, used if `type` is `selection`. Defaults to 2. 
+	// Number of available answers per question, used if `type` is `selection`. Defaults to 2.
 	SelectionsPerQuestion float32 `json:"selections_per_question"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties  map[string]interface{}
 }
 
 type _MFA MFA
@@ -35,7 +35,7 @@ type _MFA MFA
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMFA(type_ string, questionRounds float32, questionsPerRound float32, selectionRounds float32, selectionsPerQuestion float32, ) *MFA {
+func NewMFA(type_ string, questionRounds float32, questionsPerRound float32, selectionRounds float32, selectionsPerQuestion float32) *MFA {
 	this := MFA{}
 	this.Type = type_
 	this.QuestionRounds = questionRounds
@@ -55,7 +55,7 @@ func NewMFAWithDefaults() *MFA {
 
 // GetType returns the Type field value
 func (o *MFA) GetType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *MFA) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *MFA) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -79,7 +79,7 @@ func (o *MFA) SetType(v string) {
 
 // GetQuestionRounds returns the QuestionRounds field value
 func (o *MFA) GetQuestionRounds() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *MFA) GetQuestionRounds() float32 {
 // GetQuestionRoundsOk returns a tuple with the QuestionRounds field value
 // and a boolean to check if the value has been set.
 func (o *MFA) GetQuestionRoundsOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.QuestionRounds, true
@@ -103,7 +103,7 @@ func (o *MFA) SetQuestionRounds(v float32) {
 
 // GetQuestionsPerRound returns the QuestionsPerRound field value
 func (o *MFA) GetQuestionsPerRound() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *MFA) GetQuestionsPerRound() float32 {
 // GetQuestionsPerRoundOk returns a tuple with the QuestionsPerRound field value
 // and a boolean to check if the value has been set.
 func (o *MFA) GetQuestionsPerRoundOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.QuestionsPerRound, true
@@ -127,7 +127,7 @@ func (o *MFA) SetQuestionsPerRound(v float32) {
 
 // GetSelectionRounds returns the SelectionRounds field value
 func (o *MFA) GetSelectionRounds() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *MFA) GetSelectionRounds() float32 {
 // GetSelectionRoundsOk returns a tuple with the SelectionRounds field value
 // and a boolean to check if the value has been set.
 func (o *MFA) GetSelectionRoundsOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.SelectionRounds, true
@@ -151,7 +151,7 @@ func (o *MFA) SetSelectionRounds(v float32) {
 
 // GetSelectionsPerQuestion returns the SelectionsPerQuestion field value
 func (o *MFA) GetSelectionsPerQuestion() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *MFA) GetSelectionsPerQuestion() float32 {
 // GetSelectionsPerQuestionOk returns a tuple with the SelectionsPerQuestion field value
 // and a boolean to check if the value has been set.
 func (o *MFA) GetSelectionsPerQuestionOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.SelectionsPerQuestion, true
@@ -254,5 +254,3 @@ func (v *NullableMFA) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

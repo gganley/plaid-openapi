@@ -21,7 +21,7 @@ type ProcessorAuthGetRequest struct {
 	// Your Plaid API `secret`.
 	Secret *string `json:"secret,omitempty"`
 	// The processor token obtained from the Plaid integration partner. Processor tokens are in the format: `processor-<environment>-<identifier>`
-	ProcessorToken string `json:"processor_token"`
+	ProcessorToken       string `json:"processor_token"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _ProcessorAuthGetRequest ProcessorAuthGetRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProcessorAuthGetRequest(processorToken string, ) *ProcessorAuthGetRequest {
+func NewProcessorAuthGetRequest(processorToken string) *ProcessorAuthGetRequest {
 	this := ProcessorAuthGetRequest{}
 	this.ProcessorToken = processorToken
 	return &this
@@ -111,7 +111,7 @@ func (o *ProcessorAuthGetRequest) SetSecret(v string) {
 
 // GetProcessorToken returns the ProcessorToken field value
 func (o *ProcessorAuthGetRequest) GetProcessorToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *ProcessorAuthGetRequest) GetProcessorToken() string {
 // GetProcessorTokenOk returns a tuple with the ProcessorToken field value
 // and a boolean to check if the value has been set.
 func (o *ProcessorAuthGetRequest) GetProcessorTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ProcessorToken, true
@@ -206,5 +206,3 @@ func (v *NullableProcessorAuthGetRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

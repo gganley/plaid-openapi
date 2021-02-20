@@ -19,8 +19,8 @@ type AssetReportCreateRequestOptions struct {
 	// Client-generated identifier, which can be used by lenders to track loan applications.
 	ClientReportId *string `json:"client_report_id,omitempty"`
 	// URL to which Plaid will send Assets webhooks, for example when the requested Asset Report is ready.
-	Webhook *string `json:"webhook,omitempty"`
-	User *AssetReportUser `json:"user,omitempty"`
+	Webhook              *string          `json:"webhook,omitempty"`
+	User                 *AssetReportUser `json:"user,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -212,5 +212,3 @@ func (v *NullableAssetReportCreateRequestOptions) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

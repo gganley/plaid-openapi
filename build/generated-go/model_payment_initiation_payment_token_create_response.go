@@ -21,7 +21,7 @@ type PaymentInitiationPaymentTokenCreateResponse struct {
 	// The date and time at which the token will expire, in ISO 8601 format. A `payment_token` expires after 15 minutes.
 	PaymentTokenExpirationTime string `json:"payment_token_expiration_time"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,7 +31,7 @@ type _PaymentInitiationPaymentTokenCreateResponse PaymentInitiationPaymentTokenC
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaymentInitiationPaymentTokenCreateResponse(paymentToken string, paymentTokenExpirationTime string, requestId string, ) *PaymentInitiationPaymentTokenCreateResponse {
+func NewPaymentInitiationPaymentTokenCreateResponse(paymentToken string, paymentTokenExpirationTime string, requestId string) *PaymentInitiationPaymentTokenCreateResponse {
 	this := PaymentInitiationPaymentTokenCreateResponse{}
 	this.PaymentToken = paymentToken
 	this.PaymentTokenExpirationTime = paymentTokenExpirationTime
@@ -49,7 +49,7 @@ func NewPaymentInitiationPaymentTokenCreateResponseWithDefaults() *PaymentInitia
 
 // GetPaymentToken returns the PaymentToken field value
 func (o *PaymentInitiationPaymentTokenCreateResponse) GetPaymentToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *PaymentInitiationPaymentTokenCreateResponse) GetPaymentToken() string {
 // GetPaymentTokenOk returns a tuple with the PaymentToken field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationPaymentTokenCreateResponse) GetPaymentTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PaymentToken, true
@@ -73,7 +73,7 @@ func (o *PaymentInitiationPaymentTokenCreateResponse) SetPaymentToken(v string) 
 
 // GetPaymentTokenExpirationTime returns the PaymentTokenExpirationTime field value
 func (o *PaymentInitiationPaymentTokenCreateResponse) GetPaymentTokenExpirationTime() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *PaymentInitiationPaymentTokenCreateResponse) GetPaymentTokenExpirationT
 // GetPaymentTokenExpirationTimeOk returns a tuple with the PaymentTokenExpirationTime field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationPaymentTokenCreateResponse) GetPaymentTokenExpirationTimeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PaymentTokenExpirationTime, true
@@ -97,7 +97,7 @@ func (o *PaymentInitiationPaymentTokenCreateResponse) SetPaymentTokenExpirationT
 
 // GetRequestId returns the RequestId field value
 func (o *PaymentInitiationPaymentTokenCreateResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *PaymentInitiationPaymentTokenCreateResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationPaymentTokenCreateResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -192,5 +192,3 @@ func (v *NullablePaymentInitiationPaymentTokenCreateResponse) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,7 +19,7 @@ type PaymentInitiationRecipientCreateResponse struct {
 	// A unique ID identifying the recipient
 	RecipientId string `json:"recipient_id"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _PaymentInitiationRecipientCreateResponse PaymentInitiationRecipientCreateR
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaymentInitiationRecipientCreateResponse(recipientId string, requestId string, ) *PaymentInitiationRecipientCreateResponse {
+func NewPaymentInitiationRecipientCreateResponse(recipientId string, requestId string) *PaymentInitiationRecipientCreateResponse {
 	this := PaymentInitiationRecipientCreateResponse{}
 	this.RecipientId = recipientId
 	this.RequestId = requestId
@@ -46,7 +46,7 @@ func NewPaymentInitiationRecipientCreateResponseWithDefaults() *PaymentInitiatio
 
 // GetRecipientId returns the RecipientId field value
 func (o *PaymentInitiationRecipientCreateResponse) GetRecipientId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *PaymentInitiationRecipientCreateResponse) GetRecipientId() string {
 // GetRecipientIdOk returns a tuple with the RecipientId field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationRecipientCreateResponse) GetRecipientIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RecipientId, true
@@ -70,7 +70,7 @@ func (o *PaymentInitiationRecipientCreateResponse) SetRecipientId(v string) {
 
 // GetRequestId returns the RequestId field value
 func (o *PaymentInitiationRecipientCreateResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *PaymentInitiationRecipientCreateResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *PaymentInitiationRecipientCreateResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -161,5 +161,3 @@ func (v *NullablePaymentInitiationRecipientCreateResponse) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

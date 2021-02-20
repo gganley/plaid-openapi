@@ -19,9 +19,9 @@ type InstitutionsSearchRequestOptions struct {
 	// Limit results to institutions with or without OAuth login flows. This is primarily relevant to institutions with European country codes
 	Oauth *bool `json:"oauth,omitempty"`
 	// When true, return the institution's homepage URL, logo and primary brand color. Learn more
-	IncludeOptionalMetadata *bool `json:"include_optional_metadata,omitempty"`
-	AccountFilter *InstitutionsSearchAccountFilter `json:"account_filter,omitempty"`
-	AdditionalProperties map[string]interface{}
+	IncludeOptionalMetadata *bool                            `json:"include_optional_metadata,omitempty"`
+	AccountFilter           *InstitutionsSearchAccountFilter `json:"account_filter,omitempty"`
+	AdditionalProperties    map[string]interface{}
 }
 
 type _InstitutionsSearchRequestOptions InstitutionsSearchRequestOptions
@@ -212,5 +212,3 @@ func (v *NullableInstitutionsSearchRequestOptions) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

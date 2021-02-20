@@ -33,8 +33,8 @@ type Institution struct {
 	// A partial list of routing numbers associated with the institution. This list is provided for the purpose of looking up institutions by routing number. It is not comprehensive and should never be used as a complete list of routing numbers for an institution.
 	RoutingNumbers []string `json:"routing_numbers,omitempty"`
 	// Indicates that the institution has an OAuth login flow. This is primarily relevant to institutions with European country codes.
-	Oauth bool `json:"oauth"`
-	Status *InstitutionStatus `json:"status,omitempty"`
+	Oauth                bool               `json:"oauth"`
+	Status               *InstitutionStatus `json:"status,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,7 +44,7 @@ type _Institution Institution
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInstitution(institutionId string, name string, products []Products, countryCodes []CountryCode, oauth bool, ) *Institution {
+func NewInstitution(institutionId string, name string, products []Products, countryCodes []CountryCode, oauth bool) *Institution {
 	this := Institution{}
 	this.InstitutionId = institutionId
 	this.Name = name
@@ -64,7 +64,7 @@ func NewInstitutionWithDefaults() *Institution {
 
 // GetInstitutionId returns the InstitutionId field value
 func (o *Institution) GetInstitutionId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -75,7 +75,7 @@ func (o *Institution) GetInstitutionId() string {
 // GetInstitutionIdOk returns a tuple with the InstitutionId field value
 // and a boolean to check if the value has been set.
 func (o *Institution) GetInstitutionIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.InstitutionId, true
@@ -88,7 +88,7 @@ func (o *Institution) SetInstitutionId(v string) {
 
 // GetName returns the Name field value
 func (o *Institution) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -99,7 +99,7 @@ func (o *Institution) GetName() string {
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *Institution) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Name, true
@@ -112,7 +112,7 @@ func (o *Institution) SetName(v string) {
 
 // GetProducts returns the Products field value
 func (o *Institution) GetProducts() []Products {
-	if o == nil  {
+	if o == nil {
 		var ret []Products
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *Institution) GetProducts() []Products {
 // GetProductsOk returns a tuple with the Products field value
 // and a boolean to check if the value has been set.
 func (o *Institution) GetProductsOk() (*[]Products, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Products, true
@@ -136,7 +136,7 @@ func (o *Institution) SetProducts(v []Products) {
 
 // GetCountryCodes returns the CountryCodes field value
 func (o *Institution) GetCountryCodes() []CountryCode {
-	if o == nil  {
+	if o == nil {
 		var ret []CountryCode
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *Institution) GetCountryCodes() []CountryCode {
 // GetCountryCodesOk returns a tuple with the CountryCodes field value
 // and a boolean to check if the value has been set.
 func (o *Institution) GetCountryCodesOk() (*[]CountryCode, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.CountryCodes, true
@@ -171,7 +171,7 @@ func (o *Institution) GetUrl() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Institution) GetUrlOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Url.Get(), o.Url.IsSet()
@@ -190,6 +190,7 @@ func (o *Institution) HasUrl() bool {
 func (o *Institution) SetUrl(v string) {
 	o.Url.Set(&v)
 }
+
 // SetUrlNil sets the value for Url to be an explicit nil
 func (o *Institution) SetUrlNil() {
 	o.Url.Set(nil)
@@ -213,7 +214,7 @@ func (o *Institution) GetPrimaryColor() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Institution) GetPrimaryColorOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PrimaryColor.Get(), o.PrimaryColor.IsSet()
@@ -232,6 +233,7 @@ func (o *Institution) HasPrimaryColor() bool {
 func (o *Institution) SetPrimaryColor(v string) {
 	o.PrimaryColor.Set(&v)
 }
+
 // SetPrimaryColorNil sets the value for PrimaryColor to be an explicit nil
 func (o *Institution) SetPrimaryColorNil() {
 	o.PrimaryColor.Set(nil)
@@ -255,7 +257,7 @@ func (o *Institution) GetLogo() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Institution) GetLogoOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Logo.Get(), o.Logo.IsSet()
@@ -274,6 +276,7 @@ func (o *Institution) HasLogo() bool {
 func (o *Institution) SetLogo(v string) {
 	o.Logo.Set(&v)
 }
+
 // SetLogoNil sets the value for Logo to be an explicit nil
 func (o *Institution) SetLogoNil() {
 	o.Logo.Set(nil)
@@ -286,7 +289,7 @@ func (o *Institution) UnsetLogo() {
 
 // GetRoutingNumbers returns the RoutingNumbers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Institution) GetRoutingNumbers() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -319,7 +322,7 @@ func (o *Institution) SetRoutingNumbers(v []string) {
 
 // GetOauth returns the Oauth field value
 func (o *Institution) GetOauth() bool {
-	if o == nil  {
+	if o == nil {
 		var ret bool
 		return ret
 	}
@@ -330,7 +333,7 @@ func (o *Institution) GetOauth() bool {
 // GetOauthOk returns a tuple with the Oauth field value
 // and a boolean to check if the value has been set.
 func (o *Institution) GetOauthOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Oauth, true
@@ -474,5 +477,3 @@ func (v *NullableInstitution) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

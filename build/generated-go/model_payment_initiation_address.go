@@ -23,7 +23,7 @@ type PaymentInitiationAddress struct {
 	// The postal code where the recipient is located. Maximum of 16 characters.
 	PostalCode *string `json:"postal_code,omitempty"`
 	// The ISO 3166-1 alpha-2 country code where the recipient is located.
-	Country *string `json:"country,omitempty"`
+	Country              *string `json:"country,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -251,5 +251,3 @@ func (v *NullablePaymentInitiationAddress) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -24,7 +24,7 @@ type HistoricalBalance struct {
 	IsoCurrencyCode NullableString `json:"iso_currency_code,omitempty"`
 	// The unofficial currency code associated with the balance. Always `null` if `iso_currency_code` is non-`null`.  See the [currency code schema](/docs/api/accounts#currency-code-schema) for a full listing of supported `iso_currency_code`s.
 	UnofficialCurrencyCode NullableString `json:"unofficial_currency_code,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties   map[string]interface{}
 }
 
 type _HistoricalBalance HistoricalBalance
@@ -33,7 +33,7 @@ type _HistoricalBalance HistoricalBalance
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewHistoricalBalance(date string, current float32, ) *HistoricalBalance {
+func NewHistoricalBalance(date string, current float32) *HistoricalBalance {
 	this := HistoricalBalance{}
 	this.Date = date
 	this.Current = current
@@ -50,7 +50,7 @@ func NewHistoricalBalanceWithDefaults() *HistoricalBalance {
 
 // GetDate returns the Date field value
 func (o *HistoricalBalance) GetDate() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *HistoricalBalance) GetDate() string {
 // GetDateOk returns a tuple with the Date field value
 // and a boolean to check if the value has been set.
 func (o *HistoricalBalance) GetDateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Date, true
@@ -74,7 +74,7 @@ func (o *HistoricalBalance) SetDate(v string) {
 
 // GetCurrent returns the Current field value
 func (o *HistoricalBalance) GetCurrent() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *HistoricalBalance) GetCurrent() float32 {
 // GetCurrentOk returns a tuple with the Current field value
 // and a boolean to check if the value has been set.
 func (o *HistoricalBalance) GetCurrentOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Current, true
@@ -109,7 +109,7 @@ func (o *HistoricalBalance) GetIsoCurrencyCode() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HistoricalBalance) GetIsoCurrencyCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.IsoCurrencyCode.Get(), o.IsoCurrencyCode.IsSet()
@@ -128,6 +128,7 @@ func (o *HistoricalBalance) HasIsoCurrencyCode() bool {
 func (o *HistoricalBalance) SetIsoCurrencyCode(v string) {
 	o.IsoCurrencyCode.Set(&v)
 }
+
 // SetIsoCurrencyCodeNil sets the value for IsoCurrencyCode to be an explicit nil
 func (o *HistoricalBalance) SetIsoCurrencyCodeNil() {
 	o.IsoCurrencyCode.Set(nil)
@@ -151,7 +152,7 @@ func (o *HistoricalBalance) GetUnofficialCurrencyCode() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HistoricalBalance) GetUnofficialCurrencyCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UnofficialCurrencyCode.Get(), o.UnofficialCurrencyCode.IsSet()
@@ -170,6 +171,7 @@ func (o *HistoricalBalance) HasUnofficialCurrencyCode() bool {
 func (o *HistoricalBalance) SetUnofficialCurrencyCode(v string) {
 	o.UnofficialCurrencyCode.Set(&v)
 }
+
 // SetUnofficialCurrencyCodeNil sets the value for UnofficialCurrencyCode to be an explicit nil
 func (o *HistoricalBalance) SetUnofficialCurrencyCodeNil() {
 	o.UnofficialCurrencyCode.Set(nil)
@@ -257,5 +259,3 @@ func (v *NullableHistoricalBalance) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

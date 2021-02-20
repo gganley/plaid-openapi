@@ -19,10 +19,10 @@ type Employer struct {
 	// Plaid's unique identifier for the employer.
 	EmployerId string `json:"employer_id"`
 	// The name of the employer
-	Name string `json:"name"`
+	Name    string              `json:"name"`
 	Address NullableAddressData `json:"address,omitempty"`
 	// A number from 0 to 1 indicating Plaid's level of confidence in the pairing between the employer and the institution (not yet implemented).
-	ConfidenceScore NullableFloat32 `json:"confidence_score,omitempty"`
+	ConfidenceScore      NullableFloat32 `json:"confidence_score,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -32,7 +32,7 @@ type _Employer Employer
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEmployer(employerId string, name string, ) *Employer {
+func NewEmployer(employerId string, name string) *Employer {
 	this := Employer{}
 	this.EmployerId = employerId
 	this.Name = name
@@ -49,7 +49,7 @@ func NewEmployerWithDefaults() *Employer {
 
 // GetEmployerId returns the EmployerId field value
 func (o *Employer) GetEmployerId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *Employer) GetEmployerId() string {
 // GetEmployerIdOk returns a tuple with the EmployerId field value
 // and a boolean to check if the value has been set.
 func (o *Employer) GetEmployerIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.EmployerId, true
@@ -73,7 +73,7 @@ func (o *Employer) SetEmployerId(v string) {
 
 // GetName returns the Name field value
 func (o *Employer) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *Employer) GetName() string {
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *Employer) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Name, true
@@ -108,7 +108,7 @@ func (o *Employer) GetAddress() AddressData {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Employer) GetAddressOk() (*AddressData, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Address.Get(), o.Address.IsSet()
@@ -127,6 +127,7 @@ func (o *Employer) HasAddress() bool {
 func (o *Employer) SetAddress(v AddressData) {
 	o.Address.Set(&v)
 }
+
 // SetAddressNil sets the value for Address to be an explicit nil
 func (o *Employer) SetAddressNil() {
 	o.Address.Set(nil)
@@ -150,7 +151,7 @@ func (o *Employer) GetConfidenceScore() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Employer) GetConfidenceScoreOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ConfidenceScore.Get(), o.ConfidenceScore.IsSet()
@@ -169,6 +170,7 @@ func (o *Employer) HasConfidenceScore() bool {
 func (o *Employer) SetConfidenceScore(v float32) {
 	o.ConfidenceScore.Set(&v)
 }
+
 // SetConfidenceScoreNil sets the value for ConfidenceScore to be an explicit nil
 func (o *Employer) SetConfidenceScoreNil() {
 	o.ConfidenceScore.Set(nil)
@@ -256,5 +258,3 @@ func (v *NullableEmployer) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

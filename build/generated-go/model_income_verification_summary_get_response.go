@@ -19,7 +19,7 @@ type IncomeVerificationSummaryGetResponse struct {
 	// A list of income summaries.
 	IncomeSummaries []IncomeSummary `json:"income_summaries"`
 	// A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.
-	RequestId string `json:"request_id"`
+	RequestId            string `json:"request_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _IncomeVerificationSummaryGetResponse IncomeVerificationSummaryGetResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIncomeVerificationSummaryGetResponse(incomeSummaries []IncomeSummary, requestId string, ) *IncomeVerificationSummaryGetResponse {
+func NewIncomeVerificationSummaryGetResponse(incomeSummaries []IncomeSummary, requestId string) *IncomeVerificationSummaryGetResponse {
 	this := IncomeVerificationSummaryGetResponse{}
 	this.IncomeSummaries = incomeSummaries
 	this.RequestId = requestId
@@ -46,7 +46,7 @@ func NewIncomeVerificationSummaryGetResponseWithDefaults() *IncomeVerificationSu
 
 // GetIncomeSummaries returns the IncomeSummaries field value
 func (o *IncomeVerificationSummaryGetResponse) GetIncomeSummaries() []IncomeSummary {
-	if o == nil  {
+	if o == nil {
 		var ret []IncomeSummary
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *IncomeVerificationSummaryGetResponse) GetIncomeSummaries() []IncomeSumm
 // GetIncomeSummariesOk returns a tuple with the IncomeSummaries field value
 // and a boolean to check if the value has been set.
 func (o *IncomeVerificationSummaryGetResponse) GetIncomeSummariesOk() (*[]IncomeSummary, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.IncomeSummaries, true
@@ -70,7 +70,7 @@ func (o *IncomeVerificationSummaryGetResponse) SetIncomeSummaries(v []IncomeSumm
 
 // GetRequestId returns the RequestId field value
 func (o *IncomeVerificationSummaryGetResponse) GetRequestId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *IncomeVerificationSummaryGetResponse) GetRequestId() string {
 // GetRequestIdOk returns a tuple with the RequestId field value
 // and a boolean to check if the value has been set.
 func (o *IncomeVerificationSummaryGetResponse) GetRequestIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RequestId, true
@@ -161,5 +161,3 @@ func (v *NullableIncomeVerificationSummaryGetResponse) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
